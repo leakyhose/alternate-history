@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { MapGpuContext } from '@lib/map-renderer/gpu-context';
-import type { MapMetadata } from '@lib/map-renderer/types';
+import type { MapMetadata, ProvinceHistoryEntry, CountryHistory } from '@lib/map-renderer/types';
 import { MapViewport } from '@lib/map-renderer/viewport';
 
 // Pack RGB to u32 (0x00RRGGBB)
@@ -16,19 +16,34 @@ function hexToRgb(hex: string): [number, number, number] {
   if (result) {
     return [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)];
   }
-  return [128, 128, 128]; // Default gray
+  return [0, 0, 0]; // Default black for unknown tags
 }
 
-export default function MapCanvas() {
+interface MapCanvasProps {
+  year?: number;
+}
+
+export default function MapCanvas({ year = 2 }: MapCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [gpuContext, setGpuContext] = useState<MapGpuContext | null>(null);
+  const [metadata, setMetadata] = useState<MapMetadata | null>(null);
+  const [historyFiles, setHistoryFiles] = useState<Record<string, CountryHistory>>({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [canvasSize, setCanvasSize] = useState({ width: 1920, height: 1080 });
   const viewport = useRef(new MapViewport({ width: 5632, height: 2304 }));
   const isDragging = useRef(false);
 
+  // Get color for a tag from metadata (returns dark gray for unknown tags, never 0)
+  const getTagColor = useCallback((tag: string, meta: MapMetadata): number => {
+    if (meta.tags && meta.tags[tag]) {
+      const [r, g, b] = hexToRgb(meta.tags[tag].color);
+      return packColor(r, g, b);
+    }
+    // Use dark gray (16,16,16) instead of black (0,0,0) so it's not confused with "no color"
+    return packColor(16, 16, 16);
+  }, []);
 
   // Initialize GPU and load map
   useEffect(() => {
@@ -47,60 +62,47 @@ export default function MapCanvas() {
         // Fetches Data
         const westData = new Uint16Array(await westRes.arrayBuffer());
         const eastData = new Uint16Array(await eastRes.arrayBuffer());
-        const metadata: MapMetadata = await metaRes.json();
+        const loadedMetadata: MapMetadata = await metaRes.json();
 
         // Uploads textures
         await ctx.loadMapTextures(
           westData,
           eastData,
-          metadata.westWidth,
-          metadata.height
+          loadedMetadata.westWidth,
+          loadedMetadata.height
         );
 
-        ctx.createUniformBuffer(metadata.westWidth, metadata.height, metadata.provinceCount);
-        ctx.createColorBuffers(metadata.provinceCount);
+        ctx.createUniformBuffer(loadedMetadata.westWidth, loadedMetadata.height, loadedMetadata.provinceCount);
+        ctx.createColorBuffers(loadedMetadata.provinceCount);
 
-        // Generate country colors from metadata
-        const primaryColors = new Uint32Array(metadata.provinceCount);
-        const ownerColors = new Uint32Array(metadata.provinceCount);
-        
-        // Default: gray for all provinces
-        const defaultLandColor = packColor(94, 94, 94);
-        const seaColor = packColor(68, 107, 163); // EU4 style blue
-        
-        // Sea provinces list (from definition.csv - provinces containing Sea, Ocean, Lake, Gulf, Bay, etc.)
-        // These are scattered throughout the file, not contiguous
-        const seaProvinces = new Set(metadata.seaProvinces || []);
-        
-        for (let i = 0; i < metadata.provinceCount; i++) {
-          if (seaProvinces.has(i)) {
-            // Sea province - blue color, same "owner" so no borders between sea
-            primaryColors[i] = seaColor;
-            ownerColors[i] = seaColor;
-          } else {
-            primaryColors[i] = defaultLandColor;
-            ownerColors[i] = defaultLandColor;
-          }
-        }
-        
-        // Assign country colors (only for land provinces)
-        if (metadata.countries) {
-          for (const [, country] of Object.entries(metadata.countries)) {
-            const [r, g, b] = hexToRgb(country.color);
-            const color = packColor(r, g, b);
-            
-            for (const provId of country.provinces) {
-              if (!seaProvinces.has(provId) && provId < metadata.provinceCount) {
-                primaryColors[provId] = color;
-                ownerColors[provId] = color;
+        // Load history files for all tags in metadata
+        const historyData: Record<string, CountryHistory> = {};
+        if (loadedMetadata.tags) {
+          const tagNames = Object.keys(loadedMetadata.tags);
+          const historyPromises = tagNames.map(async (tag) => {
+            try {
+              const res = await fetch(`/history/${tag}.json`);
+              if (res.ok) {
+                const data = await res.json();
+                return { tag, data };
               }
+            } catch {
+              console.log(`No history file for ${tag}`);
+            }
+            return null;
+          });
+          
+          const results = await Promise.all(historyPromises);
+          for (const result of results) {
+            if (result) {
+              historyData[result.tag] = result.data;
             }
           }
         }
         
-        ctx.updateProvinceColors(primaryColors);
-        ctx.updateOwnerColors(ownerColors);
-        console.log('✓ Country colors loaded');
+        console.log('Loaded history files:', Object.keys(historyData));
+        setHistoryFiles(historyData);
+        setMetadata(loadedMetadata);
 
         const format = navigator.gpu.getPreferredCanvasFormat();
         await ctx.createRenderPipeline(format);
@@ -116,6 +118,64 @@ export default function MapCanvas() {
 
     init();
   }, []);
+
+  // Update map colors when year changes
+  useEffect(() => {
+    if (!gpuContext || !metadata || Object.keys(historyFiles).length === 0) return;
+
+    const seaProvinces = new Set(metadata.seaProvinces || []);
+    const defaultLandColor = packColor(94, 94, 94);
+    const seaColor = packColor(68, 107, 163);
+
+    const primaryColors = new Uint32Array(metadata.provinceCount);
+    const ownerColors = new Uint32Array(metadata.provinceCount);
+    const secondaryColors = new Uint32Array(metadata.provinceCount);
+
+    // Initialize all provinces
+    for (let i = 0; i < metadata.provinceCount; i++) {
+      if (seaProvinces.has(i)) {
+        primaryColors[i] = seaColor;
+        ownerColors[i] = seaColor;
+        secondaryColors[i] = 0; // No stripes for sea
+      } else {
+        primaryColors[i] = defaultLandColor;
+        ownerColors[i] = defaultLandColor;
+        secondaryColors[i] = 0;
+      }
+    }
+
+    // Apply historical data for each country
+    const yearStr = String(year);
+    for (const [tag, history] of Object.entries(historyFiles)) {
+      const yearData = history[yearStr] as ProvinceHistoryEntry[] | undefined;
+      if (!yearData || !Array.isArray(yearData)) continue;
+
+      const tagColor = getTagColor(tag, metadata);
+
+      for (const province of yearData) {
+        const provId = province.ID;
+        if (provId >= metadata.provinceCount || seaProvinces.has(provId)) continue;
+
+        // Set province color to tag's color
+        primaryColors[provId] = tagColor;
+        ownerColors[provId] = tagColor;
+
+        // Handle occupation
+        if (province.CONTROL && province.CONTROL !== '') {
+          // Province is occupied - show stripes with occupier's color
+          const occupierColor = getTagColor(province.CONTROL, metadata);
+          secondaryColors[provId] = occupierColor;
+        } else {
+          secondaryColors[provId] = 0; // No occupation, no stripes
+        }
+      }
+    }
+
+    gpuContext.updateProvinceColors(primaryColors);
+    gpuContext.updateOwnerColors(ownerColors);
+    gpuContext.updateSecondaryColors(secondaryColors);
+    console.log(`Map updated for year ${year}`);
+  }, [year, gpuContext, metadata, historyFiles, getTagColor]);
 
   // Configure canvas and handle resize
   useEffect(() => {
@@ -140,7 +200,6 @@ export default function MapCanvas() {
 
     return () => resizeObserver.disconnect();
   }, [gpuContext]);
-
 
 
   // Render loop
@@ -172,35 +231,28 @@ export default function MapCanvas() {
   // Mouse/wheel event handlers
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas || isLoading) return;
 
     const onMouseDown = (e: MouseEvent) => {
       if (e.button === 0) { // Left click only
         isDragging.current = true;
-        console.log('Mouse down - dragging started');
       }
     };
 
     const onMouseUp = () => {
-      if (isDragging.current) {
-        console.log('Mouse up - dragging stopped');
-      }
       isDragging.current = false;
     };
 
     const onMouseMove = (e: MouseEvent) => {
       if (isDragging.current) {
-        console.log(`Panning: dx=${e.movementX}, dy=${e.movementY}`);
         viewport.current.pan(-e.movementX, -e.movementY);
       }
     };
 
-    
 
     const onWheel = (e: WheelEvent) => {
       e.preventDefault();
       const zoomDelta = e.deltaY > 0 ? 0.9 : 1.1;
-      console.log(`Zoom: delta=${zoomDelta}`);
       viewport.current.zoomAt(e.offsetX, e.offsetY, zoomDelta);
     };
 
@@ -217,7 +269,7 @@ export default function MapCanvas() {
       canvas.removeEventListener('mousemove', onMouseMove);
       canvas.removeEventListener('wheel', onWheel);
     };
-  }, [isLoading]); // Re-run when loading completes so canvas exists
+  }, [isLoading]);
 
   
   if (error) {
