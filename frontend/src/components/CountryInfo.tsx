@@ -1,5 +1,7 @@
+'use client'
+
 import { useState, useEffect, useMemo } from 'react';
-import type { MapMetadata, RulerFile } from '@lib/map-renderer/types';
+import type { MapMetadata, RulerFile } from '@/lib/map-renderer/types';
 
 interface CountryInfoProps {
     selectedTag: string | null;

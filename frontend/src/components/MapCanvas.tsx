@@ -1,9 +1,9 @@
-'use client';
+'use client'
 
 import { useEffect, useRef, useState, useCallback } from 'react';
-import { MapGpuContext } from '@lib/map-renderer/gpu-context';
-import type { MapMetadata, ProvinceHistoryEntry, CountryHistory } from '@lib/map-renderer/types';
-import { MapViewport } from '@lib/map-renderer/viewport';
+import { MapGpuContext } from '@/lib/map-renderer/gpu-context';
+import type { MapMetadata, ProvinceHistoryEntry, CountryHistory } from '@/lib/map-renderer/types';
+import { MapViewport } from '@/lib/map-renderer/viewport';
 
 // Pack RGB to u32 (0x00RRGGBB)
 function packColor(r: number, g: number, b: number): number {
