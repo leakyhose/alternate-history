@@ -113,7 +113,7 @@ export class MapGpuContext {
     });
 
     // Initialize with default values (gray)
-    const defaultColor = packColor(94, 94, 94);
+    const defaultColor = packColor(173, 150, 116);
     const defaultPrimary = new Uint32Array(provinceCount).fill(defaultColor);
     const defaultStates = new Uint32Array(provinceCount).fill(0);
     const defaultOwner = new Uint32Array(provinceCount).fill(defaultColor);

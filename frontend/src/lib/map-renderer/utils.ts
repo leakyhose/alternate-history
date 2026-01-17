@@ -21,11 +21,11 @@ export function buildColorArray(
 ): Uint32Array {
   const colors = new Uint32Array(provinceCount);
   
-  // Default color (unassigned provinces)
-  const defaultColor = packColor(94, 94, 94, 255);
+  // Default color of unassigned provinces
+  const defaultColor = packColor(173, 150, 116, 255);
   colors.fill(defaultColor);
   
-  // Fill in tagged provinces
+  // tagged provinces
   for (const [provinceId, tag] of Object.entries(saveData.provinces)) {
     if (tag && tagDefs[tag]) {
       const [r, g, b] = hexToRgb(tagDefs[tag].color);

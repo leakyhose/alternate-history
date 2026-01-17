@@ -37,7 +37,7 @@ struct ComputeUniforms {
 @group(0) @binding(6) var<storage, read> location_secondary_colors: array<u32>;
 
 // Fallback color for out-of-bounds province IDs
-const FALLBACK_COLOR: vec3<f32> = vec3<f32>(0.37, 0.37, 0.37);
+const FALLBACK_COLOR: vec3<f32> = vec3<f32>(0.678, 0.588, 0.455);
 
 fn wrap_x(x: i32) -> i32 {
     let w = i32(uniforms.tile_width * 2u);

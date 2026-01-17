@@ -148,8 +148,8 @@ export default function MapCanvas({ year = 2, onProvinceSelect }: MapCanvasProps
     if (!gpuContext || !metadata || Object.keys(historyFiles).length === 0) return;
 
     const seaProvinces = new Set(metadata.seaProvinces || []);
-    const defaultLandColor = packColor(94, 94, 94);
-    const seaColor = packColor(68, 107, 163);
+    const defaultLandColor = packColor(173, 150, 116);
+    const seaColor = packColor(61, 66, 107);
 
     const primaryColors = new Uint32Array(metadata.provinceCount);
     const ownerColors = new Uint32Array(metadata.provinceCount);
