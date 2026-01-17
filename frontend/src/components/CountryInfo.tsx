@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react';
-import type { RulerHistory, MapMetadata } from '@/lib/map-renderer/types';
+import type { RulerHistory, MapMetadata } from '@/types'
 
 interface CountryInfoProps {
     defaultRulerHistory: RulerHistory | null

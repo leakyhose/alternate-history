@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { MapGpuContext } from '@/lib/map-renderer/gpu-context';
-import type { MapMetadata, ProvinceHistory } from '@/lib/map-renderer/types';
+import type { MapMetadata, ProvinceHistory } from '@/types'
 import { MapViewport } from '@/lib/map-renderer/viewport';
 
 // Pack RGB to u32 (0x00RRGGBB)

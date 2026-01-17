@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import MapCanvas from '@components/MapCanvas'
 import YearSlider from '@components/YearSlider'
 import CountryInfo from '@components/CountryInfo'
-import type { ProvinceHistory, RulerHistory } from '@/lib/map-renderer/types'
+import type { ProvinceHistory, RulerHistory } from '@/types'
 
 export default function RomePage() {
   const [year, setYear] = useState(2)
