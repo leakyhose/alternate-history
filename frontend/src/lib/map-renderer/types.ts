@@ -19,9 +19,20 @@ export interface ProvinceHistoryEntry {
   CONTROL: string; // Tag that controls/occupies, empty string if none
 }
 
+export interface RulerHistoryEntry {
+  name: string;
+  dynasty: string;
+  title: string;
+}
+
 export interface CountryHistory {
   tags: string[];
   [year: string]: ProvinceHistoryEntry[] | string[];
+}
+
+export interface RulerHistory {
+  tags: string[];
+  [year: string]: RulerHistoryEntry[] | string[];
 }
 
 export interface SaveData {
