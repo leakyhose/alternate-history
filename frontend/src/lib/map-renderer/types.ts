@@ -3,6 +3,11 @@ export interface MapMetadata {
   height: number;
   westWidth: number;
   provinceCount: number;
+  seaProvinces?: number[];
+  countries?: Record<string, {
+    color: string;
+    provinces: number[];
+  }>;
 }
 
 export interface SaveData {

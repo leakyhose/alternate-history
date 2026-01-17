@@ -13,10 +13,11 @@ export class MapGpuContext {
   private bindGroupLayout!: GPUBindGroupLayout;
   private bindGroup!: GPUBindGroup;
   private canvasContext?: GPUCanvasContext;
-  private mapWidth: number = 0;
-  private mapHeight: number = 0;
+  private tileWidth: number = 0;
+  private tileHeight: number = 0;
   private canvasWidth: number = 1920;
   private canvasHeight: number = 1080;
+  private maxProvinceId: number = 8192;
 
   static async create(): Promise<MapGpuContext> {
     const context = new MapGpuContext();
@@ -46,9 +47,6 @@ export class MapGpuContext {
     width: number,
     height: number
   ) {
-    this.mapWidth = width;
-    this.mapHeight = height;
-
     this.westTexture = this.device.createTexture({
       size: { width, height },
       format: 'r16uint',
@@ -78,14 +76,22 @@ export class MapGpuContext {
     console.log(`✓ Map textures uploaded (${width}x${height})`);
   }
 
-  createColorBuffer(provinceCount: number) {
-    // Uniforms struct must be 16-byte aligned
+  createUniformBuffer(tileWidth: number, tileHeight: number, maxProvinceId: number = 8192) {
+    this.tileWidth = tileWidth;
+    this.tileHeight = tileHeight;
+    this.maxProvinceId = maxProvinceId;
+
+    // Uniforms struct - needs 48 bytes + padding to 64
     this.uniformsBuffer = this.device.createBuffer({
-      size: 48,
+      size: 64,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
     });
 
-    // Create color/state buffers
+    console.log(`✓ Uniform buffer created (tile: ${tileWidth}x${tileHeight}, maxProvinceId: ${maxProvinceId})`);
+  }
+
+  createColorBuffers(provinceCount: number) {
+    // Create all 4 color/state buffers
     this.primaryColorsBuffer = this.device.createBuffer({
       size: provinceCount * 4,
       usage: GPUBufferUsage.STORAGE | GPUBufferUsage.COPY_DST,
@@ -106,44 +112,74 @@ export class MapGpuContext {
       usage: GPUBufferUsage.STORAGE | GPUBufferUsage.COPY_DST,
     });
 
-    // Initialize with default values
-    const defaultPrimary = new Uint32Array(provinceCount).fill(0x5E5E5E);
+    // Initialize with default values (gray)
+    const defaultColor = packColor(94, 94, 94);
+    const defaultPrimary = new Uint32Array(provinceCount).fill(defaultColor);
     const defaultStates = new Uint32Array(provinceCount).fill(0);
-    const defaultOwner = new Uint32Array(provinceCount).fill(0x5E5E5E);
+    const defaultOwner = new Uint32Array(provinceCount).fill(defaultColor);
     const defaultSecondary = new Uint32Array(provinceCount).fill(0);
 
-    this.queue.writeBuffer(this.primaryColorsBuffer, 0, defaultPrimary.buffer);
-    this.queue.writeBuffer(this.statesBuffer, 0, defaultStates.buffer);
-    this.queue.writeBuffer(this.ownerColorsBuffer, 0, defaultOwner.buffer);
-    this.queue.writeBuffer(this.secondaryColorsBuffer, 0, defaultSecondary.buffer);
-
-    this.updateUniforms();
+    this.queue.writeBuffer(this.primaryColorsBuffer, 0, defaultPrimary.buffer as ArrayBuffer);
+    this.queue.writeBuffer(this.statesBuffer, 0, defaultStates.buffer as ArrayBuffer);
+    this.queue.writeBuffer(this.ownerColorsBuffer, 0, defaultOwner.buffer as ArrayBuffer);
+    this.queue.writeBuffer(this.secondaryColorsBuffer, 0, defaultSecondary.buffer as ArrayBuffer);
 
     console.log(`✓ Color buffers created (${provinceCount} provinces)`);
   }
 
-  private updateUniforms() {
-    const data = new ArrayBuffer(48);
+  updateUniforms(viewport: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    zoom: number;
+  }) {
+    const data = new ArrayBuffer(64);
     const view = new DataView(data);
+    let offset = 0;
 
-    view.setUint32(0, this.mapWidth, true);           // tile_width
-    view.setUint32(4, this.mapHeight, true);          // tile_height
-    view.setUint32(8, 1, true);                       // enable_location_borders
-    view.setUint32(12, 0, true);                      // enable_owner_borders
-    view.setUint32(16, 0, true);                      // view_x
-    view.setUint32(20, 0, true);                      // view_y
-    view.setUint32(24, this.mapWidth * 2, true);      // view_width
-    view.setUint32(28, this.mapHeight, true);         // view_height
-    view.setFloat32(32, 1.0, true);                   // zoom_level
-    view.setUint32(36, this.canvasWidth, true);       // surface_width
-    view.setUint32(40, this.canvasHeight, true);      // surface_height
+    // struct ComputeUniforms (must match WGSL)
+    view.setUint32(offset, this.tileWidth, true);
+    offset += 4;
+    view.setUint32(offset, this.tileHeight, true);
+    offset += 4;
+    view.setUint32(offset, 1, true); // enable_location_borders
+    offset += 4;
+    view.setUint32(offset, 1, true); // enable_owner_borders
+    offset += 4;
+    view.setUint32(offset, Math.floor(viewport.x), true); // view_x
+    offset += 4;
+    view.setUint32(offset, Math.floor(viewport.y), true); // view_y
+    offset += 4;
+    view.setUint32(offset, Math.floor(viewport.width), true); // view_width
+    offset += 4;
+    view.setUint32(offset, Math.floor(viewport.height), true); // view_height
+    offset += 4;
+    view.setFloat32(offset, viewport.zoom, true); // zoom_level
+    offset += 4;
+    view.setUint32(offset, this.canvasWidth, true); // surface_width
+    offset += 4;
+    view.setUint32(offset, this.canvasHeight, true); // surface_height
+    offset += 4;
+    view.setUint32(offset, this.maxProvinceId, true); // max_province_id
 
     this.queue.writeBuffer(this.uniformsBuffer, 0, data);
   }
 
   updateProvinceColors(colors: Uint32Array) {
-    this.queue.writeBuffer(this.primaryColorsBuffer, 0, colors.buffer);
-    this.queue.writeBuffer(this.ownerColorsBuffer, 0, colors.buffer);
+    this.queue.writeBuffer(this.primaryColorsBuffer, 0, colors.buffer as ArrayBuffer);
+  }
+
+  updateOwnerColors(colors: Uint32Array) {
+    this.queue.writeBuffer(this.ownerColorsBuffer, 0, colors.buffer as ArrayBuffer);
+  }
+
+  updateSecondaryColors(colors: Uint32Array) {
+    this.queue.writeBuffer(this.secondaryColorsBuffer, 0, colors.buffer as ArrayBuffer);
+  }
+
+  updateStates(states: Uint32Array) {
+    this.queue.writeBuffer(this.statesBuffer, 0, states.buffer as ArrayBuffer);
   }
 
   async createRenderPipeline(canvasFormat: GPUTextureFormat) {
@@ -157,7 +193,7 @@ export class MapGpuContext {
       entries: [
         { binding: 0, visibility: GPUShaderStage.FRAGMENT, texture: { sampleType: 'uint', viewDimension: '2d' } },
         { binding: 1, visibility: GPUShaderStage.FRAGMENT, texture: { sampleType: 'uint', viewDimension: '2d' } },
-        { binding: 2, visibility: GPUShaderStage.FRAGMENT, buffer: { type: 'uniform' } },
+        { binding: 2, visibility: GPUShaderStage.FRAGMENT | GPUShaderStage.VERTEX, buffer: { type: 'uniform' } },
         { binding: 3, visibility: GPUShaderStage.FRAGMENT, buffer: { type: 'read-only-storage' } },
         { binding: 4, visibility: GPUShaderStage.FRAGMENT, buffer: { type: 'read-only-storage' } },
         { binding: 5, visibility: GPUShaderStage.FRAGMENT, buffer: { type: 'read-only-storage' } },
@@ -198,9 +234,9 @@ export class MapGpuContext {
     console.log('✓ Render pipeline created');
   }
 
-  configureCanvas(canvas: HTMLCanvasElement) {
-    this.canvasWidth = canvas.width;
-    this.canvasHeight = canvas.height;
+  configureCanvas(canvas: HTMLCanvasElement, width: number, height: number) {
+    this.canvasWidth = width;
+    this.canvasHeight = height;
 
     this.canvasContext = canvas.getContext('webgpu') as GPUCanvasContext;
     if (!this.canvasContext) {
@@ -212,8 +248,7 @@ export class MapGpuContext {
       format: navigator.gpu.getPreferredCanvasFormat(),
     });
 
-    // Update uniforms with actual canvas size
-    this.updateUniforms();
+    console.log(`✓ Canvas configured: ${width}x${height} physical pixels`);
   }
 
   render() {
@@ -230,7 +265,7 @@ export class MapGpuContext {
       colorAttachments: [
         {
           view: view,
-          clearValue: { r: 0.1, g: 0.1, b: 0.1, a: 1 },
+          clearValue: { r: 0.05, g: 0.05, b: 0.05, a: 1 },
           loadOp: 'clear',
           storeOp: 'store',
         },
@@ -239,9 +274,14 @@ export class MapGpuContext {
 
     pass.setPipeline(this.pipeline);
     pass.setBindGroup(0, this.bindGroup);
-    pass.draw(3);
+    pass.draw(3); // Draw fullscreen triangle
     pass.end();
 
     this.queue.submit([encoder.finish()]);
   }
+}
+
+// Helper function - pack as 0x00RRGGBB to match shader unpack_color
+function packColor(r: number, g: number, b: number): number {
+  return (r << 16) | (g << 8) | b;
 }
