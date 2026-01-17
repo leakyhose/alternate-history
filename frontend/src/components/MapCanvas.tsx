@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { MapGpuContext } from '@/lib/map-renderer/gpu-context';
-import type { MapMetadata, History } from '@/lib/map-renderer/types';
+import type { MapMetadata, ProvinceHistory } from '@/lib/map-renderer/types';
 import { MapViewport } from '@/lib/map-renderer/viewport';
 
 // Pack RGB to u32 (0x00RRGGBB)
@@ -20,12 +20,12 @@ function hexToRgb(hex: string): [number, number, number] {
 }
 
 interface MapCanvasProps {
-  defaultHistory: History | null;
+  defaultProvinceHistory: ProvinceHistory | null;
   year?: number;
   onProvinceSelect?: (tag: string | null) => void;
 }
 
-export default function MapCanvas({ defaultHistory, year = 2, onProvinceSelect }: MapCanvasProps) {
+export default function MapCanvas({ defaultProvinceHistory, year = 2, onProvinceSelect }: MapCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [gpuContext, setGpuContext] = useState<MapGpuContext | null>(null);
@@ -118,7 +118,7 @@ export default function MapCanvas({ defaultHistory, year = 2, onProvinceSelect }
 
   // Update map colors when year or history changes
   useEffect(() => {
-    if (!gpuContext || !metadata || !defaultHistory) return;
+    if (!gpuContext || !metadata || !defaultProvinceHistory) return;
 
     const seaProvinces = new Set(metadata.seaProvinces || []);
     const defaultLandColor = packColor(173, 150, 116);
@@ -143,7 +143,7 @@ export default function MapCanvas({ defaultHistory, year = 2, onProvinceSelect }
 
     // Apply historical data for this year
     const yearStr = String(year);
-    const yearData = defaultHistory[yearStr];
+    const yearData = defaultProvinceHistory[yearStr];
     
     provinceToTagMap.current.clear();
     
@@ -174,7 +174,7 @@ export default function MapCanvas({ defaultHistory, year = 2, onProvinceSelect }
     gpuContext.updateOwnerColors(ownerColors);
     gpuContext.updateSecondaryColors(secondaryColors);
     console.log(`Map updated for year ${year}, provinces: ${provinceToTagMap.current.size}`);
-  }, [year, gpuContext, metadata, defaultHistory, getTagColor]);
+  }, [year, gpuContext, metadata, defaultProvinceHistory, getTagColor]);
 
   // Configure canvas and handle resize
   useEffect(() => {

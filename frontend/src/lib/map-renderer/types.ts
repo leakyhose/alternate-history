@@ -21,7 +21,7 @@ export interface ProvinceHistoryEntry {
   CONTROL: string; // Tag that controls/occupies, empty string if none
 }
 
-export interface History {
+export interface ProvinceHistory {
   [year: string]: ProvinceHistoryEntry[];
 }
 

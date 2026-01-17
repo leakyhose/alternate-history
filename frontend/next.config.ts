@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // Proxy API requests to FastAPI backend (avoids CORS)
+  // Proxy API requests to backend for cors
   async rewrites() {
     return [
       {
