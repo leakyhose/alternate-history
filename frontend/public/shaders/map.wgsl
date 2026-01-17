@@ -136,11 +136,11 @@ fn get_pixel_color(x: i32, y: i32) -> vec3<f32> {
     let secondary = get_secondary_color(loc);
     if (secondary != 0u) {
         // Create diagonal stripes for occupied territories
-        let stripe_width = 4.0; // Width of each stripe in pixels
+        let stripe_width = 3.0; // Width of each stripe in pixels (smaller = denser)
         let pattern = (f32(x) + f32(y)) / stripe_width;
         let stripe = fract(pattern);
-        if (stripe > 0.5) {
-            // Use occupier's color for stripe
+        if (stripe > 0.4) {
+            // Use occupier's color for stripe (0.4 threshold = 60% stripe coverage)
             base = unpack_color(secondary);
         }
     }
