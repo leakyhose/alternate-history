@@ -298,7 +298,11 @@ export default function MapCanvas({ year = 2, onProvinceSelect }: MapCanvasProps
             // Find the tag that owns this province
             const owningTag = provinceToTagMap.current.get(provinceId);
             console.log(`Clicked province ${provinceId}, owned by: ${owningTag || 'none'}`);
-            onProvinceSelect(owningTag || null);
+            
+            // Only update selection if the province is owned by a tag
+            if (owningTag) {
+              onProvinceSelect(owningTag);
+            }
           }
         }
         

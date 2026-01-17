@@ -9,6 +9,7 @@ export interface MapMetadata {
     provinces: number[];
   }>;
   tags?: Record<string, {
+    name: string;
     color: string;
   }>;
 }
