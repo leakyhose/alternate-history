@@ -35,6 +35,13 @@ export interface RulerHistory {
   [year: string]: RulerHistoryEntry[] | string[];
 }
 
+export interface RulerFile {
+  tag: string;
+  country: string;
+  title: string;
+  rulers: Record<string, RulerHistoryEntry | null>;
+}
+
 export interface SaveData {
   provinces: Record<string, string | null>; // Province ID → Tag
 }
