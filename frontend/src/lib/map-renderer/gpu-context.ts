@@ -38,7 +38,7 @@ export class MapGpuContext {
     this.device = await adapter.requestDevice();
     this.queue = this.device.queue;
 
-    console.log('✓ GPU initialized');
+    console.log('GPU initialized');
   }
 
   async loadMapTextures(
@@ -87,7 +87,7 @@ export class MapGpuContext {
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
     });
 
-    console.log(`✓ Uniform buffer created (tile: ${tileWidth}x${tileHeight}, maxProvinceId: ${maxProvinceId})`);
+    console.log(`Uniform buffer created (tile: ${tileWidth}x${tileHeight}, maxProvinceId: ${maxProvinceId})`);
   }
 
   createColorBuffers(provinceCount: number) {
@@ -231,7 +231,7 @@ export class MapGpuContext {
       ],
     });
 
-    console.log('✓ Render pipeline created');
+    console.log('Render pipeline created');
   }
 
   configureCanvas(canvas: HTMLCanvasElement, width: number, height: number) {
@@ -248,7 +248,7 @@ export class MapGpuContext {
       format: navigator.gpu.getPreferredCanvasFormat(),
     });
 
-    console.log(`✓ Canvas configured: ${width}x${height} physical pixels`);
+    console.log(`Canvas configured: ${width}x${height} physical pixels`);
   }
 
   render() {
