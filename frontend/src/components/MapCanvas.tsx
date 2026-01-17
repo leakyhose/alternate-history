@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { MapGpuContext } from '@/lib/map-renderer/gpu-context';
-import type { MapMetadata, ProvinceHistoryEntry, CountryHistory } from '@/lib/map-renderer/types';
+import type { MapMetadata, History } from '@/lib/map-renderer/types';
 import { MapViewport } from '@/lib/map-renderer/viewport';
 
 // Pack RGB to u32 (0x00RRGGBB)
@@ -20,16 +20,16 @@ function hexToRgb(hex: string): [number, number, number] {
 }
 
 interface MapCanvasProps {
+  defaultHistory: History | null;
   year?: number;
   onProvinceSelect?: (tag: string | null) => void;
 }
 
-export default function MapCanvas({ year = 2, onProvinceSelect }: MapCanvasProps) {
+export default function MapCanvas({ defaultHistory, year = 2, onProvinceSelect }: MapCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [gpuContext, setGpuContext] = useState<MapGpuContext | null>(null);
   const [metadata, setMetadata] = useState<MapMetadata | null>(null);
-  const [historyFiles, setHistoryFiles] = useState<Record<string, CountryHistory>>({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [canvasSize, setCanvasSize] = useState({ width: 1920, height: 1080 });
@@ -99,33 +99,6 @@ export default function MapCanvas({ year = 2, onProvinceSelect }: MapCanvasProps
         ctx.createUniformBuffer(loadedMetadata.westWidth, loadedMetadata.height, loadedMetadata.provinceCount);
         ctx.createColorBuffers(loadedMetadata.provinceCount);
 
-        // Load history files for all tags in metadata
-        const historyData: Record<string, CountryHistory> = {};
-        if (loadedMetadata.tags) {
-          const tagNames = Object.keys(loadedMetadata.tags);
-          const historyPromises = tagNames.map(async (tag) => {
-            try {
-              const res = await fetch(`/history/provinces/${tag}.json`);
-              if (res.ok) {
-                const data = await res.json();
-                return { tag, data };
-              }
-            } catch {
-              console.log(`No history file for ${tag}`);
-            }
-            return null;
-          });
-          
-          const results = await Promise.all(historyPromises);
-          for (const result of results) {
-            if (result) {
-              historyData[result.tag] = result.data;
-            }
-          }
-        }
-        
-        console.log('Loaded history files:', Object.keys(historyData));
-        setHistoryFiles(historyData);
         setMetadata(loadedMetadata);
 
         const format = navigator.gpu.getPreferredCanvasFormat();
@@ -143,9 +116,9 @@ export default function MapCanvas({ year = 2, onProvinceSelect }: MapCanvasProps
     init();
   }, []);
 
-  // Update map colors when year changes
+  // Update map colors when year or history changes
   useEffect(() => {
-    if (!gpuContext || !metadata || Object.keys(historyFiles).length === 0) return;
+    if (!gpuContext || !metadata || !defaultHistory) return;
 
     const seaProvinces = new Set(metadata.seaProvinces || []);
     const defaultLandColor = packColor(173, 150, 116);
@@ -160,7 +133,7 @@ export default function MapCanvas({ year = 2, onProvinceSelect }: MapCanvasProps
       if (seaProvinces.has(i)) {
         primaryColors[i] = seaColor;
         ownerColors[i] = seaColor;
-        secondaryColors[i] = 0; // No stripes for sea
+        secondaryColors[i] = 0;
       } else {
         primaryColors[i] = defaultLandColor;
         ownerColors[i] = defaultLandColor;
@@ -168,33 +141,31 @@ export default function MapCanvas({ year = 2, onProvinceSelect }: MapCanvasProps
       }
     }
 
-    // Apply historical data for each country
+    // Apply historical data for this year
     const yearStr = String(year);
+    const yearData = defaultHistory[yearStr];
+    
     provinceToTagMap.current.clear();
-    for (const [tag, history] of Object.entries(historyFiles)) {
-      const yearData = history[yearStr] as ProvinceHistoryEntry[] | undefined;
-      if (!yearData || !Array.isArray(yearData)) continue;
-
-      const tagColor = getTagColor(tag, metadata);
-
+    
+    if (yearData && Array.isArray(yearData)) {
       for (const province of yearData) {
         const provId = province.ID;
         if (provId >= metadata.provinceCount || seaProvinces.has(provId)) continue;
 
-        // Map province to its owning tag
-        provinceToTagMap.current.set(provId, tag);
+        const ownerTag = province.OWNER;
+        if (!ownerTag) continue;
 
-        // Set province color to tag's color
+        provinceToTagMap.current.set(provId, ownerTag);
+
+        const tagColor = getTagColor(ownerTag, metadata);
         primaryColors[provId] = tagColor;
         ownerColors[provId] = tagColor;
 
-        // Handle occupation
-        if (province.CONTROL && province.CONTROL !== '') {
-          // Province is occupied - show stripes with occupier's color
+        if (province.CONTROL && province.CONTROL !== ownerTag) {
           const occupierColor = getTagColor(province.CONTROL, metadata);
           secondaryColors[provId] = occupierColor;
         } else {
-          secondaryColors[provId] = 0; // No occupation, no stripes
+          secondaryColors[provId] = 0;
         }
       }
     }
@@ -202,8 +173,8 @@ export default function MapCanvas({ year = 2, onProvinceSelect }: MapCanvasProps
     gpuContext.updateProvinceColors(primaryColors);
     gpuContext.updateOwnerColors(ownerColors);
     gpuContext.updateSecondaryColors(secondaryColors);
-    console.log(`Map updated for year ${year}`);
-  }, [year, gpuContext, metadata, historyFiles, getTagColor]);
+    console.log(`Map updated for year ${year}, provinces: ${provinceToTagMap.current.size}`);
+  }, [year, gpuContext, metadata, defaultHistory, getTagColor]);
 
   // Configure canvas and handle resize
   useEffect(() => {
@@ -229,7 +200,6 @@ export default function MapCanvas({ year = 2, onProvinceSelect }: MapCanvasProps
     return () => resizeObserver.disconnect();
   }, [gpuContext]);
 
-
   // Render loop
   useEffect(() => {
     if (!gpuContext || !canvasRef.current) return;
@@ -237,7 +207,6 @@ export default function MapCanvas({ year = 2, onProvinceSelect }: MapCanvasProps
     let frameId: number;
 
     function animate() {
-      // Update GPU with current viewport
       const uniforms = viewport.current.getUniforms();
       gpuContext!.updateUniforms({
         x: uniforms.view_x,

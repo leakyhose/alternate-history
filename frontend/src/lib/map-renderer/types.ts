@@ -17,7 +17,12 @@ export interface MapMetadata {
 export interface ProvinceHistoryEntry {
   ID: number;
   NAME: string;
+  OWNER: string;
   CONTROL: string; // Tag that controls/occupies, empty string if none
+}
+
+export interface History {
+  [year: string]: ProvinceHistoryEntry[];
 }
 
 export interface RulerHistoryEntry {
@@ -26,10 +31,6 @@ export interface RulerHistoryEntry {
   title: string;
 }
 
-export interface CountryHistory {
-  tags: string[];
-  [year: string]: ProvinceHistoryEntry[] | string[];
-}
 
 export interface RulerHistory {
   tags: string[];

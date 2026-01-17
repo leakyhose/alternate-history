@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // Proxy API requests to FastAPI backend (avoids CORS)
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://localhost:8000/:path*',
+      },
+    ]
+  },
 }
 
 export default nextConfig
