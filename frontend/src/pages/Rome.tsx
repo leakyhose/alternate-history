@@ -11,7 +11,7 @@ export default function Rome() {
     <div className="relative w-screen h-screen overflow-hidden bg-black">
       <YearSlider onChange={setYear} initialValue={2} min={2} max={1453} />
       <CountryInfo selectedTag={selectedTag} year={year} />
-      <MapCanvas year={year} />
+      <MapCanvas year={year} onProvinceSelect={setSelectedTag} />
     </div>
   )
 }

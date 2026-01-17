@@ -52,6 +52,9 @@ export default function CountryInfo( {selectedTag, year}: CountryInfoProps) {
     }, [])
 
     const rulerInfo = useMemo(() => {
+
+        console.log("selected tag switch")
+
         if (!rulerFiles || !metadata || !selectedTag) {
             return null;
         }

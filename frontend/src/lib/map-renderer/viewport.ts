@@ -54,6 +54,13 @@ export class MapViewport {
     this.position.y = Math.max(0, Math.min(this.position.y, this.mapSize.height - viewHeight));
   }
   
+  // Convert screen coordinates to map coordinates
+  screenToMap(screenX: number, screenY: number): { x: number; y: number } {
+    const mapX = this.position.x + screenX / this.zoom;
+    const mapY = this.position.y + screenY / this.zoom;
+    return { x: mapX, y: mapY };
+  }
+  
   getUniforms() {
     return {
       view_x: Math.floor(this.position.x),

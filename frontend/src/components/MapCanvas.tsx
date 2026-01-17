@@ -21,9 +21,10 @@ function hexToRgb(hex: string): [number, number, number] {
 
 interface MapCanvasProps {
   year?: number;
+  onProvinceSelect?: (tag: string | null) => void;
 }
 
-export default function MapCanvas({ year = 2 }: MapCanvasProps) {
+export default function MapCanvas({ year = 2, onProvinceSelect }: MapCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [gpuContext, setGpuContext] = useState<MapGpuContext | null>(null);
@@ -34,6 +35,8 @@ export default function MapCanvas({ year = 2 }: MapCanvasProps) {
   const [canvasSize, setCanvasSize] = useState({ width: 1920, height: 1080 });
   const viewport = useRef(new MapViewport({ width: 5632, height: 2304 }));
   const isDragging = useRef(false);
+  const provinceTextureData = useRef<Uint16Array | null>(null);
+  const provinceToTagMap = useRef<Map<number, string>>(new Map());
 
   // Get color for a tag from metadata (returns dark gray for unknown tags, never 0)
   const getTagColor = useCallback((tag: string, meta: MapMetadata): number => {
@@ -71,6 +74,27 @@ export default function MapCanvas({ year = 2 }: MapCanvasProps) {
           loadedMetadata.westWidth,
           loadedMetadata.height
         );
+
+        // Store combined province data for CPU-side click detection
+        const totalWidth = loadedMetadata.westWidth * 2;
+        const totalHeight = loadedMetadata.height;
+        const combinedData = new Uint16Array(totalWidth * totalHeight);
+        
+        // Copy west data
+        for (let y = 0; y < totalHeight; y++) {
+          const srcOffset = y * loadedMetadata.westWidth;
+          const dstOffset = y * totalWidth;
+          combinedData.set(westData.subarray(srcOffset, srcOffset + loadedMetadata.westWidth), dstOffset);
+        }
+        
+        // Copy east data
+        for (let y = 0; y < totalHeight; y++) {
+          const srcOffset = y * loadedMetadata.westWidth;
+          const dstOffset = y * totalWidth + loadedMetadata.westWidth;
+          combinedData.set(eastData.subarray(srcOffset, srcOffset + loadedMetadata.westWidth), dstOffset);
+        }
+        
+        provinceTextureData.current = combinedData;
 
         ctx.createUniformBuffer(loadedMetadata.westWidth, loadedMetadata.height, loadedMetadata.provinceCount);
         ctx.createColorBuffers(loadedMetadata.provinceCount);
@@ -146,6 +170,7 @@ export default function MapCanvas({ year = 2 }: MapCanvasProps) {
 
     // Apply historical data for each country
     const yearStr = String(year);
+    provinceToTagMap.current.clear();
     for (const [tag, history] of Object.entries(historyFiles)) {
       const yearData = history[yearStr] as ProvinceHistoryEntry[] | undefined;
       if (!yearData || !Array.isArray(yearData)) continue;
@@ -155,6 +180,9 @@ export default function MapCanvas({ year = 2 }: MapCanvasProps) {
       for (const province of yearData) {
         const provId = province.ID;
         if (provId >= metadata.provinceCount || seaProvinces.has(provId)) continue;
+
+        // Map province to its owning tag
+        provinceToTagMap.current.set(provId, tag);
 
         // Set province color to tag's color
         primaryColors[provId] = tagColor;
@@ -233,19 +261,66 @@ export default function MapCanvas({ year = 2 }: MapCanvasProps) {
     const canvas = canvasRef.current;
     if (!canvas || isLoading) return;
 
+    let mouseDownPos: { x: number; y: number } | null = null;
+
     const onMouseDown = (e: MouseEvent) => {
       if (e.button === 0) { // Left click only
-        isDragging.current = true;
+        isDragging.current = false;
+        mouseDownPos = { x: e.clientX, y: e.clientY };
       }
     };
 
-    const onMouseUp = () => {
-      isDragging.current = false;
+    const onMouseUp = (e: MouseEvent) => {
+      if (e.button === 0 && mouseDownPos) {
+        const dragDistance = Math.sqrt(
+          Math.pow(e.clientX - mouseDownPos.x, 2) + 
+          Math.pow(e.clientY - mouseDownPos.y, 2)
+        );
+        
+        // Only treat as click if drag distance is very small (< 5 pixels)
+        if (dragDistance < 5 && onProvinceSelect && provinceTextureData.current && metadata) {
+          // Click without drag - select province
+          const rect = canvas.getBoundingClientRect();
+          const canvasX = e.clientX - rect.left;
+          const canvasY = e.clientY - rect.top;
+          
+          // Convert canvas coordinates to map coordinates using viewport
+          const mapCoords = viewport.current.screenToMap(canvasX, canvasY);
+          const mapX = Math.floor(mapCoords.x);
+          const mapY = Math.floor(mapCoords.y);
+          
+          // Get province ID from texture data
+          const totalWidth = metadata.westWidth * 2;
+          if (mapX >= 0 && mapX < totalWidth && mapY >= 0 && mapY < metadata.height) {
+            const index = mapY * totalWidth + mapX;
+            const provinceId = provinceTextureData.current[index];
+            
+            // Find the tag that owns this province
+            const owningTag = provinceToTagMap.current.get(provinceId);
+            console.log(`Clicked province ${provinceId}, owned by: ${owningTag || 'none'}`);
+            onProvinceSelect(owningTag || null);
+          }
+        }
+        
+        isDragging.current = false;
+        mouseDownPos = null;
+      }
     };
 
     const onMouseMove = (e: MouseEvent) => {
-      if (isDragging.current) {
-        viewport.current.pan(-e.movementX, -e.movementY);
+      if (mouseDownPos) {
+        const dragDistance = Math.sqrt(
+          Math.pow(e.clientX - mouseDownPos.x, 2) + 
+          Math.pow(e.clientY - mouseDownPos.y, 2)
+        );
+        
+        if (dragDistance > 5 && !isDragging.current) {
+          isDragging.current = true;
+        }
+        
+        if (isDragging.current) {
+          viewport.current.pan(-e.movementX, -e.movementY);
+        }
       }
     };
 
@@ -269,7 +344,7 @@ export default function MapCanvas({ year = 2 }: MapCanvasProps) {
       canvas.removeEventListener('mousemove', onMouseMove);
       canvas.removeEventListener('wheel', onWheel);
     };
-  }, [isLoading]);
+  }, [isLoading, onProvinceSelect, metadata]);
 
   
   if (error) {
