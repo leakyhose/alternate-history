@@ -1,0 +1,8411 @@
+{
+  "tag": "ROW",
+  "country": "Western Roman Empire",
+  "title": "Emperor",
+  "rulers": {
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null,
+    "15": null,
+    "16": null,
+    "17": null,
+    "18": null,
+    "19": null,
+    "20": null,
+    "21": null,
+    "22": null,
+    "23": null,
+    "24": null,
+    "25": null,
+    "26": null,
+    "27": null,
+    "28": null,
+    "29": null,
+    "30": null,
+    "31": null,
+    "32": null,
+    "33": null,
+    "34": null,
+    "35": null,
+    "36": null,
+    "37": null,
+    "38": null,
+    "39": null,
+    "40": null,
+    "41": null,
+    "42": null,
+    "43": null,
+    "44": null,
+    "45": null,
+    "46": null,
+    "47": null,
+    "48": null,
+    "49": null,
+    "50": null,
+    "51": null,
+    "52": null,
+    "53": null,
+    "54": null,
+    "55": null,
+    "56": null,
+    "57": null,
+    "58": null,
+    "59": null,
+    "60": null,
+    "61": null,
+    "62": null,
+    "63": null,
+    "64": null,
+    "65": null,
+    "66": null,
+    "67": null,
+    "68": null,
+    "69": null,
+    "70": null,
+    "71": null,
+    "72": null,
+    "73": null,
+    "74": null,
+    "75": null,
+    "76": null,
+    "77": null,
+    "78": null,
+    "79": null,
+    "80": null,
+    "81": null,
+    "82": null,
+    "83": null,
+    "84": null,
+    "85": null,
+    "86": null,
+    "87": null,
+    "88": null,
+    "89": null,
+    "90": null,
+    "91": null,
+    "92": null,
+    "93": null,
+    "94": null,
+    "95": null,
+    "96": null,
+    "97": null,
+    "98": null,
+    "99": null,
+    "100": null,
+    "101": null,
+    "102": null,
+    "103": null,
+    "104": null,
+    "105": null,
+    "106": null,
+    "107": null,
+    "108": null,
+    "109": null,
+    "110": null,
+    "111": null,
+    "112": null,
+    "113": null,
+    "114": null,
+    "115": null,
+    "116": null,
+    "117": null,
+    "118": null,
+    "119": null,
+    "120": null,
+    "121": null,
+    "122": null,
+    "123": null,
+    "124": null,
+    "125": null,
+    "126": null,
+    "127": null,
+    "128": null,
+    "129": null,
+    "130": null,
+    "131": null,
+    "132": null,
+    "133": null,
+    "134": null,
+    "135": null,
+    "136": null,
+    "137": null,
+    "138": null,
+    "139": null,
+    "140": null,
+    "141": null,
+    "142": null,
+    "143": null,
+    "144": null,
+    "145": null,
+    "146": null,
+    "147": null,
+    "148": null,
+    "149": null,
+    "150": null,
+    "151": null,
+    "152": null,
+    "153": null,
+    "154": null,
+    "155": null,
+    "156": null,
+    "157": null,
+    "158": null,
+    "159": null,
+    "160": null,
+    "161": null,
+    "162": null,
+    "163": null,
+    "164": null,
+    "165": null,
+    "166": null,
+    "167": null,
+    "168": null,
+    "169": null,
+    "170": null,
+    "171": null,
+    "172": null,
+    "173": null,
+    "174": null,
+    "175": null,
+    "176": null,
+    "177": null,
+    "178": null,
+    "179": null,
+    "180": null,
+    "181": null,
+    "182": null,
+    "183": null,
+    "184": null,
+    "185": null,
+    "186": null,
+    "187": null,
+    "188": null,
+    "189": null,
+    "190": null,
+    "191": null,
+    "192": null,
+    "193": null,
+    "194": null,
+    "195": null,
+    "196": null,
+    "197": null,
+    "198": null,
+    "199": null,
+    "200": null,
+    "201": null,
+    "202": null,
+    "203": null,
+    "204": null,
+    "205": null,
+    "206": null,
+    "207": null,
+    "208": null,
+    "209": null,
+    "210": null,
+    "211": null,
+    "212": null,
+    "213": null,
+    "214": null,
+    "215": null,
+    "216": null,
+    "217": null,
+    "218": null,
+    "219": null,
+    "220": null,
+    "221": null,
+    "222": null,
+    "223": null,
+    "224": null,
+    "225": null,
+    "226": null,
+    "227": null,
+    "228": null,
+    "229": null,
+    "230": null,
+    "231": null,
+    "232": null,
+    "233": null,
+    "234": null,
+    "235": null,
+    "236": null,
+    "237": null,
+    "238": null,
+    "239": null,
+    "240": null,
+    "241": null,
+    "242": null,
+    "243": null,
+    "244": null,
+    "245": null,
+    "246": null,
+    "247": null,
+    "248": null,
+    "249": null,
+    "250": null,
+    "251": null,
+    "252": null,
+    "253": null,
+    "254": null,
+    "255": null,
+    "256": null,
+    "257": null,
+    "258": null,
+    "259": null,
+    "260": null,
+    "261": null,
+    "262": null,
+    "263": null,
+    "264": null,
+    "265": null,
+    "266": null,
+    "267": null,
+    "268": null,
+    "269": null,
+    "270": null,
+    "271": null,
+    "272": null,
+    "273": null,
+    "274": null,
+    "275": null,
+    "276": null,
+    "277": null,
+    "278": null,
+    "279": null,
+    "280": null,
+    "281": null,
+    "282": null,
+    "283": null,
+    "284": null,
+    "285": null,
+    "286": null,
+    "287": null,
+    "288": null,
+    "289": null,
+    "290": null,
+    "291": null,
+    "292": null,
+    "293": null,
+    "294": null,
+    "295": null,
+    "296": null,
+    "297": null,
+    "298": null,
+    "299": null,
+    "300": null,
+    "301": null,
+    "302": null,
+    "303": null,
+    "304": null,
+    "305": null,
+    "306": null,
+    "307": null,
+    "308": null,
+    "309": null,
+    "310": null,
+    "311": null,
+    "312": null,
+    "313": null,
+    "314": null,
+    "315": null,
+    "316": null,
+    "317": null,
+    "318": null,
+    "319": null,
+    "320": null,
+    "321": null,
+    "322": null,
+    "323": null,
+    "324": null,
+    "325": null,
+    "326": null,
+    "327": null,
+    "328": null,
+    "329": null,
+    "330": null,
+    "331": null,
+    "332": null,
+    "333": null,
+    "334": null,
+    "335": null,
+    "336": null,
+    "337": null,
+    "338": null,
+    "339": null,
+    "340": null,
+    "341": null,
+    "342": null,
+    "343": null,
+    "344": null,
+    "345": null,
+    "346": null,
+    "347": null,
+    "348": null,
+    "349": null,
+    "350": null,
+    "351": null,
+    "352": null,
+    "353": null,
+    "354": null,
+    "355": null,
+    "356": null,
+    "357": null,
+    "358": null,
+    "359": null,
+    "360": null,
+    "361": null,
+    "362": null,
+    "363": null,
+    "364": null,
+    "365": null,
+    "366": null,
+    "367": null,
+    "368": null,
+    "369": null,
+    "370": null,
+    "371": null,
+    "372": null,
+    "373": null,
+    "374": null,
+    "375": null,
+    "376": null,
+    "377": null,
+    "378": null,
+    "379": null,
+    "380": null,
+    "381": null,
+    "382": null,
+    "383": null,
+    "384": null,
+    "385": null,
+    "386": null,
+    "387": null,
+    "388": null,
+    "389": null,
+    "390": null,
+    "391": null,
+    "392": null,
+    "393": null,
+    "394": null,
+    "395": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "396": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "397": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "398": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "399": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "400": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "401": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "402": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "403": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "404": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "405": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "406": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "407": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "408": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "409": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "410": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "411": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "412": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "413": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "414": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "415": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "416": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "417": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "418": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "419": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "420": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "421": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "422": {
+      "name": "Honorius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "423": {
+      "name": "Joannes",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "424": {
+      "name": "Joannes",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "425": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "426": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "427": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "428": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "429": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "430": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "431": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "432": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "433": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "434": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "435": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "436": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "437": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "438": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "439": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "440": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "441": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "442": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "443": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "444": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "445": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "446": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "447": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "448": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "449": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "450": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "451": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "452": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "453": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "454": {
+      "name": "Valentinian III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "455": {
+      "name": "Avitus",
+      "title": "Emperor"
+    },
+    "456": {
+      "name": "Avitus",
+      "title": "Emperor"
+    },
+    "457": {
+      "name": "Majorian",
+      "title": "Emperor"
+    },
+    "458": {
+      "name": "Majorian",
+      "title": "Emperor"
+    },
+    "459": {
+      "name": "Majorian",
+      "title": "Emperor"
+    },
+    "460": {
+      "name": "Majorian",
+      "title": "Emperor"
+    },
+    "461": {
+      "name": "Libius Severus",
+      "title": "Emperor"
+    },
+    "462": {
+      "name": "Libius Severus",
+      "title": "Emperor"
+    },
+    "463": {
+      "name": "Libius Severus",
+      "title": "Emperor"
+    },
+    "464": {
+      "name": "Libius Severus",
+      "title": "Emperor"
+    },
+    "465": {
+      "name": "Libius Severus",
+      "title": "Emperor"
+    },
+    "466": {
+      "name": "Libius Severus",
+      "title": "Emperor"
+    },
+    "467": {
+      "name": "Anthemius",
+      "title": "Emperor"
+    },
+    "468": {
+      "name": "Anthemius",
+      "title": "Emperor"
+    },
+    "469": {
+      "name": "Anthemius",
+      "title": "Emperor"
+    },
+    "470": {
+      "name": "Anthemius",
+      "title": "Emperor"
+    },
+    "471": {
+      "name": "Anthemius",
+      "title": "Emperor"
+    },
+    "472": {
+      "name": "Olybrius",
+      "title": "Emperor"
+    },
+    "473": {
+      "name": "Glycerius",
+      "title": "Emperor"
+    },
+    "474": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "475": {
+      "name": "Romulus",
+      "dynasty": "Augustus",
+      "title": "Emperor"
+    },
+    "476": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "477": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "478": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "479": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "480": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "481": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "482": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "483": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "484": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "485": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "486": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "487": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "488": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "489": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "490": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "491": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "492": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "493": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "494": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "495": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "496": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "497": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "498": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "499": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "500": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "501": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "502": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "503": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "504": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "505": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "506": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "507": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "508": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "509": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "510": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "511": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "512": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "513": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "514": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "515": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "516": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "517": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "518": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "519": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "520": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "521": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "522": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "523": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "524": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "525": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "526": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "527": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "528": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "529": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "530": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "531": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "532": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "533": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "534": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "535": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "536": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "537": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "538": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "539": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "540": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "541": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "542": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "543": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "544": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "545": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "546": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "547": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "548": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "549": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "550": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "551": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "552": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "553": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "554": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "555": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "556": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "557": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "558": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "559": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "560": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "561": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "562": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "563": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "564": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "565": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "566": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "567": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "568": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "569": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "570": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "571": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "572": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "573": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "574": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "575": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "576": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "577": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "578": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "579": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "580": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "581": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "582": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "583": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "584": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "585": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "586": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "587": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "588": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "589": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "590": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "591": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "592": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "593": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "594": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "595": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "596": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "597": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "598": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "599": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "600": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "601": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "602": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "603": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "604": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "605": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "606": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "607": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "608": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "609": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "610": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "611": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "612": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "613": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "614": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "615": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "616": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "617": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "618": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "619": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "620": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "621": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "622": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "623": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "624": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "625": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "626": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "627": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "628": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "629": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "630": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "631": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "632": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "633": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "634": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "635": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "636": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "637": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "638": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "639": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "640": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "641": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "642": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "643": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "644": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "645": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "646": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "647": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "648": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "649": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "650": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "651": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "652": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "653": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "654": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "655": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "656": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "657": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "658": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "659": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "660": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "661": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "662": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "663": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "664": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "665": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "666": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "667": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "668": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "669": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "670": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "671": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "672": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "673": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "674": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "675": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "676": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "677": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "678": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "679": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "680": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "681": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "682": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "683": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "684": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "685": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "686": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "687": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "688": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "689": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "690": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "691": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "692": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "693": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "694": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "695": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "696": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "697": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "698": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "699": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "700": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "701": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "702": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "703": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "704": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "705": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "706": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "707": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "708": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "709": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "710": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "711": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "712": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "713": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "714": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "715": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "716": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "717": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "718": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "719": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "720": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "721": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "722": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "723": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "724": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "725": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "726": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "727": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "728": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "729": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "730": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "731": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "732": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "733": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "734": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "735": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "736": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "737": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "738": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "739": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "740": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "741": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "742": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "743": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "744": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "745": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "746": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "747": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "748": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "749": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "750": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "751": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "752": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "753": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "754": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "755": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "756": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "757": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "758": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "759": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "760": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "761": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "762": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "763": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "764": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "765": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "766": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "767": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "768": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "769": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "770": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "771": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "772": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "773": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "774": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "775": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "776": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "777": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "778": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "779": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "780": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "781": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "782": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "783": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "784": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "785": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "786": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "787": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "788": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "789": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "790": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "791": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "792": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "793": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "794": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "795": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "796": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "797": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "798": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "799": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "800": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "801": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "802": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "803": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "804": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "805": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "806": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "807": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "808": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "809": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "810": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "811": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "812": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "813": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "814": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "815": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "816": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "817": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "818": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "819": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "820": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "821": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "822": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "823": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "824": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "825": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "826": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "827": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "828": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "829": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "830": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "831": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "832": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "833": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "834": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "835": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "836": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "837": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "838": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "839": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "840": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "841": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "842": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "843": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "844": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "845": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "846": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "847": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "848": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "849": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "850": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "851": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "852": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "853": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "854": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "855": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "856": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "857": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "858": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "859": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "860": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "861": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "862": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "863": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "864": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "865": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "866": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "867": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "868": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "869": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "870": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "871": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "872": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "873": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "874": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "875": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "876": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "877": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "878": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "879": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "880": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "881": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "882": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "883": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "884": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "885": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "886": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "887": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "888": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "889": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "890": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "891": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "892": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "893": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "894": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "895": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "896": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "897": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "898": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "899": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "900": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "901": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "902": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "903": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "904": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "905": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "906": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "907": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "908": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "909": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "910": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "911": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "912": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "913": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "914": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "915": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "916": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "917": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "918": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "919": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "920": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "921": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "922": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "923": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "924": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "925": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "926": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "927": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "928": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "929": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "930": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "931": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "932": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "933": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "934": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "935": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "936": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "937": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "938": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "939": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "940": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "941": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "942": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "943": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "944": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "945": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "946": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "947": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "948": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "949": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "950": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "951": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "952": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "953": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "954": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "955": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "956": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "957": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "958": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "959": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "960": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "961": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "962": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "963": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "964": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "965": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "966": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "967": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "968": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "969": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "970": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "971": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "972": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "973": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "974": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "975": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "976": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "977": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "978": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "979": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "980": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "981": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "982": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "983": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "984": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "985": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "986": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "987": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "988": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "989": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "990": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "991": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "992": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "993": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "994": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "995": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "996": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "997": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "998": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "999": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1000": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1001": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1002": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1003": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1004": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1005": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1006": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1007": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1008": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1009": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1010": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1011": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1012": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1013": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1014": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1015": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1016": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1017": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1018": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1019": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1020": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1021": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1022": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1023": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1024": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1025": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1026": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1027": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1028": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1029": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1030": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1031": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1032": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1033": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1034": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1035": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1036": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1037": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1038": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1039": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1040": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1041": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1042": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1043": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1044": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1045": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1046": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1047": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1048": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1049": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1050": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1051": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1052": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1053": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1054": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1055": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1056": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1057": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1058": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1059": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1060": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1061": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1062": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1063": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1064": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1065": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1066": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1067": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1068": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1069": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1070": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1071": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1072": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1073": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1074": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1075": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1076": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1077": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1078": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1079": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1080": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1081": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1082": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1083": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1084": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1085": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1086": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1087": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1088": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1089": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1090": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1091": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1092": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1093": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1094": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1095": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1096": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1097": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1098": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1099": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1100": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1101": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1102": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1103": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1104": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1105": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1106": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1107": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1108": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1109": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1110": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1111": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1112": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1113": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1114": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1115": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1116": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1117": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1118": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1119": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1120": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1121": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1122": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1123": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1124": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1125": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1126": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1127": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1128": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1129": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1130": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1131": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1132": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1133": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1134": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1135": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1136": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1137": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1138": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1139": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1140": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1141": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1142": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1143": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1144": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1145": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1146": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1147": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1148": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1149": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1150": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1151": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1152": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1153": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1154": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1155": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1156": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1157": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1158": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1159": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1160": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1161": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1162": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1163": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1164": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1165": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1166": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1167": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1168": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1169": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1170": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1171": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1172": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1173": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1174": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1175": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1176": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1177": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1178": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1179": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1180": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1181": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1182": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1183": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1184": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1185": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1186": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1187": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1188": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1189": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1190": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1191": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1192": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1193": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1194": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1195": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1196": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1197": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1198": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1199": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1200": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1201": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1202": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1203": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1204": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1205": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1206": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1207": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1208": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1209": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1210": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1211": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1212": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1213": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1214": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1215": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1216": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1217": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1218": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1219": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1220": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1221": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1222": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1223": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1224": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1225": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1226": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1227": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1228": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1229": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1230": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1231": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1232": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1233": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1234": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1235": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1236": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1237": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1238": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1239": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1240": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1241": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1242": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1243": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1244": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1245": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1246": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1247": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1248": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1249": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1250": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1251": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1252": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1253": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1254": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1255": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1256": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1257": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1258": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1259": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1260": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1261": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1262": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1263": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1264": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1265": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1266": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1267": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1268": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1269": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1270": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1271": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1272": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1273": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1274": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1275": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1276": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1277": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1278": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1279": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1280": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1281": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1282": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1283": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1284": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1285": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1286": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1287": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1288": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1289": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1290": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1291": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1292": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1293": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1294": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1295": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1296": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1297": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1298": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1299": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1300": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1301": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1302": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1303": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1304": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1305": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1306": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1307": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1308": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1309": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1310": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1311": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1312": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1313": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1314": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1315": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1316": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1317": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1318": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1319": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1320": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1321": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1322": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1323": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1324": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1325": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1326": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1327": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1328": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1329": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1330": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1331": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1332": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1333": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1334": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1335": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1336": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1337": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1338": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1339": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1340": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1341": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1342": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1343": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1344": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1345": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1346": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1347": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1348": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1349": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1350": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1351": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1352": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1353": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1354": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1355": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1356": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1357": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1358": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1359": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1360": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1361": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1362": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1363": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1364": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1365": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1366": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1367": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1368": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1369": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1370": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1371": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1372": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1373": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1374": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1375": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1376": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1377": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1378": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1379": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1380": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1381": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1382": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1383": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1384": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1385": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1386": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1387": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1388": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1389": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1390": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1391": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1392": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1393": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1394": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1395": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1396": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1397": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1398": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1399": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1400": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1401": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1402": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1403": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1404": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1405": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1406": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1407": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1408": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1409": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1410": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1411": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1412": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1413": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1414": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1415": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1416": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1417": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1418": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1419": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1420": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1421": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1422": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1423": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1424": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1425": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1426": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1427": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1428": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1429": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1430": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1431": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1432": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1433": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1434": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1435": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1436": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1437": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1438": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1439": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1440": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1441": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1442": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1443": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1444": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1445": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1446": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1447": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1448": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1449": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1450": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1451": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1452": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1453": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1454": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1455": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1456": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1457": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1458": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1459": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1460": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1461": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1462": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1463": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1464": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1465": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1466": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1467": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1468": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1469": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1470": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1471": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1472": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1473": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1474": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1475": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1476": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1477": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1478": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1479": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1480": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1481": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1482": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1483": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1484": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1485": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1486": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1487": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1488": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1489": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1490": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1491": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1492": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1493": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1494": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1495": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1496": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1497": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1498": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1499": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1500": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1501": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1502": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1503": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1504": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1505": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1506": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1507": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1508": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1509": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1510": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1511": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1512": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1513": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1514": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1515": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1516": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1517": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1518": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1519": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1520": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1521": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1522": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1523": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1524": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1525": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1526": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1527": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1528": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1529": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1530": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1531": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1532": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1533": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1534": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1535": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1536": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1537": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1538": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1539": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1540": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1541": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1542": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1543": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1544": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1545": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1546": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1547": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1548": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1549": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1550": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1551": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1552": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1553": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1554": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1555": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1556": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1557": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1558": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1559": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1560": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1561": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1562": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1563": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1564": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1565": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1566": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1567": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1568": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1569": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1570": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1571": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1572": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1573": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1574": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1575": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1576": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1577": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1578": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1579": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1580": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1581": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1582": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1583": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1584": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1585": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1586": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1587": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1588": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1589": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1590": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1591": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1592": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1593": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1594": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1595": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1596": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1597": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1598": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1599": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1600": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1601": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1602": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1603": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1604": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1605": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1606": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1607": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1608": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1609": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1610": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1611": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1612": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1613": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1614": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1615": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1616": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1617": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1618": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1619": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1620": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1621": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1622": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1623": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1624": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1625": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1626": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1627": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1628": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1629": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1630": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1631": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1632": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1633": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1634": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1635": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1636": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1637": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1638": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1639": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1640": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1641": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1642": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1643": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1644": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1645": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1646": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1647": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1648": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1649": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1650": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1651": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1652": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1653": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1654": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1655": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1656": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1657": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1658": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1659": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1660": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1661": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1662": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1663": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1664": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1665": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1666": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1667": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1668": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1669": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1670": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1671": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1672": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1673": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1674": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1675": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1676": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1677": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1678": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1679": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1680": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1681": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1682": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1683": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1684": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1685": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1686": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1687": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1688": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1689": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1690": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1691": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1692": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1693": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1694": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1695": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1696": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1697": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1698": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1699": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1700": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1701": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1702": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1703": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1704": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1705": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1706": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1707": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1708": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1709": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1710": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1711": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1712": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1713": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1714": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1715": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1716": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1717": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1718": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1719": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1720": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1721": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1722": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1723": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1724": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1725": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1726": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1727": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1728": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1729": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1730": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1731": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1732": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1733": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1734": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1735": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1736": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1737": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1738": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1739": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1740": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1741": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1742": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1743": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1744": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1745": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1746": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1747": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1748": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1749": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1750": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1751": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1752": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1753": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1754": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1755": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1756": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1757": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1758": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1759": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1760": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1761": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1762": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1763": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1764": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1765": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1766": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1767": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1768": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1769": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1770": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1771": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1772": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1773": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1774": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1775": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1776": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1777": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1778": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1779": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1780": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1781": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1782": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1783": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1784": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1785": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1786": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1787": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1788": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1789": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1790": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1791": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1792": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1793": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1794": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1795": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1796": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1797": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1798": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1799": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1800": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1801": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1802": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1803": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1804": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1805": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1806": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1807": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1808": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1809": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1810": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1811": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1812": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1813": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1814": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1815": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1816": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1817": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1818": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1819": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1820": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1821": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1822": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1823": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1824": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1825": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1826": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1827": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1828": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1829": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1830": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1831": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1832": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1833": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1834": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1835": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1836": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1837": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1838": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1839": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1840": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1841": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1842": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1843": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1844": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1845": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1846": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1847": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1848": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1849": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1850": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1851": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1852": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1853": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1854": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1855": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1856": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1857": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1858": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1859": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1860": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1861": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1862": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1863": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1864": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1865": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1866": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1867": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1868": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1869": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1870": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1871": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1872": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1873": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1874": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1875": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1876": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1877": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1878": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1879": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1880": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1881": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1882": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1883": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1884": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1885": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1886": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1887": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1888": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1889": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1890": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1891": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1892": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1893": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1894": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1895": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1896": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1897": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1898": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1899": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1900": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1901": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1902": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1903": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1904": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1905": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1906": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1907": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1908": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1909": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1910": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1911": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1912": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1913": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1914": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1915": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1916": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1917": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1918": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1919": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1920": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1921": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1922": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1923": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1924": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1925": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1926": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1927": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1928": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1929": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1930": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1931": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1932": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1933": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1934": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1935": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1936": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1937": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1938": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1939": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1940": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1941": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1942": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1943": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1944": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1945": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1946": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1947": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1948": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1949": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1950": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1951": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1952": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1953": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1954": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1955": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1956": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1957": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1958": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1959": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1960": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1961": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1962": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1963": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1964": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1965": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1966": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1967": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1968": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1969": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1970": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1971": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1972": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1973": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1974": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1975": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1976": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1977": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1978": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1979": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1980": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1981": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1982": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1983": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1984": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1985": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1986": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1987": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1988": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1989": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1990": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1991": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1992": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1993": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1994": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1995": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1996": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1997": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1998": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "1999": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    },
+    "2000": {
+      "name": "Julius",
+      "dynasty": "Nepos",
+      "title": "Emperor"
+    }
+  }
+}

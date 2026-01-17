@@ -1,0 +1,8430 @@
+{
+  "tag": "BYZ",
+  "country": "ByzantineEmpire",
+  "title": "Emperor",
+  "rulers": {
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null,
+    "15": null,
+    "16": null,
+    "17": null,
+    "18": null,
+    "19": null,
+    "20": null,
+    "21": null,
+    "22": null,
+    "23": null,
+    "24": null,
+    "25": null,
+    "26": null,
+    "27": null,
+    "28": null,
+    "29": null,
+    "30": null,
+    "31": null,
+    "32": null,
+    "33": null,
+    "34": null,
+    "35": null,
+    "36": null,
+    "37": null,
+    "38": null,
+    "39": null,
+    "40": null,
+    "41": null,
+    "42": null,
+    "43": null,
+    "44": null,
+    "45": null,
+    "46": null,
+    "47": null,
+    "48": null,
+    "49": null,
+    "50": null,
+    "51": null,
+    "52": null,
+    "53": null,
+    "54": null,
+    "55": null,
+    "56": null,
+    "57": null,
+    "58": null,
+    "59": null,
+    "60": null,
+    "61": null,
+    "62": null,
+    "63": null,
+    "64": null,
+    "65": null,
+    "66": null,
+    "67": null,
+    "68": null,
+    "69": null,
+    "70": null,
+    "71": null,
+    "72": null,
+    "73": null,
+    "74": null,
+    "75": null,
+    "76": null,
+    "77": null,
+    "78": null,
+    "79": null,
+    "80": null,
+    "81": null,
+    "82": null,
+    "83": null,
+    "84": null,
+    "85": null,
+    "86": null,
+    "87": null,
+    "88": null,
+    "89": null,
+    "90": null,
+    "91": null,
+    "92": null,
+    "93": null,
+    "94": null,
+    "95": null,
+    "96": null,
+    "97": null,
+    "98": null,
+    "99": null,
+    "100": null,
+    "101": null,
+    "102": null,
+    "103": null,
+    "104": null,
+    "105": null,
+    "106": null,
+    "107": null,
+    "108": null,
+    "109": null,
+    "110": null,
+    "111": null,
+    "112": null,
+    "113": null,
+    "114": null,
+    "115": null,
+    "116": null,
+    "117": null,
+    "118": null,
+    "119": null,
+    "120": null,
+    "121": null,
+    "122": null,
+    "123": null,
+    "124": null,
+    "125": null,
+    "126": null,
+    "127": null,
+    "128": null,
+    "129": null,
+    "130": null,
+    "131": null,
+    "132": null,
+    "133": null,
+    "134": null,
+    "135": null,
+    "136": null,
+    "137": null,
+    "138": null,
+    "139": null,
+    "140": null,
+    "141": null,
+    "142": null,
+    "143": null,
+    "144": null,
+    "145": null,
+    "146": null,
+    "147": null,
+    "148": null,
+    "149": null,
+    "150": null,
+    "151": null,
+    "152": null,
+    "153": null,
+    "154": null,
+    "155": null,
+    "156": null,
+    "157": null,
+    "158": null,
+    "159": null,
+    "160": null,
+    "161": null,
+    "162": null,
+    "163": null,
+    "164": null,
+    "165": null,
+    "166": null,
+    "167": null,
+    "168": null,
+    "169": null,
+    "170": null,
+    "171": null,
+    "172": null,
+    "173": null,
+    "174": null,
+    "175": null,
+    "176": null,
+    "177": null,
+    "178": null,
+    "179": null,
+    "180": null,
+    "181": null,
+    "182": null,
+    "183": null,
+    "184": null,
+    "185": null,
+    "186": null,
+    "187": null,
+    "188": null,
+    "189": null,
+    "190": null,
+    "191": null,
+    "192": null,
+    "193": null,
+    "194": null,
+    "195": null,
+    "196": null,
+    "197": null,
+    "198": null,
+    "199": null,
+    "200": null,
+    "201": null,
+    "202": null,
+    "203": null,
+    "204": null,
+    "205": null,
+    "206": null,
+    "207": null,
+    "208": null,
+    "209": null,
+    "210": null,
+    "211": null,
+    "212": null,
+    "213": null,
+    "214": null,
+    "215": null,
+    "216": null,
+    "217": null,
+    "218": null,
+    "219": null,
+    "220": null,
+    "221": null,
+    "222": null,
+    "223": null,
+    "224": null,
+    "225": null,
+    "226": null,
+    "227": null,
+    "228": null,
+    "229": null,
+    "230": null,
+    "231": null,
+    "232": null,
+    "233": null,
+    "234": null,
+    "235": null,
+    "236": null,
+    "237": null,
+    "238": null,
+    "239": null,
+    "240": null,
+    "241": null,
+    "242": null,
+    "243": null,
+    "244": null,
+    "245": null,
+    "246": null,
+    "247": null,
+    "248": null,
+    "249": null,
+    "250": null,
+    "251": null,
+    "252": null,
+    "253": null,
+    "254": null,
+    "255": null,
+    "256": null,
+    "257": null,
+    "258": null,
+    "259": null,
+    "260": null,
+    "261": null,
+    "262": null,
+    "263": null,
+    "264": null,
+    "265": null,
+    "266": null,
+    "267": null,
+    "268": null,
+    "269": null,
+    "270": null,
+    "271": null,
+    "272": null,
+    "273": null,
+    "274": null,
+    "275": null,
+    "276": null,
+    "277": null,
+    "278": null,
+    "279": null,
+    "280": null,
+    "281": null,
+    "282": null,
+    "283": null,
+    "284": null,
+    "285": null,
+    "286": null,
+    "287": null,
+    "288": null,
+    "289": null,
+    "290": null,
+    "291": null,
+    "292": null,
+    "293": null,
+    "294": null,
+    "295": null,
+    "296": null,
+    "297": null,
+    "298": null,
+    "299": null,
+    "300": null,
+    "301": null,
+    "302": null,
+    "303": null,
+    "304": null,
+    "305": null,
+    "306": null,
+    "307": null,
+    "308": null,
+    "309": null,
+    "310": null,
+    "311": null,
+    "312": null,
+    "313": null,
+    "314": null,
+    "315": null,
+    "316": null,
+    "317": null,
+    "318": null,
+    "319": null,
+    "320": null,
+    "321": null,
+    "322": null,
+    "323": null,
+    "324": null,
+    "325": null,
+    "326": null,
+    "327": null,
+    "328": null,
+    "329": null,
+    "330": null,
+    "331": null,
+    "332": null,
+    "333": null,
+    "334": null,
+    "335": null,
+    "336": null,
+    "337": null,
+    "338": null,
+    "339": null,
+    "340": null,
+    "341": null,
+    "342": null,
+    "343": null,
+    "344": null,
+    "345": null,
+    "346": null,
+    "347": null,
+    "348": null,
+    "349": null,
+    "350": null,
+    "351": null,
+    "352": null,
+    "353": null,
+    "354": null,
+    "355": null,
+    "356": null,
+    "357": null,
+    "358": null,
+    "359": null,
+    "360": null,
+    "361": null,
+    "362": null,
+    "363": null,
+    "364": null,
+    "365": null,
+    "366": null,
+    "367": null,
+    "368": null,
+    "369": null,
+    "370": null,
+    "371": null,
+    "372": null,
+    "373": null,
+    "374": null,
+    "375": null,
+    "376": null,
+    "377": null,
+    "378": null,
+    "379": null,
+    "380": null,
+    "381": null,
+    "382": null,
+    "383": null,
+    "384": null,
+    "385": null,
+    "386": null,
+    "387": null,
+    "388": null,
+    "389": null,
+    "390": null,
+    "391": null,
+    "392": null,
+    "393": null,
+    "394": null,
+    "395": {
+      "name": "Arcadius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "396": {
+      "name": "Arcadius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "397": {
+      "name": "Arcadius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "398": {
+      "name": "Arcadius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "399": {
+      "name": "Arcadius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "400": {
+      "name": "Arcadius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "401": {
+      "name": "Arcadius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "402": {
+      "name": "Arcadius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "403": {
+      "name": "Arcadius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "404": {
+      "name": "Arcadius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "405": {
+      "name": "Arcadius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "406": {
+      "name": "Arcadius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "407": {
+      "name": "Arcadius",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "408": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "409": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "410": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "411": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "412": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "413": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "414": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "415": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "416": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "417": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "418": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "419": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "420": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "421": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "422": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "423": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "424": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "425": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "426": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "427": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "428": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "429": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "430": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "431": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "432": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "433": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "434": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "435": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "436": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "437": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "438": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "439": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "440": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "441": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "442": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "443": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "444": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "445": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "446": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "447": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "448": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "449": {
+      "name": "Theodosius II",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "450": {
+      "name": "Marcian",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "451": {
+      "name": "Marcian",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "452": {
+      "name": "Marcian",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "453": {
+      "name": "Marcian",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "454": {
+      "name": "Marcian",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "455": {
+      "name": "Marcian",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "456": {
+      "name": "Marcian",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "457": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "458": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "459": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "460": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "461": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "462": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "463": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "464": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "465": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "466": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "467": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "468": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "469": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "470": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "471": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "472": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "473": {
+      "name": "Leo I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "474": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "475": {
+      "name": "Basiliscus",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "476": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "477": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "478": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "479": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "480": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "481": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "482": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "483": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "484": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "485": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "486": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "487": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "488": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "489": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "490": {
+      "name": "Zeno",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "491": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "492": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "493": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "494": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "495": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "496": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "497": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "498": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "499": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "500": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "501": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "502": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "503": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "504": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "505": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "506": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "507": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "508": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "509": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "510": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "511": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "512": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "513": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "514": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "515": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "516": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "517": {
+      "name": "Anastasius I",
+      "dynasty": "Leonid",
+      "title": "Emperor"
+    },
+    "518": {
+      "name": "Justin I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "519": {
+      "name": "Justin I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "520": {
+      "name": "Justin I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "521": {
+      "name": "Justin I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "522": {
+      "name": "Justin I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "523": {
+      "name": "Justin I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "524": {
+      "name": "Justin I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "525": {
+      "name": "Justin I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "526": {
+      "name": "Justin I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "527": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "528": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "529": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "530": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "531": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "532": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "533": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "534": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "535": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "536": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "537": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "538": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "539": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "540": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "541": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "542": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "543": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "544": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "545": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "546": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "547": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "548": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "549": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "550": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "551": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "552": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "553": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "554": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "555": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "556": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "557": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "558": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "559": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "560": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "561": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "562": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "563": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "564": {
+      "name": "Justinian I",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "565": {
+      "name": "Justin II",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "566": {
+      "name": "Justin II",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "567": {
+      "name": "Justin II",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "568": {
+      "name": "Justin II",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "569": {
+      "name": "Justin II",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "570": {
+      "name": "Justin II",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "571": {
+      "name": "Justin II",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "572": {
+      "name": "Justin II",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "573": {
+      "name": "Justin II",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "574": {
+      "name": "Justin II",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "575": {
+      "name": "Justin II",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "576": {
+      "name": "Justin II",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "577": {
+      "name": "Justin II",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "578": {
+      "name": "Tiberius II Constantine",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "579": {
+      "name": "Tiberius II Constantine",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "580": {
+      "name": "Tiberius II Constantine",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "581": {
+      "name": "Tiberius II Constantine",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "582": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "583": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "584": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "585": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "586": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "587": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "588": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "589": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "590": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "591": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "592": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "593": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "594": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "595": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "596": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "597": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "598": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "599": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "600": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "601": {
+      "name": "Maurice",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "602": {
+      "name": "Phocas",
+      "dynasty": "Phocian",
+      "title": "Emperor"
+    },
+    "603": {
+      "name": "Phocas",
+      "dynasty": "Phocian",
+      "title": "Emperor"
+    },
+    "604": {
+      "name": "Phocas",
+      "dynasty": "Phocian",
+      "title": "Emperor"
+    },
+    "605": {
+      "name": "Phocas",
+      "dynasty": "Phocian",
+      "title": "Emperor"
+    },
+    "606": {
+      "name": "Phocas",
+      "dynasty": "Phocian",
+      "title": "Emperor"
+    },
+    "607": {
+      "name": "Phocas",
+      "dynasty": "Phocian",
+      "title": "Emperor"
+    },
+    "608": {
+      "name": "Phocas",
+      "dynasty": "Phocian",
+      "title": "Emperor"
+    },
+    "609": {
+      "name": "Phocas",
+      "dynasty": "Phocian",
+      "title": "Emperor"
+    },
+    "610": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "611": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "612": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "613": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "614": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "615": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "616": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "617": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "618": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "619": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "620": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "621": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "622": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "623": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "624": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "625": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "626": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "627": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "628": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "629": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "630": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "631": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "632": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "633": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "634": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "635": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "636": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "637": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "638": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "639": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "640": {
+      "name": "Heraclius",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "641": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "642": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "643": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "644": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "645": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "646": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "647": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "648": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "649": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "650": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "651": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "652": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "653": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "654": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "655": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "656": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "657": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "658": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "659": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "660": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "661": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "662": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "663": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "664": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "665": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "666": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "667": {
+      "name": "Constans II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "668": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "669": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "670": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "671": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "672": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "673": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "674": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "675": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "676": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "677": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "678": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "679": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "680": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "681": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "682": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "683": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "684": {
+      "name": "Constantine IV",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "685": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "686": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "687": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "688": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "689": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "690": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "691": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "692": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "693": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "694": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "695": {
+      "name": "Leontios",
+      "dynasty": "Leontian",
+      "title": "Emperor"
+    },
+    "696": {
+      "name": "Leontios",
+      "dynasty": "Leontian",
+      "title": "Emperor"
+    },
+    "697": {
+      "name": "Leontios",
+      "dynasty": "Leontian",
+      "title": "Emperor"
+    },
+    "698": {
+      "name": "Tiberius III Apsimar",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "699": {
+      "name": "Tiberius III Apsimar",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "700": {
+      "name": "Tiberius III Apsimar",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "701": {
+      "name": "Tiberius III Apsimar",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "702": {
+      "name": "Tiberius III Apsimar",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "703": {
+      "name": "Tiberius III Apsimar",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "704": {
+      "name": "Tiberius III Apsimar",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "705": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "706": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "707": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "708": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "709": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "710": {
+      "name": "Justinian II",
+      "dynasty": "Heraclian",
+      "title": "Emperor"
+    },
+    "711": {
+      "name": "Philippikos",
+      "dynasty": "Bardanes",
+      "title": "Emperor"
+    },
+    "712": {
+      "name": "Philippikos",
+      "dynasty": "Bardanes",
+      "title": "Emperor"
+    },
+    "713": {
+      "name": "Anastasios II",
+      "dynasty": "Anastasian",
+      "title": "Emperor"
+    },
+    "714": {
+      "name": "Anastasios II",
+      "dynasty": "Anastasian",
+      "title": "Emperor"
+    },
+    "715": {
+      "name": "Theodosios III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "716": {
+      "name": "Theodosios III",
+      "dynasty": "Theodosian",
+      "title": "Emperor"
+    },
+    "717": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "718": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "719": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "720": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "721": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "722": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "723": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "724": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "725": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "726": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "727": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "728": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "729": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "730": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "731": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "732": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "733": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "734": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "735": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "736": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "737": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "738": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "739": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "740": {
+      "name": "Leo III",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "741": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "742": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "743": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "744": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "745": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "746": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "747": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "748": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "749": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "750": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "751": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "752": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "753": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "754": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "755": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "756": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "757": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "758": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "759": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "760": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "761": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "762": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "763": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "764": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "765": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "766": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "767": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "768": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "769": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "770": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "771": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "772": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "773": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "774": {
+      "name": "Konstantinos V",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "775": {
+      "name": "Leo IV",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "776": {
+      "name": "Leo IV",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "777": {
+      "name": "Leo IV",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "778": {
+      "name": "Leo IV",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "779": {
+      "name": "Leo IV",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "780": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "781": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "782": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "783": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "784": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "785": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "786": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "787": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "788": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "789": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "790": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "791": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "792": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "793": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "794": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "795": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "796": {
+      "name": "Konstantinos VI",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "797": {
+      "name": "Irene",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "798": {
+      "name": "Irene",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "799": {
+      "name": "Irene",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "800": {
+      "name": "Irene",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "801": {
+      "name": "Irene",
+      "dynasty": "Isaurian",
+      "title": "Emperor"
+    },
+    "802": {
+      "name": "Nikephoros I",
+      "dynasty": "Nikephoros",
+      "title": "Emperor"
+    },
+    "803": {
+      "name": "Nikephoros I",
+      "dynasty": "Nikephoros",
+      "title": "Emperor"
+    },
+    "804": {
+      "name": "Nikephoros I",
+      "dynasty": "Nikephoros",
+      "title": "Emperor"
+    },
+    "805": {
+      "name": "Nikephoros I",
+      "dynasty": "Nikephoros",
+      "title": "Emperor"
+    },
+    "806": {
+      "name": "Nikephoros I",
+      "dynasty": "Nikephoros",
+      "title": "Emperor"
+    },
+    "807": {
+      "name": "Nikephoros I",
+      "dynasty": "Nikephoros",
+      "title": "Emperor"
+    },
+    "808": {
+      "name": "Nikephoros I",
+      "dynasty": "Nikephoros",
+      "title": "Emperor"
+    },
+    "809": {
+      "name": "Nikephoros I",
+      "dynasty": "Nikephoros",
+      "title": "Emperor"
+    },
+    "810": {
+      "name": "Nikephoros I",
+      "dynasty": "Nikephoros",
+      "title": "Emperor"
+    },
+    "811": {
+      "name": "Staurakios",
+      "dynasty": "Nikephoros",
+      "title": "Emperor"
+    },
+    "812": {
+      "name": "Mikhael I Rangabe",
+      "dynasty": "Justinian",
+      "title": "Emperor"
+    },
+    "813": {
+      "name": "Leo V",
+      "dynasty": "Armenios",
+      "title": "Emperor"
+    },
+    "814": {
+      "name": "Leo V",
+      "dynasty": "Armenios",
+      "title": "Emperor"
+    },
+    "815": {
+      "name": "Leo V",
+      "dynasty": "Armenios",
+      "title": "Emperor"
+    },
+    "816": {
+      "name": "Leo V",
+      "dynasty": "Armenios",
+      "title": "Emperor"
+    },
+    "817": {
+      "name": "Leo V",
+      "dynasty": "Armenios",
+      "title": "Emperor"
+    },
+    "818": {
+      "name": "Leo V",
+      "dynasty": "Armenios",
+      "title": "Emperor"
+    },
+    "819": {
+      "name": "Leo V",
+      "dynasty": "Armenios",
+      "title": "Emperor"
+    },
+    "820": {
+      "name": "Mikhael II",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "821": {
+      "name": "Mikhael II",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "822": {
+      "name": "Mikhael II",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "823": {
+      "name": "Mikhael II",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "824": {
+      "name": "Mikhael II",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "825": {
+      "name": "Mikhael II",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "826": {
+      "name": "Mikhael II",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "827": {
+      "name": "Mikhael II",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "828": {
+      "name": "Mikhael II",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "829": {
+      "name": "Theophilos",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "830": {
+      "name": "Theophilos",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "831": {
+      "name": "Theophilos",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "832": {
+      "name": "Theophilos",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "833": {
+      "name": "Theophilos",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "834": {
+      "name": "Theophilos",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "835": {
+      "name": "Theophilos",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "836": {
+      "name": "Theophilos",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "837": {
+      "name": "Theophilos",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "838": {
+      "name": "Theophilos",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "839": {
+      "name": "Theophilos",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "840": {
+      "name": "Theophilos",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "841": {
+      "name": "Theophilos",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "842": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "843": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "844": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "845": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "846": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "847": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "848": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "849": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "850": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "851": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "852": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "853": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "854": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "855": {
+      "name": "Theodora",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "856": {
+      "name": "Mikhael III",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "857": {
+      "name": "Mikhael III",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "858": {
+      "name": "Mikhael III",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "859": {
+      "name": "Mikhael III",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "860": {
+      "name": "Mikhael III",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "861": {
+      "name": "Mikhael III",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "862": {
+      "name": "Mikhael III",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "863": {
+      "name": "Mikhael III",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "864": {
+      "name": "Mikhael III",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "865": {
+      "name": "Mikhael III",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "866": {
+      "name": "Mikhael III",
+      "dynasty": "Amorian",
+      "title": "Emperor"
+    },
+    "867": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "868": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "869": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "870": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "871": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "872": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "873": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "874": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "875": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "876": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "877": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "878": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "879": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "880": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "881": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "882": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "883": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "884": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "885": {
+      "name": "Basil I",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "886": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "887": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "888": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "889": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "890": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "891": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "892": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "893": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "894": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "895": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "896": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "897": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "898": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "899": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "900": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "901": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "902": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "903": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "904": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "905": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "906": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "907": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "908": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "909": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "910": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "911": {
+      "name": "Leo VI",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "912": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "913": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "914": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "915": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "916": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "917": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "918": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "919": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "920": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "921": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "922": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "923": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "924": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "925": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "926": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "927": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "928": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "929": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "930": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "931": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "932": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "933": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "934": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "935": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "936": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "937": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "938": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "939": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "940": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "941": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "942": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "943": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "944": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "945": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "946": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "947": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "948": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "949": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "950": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "951": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "952": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "953": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "954": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "955": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "956": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "957": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "958": {
+      "name": "Konstantinos VII Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "959": {
+      "name": "Romanos II Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "960": {
+      "name": "Romanos II Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "961": {
+      "name": "Romanos II Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "962": {
+      "name": "Romanos II Porphyrogennetos",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "963": {
+      "name": "Nikopheros II Phokas",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "964": {
+      "name": "Nikopheros II Phokas",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "965": {
+      "name": "Nikopheros II Phokas",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "966": {
+      "name": "Nikopheros II Phokas",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "967": {
+      "name": "Nikopheros II Phokas",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "968": {
+      "name": "Nikopheros II Phokas",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "969": {
+      "name": "Ioannes I Tzimiskes",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "970": {
+      "name": "Ioannes I Tzimiskes",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "971": {
+      "name": "Ioannes I Tzimiskes",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "972": {
+      "name": "Ioannes I Tzimiskes",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "973": {
+      "name": "Ioannes I Tzimiskes",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "974": {
+      "name": "Ioannes I Tzimiskes",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "975": {
+      "name": "Ioannes I Tzimiskes",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "976": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "977": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "978": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "979": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "980": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "981": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "982": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "983": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "984": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "985": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "986": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "987": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "988": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "989": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "990": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "991": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "992": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "993": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "994": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "995": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "996": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "997": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "998": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "999": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1000": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1001": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1002": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1003": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1004": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1005": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1006": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1007": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1008": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1009": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1010": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1011": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1012": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1013": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1014": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1015": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1016": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1017": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1018": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1019": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1020": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1021": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1022": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1023": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1024": {
+      "name": "Basil II",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1025": {
+      "name": "Konstantinos VIII",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1026": {
+      "name": "Konstantinos VIII",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1027": {
+      "name": "Konstantinos VIII",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1028": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1029": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1030": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1031": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1032": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1033": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1034": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1035": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1036": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1037": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1038": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1039": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1040": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1041": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1042": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1043": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1044": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1045": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1046": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1047": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1048": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1049": {
+      "name": "Zoe",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1050": {
+      "name": "Theodora",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1051": {
+      "name": "Theodora",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1052": {
+      "name": "Theodora",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1053": {
+      "name": "Theodora",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1054": {
+      "name": "Theodora",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1055": {
+      "name": "Theodora",
+      "dynasty": "Macedonian",
+      "title": "Emperor"
+    },
+    "1056": {
+      "name": "Mikhael VI",
+      "dynasty": "Bringas",
+      "title": "Emperor"
+    },
+    "1057": {
+      "name": "Isaac I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1058": {
+      "name": "Isaac I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1059": {
+      "name": "Konstantinos X",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1060": {
+      "name": "Konstantinos X",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1061": {
+      "name": "Konstantinos X",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1062": {
+      "name": "Konstantinos X",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1063": {
+      "name": "Konstantinos X",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1064": {
+      "name": "Konstantinos X",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1065": {
+      "name": "Konstantinos X",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1066": {
+      "name": "Konstantinos X",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1067": {
+      "name": "Mikhael VII",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1068": {
+      "name": "Mikhael VII",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1069": {
+      "name": "Mikhael VII",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1070": {
+      "name": "Mikhael VII",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1071": {
+      "name": "Mikhael VII",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1072": {
+      "name": "Mikhael VII",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1073": {
+      "name": "Mikhael VII",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1074": {
+      "name": "Mikhael VII",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1075": {
+      "name": "Mikhael VII",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1076": {
+      "name": "Mikhael VII",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1077": {
+      "name": "Mikhael VII",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1078": {
+      "name": "Nikephoros III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1079": {
+      "name": "Nikephoros III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1080": {
+      "name": "Nikephoros III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1081": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1082": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1083": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1084": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1085": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1086": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1087": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1088": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1089": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1090": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1091": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1092": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1093": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1094": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1095": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1096": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1097": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1098": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1099": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1100": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1101": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1102": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1103": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1104": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1105": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1106": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1107": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1108": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1109": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1110": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1111": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1112": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1113": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1114": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1115": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1116": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1117": {
+      "name": "Alexios I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1118": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1119": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1120": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1121": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1122": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1123": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1124": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1125": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1126": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1127": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1128": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1129": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1130": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1131": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1132": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1133": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1134": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1135": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1136": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1137": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1138": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1139": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1140": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1141": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1142": {
+      "name": "Ioannes II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1143": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1144": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1145": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1146": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1147": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1148": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1149": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1150": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1151": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1152": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1153": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1154": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1155": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1156": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1157": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1158": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1159": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1160": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1161": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1162": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1163": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1164": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1165": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1166": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1167": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1168": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1169": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1170": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1171": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1172": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1173": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1174": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1175": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1176": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1177": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1178": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1179": {
+      "name": "Manuel I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1180": {
+      "name": "Alexios II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1181": {
+      "name": "Alexios II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1182": {
+      "name": "Alexios II",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1183": {
+      "name": "Andronikos I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1184": {
+      "name": "Andronikos I",
+      "dynasty": "Komnenos",
+      "title": "Emperor"
+    },
+    "1185": {
+      "name": "Isaac II",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1186": {
+      "name": "Isaac II",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1187": {
+      "name": "Isaac II",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1188": {
+      "name": "Isaac II",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1189": {
+      "name": "Isaac II",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1190": {
+      "name": "Isaac II",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1191": {
+      "name": "Isaac II",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1192": {
+      "name": "Isaac II",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1193": {
+      "name": "Isaac II",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1194": {
+      "name": "Isaac II",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1195": {
+      "name": "Alexios III",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1196": {
+      "name": "Alexios III",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1197": {
+      "name": "Alexios III",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1198": {
+      "name": "Alexios III",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1199": {
+      "name": "Alexios III",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1200": {
+      "name": "Alexios III",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1201": {
+      "name": "Alexios III",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1202": {
+      "name": "Alexios III",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1203": {
+      "name": "Isaac II",
+      "dynasty": "Angelos",
+      "title": "Emperor"
+    },
+    "1204": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1205": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1206": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1207": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1208": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1209": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1210": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1211": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1212": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1213": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1214": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1215": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1216": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1217": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1218": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1219": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1220": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1221": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1222": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1223": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1224": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1225": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1226": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1227": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1228": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1229": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1230": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1231": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1232": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1233": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1234": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1235": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1236": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1237": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1238": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1239": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1240": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1241": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1242": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1243": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1244": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1245": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1246": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1247": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1248": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1249": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1250": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1251": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1252": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1253": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1254": {
+      "name": "Theodore II",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1255": {
+      "name": "Theodore II",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1256": {
+      "name": "Theodore II",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1257": {
+      "name": "Theodore II",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1258": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1259": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1260": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1261": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1262": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1263": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1264": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1265": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1266": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1267": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1268": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1269": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1270": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1271": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1272": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1273": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1274": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1275": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1276": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1277": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1278": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1279": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1280": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1281": {
+      "name": "Mikhael VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1282": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1283": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1284": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1285": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1286": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1287": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1288": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1289": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1290": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1291": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1292": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1293": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1294": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1295": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1296": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1297": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1298": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1299": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1300": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1301": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1302": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1303": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1304": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1305": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1306": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1307": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1308": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1309": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1310": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1311": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1312": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1313": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1314": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1315": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1316": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1317": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1318": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1319": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1320": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1321": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1322": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1323": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1324": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1325": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1326": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1327": {
+      "name": "Andronikos II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1328": {
+      "name": "Andronikos III",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1329": {
+      "name": "Andronikos III",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1330": {
+      "name": "Andronikos III",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1331": {
+      "name": "Andronikos III",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1332": {
+      "name": "Andronikos III",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1333": {
+      "name": "Andronikos III",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1334": {
+      "name": "Andronikos III",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1335": {
+      "name": "Andronikos III",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1336": {
+      "name": "Andronikos III",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1337": {
+      "name": "Andronikos III",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1338": {
+      "name": "Andronikos III",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1339": {
+      "name": "Andronikos III",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1340": {
+      "name": "Andronikos III",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1341": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1342": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1343": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1344": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1345": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1346": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1347": {
+      "name": "Ioannes VI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1348": {
+      "name": "Ioannes VI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1349": {
+      "name": "Ioannes VI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1350": {
+      "name": "Ioannes VI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1351": {
+      "name": "Ioannes VI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1352": {
+      "name": "Ioannes VI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1353": {
+      "name": "Ioannes VI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1354": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1355": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1356": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1357": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1358": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1359": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1360": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1361": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1362": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1363": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1364": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1365": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1366": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1367": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1368": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1369": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1370": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1371": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1372": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1373": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1374": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1375": {
+      "name": "Matthaios",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1376": {
+      "name": "Andronikos IV",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1377": {
+      "name": "Andronikos IV",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1378": {
+      "name": "Andronikos IV",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1379": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1380": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1381": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1382": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1383": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1384": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1385": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1386": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1387": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1388": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1389": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1390": {
+      "name": "Ioannes V",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1391": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1392": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1393": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1394": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1395": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1396": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1397": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1398": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1399": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1400": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1401": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1402": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1403": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1404": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1405": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1406": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1407": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1408": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1409": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1410": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1411": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1412": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1413": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1414": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1415": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1416": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1417": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1418": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1419": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1420": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1421": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1422": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1423": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1424": {
+      "name": "Manuel II",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1425": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1426": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1427": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1428": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1429": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1430": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1431": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1432": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1433": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1434": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1435": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1436": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1437": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1438": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1439": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1440": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1441": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1442": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1443": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1444": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1445": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1446": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1447": {
+      "name": "Ioannes VIII",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1448": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1449": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1450": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1451": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1452": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1453": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1454": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1455": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1456": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1457": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1458": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1459": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1460": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1461": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1462": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1463": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1464": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1465": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1466": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1467": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1468": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1469": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1470": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1471": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1472": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1473": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1474": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1475": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1476": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1477": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1478": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1479": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1480": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1481": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1482": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1483": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1484": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1485": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1486": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1487": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1488": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1489": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1490": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1491": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1492": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1493": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1494": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1495": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1496": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1497": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1498": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1499": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1500": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1501": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1502": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1503": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1504": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1505": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1506": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1507": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1508": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1509": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1510": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1511": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1512": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1513": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1514": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1515": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1516": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1517": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1518": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1519": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1520": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1521": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1522": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1523": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1524": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1525": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1526": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1527": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1528": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1529": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1530": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1531": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1532": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1533": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1534": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1535": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1536": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1537": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1538": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1539": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1540": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1541": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1542": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1543": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1544": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1545": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1546": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1547": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1548": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1549": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1550": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1551": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1552": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1553": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1554": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1555": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1556": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1557": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1558": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1559": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1560": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1561": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1562": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1563": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1564": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1565": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1566": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1567": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1568": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1569": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1570": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1571": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1572": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1573": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1574": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1575": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1576": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1577": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1578": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1579": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1580": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1581": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1582": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1583": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1584": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1585": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1586": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1587": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1588": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1589": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1590": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1591": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1592": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1593": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1594": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1595": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1596": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1597": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1598": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1599": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1600": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1601": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1602": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1603": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1604": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1605": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1606": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1607": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1608": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1609": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1610": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1611": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1612": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1613": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1614": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1615": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1616": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1617": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1618": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1619": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1620": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1621": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1622": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1623": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1624": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1625": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1626": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1627": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1628": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1629": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1630": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1631": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1632": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1633": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1634": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1635": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1636": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1637": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1638": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1639": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1640": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1641": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1642": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1643": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1644": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1645": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1646": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1647": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1648": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1649": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1650": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1651": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1652": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1653": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1654": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1655": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1656": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1657": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1658": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1659": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1660": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1661": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1662": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1663": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1664": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1665": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1666": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1667": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1668": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1669": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1670": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1671": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1672": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1673": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1674": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1675": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1676": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1677": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1678": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1679": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1680": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1681": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1682": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1683": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1684": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1685": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1686": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1687": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1688": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1689": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1690": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1691": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1692": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1693": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1694": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1695": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1696": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1697": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1698": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1699": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1700": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1701": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1702": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1703": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1704": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1705": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1706": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1707": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1708": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1709": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1710": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1711": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1712": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1713": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1714": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1715": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1716": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1717": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1718": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1719": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1720": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1721": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1722": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1723": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1724": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1725": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1726": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1727": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1728": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1729": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1730": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1731": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1732": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1733": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1734": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1735": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1736": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1737": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1738": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1739": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1740": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1741": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1742": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1743": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1744": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1745": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1746": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1747": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1748": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1749": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1750": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1751": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1752": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1753": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1754": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1755": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1756": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1757": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1758": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1759": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1760": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1761": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1762": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1763": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1764": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1765": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1766": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1767": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1768": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1769": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1770": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1771": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1772": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1773": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1774": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1775": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1776": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1777": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1778": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1779": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1780": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1781": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1782": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1783": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1784": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1785": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1786": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1787": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1788": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1789": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1790": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1791": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1792": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1793": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1794": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1795": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1796": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1797": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1798": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1799": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1800": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1801": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1802": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1803": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1804": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1805": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1806": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1807": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1808": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1809": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1810": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1811": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1812": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1813": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1814": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1815": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1816": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1817": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1818": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1819": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1820": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1821": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1822": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1823": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1824": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1825": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1826": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1827": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1828": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1829": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1830": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1831": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1832": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1833": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1834": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1835": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1836": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1837": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1838": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1839": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1840": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1841": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1842": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1843": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1844": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1845": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1846": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1847": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1848": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1849": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1850": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1851": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1852": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1853": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1854": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1855": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1856": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1857": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1858": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1859": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1860": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1861": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1862": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1863": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1864": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1865": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1866": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1867": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1868": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1869": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1870": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1871": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1872": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1873": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1874": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1875": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1876": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1877": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1878": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1879": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1880": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1881": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1882": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1883": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1884": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1885": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1886": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1887": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1888": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1889": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1890": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1891": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1892": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1893": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1894": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1895": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1896": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1897": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1898": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1899": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1900": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1901": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1902": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1903": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1904": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1905": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1906": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1907": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1908": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1909": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1910": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1911": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1912": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1913": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1914": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1915": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1916": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1917": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1918": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1919": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1920": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1921": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1922": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1923": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1924": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1925": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1926": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1927": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1928": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1929": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1930": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1931": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1932": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1933": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1934": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1935": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1936": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1937": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1938": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1939": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1940": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1941": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1942": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1943": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1944": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1945": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1946": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1947": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1948": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1949": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1950": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1951": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1952": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1953": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1954": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1955": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1956": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1957": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1958": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1959": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1960": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1961": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1962": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1963": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1964": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1965": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1966": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1967": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1968": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1969": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1970": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1971": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1972": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1973": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1974": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1975": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1976": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1977": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1978": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1979": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1980": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1981": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1982": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1983": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1984": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1985": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1986": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1987": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1988": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1989": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1990": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1991": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1992": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1993": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1994": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1995": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1996": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1997": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1998": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "1999": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    },
+    "2000": {
+      "name": "Konstantinos XI",
+      "dynasty": "Palaiologos",
+      "title": "Emperor"
+    }
+  }
+}

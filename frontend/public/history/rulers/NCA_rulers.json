@@ -1,0 +1,5194 @@
+{
+  "tag": "NCA",
+  "country": "Nicaea",
+  "title": "Emperor",
+  "rulers": {
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "8": null,
+    "9": null,
+    "10": null,
+    "11": null,
+    "12": null,
+    "13": null,
+    "14": null,
+    "15": null,
+    "16": null,
+    "17": null,
+    "18": null,
+    "19": null,
+    "20": null,
+    "21": null,
+    "22": null,
+    "23": null,
+    "24": null,
+    "25": null,
+    "26": null,
+    "27": null,
+    "28": null,
+    "29": null,
+    "30": null,
+    "31": null,
+    "32": null,
+    "33": null,
+    "34": null,
+    "35": null,
+    "36": null,
+    "37": null,
+    "38": null,
+    "39": null,
+    "40": null,
+    "41": null,
+    "42": null,
+    "43": null,
+    "44": null,
+    "45": null,
+    "46": null,
+    "47": null,
+    "48": null,
+    "49": null,
+    "50": null,
+    "51": null,
+    "52": null,
+    "53": null,
+    "54": null,
+    "55": null,
+    "56": null,
+    "57": null,
+    "58": null,
+    "59": null,
+    "60": null,
+    "61": null,
+    "62": null,
+    "63": null,
+    "64": null,
+    "65": null,
+    "66": null,
+    "67": null,
+    "68": null,
+    "69": null,
+    "70": null,
+    "71": null,
+    "72": null,
+    "73": null,
+    "74": null,
+    "75": null,
+    "76": null,
+    "77": null,
+    "78": null,
+    "79": null,
+    "80": null,
+    "81": null,
+    "82": null,
+    "83": null,
+    "84": null,
+    "85": null,
+    "86": null,
+    "87": null,
+    "88": null,
+    "89": null,
+    "90": null,
+    "91": null,
+    "92": null,
+    "93": null,
+    "94": null,
+    "95": null,
+    "96": null,
+    "97": null,
+    "98": null,
+    "99": null,
+    "100": null,
+    "101": null,
+    "102": null,
+    "103": null,
+    "104": null,
+    "105": null,
+    "106": null,
+    "107": null,
+    "108": null,
+    "109": null,
+    "110": null,
+    "111": null,
+    "112": null,
+    "113": null,
+    "114": null,
+    "115": null,
+    "116": null,
+    "117": null,
+    "118": null,
+    "119": null,
+    "120": null,
+    "121": null,
+    "122": null,
+    "123": null,
+    "124": null,
+    "125": null,
+    "126": null,
+    "127": null,
+    "128": null,
+    "129": null,
+    "130": null,
+    "131": null,
+    "132": null,
+    "133": null,
+    "134": null,
+    "135": null,
+    "136": null,
+    "137": null,
+    "138": null,
+    "139": null,
+    "140": null,
+    "141": null,
+    "142": null,
+    "143": null,
+    "144": null,
+    "145": null,
+    "146": null,
+    "147": null,
+    "148": null,
+    "149": null,
+    "150": null,
+    "151": null,
+    "152": null,
+    "153": null,
+    "154": null,
+    "155": null,
+    "156": null,
+    "157": null,
+    "158": null,
+    "159": null,
+    "160": null,
+    "161": null,
+    "162": null,
+    "163": null,
+    "164": null,
+    "165": null,
+    "166": null,
+    "167": null,
+    "168": null,
+    "169": null,
+    "170": null,
+    "171": null,
+    "172": null,
+    "173": null,
+    "174": null,
+    "175": null,
+    "176": null,
+    "177": null,
+    "178": null,
+    "179": null,
+    "180": null,
+    "181": null,
+    "182": null,
+    "183": null,
+    "184": null,
+    "185": null,
+    "186": null,
+    "187": null,
+    "188": null,
+    "189": null,
+    "190": null,
+    "191": null,
+    "192": null,
+    "193": null,
+    "194": null,
+    "195": null,
+    "196": null,
+    "197": null,
+    "198": null,
+    "199": null,
+    "200": null,
+    "201": null,
+    "202": null,
+    "203": null,
+    "204": null,
+    "205": null,
+    "206": null,
+    "207": null,
+    "208": null,
+    "209": null,
+    "210": null,
+    "211": null,
+    "212": null,
+    "213": null,
+    "214": null,
+    "215": null,
+    "216": null,
+    "217": null,
+    "218": null,
+    "219": null,
+    "220": null,
+    "221": null,
+    "222": null,
+    "223": null,
+    "224": null,
+    "225": null,
+    "226": null,
+    "227": null,
+    "228": null,
+    "229": null,
+    "230": null,
+    "231": null,
+    "232": null,
+    "233": null,
+    "234": null,
+    "235": null,
+    "236": null,
+    "237": null,
+    "238": null,
+    "239": null,
+    "240": null,
+    "241": null,
+    "242": null,
+    "243": null,
+    "244": null,
+    "245": null,
+    "246": null,
+    "247": null,
+    "248": null,
+    "249": null,
+    "250": null,
+    "251": null,
+    "252": null,
+    "253": null,
+    "254": null,
+    "255": null,
+    "256": null,
+    "257": null,
+    "258": null,
+    "259": null,
+    "260": null,
+    "261": null,
+    "262": null,
+    "263": null,
+    "264": null,
+    "265": null,
+    "266": null,
+    "267": null,
+    "268": null,
+    "269": null,
+    "270": null,
+    "271": null,
+    "272": null,
+    "273": null,
+    "274": null,
+    "275": null,
+    "276": null,
+    "277": null,
+    "278": null,
+    "279": null,
+    "280": null,
+    "281": null,
+    "282": null,
+    "283": null,
+    "284": null,
+    "285": null,
+    "286": null,
+    "287": null,
+    "288": null,
+    "289": null,
+    "290": null,
+    "291": null,
+    "292": null,
+    "293": null,
+    "294": null,
+    "295": null,
+    "296": null,
+    "297": null,
+    "298": null,
+    "299": null,
+    "300": null,
+    "301": null,
+    "302": null,
+    "303": null,
+    "304": null,
+    "305": null,
+    "306": null,
+    "307": null,
+    "308": null,
+    "309": null,
+    "310": null,
+    "311": null,
+    "312": null,
+    "313": null,
+    "314": null,
+    "315": null,
+    "316": null,
+    "317": null,
+    "318": null,
+    "319": null,
+    "320": null,
+    "321": null,
+    "322": null,
+    "323": null,
+    "324": null,
+    "325": null,
+    "326": null,
+    "327": null,
+    "328": null,
+    "329": null,
+    "330": null,
+    "331": null,
+    "332": null,
+    "333": null,
+    "334": null,
+    "335": null,
+    "336": null,
+    "337": null,
+    "338": null,
+    "339": null,
+    "340": null,
+    "341": null,
+    "342": null,
+    "343": null,
+    "344": null,
+    "345": null,
+    "346": null,
+    "347": null,
+    "348": null,
+    "349": null,
+    "350": null,
+    "351": null,
+    "352": null,
+    "353": null,
+    "354": null,
+    "355": null,
+    "356": null,
+    "357": null,
+    "358": null,
+    "359": null,
+    "360": null,
+    "361": null,
+    "362": null,
+    "363": null,
+    "364": null,
+    "365": null,
+    "366": null,
+    "367": null,
+    "368": null,
+    "369": null,
+    "370": null,
+    "371": null,
+    "372": null,
+    "373": null,
+    "374": null,
+    "375": null,
+    "376": null,
+    "377": null,
+    "378": null,
+    "379": null,
+    "380": null,
+    "381": null,
+    "382": null,
+    "383": null,
+    "384": null,
+    "385": null,
+    "386": null,
+    "387": null,
+    "388": null,
+    "389": null,
+    "390": null,
+    "391": null,
+    "392": null,
+    "393": null,
+    "394": null,
+    "395": null,
+    "396": null,
+    "397": null,
+    "398": null,
+    "399": null,
+    "400": null,
+    "401": null,
+    "402": null,
+    "403": null,
+    "404": null,
+    "405": null,
+    "406": null,
+    "407": null,
+    "408": null,
+    "409": null,
+    "410": null,
+    "411": null,
+    "412": null,
+    "413": null,
+    "414": null,
+    "415": null,
+    "416": null,
+    "417": null,
+    "418": null,
+    "419": null,
+    "420": null,
+    "421": null,
+    "422": null,
+    "423": null,
+    "424": null,
+    "425": null,
+    "426": null,
+    "427": null,
+    "428": null,
+    "429": null,
+    "430": null,
+    "431": null,
+    "432": null,
+    "433": null,
+    "434": null,
+    "435": null,
+    "436": null,
+    "437": null,
+    "438": null,
+    "439": null,
+    "440": null,
+    "441": null,
+    "442": null,
+    "443": null,
+    "444": null,
+    "445": null,
+    "446": null,
+    "447": null,
+    "448": null,
+    "449": null,
+    "450": null,
+    "451": null,
+    "452": null,
+    "453": null,
+    "454": null,
+    "455": null,
+    "456": null,
+    "457": null,
+    "458": null,
+    "459": null,
+    "460": null,
+    "461": null,
+    "462": null,
+    "463": null,
+    "464": null,
+    "465": null,
+    "466": null,
+    "467": null,
+    "468": null,
+    "469": null,
+    "470": null,
+    "471": null,
+    "472": null,
+    "473": null,
+    "474": null,
+    "475": null,
+    "476": null,
+    "477": null,
+    "478": null,
+    "479": null,
+    "480": null,
+    "481": null,
+    "482": null,
+    "483": null,
+    "484": null,
+    "485": null,
+    "486": null,
+    "487": null,
+    "488": null,
+    "489": null,
+    "490": null,
+    "491": null,
+    "492": null,
+    "493": null,
+    "494": null,
+    "495": null,
+    "496": null,
+    "497": null,
+    "498": null,
+    "499": null,
+    "500": null,
+    "501": null,
+    "502": null,
+    "503": null,
+    "504": null,
+    "505": null,
+    "506": null,
+    "507": null,
+    "508": null,
+    "509": null,
+    "510": null,
+    "511": null,
+    "512": null,
+    "513": null,
+    "514": null,
+    "515": null,
+    "516": null,
+    "517": null,
+    "518": null,
+    "519": null,
+    "520": null,
+    "521": null,
+    "522": null,
+    "523": null,
+    "524": null,
+    "525": null,
+    "526": null,
+    "527": null,
+    "528": null,
+    "529": null,
+    "530": null,
+    "531": null,
+    "532": null,
+    "533": null,
+    "534": null,
+    "535": null,
+    "536": null,
+    "537": null,
+    "538": null,
+    "539": null,
+    "540": null,
+    "541": null,
+    "542": null,
+    "543": null,
+    "544": null,
+    "545": null,
+    "546": null,
+    "547": null,
+    "548": null,
+    "549": null,
+    "550": null,
+    "551": null,
+    "552": null,
+    "553": null,
+    "554": null,
+    "555": null,
+    "556": null,
+    "557": null,
+    "558": null,
+    "559": null,
+    "560": null,
+    "561": null,
+    "562": null,
+    "563": null,
+    "564": null,
+    "565": null,
+    "566": null,
+    "567": null,
+    "568": null,
+    "569": null,
+    "570": null,
+    "571": null,
+    "572": null,
+    "573": null,
+    "574": null,
+    "575": null,
+    "576": null,
+    "577": null,
+    "578": null,
+    "579": null,
+    "580": null,
+    "581": null,
+    "582": null,
+    "583": null,
+    "584": null,
+    "585": null,
+    "586": null,
+    "587": null,
+    "588": null,
+    "589": null,
+    "590": null,
+    "591": null,
+    "592": null,
+    "593": null,
+    "594": null,
+    "595": null,
+    "596": null,
+    "597": null,
+    "598": null,
+    "599": null,
+    "600": null,
+    "601": null,
+    "602": null,
+    "603": null,
+    "604": null,
+    "605": null,
+    "606": null,
+    "607": null,
+    "608": null,
+    "609": null,
+    "610": null,
+    "611": null,
+    "612": null,
+    "613": null,
+    "614": null,
+    "615": null,
+    "616": null,
+    "617": null,
+    "618": null,
+    "619": null,
+    "620": null,
+    "621": null,
+    "622": null,
+    "623": null,
+    "624": null,
+    "625": null,
+    "626": null,
+    "627": null,
+    "628": null,
+    "629": null,
+    "630": null,
+    "631": null,
+    "632": null,
+    "633": null,
+    "634": null,
+    "635": null,
+    "636": null,
+    "637": null,
+    "638": null,
+    "639": null,
+    "640": null,
+    "641": null,
+    "642": null,
+    "643": null,
+    "644": null,
+    "645": null,
+    "646": null,
+    "647": null,
+    "648": null,
+    "649": null,
+    "650": null,
+    "651": null,
+    "652": null,
+    "653": null,
+    "654": null,
+    "655": null,
+    "656": null,
+    "657": null,
+    "658": null,
+    "659": null,
+    "660": null,
+    "661": null,
+    "662": null,
+    "663": null,
+    "664": null,
+    "665": null,
+    "666": null,
+    "667": null,
+    "668": null,
+    "669": null,
+    "670": null,
+    "671": null,
+    "672": null,
+    "673": null,
+    "674": null,
+    "675": null,
+    "676": null,
+    "677": null,
+    "678": null,
+    "679": null,
+    "680": null,
+    "681": null,
+    "682": null,
+    "683": null,
+    "684": null,
+    "685": null,
+    "686": null,
+    "687": null,
+    "688": null,
+    "689": null,
+    "690": null,
+    "691": null,
+    "692": null,
+    "693": null,
+    "694": null,
+    "695": null,
+    "696": null,
+    "697": null,
+    "698": null,
+    "699": null,
+    "700": null,
+    "701": null,
+    "702": null,
+    "703": null,
+    "704": null,
+    "705": null,
+    "706": null,
+    "707": null,
+    "708": null,
+    "709": null,
+    "710": null,
+    "711": null,
+    "712": null,
+    "713": null,
+    "714": null,
+    "715": null,
+    "716": null,
+    "717": null,
+    "718": null,
+    "719": null,
+    "720": null,
+    "721": null,
+    "722": null,
+    "723": null,
+    "724": null,
+    "725": null,
+    "726": null,
+    "727": null,
+    "728": null,
+    "729": null,
+    "730": null,
+    "731": null,
+    "732": null,
+    "733": null,
+    "734": null,
+    "735": null,
+    "736": null,
+    "737": null,
+    "738": null,
+    "739": null,
+    "740": null,
+    "741": null,
+    "742": null,
+    "743": null,
+    "744": null,
+    "745": null,
+    "746": null,
+    "747": null,
+    "748": null,
+    "749": null,
+    "750": null,
+    "751": null,
+    "752": null,
+    "753": null,
+    "754": null,
+    "755": null,
+    "756": null,
+    "757": null,
+    "758": null,
+    "759": null,
+    "760": null,
+    "761": null,
+    "762": null,
+    "763": null,
+    "764": null,
+    "765": null,
+    "766": null,
+    "767": null,
+    "768": null,
+    "769": null,
+    "770": null,
+    "771": null,
+    "772": null,
+    "773": null,
+    "774": null,
+    "775": null,
+    "776": null,
+    "777": null,
+    "778": null,
+    "779": null,
+    "780": null,
+    "781": null,
+    "782": null,
+    "783": null,
+    "784": null,
+    "785": null,
+    "786": null,
+    "787": null,
+    "788": null,
+    "789": null,
+    "790": null,
+    "791": null,
+    "792": null,
+    "793": null,
+    "794": null,
+    "795": null,
+    "796": null,
+    "797": null,
+    "798": null,
+    "799": null,
+    "800": null,
+    "801": null,
+    "802": null,
+    "803": null,
+    "804": null,
+    "805": null,
+    "806": null,
+    "807": null,
+    "808": null,
+    "809": null,
+    "810": null,
+    "811": null,
+    "812": null,
+    "813": null,
+    "814": null,
+    "815": null,
+    "816": null,
+    "817": null,
+    "818": null,
+    "819": null,
+    "820": null,
+    "821": null,
+    "822": null,
+    "823": null,
+    "824": null,
+    "825": null,
+    "826": null,
+    "827": null,
+    "828": null,
+    "829": null,
+    "830": null,
+    "831": null,
+    "832": null,
+    "833": null,
+    "834": null,
+    "835": null,
+    "836": null,
+    "837": null,
+    "838": null,
+    "839": null,
+    "840": null,
+    "841": null,
+    "842": null,
+    "843": null,
+    "844": null,
+    "845": null,
+    "846": null,
+    "847": null,
+    "848": null,
+    "849": null,
+    "850": null,
+    "851": null,
+    "852": null,
+    "853": null,
+    "854": null,
+    "855": null,
+    "856": null,
+    "857": null,
+    "858": null,
+    "859": null,
+    "860": null,
+    "861": null,
+    "862": null,
+    "863": null,
+    "864": null,
+    "865": null,
+    "866": null,
+    "867": null,
+    "868": null,
+    "869": null,
+    "870": null,
+    "871": null,
+    "872": null,
+    "873": null,
+    "874": null,
+    "875": null,
+    "876": null,
+    "877": null,
+    "878": null,
+    "879": null,
+    "880": null,
+    "881": null,
+    "882": null,
+    "883": null,
+    "884": null,
+    "885": null,
+    "886": null,
+    "887": null,
+    "888": null,
+    "889": null,
+    "890": null,
+    "891": null,
+    "892": null,
+    "893": null,
+    "894": null,
+    "895": null,
+    "896": null,
+    "897": null,
+    "898": null,
+    "899": null,
+    "900": null,
+    "901": null,
+    "902": null,
+    "903": null,
+    "904": null,
+    "905": null,
+    "906": null,
+    "907": null,
+    "908": null,
+    "909": null,
+    "910": null,
+    "911": null,
+    "912": null,
+    "913": null,
+    "914": null,
+    "915": null,
+    "916": null,
+    "917": null,
+    "918": null,
+    "919": null,
+    "920": null,
+    "921": null,
+    "922": null,
+    "923": null,
+    "924": null,
+    "925": null,
+    "926": null,
+    "927": null,
+    "928": null,
+    "929": null,
+    "930": null,
+    "931": null,
+    "932": null,
+    "933": null,
+    "934": null,
+    "935": null,
+    "936": null,
+    "937": null,
+    "938": null,
+    "939": null,
+    "940": null,
+    "941": null,
+    "942": null,
+    "943": null,
+    "944": null,
+    "945": null,
+    "946": null,
+    "947": null,
+    "948": null,
+    "949": null,
+    "950": null,
+    "951": null,
+    "952": null,
+    "953": null,
+    "954": null,
+    "955": null,
+    "956": null,
+    "957": null,
+    "958": null,
+    "959": null,
+    "960": null,
+    "961": null,
+    "962": null,
+    "963": null,
+    "964": null,
+    "965": null,
+    "966": null,
+    "967": null,
+    "968": null,
+    "969": null,
+    "970": null,
+    "971": null,
+    "972": null,
+    "973": null,
+    "974": null,
+    "975": null,
+    "976": null,
+    "977": null,
+    "978": null,
+    "979": null,
+    "980": null,
+    "981": null,
+    "982": null,
+    "983": null,
+    "984": null,
+    "985": null,
+    "986": null,
+    "987": null,
+    "988": null,
+    "989": null,
+    "990": null,
+    "991": null,
+    "992": null,
+    "993": null,
+    "994": null,
+    "995": null,
+    "996": null,
+    "997": null,
+    "998": null,
+    "999": null,
+    "1000": null,
+    "1001": null,
+    "1002": null,
+    "1003": null,
+    "1004": null,
+    "1005": null,
+    "1006": null,
+    "1007": null,
+    "1008": null,
+    "1009": null,
+    "1010": null,
+    "1011": null,
+    "1012": null,
+    "1013": null,
+    "1014": null,
+    "1015": null,
+    "1016": null,
+    "1017": null,
+    "1018": null,
+    "1019": null,
+    "1020": null,
+    "1021": null,
+    "1022": null,
+    "1023": null,
+    "1024": null,
+    "1025": null,
+    "1026": null,
+    "1027": null,
+    "1028": null,
+    "1029": null,
+    "1030": null,
+    "1031": null,
+    "1032": null,
+    "1033": null,
+    "1034": null,
+    "1035": null,
+    "1036": null,
+    "1037": null,
+    "1038": null,
+    "1039": null,
+    "1040": null,
+    "1041": null,
+    "1042": null,
+    "1043": null,
+    "1044": null,
+    "1045": null,
+    "1046": null,
+    "1047": null,
+    "1048": null,
+    "1049": null,
+    "1050": null,
+    "1051": null,
+    "1052": null,
+    "1053": null,
+    "1054": null,
+    "1055": null,
+    "1056": null,
+    "1057": null,
+    "1058": null,
+    "1059": null,
+    "1060": null,
+    "1061": null,
+    "1062": null,
+    "1063": null,
+    "1064": null,
+    "1065": null,
+    "1066": null,
+    "1067": null,
+    "1068": null,
+    "1069": null,
+    "1070": null,
+    "1071": null,
+    "1072": null,
+    "1073": null,
+    "1074": null,
+    "1075": null,
+    "1076": null,
+    "1077": null,
+    "1078": null,
+    "1079": null,
+    "1080": null,
+    "1081": null,
+    "1082": null,
+    "1083": null,
+    "1084": null,
+    "1085": null,
+    "1086": null,
+    "1087": null,
+    "1088": null,
+    "1089": null,
+    "1090": null,
+    "1091": null,
+    "1092": null,
+    "1093": null,
+    "1094": null,
+    "1095": null,
+    "1096": null,
+    "1097": null,
+    "1098": null,
+    "1099": null,
+    "1100": null,
+    "1101": null,
+    "1102": null,
+    "1103": null,
+    "1104": null,
+    "1105": null,
+    "1106": null,
+    "1107": null,
+    "1108": null,
+    "1109": null,
+    "1110": null,
+    "1111": null,
+    "1112": null,
+    "1113": null,
+    "1114": null,
+    "1115": null,
+    "1116": null,
+    "1117": null,
+    "1118": null,
+    "1119": null,
+    "1120": null,
+    "1121": null,
+    "1122": null,
+    "1123": null,
+    "1124": null,
+    "1125": null,
+    "1126": null,
+    "1127": null,
+    "1128": null,
+    "1129": null,
+    "1130": null,
+    "1131": null,
+    "1132": null,
+    "1133": null,
+    "1134": null,
+    "1135": null,
+    "1136": null,
+    "1137": null,
+    "1138": null,
+    "1139": null,
+    "1140": null,
+    "1141": null,
+    "1142": null,
+    "1143": null,
+    "1144": null,
+    "1145": null,
+    "1146": null,
+    "1147": null,
+    "1148": null,
+    "1149": null,
+    "1150": null,
+    "1151": null,
+    "1152": null,
+    "1153": null,
+    "1154": null,
+    "1155": null,
+    "1156": null,
+    "1157": null,
+    "1158": null,
+    "1159": null,
+    "1160": null,
+    "1161": null,
+    "1162": null,
+    "1163": null,
+    "1164": null,
+    "1165": null,
+    "1166": null,
+    "1167": null,
+    "1168": null,
+    "1169": null,
+    "1170": null,
+    "1171": null,
+    "1172": null,
+    "1173": null,
+    "1174": null,
+    "1175": null,
+    "1176": null,
+    "1177": null,
+    "1178": null,
+    "1179": null,
+    "1180": null,
+    "1181": null,
+    "1182": null,
+    "1183": null,
+    "1184": null,
+    "1185": null,
+    "1186": null,
+    "1187": null,
+    "1188": null,
+    "1189": null,
+    "1190": null,
+    "1191": null,
+    "1192": null,
+    "1193": null,
+    "1194": null,
+    "1195": null,
+    "1196": null,
+    "1197": null,
+    "1198": null,
+    "1199": null,
+    "1200": null,
+    "1201": null,
+    "1202": null,
+    "1203": null,
+    "1204": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1205": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1206": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1207": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1208": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1209": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1210": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1211": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1212": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1213": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1214": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1215": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1216": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1217": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1218": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1219": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1220": {
+      "name": "Theodore I",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1221": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1222": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1223": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1224": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1225": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1226": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1227": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1228": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1229": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1230": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1231": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1232": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1233": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1234": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1235": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1236": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1237": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1238": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1239": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1240": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1241": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1242": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1243": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1244": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1245": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1246": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1247": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1248": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1249": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1250": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1251": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1252": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1253": {
+      "name": "John III",
+      "dynasty": "Doukas",
+      "title": "Emperor"
+    },
+    "1254": {
+      "name": "Theodore II",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1255": {
+      "name": "Theodore II",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1256": {
+      "name": "Theodore II",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1257": {
+      "name": "Theodore II",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1258": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1259": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1260": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1261": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1262": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1263": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1264": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1265": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1266": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1267": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1268": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1269": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1270": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1271": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1272": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1273": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1274": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1275": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1276": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1277": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1278": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1279": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1280": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1281": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1282": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1283": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1284": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1285": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1286": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1287": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1288": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1289": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1290": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1291": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1292": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1293": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1294": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1295": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1296": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1297": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1298": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1299": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1300": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1301": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1302": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1303": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1304": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1305": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1306": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1307": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1308": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1309": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1310": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1311": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1312": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1313": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1314": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1315": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1316": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1317": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1318": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1319": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1320": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1321": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1322": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1323": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1324": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1325": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1326": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1327": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1328": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1329": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1330": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1331": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1332": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1333": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1334": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1335": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1336": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1337": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1338": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1339": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1340": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1341": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1342": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1343": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1344": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1345": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1346": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1347": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1348": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1349": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1350": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1351": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1352": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1353": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1354": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1355": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1356": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1357": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1358": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1359": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1360": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1361": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1362": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1363": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1364": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1365": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1366": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1367": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1368": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1369": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1370": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1371": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1372": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1373": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1374": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1375": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1376": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1377": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1378": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1379": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1380": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1381": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1382": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1383": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1384": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1385": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1386": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1387": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1388": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1389": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1390": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1391": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1392": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1393": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1394": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1395": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1396": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1397": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1398": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1399": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1400": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1401": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1402": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1403": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1404": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1405": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1406": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1407": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1408": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1409": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1410": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1411": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1412": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1413": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1414": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1415": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1416": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1417": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1418": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1419": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1420": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1421": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1422": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1423": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1424": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1425": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1426": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1427": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1428": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1429": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1430": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1431": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1432": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1433": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1434": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1435": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1436": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1437": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1438": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1439": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1440": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1441": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1442": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1443": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1444": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1445": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1446": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1447": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1448": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1449": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1450": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1451": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1452": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1453": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1454": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1455": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1456": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1457": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1458": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1459": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1460": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1461": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1462": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1463": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1464": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1465": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1466": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1467": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1468": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1469": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1470": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1471": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1472": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1473": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1474": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1475": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1476": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1477": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1478": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1479": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1480": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1481": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1482": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1483": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1484": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1485": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1486": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1487": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1488": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1489": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1490": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1491": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1492": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1493": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1494": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1495": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1496": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1497": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1498": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1499": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1500": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1501": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1502": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1503": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1504": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1505": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1506": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1507": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1508": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1509": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1510": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1511": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1512": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1513": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1514": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1515": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1516": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1517": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1518": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1519": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1520": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1521": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1522": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1523": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1524": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1525": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1526": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1527": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1528": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1529": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1530": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1531": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1532": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1533": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1534": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1535": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1536": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1537": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1538": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1539": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1540": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1541": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1542": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1543": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1544": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1545": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1546": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1547": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1548": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1549": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1550": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1551": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1552": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1553": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1554": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1555": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1556": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1557": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1558": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1559": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1560": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1561": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1562": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1563": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1564": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1565": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1566": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1567": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1568": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1569": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1570": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1571": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1572": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1573": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1574": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1575": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1576": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1577": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1578": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1579": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1580": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1581": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1582": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1583": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1584": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1585": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1586": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1587": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1588": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1589": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1590": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1591": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1592": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1593": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1594": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1595": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1596": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1597": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1598": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1599": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1600": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1601": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1602": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1603": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1604": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1605": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1606": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1607": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1608": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1609": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1610": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1611": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1612": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1613": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1614": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1615": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1616": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1617": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1618": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1619": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1620": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1621": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1622": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1623": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1624": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1625": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1626": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1627": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1628": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1629": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1630": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1631": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1632": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1633": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1634": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1635": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1636": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1637": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1638": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1639": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1640": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1641": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1642": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1643": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1644": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1645": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1646": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1647": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1648": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1649": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1650": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1651": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1652": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1653": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1654": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1655": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1656": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1657": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1658": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1659": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1660": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1661": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1662": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1663": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1664": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1665": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1666": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1667": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1668": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1669": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1670": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1671": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1672": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1673": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1674": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1675": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1676": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1677": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1678": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1679": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1680": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1681": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1682": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1683": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1684": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1685": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1686": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1687": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1688": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1689": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1690": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1691": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1692": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1693": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1694": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1695": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1696": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1697": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1698": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1699": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1700": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1701": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1702": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1703": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1704": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1705": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1706": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1707": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1708": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1709": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1710": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1711": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1712": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1713": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1714": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1715": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1716": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1717": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1718": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1719": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1720": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1721": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1722": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1723": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1724": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1725": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1726": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1727": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1728": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1729": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1730": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1731": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1732": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1733": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1734": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1735": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1736": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1737": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1738": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1739": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1740": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1741": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1742": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1743": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1744": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1745": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1746": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1747": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1748": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1749": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1750": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1751": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1752": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1753": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1754": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1755": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1756": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1757": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1758": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1759": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1760": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1761": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1762": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1763": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1764": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1765": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1766": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1767": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1768": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1769": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1770": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1771": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1772": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1773": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1774": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1775": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1776": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1777": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1778": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1779": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1780": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1781": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1782": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1783": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1784": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1785": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1786": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1787": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1788": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1789": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1790": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1791": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1792": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1793": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1794": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1795": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1796": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1797": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1798": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1799": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1800": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1801": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1802": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1803": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1804": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1805": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1806": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1807": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1808": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1809": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1810": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1811": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1812": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1813": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1814": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1815": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1816": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1817": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1818": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1819": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1820": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1821": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1822": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1823": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1824": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1825": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1826": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1827": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1828": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1829": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1830": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1831": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1832": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1833": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1834": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1835": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1836": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1837": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1838": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1839": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1840": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1841": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1842": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1843": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1844": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1845": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1846": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1847": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1848": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1849": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1850": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1851": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1852": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1853": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1854": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1855": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1856": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1857": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1858": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1859": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1860": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1861": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1862": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1863": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1864": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1865": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1866": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1867": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1868": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1869": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1870": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1871": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1872": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1873": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1874": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1875": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1876": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1877": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1878": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1879": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1880": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1881": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1882": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1883": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1884": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1885": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1886": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1887": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1888": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1889": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1890": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1891": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1892": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1893": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1894": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1895": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1896": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1897": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1898": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1899": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1900": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1901": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1902": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1903": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1904": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1905": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1906": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1907": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1908": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1909": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1910": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1911": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1912": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1913": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1914": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1915": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1916": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1917": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1918": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1919": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1920": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1921": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1922": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1923": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1924": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1925": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1926": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1927": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1928": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1929": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1930": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1931": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1932": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1933": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1934": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1935": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1936": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1937": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1938": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1939": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1940": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1941": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1942": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1943": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1944": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1945": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1946": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1947": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1948": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1949": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1950": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1951": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1952": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1953": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1954": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1955": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1956": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1957": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1958": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1959": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1960": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1961": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1962": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1963": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1964": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1965": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1966": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1967": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1968": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1969": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1970": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1971": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1972": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1973": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1974": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1975": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1976": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1977": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1978": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1979": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1980": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1981": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1982": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1983": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1984": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1985": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1986": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1987": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1988": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1989": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1990": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1991": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1992": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1993": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1994": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1995": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1996": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1997": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1998": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "1999": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    },
+    "2000": {
+      "name": "Ioannes IV",
+      "dynasty": "Laskaris",
+      "title": "Emperor"
+    }
+  }
+}
