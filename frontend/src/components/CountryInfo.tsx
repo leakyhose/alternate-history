@@ -121,7 +121,7 @@ export default function CountryInfo( {selectedTag, year, onTagChange}: CountryIn
     const displayInfo = rulerInfo.info;
 
     return (
-        <div className="absolute bottom-5 left-5 bg-[#1a1a24] border-2 border-[#2a2a3a] p-4 shadow-[inset_0_0_0_1px_#0a0a10,0_2px_0_#0a0a10] text-amber-400">
+        <div className="absolute bottom-5 left-5 w-60 bg-[#1a1a24] border-2 border-[#2a2a3a] p-4 shadow-[inset_0_0_0_1px_#0a0a10,0_2px_0_#0a0a10] text-amber-400">
             <h2 className=" text-4xl font-bold mb-2 text-center">{metadata?.tags![displayTag]?.name || displayTag}</h2>
             <div className="space-y-1 text-2xl text-center">
                 <p><div className="text-amber-600 text-lg">Emperor</div>
