@@ -81,7 +81,7 @@ export default function MapCanvas({ year = 2 }: MapCanvasProps) {
           const tagNames = Object.keys(loadedMetadata.tags);
           const historyPromises = tagNames.map(async (tag) => {
             try {
-              const res = await fetch(`/history/${tag}.json`);
+              const res = await fetch(`/history/provinces/${tag}.json`);
               if (res.ok) {
                 const data = await res.json();
                 return { tag, data };
@@ -295,12 +295,12 @@ export default function MapCanvas({ year = 2 }: MapCanvasProps) {
   }
 
   return (
-    <div ref={containerRef} className="w-full h-full overflow-hidden">
+    <div ref={containerRef} className="w-full h-full overflow-hidden bg-black">
       <canvas
         ref={canvasRef}
         width={canvasSize.width}
         height={canvasSize.height}
-        className="block"
+        className="block bg-black"
       />
     </div>
   );
