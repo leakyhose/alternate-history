@@ -42,7 +42,7 @@ export class MapViewport {
     
     // Apply zoom
     this.zoom *= zoomDelta;
-    this.zoom = Math.max(0.5, Math.min(this.zoom, 4.0));
+    this.zoom = Math.max(0.5, Math.min(this.zoom, 3.0));
     
     // Reposition so same world point is under cursor
     this.position.x = worldX - cursorX / this.zoom;

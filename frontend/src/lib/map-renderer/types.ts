@@ -8,6 +8,20 @@ export interface MapMetadata {
     color: string;
     provinces: number[];
   }>;
+  tags?: Record<string, {
+    color: string;
+  }>;
+}
+
+export interface ProvinceHistoryEntry {
+  ID: number;
+  NAME: string;
+  CONTROL: string; // Tag that controls/occupies, empty string if none
+}
+
+export interface CountryHistory {
+  tags: string[];
+  [year: string]: ProvinceHistoryEntry[] | string[];
 }
 
 export interface SaveData {
