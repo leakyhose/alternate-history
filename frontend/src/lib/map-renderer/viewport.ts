@@ -17,8 +17,8 @@ export class MapViewport {
   // Fit map height to screen (initial view)
   fitToScreen() {
     // Calculate zoom so map height fits canvas height
-    this.zoom = this.canvasSize.height / this.mapSize.height;
-    this.position = { x: 0, y: 0 };
+    this.zoom = (this.canvasSize.height / this.mapSize.height)*3;
+    this.position = { x: 2142, y: 236 };
   }
   
   // Pan: move viewport
@@ -32,6 +32,9 @@ export class MapViewport {
     // Clamp Y (no vertical wrap)
     const viewHeight = this.canvasSize.height / this.zoom;
     this.position.y = Math.max(0, Math.min(this.position.y, this.mapSize.height - viewHeight));
+    console.log(this.position.x);
+    console.log(this.position.y);
+
   }
   
   // Zoom at cursor position
@@ -42,7 +45,7 @@ export class MapViewport {
     
     // Apply zoom
     this.zoom *= zoomDelta;
-    this.zoom = Math.max(0.5, Math.min(this.zoom, 3.0));
+    this.zoom = Math.max(0.5, Math.min(this.zoom, 4));
     
     // Reposition so same world point is under cursor
     this.position.x = worldX - cursorX / this.zoom;
