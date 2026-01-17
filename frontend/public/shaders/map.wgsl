@@ -79,6 +79,14 @@ fn get_owner_color(loc: u32) -> u32 {
     return location_owner_colors[loc];
 }
 
+// Get secondary color (for occupation stripes) with bounds checking
+fn get_secondary_color(loc: u32) -> u32 {
+    if (loc >= uniforms.max_province_id) {
+        return 0u;
+    }
+    return location_secondary_colors[loc];
+}
+
 // Get base color for a location (no border processing)
 fn get_base_color(x: i32, y: i32) -> vec3<f32> {
     let loc = get_location_at(x, y);
@@ -114,14 +122,27 @@ fn is_owner_border(x: i32, y: i32) -> bool {
            (loc_se < uniforms.max_province_id && get_owner_color(loc_se) != owner);
 }
 
-// Simple pixel color with borders
+// Simple pixel color with borders and occupation stripes
 fn get_pixel_color(x: i32, y: i32) -> vec3<f32> {
     let loc = get_location_at(x, y);
-    let base = get_province_color(loc);
+    var base = get_province_color(loc);
     
     // Skip borders for out-of-bounds provinces
     if (loc >= uniforms.max_province_id) {
         return base;
+    }
+    
+    // Check for occupation stripes (secondary color)
+    let secondary = get_secondary_color(loc);
+    if (secondary != 0u) {
+        // Create diagonal stripes for occupied territories
+        let stripe_width = 4.0; // Width of each stripe in pixels
+        let pattern = (f32(x) + f32(y)) / stripe_width;
+        let stripe = fract(pattern);
+        if (stripe > 0.5) {
+            // Use occupier's color for stripe
+            base = unpack_color(secondary);
+        }
     }
     
     let owner = get_owner_color(loc);
