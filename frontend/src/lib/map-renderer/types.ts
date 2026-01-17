@@ -26,22 +26,14 @@ export interface ProvinceHistory {
 }
 
 export interface RulerHistoryEntry {
-  name: string;
-  dynasty: string;
-  title: string;
+  TAG: string;
+  NAME: string;
+  DYNASTY: string;
+  TITLE: string;
 }
-
 
 export interface RulerHistory {
-  tags: string[];
-  [year: string]: RulerHistoryEntry[] | string[];
-}
-
-export interface RulerFile {
-  tag: string;
-  country: string;
-  title: string;
-  rulers: Record<string, RulerHistoryEntry | null>;
+  [year: string]: RulerHistoryEntry[];
 }
 
 export interface SaveData {

@@ -1,119 +1,84 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react';
-import type { MapMetadata, RulerFile } from '@/lib/map-renderer/types';
+import type { RulerHistory, MapMetadata } from '@/lib/map-renderer/types';
 
 interface CountryInfoProps {
+    defaultRulerHistory: RulerHistory | null
     selectedTag: string | null;
     year: number;
     onTagChange: (tag: string) => void;
 }
 
-export default function CountryInfo( {selectedTag, year, onTagChange}: CountryInfoProps) {
+export default function CountryInfo({ defaultRulerHistory, selectedTag, year, onTagChange }: CountryInfoProps) {
 
-    const [rulerFiles, setRulerFiles] = useState<Record<string, RulerFile>>({})
     const [metadata, setMetadata] = useState<MapMetadata | null>(null);
 
-
-    // Initialization, gets list of all rulers
+    // Fetch metadata for tag display names
     useEffect(() => {
-
-        async function fetchRulerFiles() {
-
-            const loadedMetadata: MapMetadata = await fetch('/provinces-metadata.json').then(res => res.json());
-            const rulerData: Record<string, RulerFile> = {};
-
-            if (loadedMetadata.tags) {
-                const tagNames = Object.keys(loadedMetadata.tags);
-                const historyPromises = tagNames.map(async (tag) => {
-                    try {
-                        const res = await fetch(`/history/rulers/${tag}.json`);
-                        if (res.ok) {
-                            const data = await res.json();
-                            return { tag, data };
-                        }
-                    } catch {
-                        console.log(`No ruler file for ${tag}`);
-                    }
-                    return null;
-                });
-
-            const results = await Promise.all(historyPromises);
-            for (const result of results) {
-                if (result) {
-                    rulerData[result.tag] = result.data;
-                }
-                }
-            }
-                    
-            console.log('Loaded ruler files:', Object.keys(rulerData));
-            setRulerFiles(rulerData);
-            setMetadata(loadedMetadata);
-
-        }
-        fetchRulerFiles();
-    }, [])
+        fetch('/provinces-metadata.json')
+            .then(res => res.json())
+            .then(data => setMetadata(data))
+            .catch(err => console.error('Failed to load metadata:', err));
+    }, []);
 
     // Auto-select ROM when selectedTag is null and data is loaded
     useEffect(() => {
-        if (!selectedTag && Object.keys(rulerFiles).length > 0 && rulerFiles['ROM']) {
-            console.log('Auto-selecting ROM');
-            onTagChange('ROM');
+        if (!selectedTag && defaultRulerHistory && metadata) {
+            const yearData = defaultRulerHistory[year.toString()];
+            if (yearData && Array.isArray(yearData)) {
+                const romRuler = yearData.find((r: any) => r.TAG === 'ROM');
+                if (romRuler) {
+                    console.log('Auto-selecting ROM');
+                    onTagChange('ROM');
+                }
+            }
         }
-    }, [selectedTag, rulerFiles, onTagChange]);
+    }, [selectedTag, defaultRulerHistory, metadata, year, onTagChange]);
 
     const rulerInfo = useMemo(() => {
-        // Helper function to get ruler info for a tag
-        const getRulerInfoForTag = (tag: string) => {
-            if (!rulerFiles || !rulerFiles[tag]) return null;
-            
-            const rulers = rulerFiles[tag].rulers;
-            if (!rulers) return null;
-            
-            const rulerData = rulers[year.toString()];
-            if (!rulerData) return null;
-            
-            return rulerData;
-        };
-
-        if (!rulerFiles || !metadata || !selectedTag) {
+        if (!defaultRulerHistory || !metadata || !selectedTag) {
             return { tag: null, info: null };
         }
-        
-        // Try to get ruler info for the selected tag
-        let rulerData = getRulerInfoForTag(selectedTag);
+
+        const yearData = defaultRulerHistory[year.toString()];
+        if (!yearData || !Array.isArray(yearData)) {
+            return { tag: selectedTag, info: null };
+        }
+
+        // Find ruler for the selected tag (JSON uses uppercase keys)
+        let ruler = yearData.find((r: any) => r.TAG === selectedTag);
         let effectiveTag = selectedTag;
-        
+
         // If no ruler info, try fallback tags: ROM -> BYZ -> ROW
-        if (!rulerData) {
+        if (!ruler) {
             const fallbackTags = ['ROM', 'BYZ', 'ROW'];
             for (const fallbackTag of fallbackTags) {
                 if (fallbackTag !== selectedTag) {
-                    rulerData = getRulerInfoForTag(fallbackTag);
-                    if (rulerData) {
+                    ruler = yearData.find((r: any) => r.TAG === fallbackTag);
+                    if (ruler) {
                         console.log(`Falling back to ${fallbackTag}`);
                         effectiveTag = fallbackTag;
-                        // Auto-switch to the fallback tag
                         onTagChange(fallbackTag);
                         break;
                     }
                 }
             }
         }
-        
-        if (!rulerData) {
+
+        if (!ruler) {
             return { tag: effectiveTag, info: null };
         }
-        
+
         return {
             tag: effectiveTag,
             info: {
-                name: rulerData.name,
-                dynasty: rulerData.dynasty,
-                title: rulerData.title
+                name: ruler.NAME,
+                dynasty: ruler.DYNASTY,
+                title: ruler.TITLE
             }
         };
-    }, [selectedTag, year, rulerFiles, metadata, onTagChange]);
+    }, [selectedTag, year, defaultRulerHistory, metadata, onTagChange]);
 
     if (!rulerInfo.tag || !rulerInfo.info || !metadata) {
         return null;

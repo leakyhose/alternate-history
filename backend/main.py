@@ -12,15 +12,26 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 def read_root():
     return {"message": "Hello World!", "status": "running"}
 
-@app.get("/history/roman")
+@app.get("/rome/provinces")
 def get_roman_history():
-    file_path = os.path.join("static", "history", "roman.json")
+    file_path = os.path.join("static", "rome", "provinces.json")
     
     return FileResponse(
         file_path,
         media_type="application/json",
         headers={
-            "Cache-Control": "public, max-age=31536000, immutable",
-            "ETag": f'"roman-history-v1"'
+            "Cache-Control": "public, max-age=31536000, immutable"
+        }
+    )
+    
+@app.get("/rome/rulers")
+def get_roman_history():
+    file_path = os.path.join("static", "rome", "rulers.json")
+    
+    return FileResponse(
+        file_path,
+        media_type="application/json",
+        headers={
+            "Cache-Control": "public, max-age=31536000, immutable"
         }
     )
