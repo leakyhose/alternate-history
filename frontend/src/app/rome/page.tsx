@@ -13,7 +13,7 @@ export default function RomePage() {
   const [defaultRulerHistory, setDefaultRulerHistory] = useState<RulerHistory | null>(null)
 
   useEffect(() => {
-    fetch("/api/rome/provinces")
+    fetch("/api/rome/provinces", { cache: 'no-store' })
       .then(res => {
         if (!res.ok) {
           throw new Error(`${res.status}`)
@@ -23,7 +23,7 @@ export default function RomePage() {
       .then(data => setDefaultProvinceHistory(data))
       .catch(err => console.error(err))
 
-    fetch("/api/rome/rulers")
+    fetch("/api/rome/rulers", { cache: 'no-store' })
       .then(res => {
         if (!res.ok) {
           throw new Error(`${res.status}`)
