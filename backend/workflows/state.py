@@ -5,11 +5,12 @@ class WorkflowState(TypedDict, total=False):
     
     divergences: List[str]     
     start_year: int
-    end_year: int
-    start_ruler: str
-    start_ruler_dynasty: str
+    years_to_progress: int
     
-    provinces: List[str]
-    changes: List[str]    
-
+    ruler: str
+    ruler_title: str
+    ruler_age: int
+    ruler_dynasty: str
+    
+    logs: str
 
