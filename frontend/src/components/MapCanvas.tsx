@@ -39,6 +39,7 @@ export default function MapCanvas({ defaultProvinceHistory, scenarioMetadata, ye
   const isDragging = useRef(false);
   const provinceTextureData = useRef<Uint16Array | null>(null);
   const provinceToTagMap = useRef<Map<number, string>>(new Map());
+  const provinceIdToNameMap = useRef<Map<number, string>>(new Map());
 
   // Get color for a tag from scenario metadata, with fallback to map metadata
   const getTagColor = useCallback((tag: string, meta: MapMetadata, scenarioMeta?: ScenarioMetadata | null): number => {
@@ -64,16 +65,23 @@ export default function MapCanvas({ defaultProvinceHistory, scenarioMetadata, ye
         const ctx = await MapGpuContext.create();
 
         console.log('Loading map data...');
-        const [westRes, eastRes, metaRes] = await Promise.all([
+        const [westRes, eastRes, metaRes, namesRes] = await Promise.all([
           fetch('/provinces-west.bin'),
           fetch('/provinces-east.bin'),
           fetch('/provinces-metadata.json'),
+          fetch('/province-names.json'),
         ]);
 
         // Fetches Data
         const westData = new Uint16Array(await westRes.arrayBuffer());
         const eastData = new Uint16Array(await eastRes.arrayBuffer());
         const loadedMetadata: MapMetadata = await metaRes.json();
+        const provinceNames: Record<string, string> = await namesRes.json();
+        
+        // Store province names for tooltip
+        for (const [id, name] of Object.entries(provinceNames)) {
+          provinceIdToNameMap.current.set(parseInt(id), name);
+        }
 
         // Uploads textures
         await ctx.loadMapTextures(
@@ -302,6 +310,28 @@ export default function MapCanvas({ defaultProvinceHistory, scenarioMetadata, ye
         
         if (isDragging.current) {
           viewport.current.pan(-e.movementX, -e.movementY);
+        }
+      } else if (provinceTextureData.current && metadata) {
+        // Handle hover tooltip using native title attribute
+        const rect = canvas.getBoundingClientRect();
+        const canvasX = e.clientX - rect.left;
+        const canvasY = e.clientY - rect.top;
+        
+        // Convert canvas coordinates to map coordinates
+        const mapCoords = viewport.current.screenToMap(canvasX, canvasY);
+        const mapX = Math.floor(mapCoords.x);
+        const mapY = Math.floor(mapCoords.y);
+        
+        const totalWidth = metadata.westWidth * 2;
+        if (mapX >= 0 && mapX < totalWidth && mapY >= 0 && mapY < metadata.height) {
+          const index = mapY * totalWidth + mapX;
+          const provinceId = provinceTextureData.current[index];
+          
+          // Get province name and set as title
+          const provinceName = provinceIdToNameMap.current.get(provinceId);
+          canvas.title = provinceName || '';
+        } else {
+          canvas.title = '';
         }
       }
     };
