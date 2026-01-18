@@ -211,7 +211,6 @@ Each change needs:
 - change_type: CONQUEST (gain from untracked) | LOSS (lose to untracked) | TRANSFER (between tracked nations)
 - from_nation: Nation losing territory (null for CONQUEST)
 - to_nation: Nation gaining territory (null for LOSS)
-- context: Brief explanation
 
 === DIVERGENCE RULES ===
 - Divergences are changes that will affect FUTURE events

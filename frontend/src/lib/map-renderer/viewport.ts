@@ -17,8 +17,9 @@ export class MapViewport {
   // Fit map height to screen (initial view)
   fitToScreen() {
     // Calculate zoom so map height fits canvas height
-    this.zoom = (this.canvasSize.height / this.mapSize.height)*3;
-    this.position = { x: 2142, y: 236 };
+    this.zoom = this.canvasSize.height / this.mapSize.height;
+    // Start at top-left corner (neutral position)
+    this.position = { x: 0, y: 0 };
   }
   
   // Pan: move viewport

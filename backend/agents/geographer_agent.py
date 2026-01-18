@@ -33,6 +33,7 @@ from typing import Dict, List, Any, Optional
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.tools import tool
+from langchain_core.messages import ToolMessage
 from pydantic import BaseModel, Field
 
 from util.province_memory import (
@@ -509,11 +510,8 @@ Return your final JSON answer with areas and/or provinces for each change."""
             else:
                 result = f"Unknown tool: {tool_name}"
             
-            messages.append({
-                "role": "tool",
-                "content": result,
-                "tool_call_id": tool_call["id"]
-            })
+            # Use ToolMessage for proper Gemini 3 compatibility
+            messages.append(ToolMessage(content=result, tool_call_id=tool_call["id"]))
         
         response = llm_with_tools_auto.invoke(messages)
     
@@ -778,11 +776,8 @@ Query relevant regions and areas, then return JSON: {{"province_updates": [{{"id
             else:
                 result = f"Unknown tool: {tool_name}"
             
-            messages.append({
-                "role": "tool",
-                "content": result,
-                "tool_call_id": tool_call["id"]
-            })
+            # Use ToolMessage for proper Gemini 3 compatibility
+            messages.append(ToolMessage(content=result, tool_call_id=tool_call["id"]))
         
         response = llm_with_tools_auto.invoke(messages)
     
