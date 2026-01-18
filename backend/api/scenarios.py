@@ -58,3 +58,15 @@ def get_scenario_metadata(scenario_id: str):
         media_type="application/json",
         headers={"Cache-Control": "no-cache, no-store, must-revalidate"}
     )
+
+@router.get("/{scenario_id}/logo")
+def get_scenario_logo(scenario_id: str):
+    """Return logo image for a specific scenario."""
+    file_path = os.path.join(SCENARIOS_DIR, scenario_id, "logo.png")
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail=f"Logo for scenario '{scenario_id}' not found")
+    return FileResponse(
+        file_path,
+        media_type="image/png",
+        headers={"Cache-Control": "public, max-age=3600"}
+    )

@@ -4,7 +4,7 @@
 # Note: filter.py depends on agents.filter_agent which requires langchain_google_genai
 from workflows.nodes.filter import filter_node
 from workflows.nodes.initialize import initialize_game_node
-from workflows.nodes.agents import historian_node, dreamer_node, geographer_node, quotegiver_node
+from workflows.nodes.agents import historian_node, dreamer_node, geographer_node, quotegiver_node, illustrator_node
 from workflows.nodes.update import update_state_node, should_continue
 from workflows.nodes.memory import (
     get_province_memory,
@@ -23,6 +23,7 @@ __all__ = [
     "dreamer_node",
     "geographer_node",
     "quotegiver_node",
+    "illustrator_node",
     "update_state_node",
     "should_continue",
     # Memory

@@ -5,6 +5,7 @@ from agents.historian_agent import get_historical_context
 from agents.dreamer_agent import make_decision
 from agents.geographer_agent import interpret_territorial_changes
 from agents.quotegiver_agent import generate_quotes
+from agents.illustrator_agent import generate_portraits, enrich_quotes_with_portraits
 
 __all__ = [
     "filter_command",
@@ -12,4 +13,6 @@ __all__ = [
     "make_decision",
     "interpret_territorial_changes",
     "generate_quotes",
+    "generate_portraits",
+    "enrich_quotes_with_portraits",
 ]

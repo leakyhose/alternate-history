@@ -10,7 +10,7 @@ from agents.filter_agent import filter_command, filter_continuation_divergence
 from workflows.graph import workflow, continue_workflow
 from workflows.nodes import (
     get_current_provinces, reset_province_memory, get_province_memory, get_scenario_tags,
-    initialize_game_node, historian_node, dreamer_node, geographer_node, quotegiver_node, update_state_node
+    initialize_game_node, historian_node, dreamer_node, geographer_node, quotegiver_node, illustrator_node, update_state_node
 )
 from util.scenario import load_scenario_metadata
 from models.game import (
@@ -21,7 +21,6 @@ from util.province_memory import Province as MemoryProvince
 from workflows.state import LogEntry, RulerInfo
 
 router = APIRouter(tags=["workflow"])
-
 
 def safe_int(value, default=0):
     """Safely convert a value to int, handling empty strings and None."""
@@ -345,11 +344,22 @@ async def start_workflow_stream(request: StartRequest):
             # Run quotegiver node to generate quotes
             state.update(quotegiver_node(state))
 
-            # Emit quotegiver_complete event
+            # Emit quotegiver_complete event (quotes without portraits yet)
             quotegiver_output = state.get("quotegiver_output", {})
             quotes = quotegiver_output.get("quotes", [])
 
             yield f"data: {json.dumps({'event': 'quotegiver_complete', 'quotes': quotes})}\n\n"
+
+            await asyncio.sleep(0.1)
+
+            # Run illustrator node to generate portraits
+            state.update(illustrator_node(state))
+
+            # Emit illustrator_complete event with enriched quotes (including portraits)
+            illustrator_output = state.get("illustrator_output", {})
+            enriched_quotes = illustrator_output.get("enriched_quotes", quotes)
+
+            yield f"data: {json.dumps({'event': 'illustrator_complete', 'quotes': enriched_quotes})}\n\n"
 
             await asyncio.sleep(0.1)
 
@@ -524,11 +534,22 @@ async def continue_game_stream(game_id: str, request: ContinueRequest):
             # Run quotegiver node to generate quotes
             state.update(quotegiver_node(state))
 
-            # Emit quotegiver_complete event
+            # Emit quotegiver_complete event (quotes without portraits yet)
             quotegiver_output = state.get("quotegiver_output", {})
             quotes = quotegiver_output.get("quotes", [])
 
             yield f"data: {json.dumps({'event': 'quotegiver_complete', 'quotes': quotes})}\n\n"
+
+            await asyncio.sleep(0.1)
+
+            # Run illustrator node to generate portraits
+            state.update(illustrator_node(state))
+
+            # Emit illustrator_complete event with enriched quotes (including portraits)
+            illustrator_output = state.get("illustrator_output", {})
+            enriched_quotes = illustrator_output.get("enriched_quotes", quotes)
+
+            yield f"data: {json.dumps({'event': 'illustrator_complete', 'quotes': enriched_quotes})}\n\n"
 
             await asyncio.sleep(0.1)
 

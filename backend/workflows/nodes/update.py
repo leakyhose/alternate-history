@@ -9,7 +9,7 @@ def update_state_node(state: WorkflowState) -> dict:
     Update workflow state after agent iteration.
     
     - Apply territorial changes to province memory
-    - Append new log entry (with quotes from quotegiver)
+    - Append new log entry (with quotes from quotegiver/illustrator)
     - Update rulers and divergences from Dreamer output
     - Advance current_year
     - Condense old logs if needed
@@ -17,6 +17,7 @@ def update_state_node(state: WorkflowState) -> dict:
     """
     dreamer_output = state.get("dreamer_output", {})
     quotegiver_output = state.get("quotegiver_output", {})
+    illustrator_output = state.get("illustrator_output", {})
     territorial_changes = state.get("territorial_changes", [])
     current_year = state.get("current_year", state.get("start_year"))
     years_to_progress = state.get("years_to_progress", 20)
@@ -30,6 +31,10 @@ def update_state_node(state: WorkflowState) -> dict:
             applied = memory.apply_updates(territorial_changes)
             print(f"📍 Update: Applied {applied} province changes")
         
+        # Get quotes - prefer enriched quotes from illustrator (with portraits),
+        # fall back to quotegiver quotes (without portraits)
+        quotes = illustrator_output.get("enriched_quotes", quotegiver_output.get("quotes", []))
+        
         # Create new log entry with quotes
         new_year = current_year + years_to_progress
         new_log: LogEntry = {
@@ -37,7 +42,7 @@ def update_state_node(state: WorkflowState) -> dict:
             "narrative": dreamer_output.get("narrative", ""),
             "divergences": dreamer_output.get("updated_divergences", []),
             "territorial_changes_summary": dreamer_output.get("territorial_changes_summary", ""),
-            "quotes": quotegiver_output.get("quotes", [])
+            "quotes": quotes
         }
         logs.append(new_log)
         
@@ -64,7 +69,8 @@ def update_state_node(state: WorkflowState) -> dict:
             "historian_output": {},
             "dreamer_output": {},
             "territorial_changes": [],
-            "quotegiver_output": {}
+            "quotegiver_output": {},
+            "illustrator_output": {}
         }
     except Exception as e:
         print(f"❌ Update Error: {e}")

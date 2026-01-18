@@ -9,12 +9,13 @@ class RulerInfo(TypedDict):
     dynasty: str
 
 
-class Quote(TypedDict):
+class Quote(TypedDict, total=False):
     """A quote from a ruler."""
     tag: str
     ruler_name: str
     ruler_title: str
     quote: str
+    portrait_base64: str  # Optional base64-encoded pixel art portrait
 
 
 class LogEntry(TypedDict):
@@ -75,6 +76,19 @@ class QuotegiverOutput(TypedDict):
     quotes: List[Quote]
 
 
+class Portrait(TypedDict, total=False):
+    """A portrait of a ruler."""
+    tag: str
+    ruler_name: str
+    portrait_base64: str
+
+
+class IllustratorOutput(TypedDict):
+    """Output from the Illustrator agent."""
+    portraits: List[Portrait]
+    enriched_quotes: List[Quote]  # Quotes with portrait_base64 field added
+
+
 class WorkflowState(TypedDict, total=False):
     """Main workflow state for the alternate history simulation."""
     
@@ -85,9 +99,6 @@ class WorkflowState(TypedDict, total=False):
     
     # Scenario identification
     scenario_id: str                # Which scenario folder to use (e.g., "rome")
-    
-    # Core simulation parameters
-    divergences: List[str]          # Stack of active divergences
     start_year: int                 # Year when divergence begins (user-provided)
     years_to_progress: int          # Years remaining to simulate
     current_year: int               # Year after this iteration completes
@@ -105,6 +116,7 @@ class WorkflowState(TypedDict, total=False):
     dreamer_output: DreamerOutput       # Changes/decisions from Dreamer
     territorial_changes: List[ProvinceUpdate]  # Changes for Geographer to apply
     quotegiver_output: QuotegiverOutput # Quotes from the Quotegiver
+    illustrator_output: IllustratorOutput  # Portraits from the Illustrator
     
     # Merge state
     merged: bool                    # True if timeline converged back (at current_year)

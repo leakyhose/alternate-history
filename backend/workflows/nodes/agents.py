@@ -4,9 +4,9 @@ from agents.historian_agent import get_historical_context
 from agents.dreamer_agent import make_decision
 from agents.geographer_agent import interpret_territorial_changes
 from agents.quotegiver_agent import generate_quotes
+from agents.illustrator_agent import generate_portraits, enrich_quotes_with_portraits
 from util.scenario import get_scenario_tags
 from workflows.nodes.memory import get_province_memory
-
 
 def historian_node(state: WorkflowState) -> dict:
     """
@@ -156,9 +156,14 @@ def quotegiver_node(state: WorkflowState) -> dict:
     
     Analyzes the narrative and territorial changes, selects 1-2 most relevant
     rulers, and generates quotes from their perspective.
+    
+    IMPORTANT: Uses rulers from dreamer_output (AFTER the time period), not
+    the state's rulers (which are from BEFORE the time period).
     """
     dreamer_output = state.get("dreamer_output", {})
-    rulers = state.get("rulers", dreamer_output.get("rulers", {}))
+    # Use rulers from dreamer output - these are the rulers AFTER the time period
+    # (with updated ages, successors for deceased rulers, etc.)
+    rulers = dreamer_output.get("rulers", state.get("rulers", {}))
     current_year = state.get("current_year", state.get("start_year"))
     years_to_progress = state.get("years_to_progress", 20)
     scenario_id = state.get("scenario_id", "rome")
@@ -198,3 +203,69 @@ def quotegiver_node(state: WorkflowState) -> dict:
             "error": str(e),
             "error_node": "quotegiver"
         }
+
+
+def illustrator_node(state: WorkflowState) -> dict:
+    """
+    Illustrator Agent: Generate pixel art portraits for quoted rulers.
+    
+    Takes the quotes from quotegiver and generates low-resolution pixel art
+    headshots for each ruler, which are displayed alongside their quotes.
+    
+    IMPORTANT: Portraits are of rulers at the END of the time period.
+    """
+    quotegiver_output = state.get("quotegiver_output", {})
+    quotes = quotegiver_output.get("quotes", [])
+    current_year = state.get("current_year", state.get("start_year"))
+    years_to_progress = state.get("years_to_progress", 20)
+    scenario_id = state.get("scenario_id", "rome")
+    
+    # Use end year for portraits since rulers are from AFTER the time period
+    end_year = current_year + years_to_progress
+    year_range = f"{end_year} AD"
+    
+    print(f"🎨 Illustrator: generating portraits for rulers in {end_year} AD")
+    
+    if not quotes:
+        print("✓ Illustrator: No quotes to illustrate")
+        return {
+            "illustrator_output": {
+                "portraits": [],
+                "enriched_quotes": []
+            }
+        }
+    
+    # Get available nation tags from scenario metadata
+    available_tags = get_scenario_tags(scenario_id)
+    
+    try:
+        # Generate portraits for quoted rulers
+        portraits = generate_portraits(
+            quotes=quotes,
+            available_tags=available_tags,
+            year_range=year_range
+        )
+        
+        # Enrich quotes with portrait data
+        enriched_quotes = enrich_quotes_with_portraits(quotes, portraits)
+        
+        print(f"✓ Illustrator: {len(portraits)} portraits generated")
+        
+        return {
+            "illustrator_output": {
+                "portraits": portraits,
+                "enriched_quotes": enriched_quotes
+            }
+        }
+    except Exception as e:
+        print(f"❌ Illustrator Error: {e}")
+        # On error, return original quotes without portraits
+        return {
+            "illustrator_output": {
+                "portraits": [],
+                "enriched_quotes": quotes
+            },
+            "error": str(e),
+            "error_node": "illustrator"
+        }
+
