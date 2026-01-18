@@ -11,8 +11,10 @@ IMPORTANT: The Historian has NO knowledge of:
 - Previous alternate history events
 - What the Dreamer decided in past iterations
 
-It purely reports real history.
+It purely reports real history. For future time periods, it acts as a historian
+from that future time, reporting plausible events as if they happened.
 """
+from datetime import datetime
 from dotenv import load_dotenv
 import os
 import json
@@ -38,26 +40,33 @@ class HistorianOutput(BaseModel):
     )
 
 
-SYSTEM_PROMPT = """You are a historian specializing in the Roman/Byzantine Empire (117-1453 AD).
-Your role is to provide REAL historical context for a specific time period.
+def build_system_prompt(country_names: List[str], is_future: bool) -> str:
+    """Build a dynamic system prompt based on the countries involved."""
+    countries_str = ", ".join(country_names) if country_names else "world history"
+    
+    future_note = ""
+    if is_future:
+        future_note = """
+FUTURE PERIOD: The time period requested is in the future. You are a historian from that future era, 
+reporting what "actually happened" as if looking back. Create plausible, realistic events based on 
+current trends and geopolitical dynamics. Present these as historical fact, not speculation."""
+    
+    return f"""You are an expert historian specializing in {countries_str}.
+{future_note}
+Provide historical context for the specified time period as factual events.
 
-CRITICAL: You report ONLY what actually happened in real history. You have NO knowledge of any alternate timelines, divergences, or "what if" scenarios. You are purely a reference for actual historical events.
+Format your response as conditional events:
+- "condition": The circumstances or situation that existed
+- "outcome": What happened as a result
 
-Your response must include:
-1. "period": The year range as a string (e.g., "630-650")
-2. "conditional_events": Real historical events framed as conditions and outcomes. Format each as:
-   - "condition": The historical circumstances or situation that existed
-   - "outcome": What actually happened in real history as a result
+Focus on major events:
+- Leadership changes and political transitions
+- Wars, conflicts, and military campaigns  
+- Territorial changes
+- Major treaties and diplomatic events
+- Significant political or administrative changes
 
-Focus on major events relevant to the Roman/Byzantine world:
-- Succession crises and ruler changes
-- Wars and military campaigns
-- Invasions by external powers
-- Political and administrative changes
-- Major territorial gains or losses
-- Important treaties and diplomatic events
-
-Be specific with dates when known. Report what ACTUALLY happened, not hypotheticals."""
+Be specific with dates. Keep responses concise and relevant."""
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash-lite",
@@ -72,35 +81,61 @@ llm_structured = llm.with_structured_output(HistorianOutput)
 
 def get_historical_context(
     start_year: int,
-    years_to_progress: int
+    years_to_progress: int,
+    tags: Dict[str, dict] = None
 ) -> Dict[str, Any]:
     """
     Get real historical context for a time period.
     
     NOTE: This function intentionally does NOT take any alternate timeline
-    information (rulers, divergences, etc.) - only the time period.
+    information (rulers, divergences, etc.) - only the time period and countries.
     
     Args:
         start_year: The starting year of the period
         years_to_progress: How many years the period covers
+        tags: Dict of nation tags with their metadata (e.g., {"ROM": {"name": "Roman Empire"}})
         
     Returns:
         Dict with period and conditional_events from real history
     """
     end_year = start_year + years_to_progress
+    
+    # Extract country names from tags
+    country_names = []
+    if tags:
+        country_names = [tag_info.get("name", tag) for tag, tag_info in tags.items()]
+    
+    # Check if this is a future period
+    current_real_year = datetime.now().year
+    is_future = start_year > current_real_year
+    
+    # Build dynamic system prompt
+    system_prompt = build_system_prompt(country_names, is_future)
+    
+    # Build user prompt
+    countries_str = ", ".join(country_names) if country_names else "the region"
+    
+    if is_future:
+        user_prompt = f"""Provide historical context for {countries_str} during the period {start_year}-{end_year}.
 
-    user_prompt = f"""Provide the real historical context for the Byzantine/Roman Empire during the period {start_year}-{end_year} AD.
+As a historian from this future era, report what major events occurred:
+- Leadership and political changes
+- Conflicts and their outcomes
+- Territorial changes
+- Major diplomatic events
 
-What major events ACTUALLY happened in real history during this period? Include:
+Present these as established historical fact."""
+    else:
+        user_prompt = f"""Provide the real historical context for {countries_str} during the period {start_year}-{end_year}.
+
+What major events ACTUALLY happened during this period? Include:
 - Who was ruling and any succession changes
 - Major wars and their outcomes
 - Territorial changes
-- Important political events
-
-Report only factual history - no speculation or alternate scenarios."""
+- Important political events"""
 
     messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt}
     ]
     

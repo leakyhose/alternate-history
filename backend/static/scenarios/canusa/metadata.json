@@ -1,5 +1,5 @@
 {
-  "name": "Canada or the USA",
+  "name": "Canada and the US",
   "tags": {
     "CAN": { "name": "Canada", "color": "#FF0000" },
     "USA": { "name": "United States", "color": "#0A3161" }

@@ -16,13 +16,18 @@ def historian_node(state: WorkflowState) -> dict:
     """
     current_year = state.get("current_year", state.get("start_year"))
     years_to_progress = state.get("years_to_progress", 20)
+    scenario_id = state.get("scenario_id", "rome")
+    
+    # Get nation tags for the scenario
+    tags = get_scenario_tags(scenario_id)
     
     print(f"📚 Historian: {current_year}-{current_year + years_to_progress} AD")
     
     try:
         historian_output = get_historical_context(
             start_year=current_year,
-            years_to_progress=years_to_progress
+            years_to_progress=years_to_progress,
+            tags=tags
         )
         
         events_count = len(historian_output.get("conditional_events", []))
