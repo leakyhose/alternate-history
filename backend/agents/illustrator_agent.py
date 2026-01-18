@@ -85,7 +85,7 @@ def generate_portraits(
     try:
         model = ChatGoogleGenerativeAI(model="gemini-2.5-flash-image")
     except Exception as e:
-        print(f"⚠️ Failed to initialize Gemini model: {e}")
+        print(f"[Illustrator] WARNING: Failed to initialize Gemini model: {e}")
         return []
     
     for quote_data in quotes[:2]:  # Max 2 portraits
@@ -98,7 +98,7 @@ def generate_portraits(
         nation_info = available_tags.get(tag, {})
         nation_name = nation_info.get("name", tag if tag else "Unknown Nation")
         
-        print(f"🎨 Illustrator: Generating portrait for {ruler_name} of {nation_name}")
+        print(f"[Illustrator] Generating portrait for {ruler_name} of {nation_name}")
         
         # Generate the prompt
         prompt = generate_portrait_prompt(
@@ -122,12 +122,12 @@ def generate_portraits(
                     "ruler_name": ruler_name,
                     "portrait_base64": image_base64
                 })
-                print(f"✓ Portrait generated for {ruler_name}")
+                print(f"[Illustrator] Done: Portrait for {ruler_name}")
             else:
-                print(f"⚠️ No image data in response for {ruler_name}")
+                print(f"[Illustrator] WARNING: No image data for {ruler_name}")
                 
         except Exception as e:
-            print(f"⚠️ Failed to generate portrait for {ruler_name}: {e}")
+            print(f"[Illustrator] WARNING: Failed for {ruler_name}: {e}")
             # Continue with other portraits even if one fails
             continue
     

@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-// Backend URL for API calls
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+// Backend URL for API calls - strip trailing slash to avoid double-slash issues
+const BACKEND_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000').replace(/\/+$/, '')
 
 interface Scenario {
   id: string

@@ -155,12 +155,15 @@ def query_area_provinces(area_name: str) -> str:
     """
     Query the individual PROVINCES within a specific AREA.
     
-    ⚠️ USE SPARINGLY! You should almost always work at the AREA level.
-    Only use this tool when you need to:
-    - Split an area (e.g., "only the coastal provinces of Brittany")
-    - Handle a very specific location that doesn't align with area boundaries
+    ⛔⛔⛔ WARNING: YOU ALMOST NEVER NEED THIS TOOL! ⛔⛔⛔
     
-    For most territorial changes, just return the area name instead!
+    99% of the time, you should use transfer_areas() instead of drilling down to provinces.
+    
+    ONLY use this tool when you MUST split an area, such as:
+    - "Only the coastal provinces of Brittany" (specific provinces within an area)
+    - "The province containing city X" (a single specific province)
+    
+    If the change mentions a region, country, or area name - use AREAS, not provinces!
     
     Args:
         area_name: The area name (e.g., 'Brittany', 'Lower Egypt')
@@ -382,11 +385,17 @@ def transfer_areas(area_names: List[str], to_nation: str) -> str:
 @tool
 def transfer_provinces(province_ids: List[int], to_nation: str) -> str:
     """
-    🎯 ACTION TOOL: Transfer specific PROVINCES to a new owner.
+    ACTION TOOL: Transfer specific PROVINCES to a new owner.
     
-    ⚠️ USE SPARINGLY! Prefer transfer_areas() for most operations.
-    Only use this tool when you need to transfer specific provinces that don't
-    align with area boundaries (e.g., "only the coastal provinces").
+    ⛔⛔⛔ WARNING: YOU ALMOST NEVER NEED THIS TOOL! ⛔⛔⛔
+    
+    Use transfer_areas() instead! It's faster and cleaner.
+    
+    ONLY use transfer_provinces() when:
+    - You must transfer a subset of provinces WITHIN a single area
+    - The change explicitly names individual cities/provinces
+    
+    If the change mentions countries, regions, or areas - use transfer_areas()!
     
     Args:
         province_ids: List of province IDs to transfer (e.g., [358, 359, 360])
@@ -394,9 +403,6 @@ def transfer_provinces(province_ids: List[int], to_nation: str) -> str:
         
     Returns:
         Status message indicating which provinces were transferred
-        
-    Example usage:
-        - Transfer specific provinces: transfer_provinces([358, 359], "BYZ")
     """
     global _pending_updates
     
@@ -595,10 +601,13 @@ def untrack_areas(area_names: List[str]) -> str:
 @tool
 def untrack_provinces(province_ids: List[int]) -> str:
     """
-    🎯 ACTION TOOL: Mark specific PROVINCES as lost to untracked nations.
+    ACTION TOOL: Mark specific PROVINCES as lost to untracked nations.
     
-    ⚠️ USE SPARINGLY! Prefer untrack_areas() for most operations.
-    Only use when you need to untrack specific provinces.
+    ⛔⛔⛔ WARNING: YOU ALMOST NEVER NEED THIS TOOL! ⛔⛔⛔
+    
+    Use untrack_areas() instead! It's faster and cleaner.
+    
+    ONLY use this when you must untrack a subset of provinces within an area.
     
     Args:
         province_ids: List of province IDs to untrack (e.g., [358, 359])
@@ -669,78 +678,83 @@ def mark_complete() -> str:
 SYSTEM_PROMPT = """You are a geographer assistant for an alternate history simulation.
 Your job is to process territorial changes by calling ACTION TOOLS that directly modify province ownership.
 
-=== GEOGRAPHICAL HIERARCHY ===
-- REGIONS: Large areas (France, Egypt, Anatolia) - use get_available_regions()
-- AREAS: Medium subdivisions (Brittany, Lower Egypt) - use query_region_areas()  
-- PROVINCES: Individual territories - use query_area_provinces() ONLY when necessary
+============================================================
+CRITICAL RULES - READ THIS FIRST!
+============================================================
 
-=== AVAILABLE TOOLS ===
+1. NEVER QUERY PROVINCES! Use transfer_areas(), NOT transfer_provinces()!
+   - query_area_provinces() should be called in LESS THAN 1% of cases
+   - transfer_provinces() should be called in LESS THAN 1% of cases
+   - If you find yourself wanting to query provinces, STOP and use areas instead!
 
-📖 QUERY TOOLS (information gathering):
-- get_available_regions(): List all region names
-- query_region_areas(region_name): List areas in a region with ownership info
-- query_area_provinces(area_name): List provinces in an area (use sparingly!)
-- query_tag_territories(tag): List ALL territory owned by a nation
+2. WORK AT THE AREA LEVEL! Areas are the correct granularity for 99% of changes.
+   - "Transfer Quebec" → transfer_areas(["Lower Canada", "Laurentian", ...], "QUE")
+   - NOT: query each area's provinces and then transfer_provinces()
 
-🎯 ACTION TOOLS (modify provinces):
-- transfer_areas(area_names, to_nation): Transfer entire areas to a nation
-- transfer_provinces(province_ids, to_nation): Transfer specific provinces (use sparingly!)
+3. MINIMIZE QUERIES! Don't query what you don't need.
+   - If change says "Egypt" → query_region_areas("Egypt") DIRECTLY
+   - Do NOT call get_available_regions() first!
+   - If change says "All of BYZ" → annex_nation("BYZ", "ARB") DIRECTLY, NO queries!
+
+============================================================
+GEOGRAPHICAL HIERARCHY
+============================================================
+- REGIONS: Large areas (France, Egypt, Canada) 
+- AREAS: Medium subdivisions (Brittany, Lower Egypt, Lower Canada) ← WORK HERE!
+- PROVINCES: Individual territories ← ALMOST NEVER TOUCH THESE!
+
+============================================================
+TOOLS
+============================================================
+
+QUERY TOOLS (use sparingly):
+- get_available_regions(): List all regions - ONLY if you don't know the region name
+- query_region_areas(region_name): List areas in a region - this is your main query tool
+- query_area_provinces(area_name): ⛔ RARELY USE! Only for edge cases like splitting an area
+- query_tag_territories(tag): List all territory owned by a nation
+
+ACTION TOOLS:
+- transfer_areas(area_names, to_nation): ✅ PRIMARY TOOL - transfer entire areas
+- transfer_provinces(province_ids, to_nation): ⛔ RARELY USE! Only for specific province transfers
 - annex_nation(from_nation, to_nation): Transfer ALL territory from one nation to another
 - untrack_areas(area_names): Mark areas as lost to untracked nations
-- untrack_provinces(province_ids): Mark specific provinces as lost (use sparingly!)
+- untrack_provinces(province_ids): ⛔ RARELY USE! Only for specific province losses
 
-🏁 FINISH TOOL:
-- mark_complete(): Call this when you have processed ALL changes
+FINISH:
+- mark_complete(): Call when ALL changes are processed
 
-=== WORKFLOW ===
+============================================================
+WORKFLOW
+============================================================
 
-You will receive a list of territorial changes. Process them ONE AT A TIME in order:
+Process changes ONE AT A TIME in order:
 
-1. READ the change at the current index
-2. QUERY to find the relevant areas/provinces:
-   - For geographic locations: get_available_regions() → query_region_areas()
-   - For "all of X's territory": query_tag_territories(tag)
-3. CALL the appropriate ACTION tool:
-   - TRANSFER changes → transfer_areas() or transfer_provinces()
-   - CONQUEST changes → transfer_areas() (territory goes to to_nation)
-   - LOSS changes → untrack_areas() or untrack_provinces()
-   - "All of X goes to Y" → annex_nation()
-4. MOVE to the next index
-5. When ALL changes are processed, call mark_complete()
+1. READ the change
+2. QUERY ONLY if needed (usually just query_region_areas for the relevant region)
+3. CALL ACTION - almost always transfer_areas() or untrack_areas()
+4. NEXT change
+5. mark_complete() when done
 
-=== IMPORTANT RULES ===
+============================================================
+EXAMPLES
+============================================================
 
-⚠️ ALWAYS PREFER AREAS OVER PROVINCES!
-- Areas map well to historical territorial changes
-- Only drill down to provinces for very specific locations
+Change: "Quebec becomes independent from Canada"
+WRONG: query_area_provinces("Lower Canada"), then transfer_provinces([...])
+RIGHT: query_region_areas("Canada"), then transfer_areas(["Lower Canada", "Laurentian", ...], "QUE")
 
-⚠️ PROCESS CHANGES IN ORDER!
-- Go index by index: [0], then [1], then [2], etc.
-- Query what you need, call the action tool, then move on
-
-⚠️ USE THE RIGHT ACTION TOOL FOR EACH CHANGE TYPE!
-- CONQUEST: The to_nation gains territory → transfer_areas(..., to_nation)
-- LOSS: Territory goes to untracked nation → untrack_areas(...)
-- TRANSFER: Territory moves between tracked nations → transfer_areas(..., to_nation)
-
-=== EXAMPLES ===
-
-Change: "Egypt goes to ARB" (CONQUEST)
+Change: "Egypt goes to ARB" 
 → query_region_areas("Egypt") 
-→ transfer_areas(["Lower Egypt", "Upper Egypt", "Nile Delta"], "ARB")
+→ transfer_areas(["Lower Egypt", "Upper Egypt", ...], "ARB")
 
-Change: "All BYZ territory goes to ARB" (TRANSFER)
-→ annex_nation("BYZ", "ARB")
+Change: "All BYZ territory goes to ARB"
+→ annex_nation("BYZ", "ARB")  // NO queries needed!
 
-Change: "Gaul lost to Germanic tribes" (LOSS)  
+Change: "Gaul lost to Germanic tribes"  
 → query_region_areas("Gaul")
 → untrack_areas(["Brittany", "Normandy", "Aquitaine", ...])
 
-Change: "All BYZ except Constantinople goes to ARB"
-→ query_tag_territories("BYZ") to see what they own
-→ transfer_areas([all areas except the one with Constantinople], "ARB")
-
-After processing all changes:
+After ALL changes processed:
 → mark_complete()"""
 
 
@@ -867,7 +881,7 @@ def interpret_territorial_changes(
             "status": "No valid territorial changes to process."
         }
     
-    print(f"🗺️  Geographer: Processing {len(valid_changes)} territorial change(s)")
+    print(f"[Geographer] Processing {len(valid_changes)} territorial change(s)")
     
     # Format the changes for the prompt
     changes_text = []
@@ -935,10 +949,10 @@ Begin processing change [0]."""
         # Check if there are tool calls
         if not response.tool_calls:
             # No tool calls - LLM is done or confused
-            print(f"🗺️  Geographer: No tool calls in iteration {iteration}, finishing")
+            print(f"[Geographer] Iteration {iteration}: No tool calls, finishing")
             break
         
-        print(f"🗺️  Geographer: Iteration {iteration}, executing {len(response.tool_calls)} tool call(s)")
+        print(f"[Geographer] Iteration {iteration}: {len(response.tool_calls)} tool call(s)")
         
         messages.append(response)
         
@@ -946,12 +960,15 @@ Begin processing change [0]."""
             tool_name = tool_call["name"]
             tool_args = tool_call.get("args", {})
             
-            # Log action tools specially
-            if tool_name in ["transfer_areas", "transfer_provinces", "annex_nation", "untrack_areas", "untrack_provinces"]:
-                print(f"    🎯 ACTION: {tool_name}({tool_args})")
-            elif tool_name == "mark_complete":
-                print(f"    🏁 COMPLETE")
+            # Log all tool calls with their arguments
+            if tool_name == "mark_complete":
+                print(f"    -> COMPLETE")
                 completed = True
+            elif tool_name in ["transfer_areas", "transfer_provinces", "annex_nation", "untrack_areas", "untrack_provinces"]:
+                print(f"    -> {tool_name}({tool_args})")
+            else:
+                # Query tools - show what's being queried
+                print(f"    -> {tool_name}({tool_args})")
             
             # Execute the tool
             result = execute_tool(tool_name, tool_args)
@@ -966,7 +983,7 @@ Begin processing change [0]."""
     province_updates = _pending_updates.copy()
     update_count = len(province_updates)
     
-    status = f"✓ Geographer: {update_count} province update(s) generated via action tools"
+    status = f"[Geographer] Done: {update_count} province update(s) generated"
     print(status)
     
     return {

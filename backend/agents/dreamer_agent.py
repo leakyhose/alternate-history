@@ -192,6 +192,9 @@ The Historian provides context but may miss implications. YOU must consider:
 
 **Political Systems:**
 - Democracies/Republics: Leaders MUST change after term limits unless a divergence explains otherwise
+  * US Presidents: 4-year terms, max 2 terms (8 years). MUST have new president after 8 years.
+  * Prime Ministers (Canada, UK, etc.): No fixed terms, but elections every 4-5 years. Leaders often change after 8-12 years.
+  * Modern democracies: Expect leadership turnover every 4-10 years unless there's a specific reason (war, crisis, constitutional change).
 - Constitutional monarchies: Monarchs have limited power; parliaments matter
 - Authoritarian states: Succession crises are common; coups are possible
 

@@ -29,7 +29,7 @@ def update_state_node(state: WorkflowState) -> dict:
         memory = get_province_memory()
         if territorial_changes:
             applied = memory.apply_updates(territorial_changes)
-            print(f"📍 Update: Applied {applied} province changes")
+            print(f"[Update] Applied {applied} province changes")
         
         # Get quotes - prefer enriched quotes from illustrator (with portraits),
         # fall back to quotegiver quotes (without portraits)
@@ -56,7 +56,7 @@ def update_state_node(state: WorkflowState) -> dict:
         updated_divergences = dreamer_output.get("updated_divergences", state.get("divergences", []))
         merged = dreamer_output.get("merged", False)
         
-        print(f"✓ Update: Year {new_year} AD, {len(logs)} logs, merged={merged}")
+        print(f"[Update] Done: Year {new_year} AD, {len(logs)} logs, merged={merged}")
         
         return {
             "rulers": updated_rulers,
@@ -73,7 +73,7 @@ def update_state_node(state: WorkflowState) -> dict:
             "illustrator_output": {}
         }
     except Exception as e:
-        print(f"❌ Update Error: {e}")
+        print(f"[Update] ERROR: {e}")
         return {
             "current_year": current_year + years_to_progress,
             "error": str(e),

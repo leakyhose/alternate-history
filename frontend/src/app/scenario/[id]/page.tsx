@@ -24,7 +24,8 @@ import type {
 } from '@/types'
 
 // Direct backend URL for long-running workflow requests (bypasses Next.js proxy timeout)
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+// Strip trailing slash to avoid double-slash issues
+const BACKEND_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000').replace(/\/+$/, '')
 
 // Debug: Log at module load time (this runs when JS is parsed)
 console.log('='.repeat(50))

@@ -124,10 +124,10 @@ def filter_command(command: str, scenario_metadata: Optional[Dict[str, Any]] = N
             period_end=period.get("end", 2025)
         )
         tag_names = [info.get("name", tag) for tag, info in tags.items()]
-        print(f"✅ Using dynamic prompt for tags: {tag_names}, period: {period}")
+        print(f"[Filter] Using tags: {tag_names}, period: {period}")
     else:
         # Reject if no valid metadata - scenarios must have tags and period defined
-        print(f"❌ No valid scenario metadata. Metadata received: {scenario_metadata}")
+        print(f"[Filter] ERROR: No valid scenario metadata. Metadata received: {scenario_metadata}")
         return {
             "status": "rejected",
             "reason": "Scenario metadata missing tags or period",
@@ -209,7 +209,7 @@ def filter_continuation_divergence(command: str, current_year: int, scenario_met
     tags = scenario_metadata["tags"]
     system_prompt = build_continuation_system_prompt(tags, current_year)
     tag_names = [info.get("name", tag) for tag, info in tags.items()]
-    print(f"✅ Using continuation filter for tags: {tag_names}, current year: {current_year}")
+    print(f"[Filter] Continuation filter for tags: {tag_names}, current year: {current_year}")
     
     messages = [
         {"role": "system", "content": system_prompt},

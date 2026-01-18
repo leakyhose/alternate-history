@@ -9,7 +9,8 @@ from workflows.nodes import (
     illustrator_node,
     geographer_node,
     update_state_node,
-    should_continue
+    should_continue,
+    parallel_quote_geo_node,
 )
 
 
@@ -22,11 +23,10 @@ def build_graph() -> StateGraph:
     2. initialize_game_node: Set up game state, load provinces/rulers
     3. historian_node: Get real historical context for the period
     4. dreamer_node: Make creative decisions based on divergences
-    5. quotegiver_node: Generate memorable quotes from relevant rulers
-    6. illustrator_node: Generate pixel art portraits for quoted rulers
-    7. geographer_node: Translate territorial changes to province updates
-    8. update_state_node: Update state, advance year, check merge
-    9. Conditional: Continue iteration or end
+    5. parallel_quote_geo_node: Run quotegiver + geographer in PARALLEL
+    6. illustrator_node: Generate pixel art portraits (LAZY - async background)
+    7. update_state_node: Update state, advance year, check merge
+    8. Conditional: Continue iteration or end
     """
     graph = StateGraph(WorkflowState)
     
@@ -35,9 +35,8 @@ def build_graph() -> StateGraph:
     graph.add_node("initialize", initialize_game_node)
     graph.add_node("historian", historian_node)
     graph.add_node("dreamer", dreamer_node)
-    graph.add_node("quotegiver", quotegiver_node)
+    graph.add_node("parallel_quote_geo", parallel_quote_geo_node)  # Combined parallel node
     graph.add_node("illustrator", illustrator_node)
-    graph.add_node("geographer", geographer_node)
     graph.add_node("update_state", update_state_node)
     
     # Set entry point
@@ -60,17 +59,14 @@ def build_graph() -> StateGraph:
     # Historian -> Dreamer
     graph.add_edge("historian", "dreamer")
     
-    # Dreamer -> Quotegiver
-    graph.add_edge("dreamer", "quotegiver")
+    # Dreamer -> Parallel (Quotegiver + Geographer run together)
+    graph.add_edge("dreamer", "parallel_quote_geo")
     
-    # Quotegiver -> Illustrator
-    graph.add_edge("quotegiver", "illustrator")
+    # Parallel -> Illustrator (lazy/async portrait generation)
+    graph.add_edge("parallel_quote_geo", "illustrator")
     
-    # Illustrator -> Geographer
-    graph.add_edge("illustrator", "geographer")
-    
-    # Geographer -> Update State
-    graph.add_edge("geographer", "update_state")
+    # Illustrator -> Update State
+    graph.add_edge("illustrator", "update_state")
     
     # Update State -> Conditional (continue or end)
     graph.add_conditional_edges(
@@ -95,19 +91,17 @@ def build_continue_graph() -> StateGraph:
     Flow:
     1. historian_node
     2. dreamer_node
-    3. quotegiver_node
-    4. illustrator_node
-    5. geographer_node
-    6. update_state_node
+    3. parallel_quote_geo_node (quotegiver + geographer in parallel)
+    4. illustrator_node (lazy portrait generation)
+    5. update_state_node
     """
     graph = StateGraph(WorkflowState)
     
     # Add nodes (skip filter and initialize)
     graph.add_node("historian", historian_node)
     graph.add_node("dreamer", dreamer_node)
-    graph.add_node("quotegiver", quotegiver_node)
+    graph.add_node("parallel_quote_geo", parallel_quote_geo_node)
     graph.add_node("illustrator", illustrator_node)
-    graph.add_node("geographer", geographer_node)
     graph.add_node("update_state", update_state_node)
     
     # Set entry point
@@ -115,11 +109,10 @@ def build_continue_graph() -> StateGraph:
     
     # Define edges
     graph.add_edge("historian", "dreamer")
-    graph.add_edge("dreamer", "quotegiver")
-    graph.add_edge("quotegiver", "illustrator")
-    graph.add_edge("illustrator", "geographer")
-    graph.add_edge("geographer", "update_state")
-    
+    graph.add_edge("dreamer", "parallel_quote_geo")
+    graph.add_edge("parallel_quote_geo", "illustrator")
+    graph.add_edge("illustrator", "update_state")
+
     # Update State -> End (single iteration for continue)
     graph.add_edge("update_state", END)
     

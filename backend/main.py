@@ -8,11 +8,11 @@ from api.workflow import router as workflow_router
 app = FastAPI()
 
 # CORS middleware - allow all origins for hackathon demo
-# In production, you'd want to restrict this to specific domains
+# Note: allow_credentials must be False when using allow_origins=["*"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Allow all origins
-    allow_credentials=True,
+    allow_credentials=False,  # Must be False with wildcard origins
     allow_methods=["*"],
     allow_headers=["*"],
 )

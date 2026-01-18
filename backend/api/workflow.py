@@ -38,7 +38,7 @@ class StartRequest(BaseModel):
     """Request to start a new game."""
     command: str  # The divergence/what-if scenario
     scenario_id: str  # Which scenario to use (e.g., "rome")
-    years_to_progress: int = 5  # Default 5 years per iteration
+    years_to_progress: int = 15  # Default 15 years per iteration
 
 
 class StartResponse(BaseModel):
@@ -55,7 +55,7 @@ class StartResponse(BaseModel):
 class ContinueRequest(BaseModel):
     """Request to continue an existing game."""
     new_divergences: Optional[List[str]] = None  # Optional additional divergences
-    years_to_progress: int = 5
+    years_to_progress: int = 15
 
 
 class ContinueResponse(BaseModel):
@@ -941,6 +941,73 @@ async def get_game_rulers(game_id: str) -> dict:
             for tag, info in game.nation_tags.items()
         }
     }
+
+
+# =============================================================================
+# PORTRAIT CACHE ENDPOINTS
+# =============================================================================
+
+class PortraitStatusResponse(BaseModel):
+    """Response for portrait cache status."""
+    pending_count: int
+    cached_count: int
+
+
+class PortraitCheckRequest(BaseModel):
+    """Request to check/get portraits for specific rulers."""
+    rulers: List[Dict[str, str]]  # List of {ruler_name, nation_name, era_context}
+
+
+class PortraitCheckResponse(BaseModel):
+    """Response with available portraits."""
+    portraits: Dict[str, str]  # {cache_key: base64_image}
+    pending: List[str]  # List of cache keys still pending
+
+
+@router.get("/portraits/status")
+async def get_portrait_status() -> PortraitStatusResponse:
+    """Get the current portrait cache status."""
+    from util.portrait_cache import get_pending_count, get_all_cached_portraits
+    
+    cached_portraits = get_all_cached_portraits()
+    return PortraitStatusResponse(
+        pending_count=get_pending_count(),
+        cached_count=len(cached_portraits)
+    )
+
+
+@router.post("/portraits/check")
+async def check_portraits(request: PortraitCheckRequest) -> PortraitCheckResponse:
+    """
+    Check if portraits are available for specific rulers.
+    Returns cached portraits and lists which are still pending.
+    """
+    from util.portrait_cache import get_cached_portrait, is_portrait_pending, _make_cache_key
+    
+    portraits = {}
+    pending = []
+    
+    for ruler in request.rulers:
+        ruler_name = ruler.get("ruler_name", "")
+        nation_name = ruler.get("nation_name", "")
+        era_context = ruler.get("era_context", "")
+        
+        if not ruler_name or not nation_name:
+            continue
+        
+        cache_key = _make_cache_key(ruler_name, nation_name, era_context)
+        
+        # Check cache
+        portrait = get_cached_portrait(ruler_name, nation_name, era_context)
+        if portrait:
+            portraits[cache_key] = portrait
+        elif is_portrait_pending(ruler_name, nation_name, era_context):
+            pending.append(cache_key)
+    
+    return PortraitCheckResponse(
+        portraits=portraits,
+        pending=pending
+    )
 
 
 # Legacy endpoint for backward compatibility

@@ -22,10 +22,10 @@ def initialize_game_node(state: WorkflowState) -> dict:
     divergences = state.get("divergences", [])
     
     if start_year is None:
-        print("❌ Initialize: start_year is required")
+        print("[Initialize] ERROR: start_year is required")
         raise ValueError("start_year is required")
     
-    print(f"🎮 Initialize: {scenario_id}, year {start_year} AD")
+    print(f"[Initialize] {scenario_id}, year {start_year} AD")
     
     try:
         # Reset and load province memory for the scenario
@@ -37,7 +37,7 @@ def initialize_game_node(state: WorkflowState) -> dict:
         # Load rulers for start year from scenario
         rulers = _load_rulers_for_year(start_year, scenario_id)
         
-        print(f"✓ Initialize: {province_count} provinces, {len(rulers)} rulers")
+        print(f"[Initialize] Done: {province_count} provinces, {len(rulers)} rulers")
         
         # Create initial log entry (Log 0)
         initial_log: LogEntry = {
@@ -60,7 +60,7 @@ def initialize_game_node(state: WorkflowState) -> dict:
             "territorial_changes": []
         }
     except Exception as e:
-        print(f"❌ Initialize Error: {e}")
+        print(f"[Initialize] ERROR: {e}")
         raise
 
 

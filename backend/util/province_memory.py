@@ -192,12 +192,12 @@ class ProvinceMemory:
                     failed.append(f"ID {province_id} ({update.get('name', 'unknown')})")
         
         if added:
-            print(f"  📍 Added {len(added)} newly conquered provinces to tracking: {', '.join(added[:5])}")
+            print(f"    Added {len(added)} newly conquered provinces: {', '.join(added[:5])}")
             if len(added) > 5:
                 print(f"      ... and {len(added) - 5} more")
         
         if failed:
-            print(f"  ⚠ Skipped {len(failed)} provinces (not tracked and no owner specified): {', '.join(failed)}")
+            print(f"    WARNING: Skipped {len(failed)} provinces (not tracked): {', '.join(failed)}")
         
         return count
     
