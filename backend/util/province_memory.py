@@ -235,6 +235,8 @@ class ProvinceMemory:
 
 # Module-level region mapping cache
 _region_provinces: Optional[Dict[str, List[dict]]] = None
+_areas_cache: Optional[Dict[str, List[dict]]] = None
+_regions_to_areas_cache: Optional[Dict[str, List[str]]] = None
 
 
 def load_region_provinces() -> Dict[str, List[dict]]:
@@ -263,31 +265,112 @@ def load_region_provinces() -> Dict[str, List[dict]]:
     return _region_provinces
 
 
-def get_provinces_for_region(region_name: str) -> List[dict]:
+def load_areas() -> Dict[str, List[dict]]:
     """
-    Get list of provinces for a region.
+    Load the areas to provinces mapping.
+    
+    Returns:
+        Dict mapping area names to lists of province info dicts with 'id' and 'name'
+    """
+    global _areas_cache
+    
+    if _areas_cache is not None:
+        return _areas_cache
+    
+    file_path = os.path.join(_BACKEND_DIR, "static", "areas.json")
+    try:
+        with open(file_path, 'r') as f:
+            _areas_cache = json.load(f)
+    except FileNotFoundError:
+        print(f"Areas file not found: {file_path}")
+        _areas_cache = {}
+    except json.JSONDecodeError as e:
+        print(f"Error parsing areas: {e}")
+        _areas_cache = {}
+    
+    return _areas_cache
+
+
+def load_regions_to_areas() -> Dict[str, List[str]]:
+    """
+    Load the regions to areas mapping.
+    
+    Returns:
+        Dict mapping region names to lists of area names
+    """
+    global _regions_to_areas_cache
+    
+    if _regions_to_areas_cache is not None:
+        return _regions_to_areas_cache
+    
+    file_path = os.path.join(_BACKEND_DIR, "static", "regions.json")
+    try:
+        with open(file_path, 'r') as f:
+            _regions_to_areas_cache = json.load(f)
+    except FileNotFoundError:
+        print(f"Regions file not found: {file_path}")
+        _regions_to_areas_cache = {}
+    except json.JSONDecodeError as e:
+        print(f"Error parsing regions: {e}")
+        _regions_to_areas_cache = {}
+    
+    return _regions_to_areas_cache
+
+
+def get_all_region_names() -> List[str]:
+    """Get all available region names (from regions.json)."""
+    regions = load_regions_to_areas()
+    return list(regions.keys())
+
+
+def get_areas_for_region(region_name: str) -> List[str]:
+    """
+    Get list of area names for a region.
     
     Args:
-        region_name: The region name (e.g., "france_region")
+        region_name: The region name (e.g., "France", "Egypt")
+        
+    Returns:
+        List of area names within that region
+    """
+    regions = load_regions_to_areas()
+    return regions.get(region_name, [])
+
+
+def get_all_area_names() -> List[str]:
+    """Get all available area names."""
+    areas = load_areas()
+    return list(areas.keys())
+
+
+def get_provinces_for_area(area_name: str) -> List[dict]:
+    """
+    Get list of provinces for an area.
+    
+    Args:
+        area_name: The area name (e.g., "Brittany", "Lower Egypt")
         
     Returns:
         List of province dicts with 'id' and 'name' keys
     """
-    regions = load_region_provinces()
-    return regions.get(region_name, [])
+    areas = load_areas()
+    return areas.get(area_name, [])
 
 
-def get_all_region_names() -> List[str]:
-    """Get all available region names."""
-    regions = load_region_provinces()
-    return list(regions.keys())
-
-
-def find_region_by_province(province_id: int) -> Optional[str]:
-    """Find which region a province belongs to."""
-    regions = load_region_provinces()
-    for region_name, provinces in regions.items():
+def find_area_by_province(province_id: int) -> Optional[str]:
+    """Find which area a province belongs to."""
+    areas = load_areas()
+    for area_name, provinces in areas.items():
         for p in provinces:
             if p.get("id") == province_id:
-                return region_name
+                return area_name
+    return None
+
+
+def find_region_by_area(area_name: str) -> Optional[str]:
+    """Find which region an area belongs to."""
+    regions = load_regions_to_areas()
+    for region_name, areas in regions.items():
+        if area_name in areas:
+            return region_name
     return None
