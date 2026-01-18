@@ -7,7 +7,7 @@ happens in the alternate timeline. This is the "brain" of the simulation.
 from dotenv import load_dotenv
 import os
 import json
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Literal
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.tools import tool
@@ -27,16 +27,70 @@ class RulerInfo(BaseModel):
     dynasty: str = Field(description="The dynasty name")
 
 
+class TerritorialChange(BaseModel):
+    """A single structured territorial change.
+    
+    This provides an unambiguous way to communicate territorial changes between
+    the Dreamer and Geographer agents. The location is natural language (flexible),
+    but the change_type and nation tags are structured (no ambiguity).
+    
+    IMPORTANT: These changes describe the NET RESULT at the END of the period compared
+    to the beginning. If territory changed hands multiple times during the period,
+    only the final state matters. Do NOT list intermediate changes.
+    """
+    location: str = Field(
+        description="DETAILED natural language description of the location/region affected. "
+                    "Be as SPECIFIC as possible to help the geographer identify exact provinces: "
+                    "- Name multiple regions if applicable: 'Egypt, Cyrenaica, and Libya' "
+                    "- Use geographic boundaries: 'Syria south of Antioch to the Egyptian border' "
+                    "- Reference major cities: 'Asia Minor including Ephesus, Smyrna, and Pergamon' "
+                    "- Use rivers/mountains as boundaries: 'Mesopotamia east of the Euphrates' "
+                    "- Include sub-regions: 'Greece including Achaea, Macedonia, and Epirus' "
+                    "AVOID vague descriptions like 'eastern territories' or 'some land in the east'."
+    )
+    change_type: Literal[
+        "CONQUEST",      # Nation permanently gains territory from an untracked state
+        "LOSS",          # Nation permanently loses territory to an untracked state
+        "TRANSFER",      # Territory transfers between two tracked nations
+    ] = Field(
+        description="The type of territorial change representing the NET RESULT at period end. "
+                    "Use CONQUEST when a tracked nation ends the period controlling territory it didn't have before "
+                    "(gained from untracked peoples). Use LOSS when a tracked nation no longer controls territory "
+                    "it had at period start (lost to untracked peoples). Use TRANSFER when territory moved between "
+                    "two tracked nations by period end."
+    )
+    from_nation: Optional[str] = Field(
+        default=None,
+        description="Nation tag that owned this territory at the START of the period. "
+                    "Required for LOSS and TRANSFER. Null for CONQUEST (territory was untracked)."
+    )
+    to_nation: Optional[str] = Field(
+        default=None,
+        description="Nation tag that owns this territory at the END of the period. "
+                    "Required for CONQUEST and TRANSFER. Null for LOSS (territory becomes untracked)."
+    )
+    context: str = Field(
+        default="",
+        description="Brief context explaining why this change happened (for narrative purposes)"
+    )
+
+
 class DreamerOutput(BaseModel):
     """Structured output from the Dreamer agent."""
     rulers: Dict[str, RulerInfo] = Field(
-        description="Dictionary of nation tag -> ruler info. Only use valid tags: ROM, BYZ, ROW"
+        description="Dictionary of nation tag -> ruler info. Only use valid tags from scenario metadata."
     )
     narrative: str = Field(
         description="A concise narrative of what happened in this period. 2-4 sentences, around 50-80 words."
     )
-    territorial_changes_description: str = Field(
-        description="SPECIFIC description of territorial changes with actual region/city names"
+    territorial_changes: List[TerritorialChange] = Field(
+        default_factory=list,
+        description="List of structured territorial changes. Each change specifies location (natural language), "
+                    "change_type (CONQUEST/LOSS/TRANSFER/OCCUPATION/LIBERATION), and the nations involved."
+    )
+    territorial_changes_summary: str = Field(
+        description="Human-readable summary of territorial changes for display in the narrative log. "
+                    "This is prose for the user to read, separate from the detailed location data."
     )
     updated_divergences: List[str] = Field(
         description="List of current divergences that will affect future events"
@@ -76,19 +130,53 @@ You will receive:
 Your task is to:
 1. Evaluate which of the Historian's conditional events are triggered given the divergences
 2. Decide outcomes - events may be prevented, altered, or proceed as in real history
-3. Generate a compelling narrative of what happens. Ensure history is followed, but let creavity and "what ifs" flow
+3. Generate a compelling narrative of what happens. Ensure history is followed, but let creativity and "what ifs" flow
 4. Update rulers (handle deaths, successions, generate plausible heirs)
-5. Describe territorial changes in SPECIFIC geographic terms
+5. Specify territorial changes using the STRUCTURED FORMAT below
 6. Update divergences (remove resolved ones, add cascading effects)
 7. Determine if the timeline has merged back to normal history
 
-CRITICAL RULES FOR TERRITORIAL DESCRIPTIONS:
-- Be SPECIFIC about geography - name actual regions, provinces, cities
-- Do NOT say vague things like "half of Egypt" or "parts of Syria"
-- DO say "Upper Egypt", "the Nile Delta", "Syria up to the Euphrates", "Anatolia south of the Taurus mountains"
-- Distinguish between PERMANENT changes (conquered, annexed, ceded) and TEMPORARY changes (occupied, contested, raided)
-- Examples of permanent language: "conquered", "annexed", "now belongs to", "ceded to", "permanently lost"
-- Examples of temporary language: "occupied by", "contested between", "under siege", "raided by", "temporarily held"
+=== TERRITORIAL CHANGES FORMAT ===
+You MUST provide territorial changes as a structured list describing the NET TERRITORIAL CHANGES from the 
+START of this period to the END. These describe the FINAL STATE after 20 years, NOT intermediate events.
+
+IMPORTANT: If territory changes hands multiple times during the period, ONLY describe the NET CHANGE.
+Example: If BYZ loses Syria to Arabs, then reconquers it - there is NO NET CHANGE, so no territorial change entry needed.
+Example: If ROW loses Britannia to Saxons, briefly reconquers parts, then loses it again - the NET CHANGE is LOSS.
+
+Each change has:
+- location: DETAILED description of WHERE - this is critical for accurate province mapping!
+    * List ALL affected regions by name: "Thrace, Macedonia, Achaea, and Epirus"
+    * Use geographic boundaries: "Anatolia south of the Halys River"
+    * Reference major cities to clarify extent: "Syria including Antioch, Apamea, and Damascus"
+    * Use sub-regions: "Africa Proconsularis, Byzacena, and Numidia"
+    * Be EXHAUSTIVE - if 5 regions change hands, list all 5
+    * AVOID vague terms like "eastern provinces" or "some territories"
+- change_type: One of these EXACT labels:
+    * CONQUEST - A tracked nation gains territory from an UNTRACKED state (barbarians, Persians if not tracked, etc.)
+    * LOSS - A tracked nation loses territory to an UNTRACKED state (the province becomes untracked, owner becomes null)
+    * TRANSFER - Territory moves between TWO TRACKED nations (e.g., ROM gives Egypt to BYZ)
+- from_nation: The nation tag LOSING territory (required for LOSS, TRANSFER)
+- to_nation: The nation tag GAINING territory (required for CONQUEST, TRANSFER)
+- context: Brief explanation of why this happened
+
+IMPORTANT: When territory is lost to an untracked state (Visigoths, Vandals, Sassanids, etc.), use LOSS with 
+to_nation = null. This will UNTRACK the province (set owner to empty string). We only track provinces owned 
+by nations defined in the scenario metadata.
+
+EXAMPLES:
+1. BYZ conquers Armenia from Persia (Persia not tracked):
+   {"location": "Armenia, including Armenia Minor, Armenia Interior, and the regions around Theodosiopolis and Artaxata", "change_type": "CONQUEST", "from_nation": null, "to_nation": "BYZ", "context": "Byzantine reconquest"}
+
+2. ROW loses Britannia to Saxons (Saxons not tracked):
+   {"location": "Britannia including Britannia Prima, Britannia Secunda, Maxima Caesariensis, and Flavia Caesariensis", "change_type": "LOSS", "from_nation": "ROW", "to_nation": null, "context": "Saxon invasions"}
+
+3. ROM splits - eastern territories go to BYZ:
+   {"location": "Thrace, Macedonia, Achaea, Epirus, Crete, Asia, Lycia, Pamphylia, Galatia, Cappadocia, Pontus, Armenia, Cilicia, Syria, Phoenice, Palestine, Arabia, Egypt, Cyrenaica, Libya", "change_type": "TRANSFER", "from_nation": "ROM", "to_nation": "BYZ", "context": "Division of the empire"}
+
+=== TERRITORIAL CHANGES SUMMARY ===
+The territorial_changes_summary is a brief prose summary for display to the user.
+Keep it concise - the detailed location info goes in the territorial_changes list.
 
 RULES FOR DIVERGENCES:
 - Divergences should be RELEVANT changes from real history that affect future events
@@ -111,33 +199,16 @@ RULES FOR STATE SPLITTING AND FORMATION:
 - When a state splits (e.g., Roman Empire divides into East and West), you MUST:
   1. REMOVE the original tag from rulers (e.g., remove ROM entirely - no ruler for ROM)
   2. ADD the successor state tags with their respective rulers (e.g., add BYZ and ROW)
-  3. Clearly describe in territorial_changes_description which regions belong to which new state
+  3. Use TRANSFER changes to assign territories to the new states
 - Example: If the Roman Empire (ROM) splits in 395 AD:
   - Remove ROM from rulers completely
-  - Add BYZ (Eastern Roman Empire) with ruler and territories: "Thrace, Asia Minor, Syria, Egypt, Greece"
-  - Add ROW (Western Roman Empire) with ruler and territories: "Italy, Gaul, Hispania, Africa Proconsularis, Britannia"
-- When describing territorial ownership after a split, be EXPLICIT about which state controls what:
-  - DO: "The Eastern Empire (BYZ) now controls Thrace, Greece, Asia Minor, Syria, Palestine, and Egypt. The Western Empire (ROW) controls Italy, Gaul, Hispania, Africa, and Britannia."
-  - DON'T: "The empire split into two halves" (too vague)
+  - Add BYZ (Eastern Roman Empire) with ruler
+  - Add ROW (Western Roman Empire) with ruler
+  - Add TRANSFER: location="Thrace, Greece, Asia Minor, Syria, Palestine, Egypt", from_nation="ROM", to_nation="BYZ"
+  - Add TRANSFER: location="Italy, Gaul, Hispania, Africa, Britannia", from_nation="ROM", to_nation="ROW"
 - If states REUNIFY, remove the split tags and restore the unified tag with combined territories
 
-OUTPUT FORMAT (STRICT JSON):
-{
-  "rulers": {
-    "TAG": {
-      "name": "Ruler Name",
-      "title": "Emperor/King/etc",
-      "age": 45,
-      "dynasty": "Dynasty Name"
-    }
-  },
-  "narrative": "A CONCISE narrative of 2-4 sentences (50-80 words max). Focus on the most important events: key battles, ruler changes, major political shifts. Write in past tense.",
-  "territorial_changes_description": "SPECIFIC description of territorial changes. Name actual regions and cities. Clearly distinguish permanent conquests from temporary occupations. If no changes, explain why briefly.",
-  "updated_divergences": ["List of current divergences that will affect future events"],
-  "merged": false
-}
-
-ONLY RETURN VALID JSON. No markdown code blocks, no extra text."""
+ONLY RETURN VALID JSON matching the DreamerOutput schema. No markdown code blocks, no extra text."""
 
 
 llm = ChatGoogleGenerativeAI(
@@ -198,7 +269,7 @@ def format_logs_context(
             year_range = log.get("year_range", "Unknown period")
             narrative = log.get("narrative", "No narrative")
             divergences = log.get("divergences", [])
-            territorial = log.get("territorial_changes_description", "")
+            territorial = log.get("territorial_changes_summary", log.get("territorial_changes_description", ""))
             
             parts.append(f"\n[{year_range}]")
             parts.append(f"Narrative: {narrative}")
@@ -250,8 +321,8 @@ def make_decision(
         available_tags: Dict of valid nation tags from scenario metadata
         
     Returns:
-        Dict with rulers, narrative, territorial_changes_description, 
-        updated_divergences, and merged flag
+        Dict with rulers, narrative, territorial_changes (structured list),
+        territorial_changes_summary, updated_divergences, and merged flag
     """
     global _available_tags
     _available_tags = available_tags or {}
@@ -298,6 +369,13 @@ Based on the divergences and historical context, decide:
 4. What divergences remain active or emerge?
 5. Has the timeline essentially merged back to real history? If there are no more divergences, it should merge.
 
+For territorial changes, use the STRUCTURED FORMAT with change_type labels:
+- CONQUEST: Tracked nation gains from untracked (to_nation required, from_nation null)
+- LOSS: Tracked nation loses to untracked (from_nation required, to_nation null - province becomes UNTRACKED)
+- TRANSFER: Between two tracked nations (both from_nation and to_nation required)
+- OCCUPATION: Temporary control change (owner unchanged, controller changes)
+- LIBERATION: Occupation ends
+
 Generate a compelling narrative and return your decision as JSON."""
 
     messages = [
@@ -313,7 +391,8 @@ Generate a compelling narrative and return your decision as JSON."""
         result = {
             "rulers": {tag: ruler.model_dump() for tag, ruler in structured_response.rulers.items()},
             "narrative": structured_response.narrative,
-            "territorial_changes_description": structured_response.territorial_changes_description,
+            "territorial_changes": [change.model_dump() for change in structured_response.territorial_changes],
+            "territorial_changes_summary": structured_response.territorial_changes_summary,
             "updated_divergences": structured_response.updated_divergences,
             "merged": structured_response.merged
         }
@@ -407,13 +486,22 @@ Generate a compelling narrative and return your decision as JSON."""
         
         result = json.loads(content)
         
-        # Validate required fields
+        # Validate required fields - handle both old and new format for backward compatibility
         if "rulers" not in result:
             result["rulers"] = rulers  # Keep existing rulers
         if "narrative" not in result:
             result["narrative"] = f"The period {current_year}-{end_year} AD saw continued developments."
-        if "territorial_changes_description" not in result:
-            result["territorial_changes_description"] = "No significant territorial changes occurred."
+        
+        # Handle territorial changes - support both old and new format
+        if "territorial_changes" not in result:
+            result["territorial_changes"] = []
+        if "territorial_changes_summary" not in result:
+            # Fall back to old field name if present
+            result["territorial_changes_summary"] = result.get(
+                "territorial_changes_description", 
+                "No significant territorial changes occurred."
+            )
+        
         if "updated_divergences" not in result:
             result["updated_divergences"] = divergences  # Keep existing
         if "merged" not in result:
@@ -438,7 +526,8 @@ Generate a compelling narrative and return your decision as JSON."""
         return {
             "rulers": rulers,
             "narrative": f"The period {current_year}-{end_year} AD saw continued developments as divergences shaped events.",
-            "territorial_changes_description": "Unable to determine territorial changes due to parsing error.",
+            "territorial_changes": [],
+            "territorial_changes_summary": "Unable to determine territorial changes due to parsing error.",
             "updated_divergences": divergences,
             "merged": False
         }

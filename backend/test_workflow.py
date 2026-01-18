@@ -148,7 +148,7 @@ def test_workflow(divergence: str, years_to_progress: int = 20):
         "year_range": f"-{start_year} AD",
         "narrative": f"History up to {start_year} AD proceeded as in our timeline.",
         "divergences": [divergence],
-        "territorial_changes_description": f"Territorial state as of {start_year} AD."
+        "territorial_changes_summary": f"Territorial state as of {start_year} AD."
     }
     
     dreamer_output = make_decision(
@@ -170,8 +170,12 @@ def test_workflow(divergence: str, years_to_progress: int = 20):
     print(f"\nNarrative:")
     print(f"  {dreamer_output.get('narrative', 'No narrative')}")
     
-    print(f"\nTerritorial Changes:")
-    print(f"  {dreamer_output.get('territorial_changes_description', 'None')}")
+    print(f"\nTerritorial Changes (structured):")
+    for change in dreamer_output.get("territorial_changes", []):
+        print(f"  • {change.get('change_type')}: {change.get('location')} (from: {change.get('from_nation')}, to: {change.get('to_nation')})")
+    
+    print(f"\nTerritorial Changes Summary:")
+    print(f"  {dreamer_output.get('territorial_changes_summary', 'None')}")
     
     print(f"\nUpdated Divergences:")
     for div in dreamer_output.get("updated_divergences", []):
@@ -180,17 +184,18 @@ def test_workflow(divergence: str, years_to_progress: int = 20):
     print(f"\nMerged: {dreamer_output.get('merged', False)}")
     
     # Step 4: Geographer Agent
-    territorial_description = dreamer_output.get("territorial_changes_description", "")
+    territorial_changes = dreamer_output.get("territorial_changes", [])
     
     print("\n" + "="*60)
     print("STEP 4: GEOGRAPHER AGENT")
     print("="*60)
-    print(f"Input territorial description:")
-    print(f"  {territorial_description[:200]}..." if len(territorial_description) > 200 else f"  {territorial_description}")
+    print(f"Input territorial changes: {len(territorial_changes)} structured change(s)")
+    for i, change in enumerate(territorial_changes):
+        print(f"  [{i}] {change.get('change_type')}: {change.get('location')}")
     print("-"*40)
     
     geographer_output = interpret_territorial_changes(
-        territorial_description=territorial_description,
+        territorial_changes=territorial_changes,
         scenario_id=scenario_id,
         current_provinces=None  # In full workflow, this would be from province memory
     )
@@ -201,8 +206,7 @@ def test_workflow(divergence: str, years_to_progress: int = 20):
     print(f"\nProvince Updates ({len(province_updates)} total):")
     if province_updates:
         for update in province_updates[:20]:  # Show first 20
-            control_str = f", control: {update['control']}" if update.get('control') else ""
-            print(f"  ID {update['id']} ({update['name']}): owner={update['owner']}{control_str}")
+            print(f"  ID {update['id']} ({update['name']}): owner={update['owner']}")
         if len(province_updates) > 20:
             print(f"  ... and {len(province_updates) - 20} more")
     else:

@@ -44,7 +44,7 @@ def initialize_game_node(state: WorkflowState) -> dict:
             "year_range": f"-{start_year} AD",
             "narrative": _generate_initial_narrative(start_year, scenario_id),
             "divergences": divergences.copy(),
-            "territorial_changes_description": _generate_initial_territorial_summary(start_year, scenario_id)
+            "territorial_changes_summary": _generate_initial_territorial_summary(start_year, scenario_id)
         }
         
         return {

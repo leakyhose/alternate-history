@@ -49,7 +49,7 @@ export interface LogEntry {
   year_range: string;
   narrative: string;
   divergences: string[];
-  territorial_changes_description: string;
+  territorial_changes_summary: string;
 }
 
 export interface RulerInfo {

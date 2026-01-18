@@ -98,10 +98,10 @@ export default function GamePanel({
                 <div key={idx} className="border-b border-[#2a2a3a] pb-4 last:border-b-0">
                   <div className="text-amber-400 font-bold mb-2 text-base">{log.year_range}</div>
                   <p className="text-gray-200 text-base leading-relaxed mb-3">{log.narrative}</p>
-                  {log.territorial_changes_description && (
+                  {log.territorial_changes_summary && (
                     <div className="mt-2">
                       <div className="text-amber-600 text-sm font-bold uppercase mb-1">Territorial Changes</div>
-                      <p className="text-gray-300 text-sm leading-relaxed">{log.territorial_changes_description}</p>
+                      <p className="text-gray-300 text-sm leading-relaxed">{log.territorial_changes_summary}</p>
                     </div>
                   )}
                   {log.divergences && log.divergences.length > 0 && (

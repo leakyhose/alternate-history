@@ -89,7 +89,8 @@ def dreamer_node(state: WorkflowState) -> dict:
             "dreamer_output": {
                 "rulers": rulers,
                 "narrative": f"[Error in Dreamer agent: {str(e)}]",
-                "territorial_changes_description": "",
+                "territorial_changes": [],
+                "territorial_changes_summary": "",
                 "updated_divergences": divergences,
                 "merged": False
             },
@@ -102,11 +103,11 @@ def geographer_node(state: WorkflowState) -> dict:
     """
     Geographer Agent: Translate territorial descriptions to province updates.
     
-    Interprets Dreamer's prose and converts to OWNER/CONTROL changes.
-    Uses tools to query regions and find province IDs.
+    Interprets Dreamer's STRUCTURED territorial changes and converts to OWNER/CONTROL changes.
+    Uses tools to query regions and find province IDs, then applies change_type deterministically.
     """
     dreamer_output = state.get("dreamer_output", {})
-    territorial_description = dreamer_output.get("territorial_changes_description", "")
+    territorial_changes = dreamer_output.get("territorial_changes", [])
     scenario_id = state.get("scenario_id", "rome")
     
     print(f"🗺️  Geographer: processing territorial changes")
@@ -117,7 +118,7 @@ def geographer_node(state: WorkflowState) -> dict:
     
     try:
         geographer_output = interpret_territorial_changes(
-            territorial_description=territorial_description,
+            territorial_changes=territorial_changes,
             scenario_id=scenario_id,
             current_provinces=current_provinces
         )

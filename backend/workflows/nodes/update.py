@@ -35,7 +35,7 @@ def update_state_node(state: WorkflowState) -> dict:
             "year_range": f"{current_year}-{new_year} AD",
             "narrative": dreamer_output.get("narrative", ""),
             "divergences": dreamer_output.get("updated_divergences", []),
-            "territorial_changes_description": dreamer_output.get("territorial_changes_description", "")
+            "territorial_changes_summary": dreamer_output.get("territorial_changes_summary", "")
         }
         logs.append(new_log)
         

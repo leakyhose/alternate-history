@@ -135,7 +135,7 @@ async def start_workflow(request: StartRequest) -> StartResponse:
                 "year_range": str(log.get("year_range", "")),
                 "narrative": str(log.get("narrative", "")),
                 "divergences": list(log.get("divergences", [])),
-                "territorial_changes_description": str(log.get("territorial_changes_description", ""))
+                "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", "")))
             })
         
         # Ensure rulers are serializable
@@ -243,7 +243,7 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
                 "year_range": str(log.get("year_range", "")),
                 "narrative": str(log.get("narrative", "")),
                 "divergences": list(log.get("divergences", [])),
-                "territorial_changes_description": str(log.get("territorial_changes_description", ""))
+                "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", "")))
             })
         
         rulers = final_state.get("rulers", {})
@@ -305,7 +305,7 @@ async def get_game_state(game_id: str) -> GameStateResponse:
                 "year_range": str(log.get("year_range", "")),
                 "narrative": str(log.get("narrative", "")),
                 "divergences": list(log.get("divergences", [])),
-                "territorial_changes_description": str(log.get("territorial_changes_description", ""))
+                "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", "")))
             })
         
         return GameStateResponse(

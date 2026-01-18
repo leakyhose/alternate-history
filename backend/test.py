@@ -21,7 +21,7 @@ state.update({
         "year_range": "-630 AD",
         "narrative": "The Byzantine Empire under Heraclius has just concluded a devastating war with Persia. However, in this timeline, the Sassanid Empire collapsed earlier due to internal strife, leaving Byzantium less exhausted.",
         "divergences": ["Sassanid Empire collapsed 10 years earlier due to internal rebellion"],
-        "territorial_changes_description": "At 630 AD, the Byzantine Empire controls its traditional eastern territories including Egypt, Syria, Palestine, and Anatolia. The former Sassanid territories are in chaos with no central authority."
+        "territorial_changes_summary": "At 630 AD, the Byzantine Empire controls its traditional eastern territories including Egypt, Syria, Palestine, and Anatolia. The former Sassanid territories are in chaos with no central authority."
     }]
 })
 dreamer_result = dreamer_node(state)

@@ -1,13 +1,26 @@
 """
 Geographer Agent - Translates territorial descriptions to province updates.
 
-The Geographer interprets the Dreamer's prose descriptions of territorial changes
-and converts them into specific province-level OWNER and CONTROL updates.
+The Geographer interprets the Dreamer's STRUCTURED territorial changes
+and converts them into specific province-level OWNER updates.
+
+The Dreamer provides structured changes with:
+- location: Natural language description of WHERE
+- change_type: CONQUEST | LOSS | TRANSFER
+- from_nation: Nation losing territory (if applicable)
+- to_nation: Nation gaining territory (if applicable)
+
+These changes describe the NET TERRITORIAL STATE at the END of the period,
+compared to the beginning. Intermediate changes during the period are not tracked.
+
+The Geographer's job is to:
+1. Resolve the natural language "location" to specific province IDs
+2. Apply the change based on change_type (no interpretation of intent needed)
 """
 from dotenv import load_dotenv
 import os
 import json
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Literal
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.tools import tool
@@ -34,7 +47,13 @@ class ProvinceUpdate(BaseModel):
     id: int = Field(description="The province ID")
     name: str = Field(description="The province name")
     owner: str = Field(description="The new owner tag (e.g., 'BYZ', 'ARB'), or empty string '' if lost to an untracked state")
-    control: str = Field(default="", description="The controller tag if different from owner (for contested/occupied)")
+
+
+class LocationResolution(BaseModel):
+    """Resolution of a location description to province IDs."""
+    province_ids: List[int] = Field(
+        description="List of province IDs that match the location description"
+    )
 
 
 class GeographerOutput(BaseModel):
@@ -98,11 +117,7 @@ def query_region_provinces(region_name: str) -> str:
         current = _current_provinces_cache.get(prov_id)
         if current:
             owner = current.get('owner', '?')
-            control = current.get('control', '')
-            if control and control != owner:
-                lines.append(f"  - ID {prov_id}: {name} [owner: {owner}, controlled by: {control}]")
-            else:
-                lines.append(f"  - ID {prov_id}: {name} [owner: {owner}]")
+            lines.append(f"  - ID {prov_id}: {name} [owner: {owner}]")
         else:
             lines.append(f"  - ID {prov_id}: {name} [not tracked]")
     
@@ -110,44 +125,40 @@ def query_region_provinces(region_name: str) -> str:
 
 
 SYSTEM_PROMPT = """You are a geographer assistant for an alternate history simulation.
-Your job is to translate prose descriptions of territorial changes into specific province-level updates.
+Your job is to resolve natural language location descriptions to specific province IDs.
+
+You will receive STRUCTURED territorial changes with:
+- location: Natural language description (e.g., "Egypt", "Syria up to the Euphrates", "Thrace and Greece")
+- change_type: The type of change (CONQUEST, LOSS, TRANSFER)
+- from_nation / to_nation: The nations involved
+
+YOUR ONLY JOB is to find which province IDs match each location description.
+You do NOT need to interpret intent - the change_type already tells us what to do.
 
 WORKFLOW:
 1. First, call get_available_regions to see all region names
-2. Identify which regions match the areas mentioned in the territorial description  
+2. For each territorial change, identify which regions match the location description
 3. Call query_region_provinces for each relevant region to get province IDs
-4. After gathering the province data, STOP calling tools and return your final JSON answer
+4. Return the list of province IDs for each change
 
-WHEN TO CREATE UPDATES:
-
-1. CONQUEST/ANNEXATION (nation gains new territory):
-   - If provinces are "[not tracked]" and a tracked nation (BYZ, ROM, etc.) conquers them → ADD them
-   - Set: owner = conquering_nation, control = ""
-
-2. LOSS TO UNTRACKED STATE (nation loses territory):
-   - If provinces are owned by a tracked nation and lost to an untracked state (Bulgars, Seljuks, etc.)
-   - Set: owner = "" (empty string), control = ""
-
-3. TRANSFER BETWEEN TRACKED NATIONS:
-   - If a province changes from one tracked nation to another
-   - Set: owner = new_nation, control = ""
-
-IMPORTANT: After you have queried the relevant regions, return your final answer as a JSON object. Do not keep calling tools.
-
-OUTPUT FORMAT (return this as your final response, not a tool call):
+OUTPUT FORMAT (return as final response):
 {
-  "province_updates": [
-    {"id": 123, "name": "Province Name", "owner": "TAG", "control": ""},
+  "resolutions": [
+    {
+      "change_index": 0,
+      "province_ids": [101, 102, 103],
+      "province_names": ["Alexandria", "Memphis", "Thebes"]
+    },
     ...
   ]
 }
 
-If there are no changes needed, return: {"province_updates": []}"""
+The change_index corresponds to the index of the territorial change in the input list."""
 
 
 # Initialize LLM with timeout
 llm = ChatGoogleGenerativeAI(
-    model="gemini-3-flash-preview",
+    model="gemini-2.0-flash",
     google_api_key=os.getenv("GEMINI_API_KEY"),
     timeout=120,  # 2 minute timeout
     max_retries=2
@@ -164,67 +175,103 @@ llm_with_tools_auto = llm.bind_tools(tools, tool_choice="auto")
 llm_structured = llm.with_structured_output(GeographerOutput)
 
 
-def interpret_territorial_changes(
-    territorial_description: str,
-    scenario_id: str = "rome",
-    current_provinces: Optional[List[Dict[str, Any]]] = None
-) -> Dict[str, Any]:
+def apply_change_type(
+    change_type: str,
+    from_nation: Optional[str],
+    to_nation: Optional[str],
+    province_id: int,
+    province_name: str,
+    current_owner: str
+) -> Optional[Dict[str, Any]]:
     """
-    Interpret territorial changes from prose description into province updates.
+    Apply a structured change type to determine the new owner value.
+    
+    Returns a province update dict, or None if no change is needed.
+    
+    Change types:
+    - CONQUEST: Tracked nation gains from untracked → owner = to_nation
+    - LOSS: Tracked nation loses to untracked → owner = "" (UNTRACK the province)
+    - TRANSFER: Between tracked nations → owner = to_nation
+    
+    IMPORTANT: These describe the NET change from period start to end.
+    When a province is LOST to an untracked state (barbarians, Persians, etc.),
+    we set owner = "" (empty string). This effectively UNTRACKS the province - we only
+    track provinces owned by nations defined in the scenario metadata.
+    """
+    new_owner = current_owner
+    
+    if change_type == "CONQUEST":
+        # Tracked nation gains territory from untracked state
+        # to_nation is required, from_nation is null/untracked
+        if to_nation:
+            new_owner = to_nation
+        else:
+            return None  # Invalid: CONQUEST needs to_nation
+            
+    elif change_type == "LOSS":
+        # Tracked nation loses territory to untracked state
+        # Province becomes UNTRACKED (owner = empty string)
+        # This is used when territory is lost to barbarians, Persians (if not tracked), etc.
+        # from_nation should be the current owner, to_nation is null
+        new_owner = ""  # Untrack the province - no tracked nation owns it
+        
+    elif change_type == "TRANSFER":
+        # Territory moves between two tracked nations
+        # Both from_nation and to_nation required
+        if to_nation:
+            new_owner = to_nation
+        else:
+            return None  # Invalid: TRANSFER needs to_nation
+            
+    else:
+        print(f"⚠️ Unknown change_type: {change_type}")
+        return None
+    
+    # Only return an update if something changed
+    if new_owner != current_owner:
+        return {
+            "id": province_id,
+            "name": province_name,
+            "owner": new_owner
+        }
+    return None
+
+
+def resolve_locations_with_llm(
+    territorial_changes: List[Dict[str, Any]],
+    scenario_id: str = "rome"
+) -> Dict[int, List[Dict[str, Any]]]:
+    """
+    Use LLM to resolve natural language locations to province IDs.
     
     Args:
-        territorial_description: Prose description of territorial changes from Dreamer
-        scenario_id: The scenario ID for looking up nation tags
-        current_provinces: Optional list of current province states (for context)
+        territorial_changes: List of structured territorial changes from Dreamer
+        scenario_id: The scenario ID
         
     Returns:
-        Dict with province_updates list
+        Dict mapping change_index -> list of {province_id, province_name}
     """
-    global _available_tags, _region_names_cache, _current_provinces_cache
-    
-    # Load available nation tags
-    _available_tags = get_scenario_tags(scenario_id)
+    global _region_names_cache
     
     # Pre-load region names
     _region_names_cache = get_all_region_names()
     
-    # Build province lookup cache from current provinces
-    _current_provinces_cache = {}
-    if current_provinces:
-        for p in current_provinces:
-            prov_id = p.get("id")
-            if prov_id is not None:
-                _current_provinces_cache[prov_id] = p
+    # Format the changes for the prompt
+    changes_text = []
+    for i, change in enumerate(territorial_changes):
+        location = change.get("location", "Unknown")
+        change_type = change.get("change_type", "Unknown")
+        from_nation = change.get("from_nation", "N/A")
+        to_nation = change.get("to_nation", "N/A")
+        changes_text.append(
+            f"  [{i}] Location: \"{location}\" (change_type: {change_type}, from: {from_nation}, to: {to_nation})"
+        )
     
-    # If no territorial changes described, return empty
-    if not territorial_description or territorial_description.strip() == "":
-        return {"province_updates": []}
-    
-    # Check for explicit "no changes" statements
-    no_change_phrases = [
-        "no territorial changes",
-        "no significant territorial",
-        "borders remained",
-        "no changes occurred",
-        "territory unchanged"
-    ]
-    if any(phrase in territorial_description.lower() for phrase in no_change_phrases):
-        return {"province_updates": []}
-    
-    # Format available tags for the prompt
-    tags_text = "Available nation tags:\n"
-    if _available_tags:
-        for tag, info in _available_tags.items():
-            tags_text += f"  - {tag}: {info.get('name', 'Unknown')}\n"
-    else:
-        tags_text += "  - Use standard tags: ROM, BYZ, ARB, etc.\n"
-    
-    user_prompt = f"""=== TERRITORIAL CHANGES ===
-{territorial_description}
+    user_prompt = f"""Resolve these territorial change locations to province IDs:
 
-=== {tags_text}
+{chr(10).join(changes_text)}
 
-Query the relevant regions to find province IDs, then return your final JSON answer with province_updates."""
+Query the relevant regions to find province IDs for each location, then return your final JSON answer."""
 
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
@@ -235,26 +282,19 @@ Query the relevant regions to find province IDs, then return your final JSON ans
     max_iterations = 10
     iteration = 0
     
-    print(f"🗺️  Geographer: Sending initial request to LLM...")
-    # First call: force tool use to ensure the model queries regions
+    print(f"🗺️  Geographer: Resolving {len(territorial_changes)} location(s)...")
     response = llm_with_tools_required.invoke(messages)
-    print(f"🗺️  Geographer: Initial response - tool_calls: {len(response.tool_calls) if response.tool_calls else 0}, content length: {len(response.content) if response.content else 0}")
-    if not response.tool_calls:
-        print(f"🗺️  Geographer: No tool calls! Response content: {response.content[:500] if response.content else 'Empty'}")
     
     while response.tool_calls and iteration < max_iterations:
         iteration += 1
         print(f"🗺️  Geographer: Iteration {iteration}, executing {len(response.tool_calls)} tool calls")
         
-        # Add the AI response with tool calls
         messages.append(response)
         
-        # Execute each tool call
         for tool_call in response.tool_calls:
             tool_name = tool_call["name"]
             tool_args = tool_call.get("args", {})
             
-            # Execute the appropriate tool
             if tool_name == "get_available_regions":
                 result = get_available_regions.invoke({})
             elif tool_name == "query_region_provinces":
@@ -268,7 +308,6 @@ Query the relevant regions to find province IDs, then return your final JSON ans
                 "tool_call_id": tool_call["id"]
             })
         
-        # Subsequent calls: use "auto" so the model can choose to finish
         response = llm_with_tools_auto.invoke(messages)
     
     # Extract the final response
@@ -313,33 +352,258 @@ Query the relevant regions to find province IDs, then return your final JSON ans
         
         result = json.loads(content)
         
-        # Validate structure
+        # Convert to our expected format: change_index -> list of provinces
+        resolutions = {}
+        for resolution in result.get("resolutions", []):
+            change_index = resolution.get("change_index", 0)
+            province_ids = resolution.get("province_ids", [])
+            province_names = resolution.get("province_names", [])
+            
+            provinces = []
+            for j, pid in enumerate(province_ids):
+                name = province_names[j] if j < len(province_names) else f"Province {pid}"
+                provinces.append({"id": pid, "name": name})
+            
+            resolutions[change_index] = provinces
+        
+        return resolutions
+        
+    except json.JSONDecodeError as e:
+        print(f"❌ Failed to parse geographer response: {e}")
+        print(f"Raw response: {content[:500] if content else 'Empty'}")
+        return {}
+
+
+def interpret_territorial_changes(
+    territorial_changes: List[Dict[str, Any]],
+    scenario_id: str = "rome",
+    current_provinces: Optional[List[Dict[str, Any]]] = None
+) -> Dict[str, Any]:
+    """
+    Interpret STRUCTURED territorial changes into province updates.
+    
+    This is the new format where the Dreamer provides structured changes with:
+    - location: Natural language description of WHERE
+    - change_type: CONQUEST | LOSS | TRANSFER | OCCUPATION | LIBERATION
+    - from_nation: Nation losing territory (if applicable)
+    - to_nation: Nation gaining territory (if applicable)
+    
+    The Geographer resolves locations to province IDs and applies the change_type
+    deterministically - no interpretation of intent needed.
+    
+    IMPORTANT: When change_type is LOSS, the province becomes UNTRACKED (owner = "").
+    This happens when territory is lost to a nation not defined in the scenario metadata
+    (e.g., barbarians, Persians if not tracked). We only track provinces owned by
+    nations in the scenario metadata.
+    
+    Args:
+        territorial_changes: List of structured territorial change dicts from Dreamer
+        scenario_id: The scenario ID for looking up nation tags
+        current_provinces: Optional list of current province states (for context)
+        
+    Returns:
+        Dict with province_updates list
+    """
+    global _available_tags, _region_names_cache, _current_provinces_cache
+    
+    # Load available nation tags
+    _available_tags = get_scenario_tags(scenario_id)
+    
+    # Pre-load region names
+    _region_names_cache = get_all_region_names()
+    
+    # Build province lookup cache from current provinces
+    _current_provinces_cache = {}
+    if current_provinces:
+        for p in current_provinces:
+            prov_id = p.get("id")
+            if prov_id is not None:
+                _current_provinces_cache[prov_id] = p
+    
+    # If no territorial changes, return empty
+    if not territorial_changes:
+        return {"province_updates": []}
+    
+    # Filter out any changes that are just informational (no actual change)
+    valid_changes = [
+        c for c in territorial_changes 
+        if c.get("change_type") and c.get("location")
+    ]
+    
+    if not valid_changes:
+        return {"province_updates": []}
+    
+    print(f"🗺️  Geographer: Processing {len(valid_changes)} territorial change(s)")
+    for i, change in enumerate(valid_changes):
+        print(f"    [{i}] {change.get('change_type')}: {change.get('location')} "
+              f"(from: {change.get('from_nation')}, to: {change.get('to_nation')})")
+    
+    # Use LLM to resolve locations to province IDs
+    resolutions = resolve_locations_with_llm(valid_changes, scenario_id)
+    
+    # Apply changes based on change_type (deterministic, no LLM needed)
+    province_updates = []
+    
+    for i, change in enumerate(valid_changes):
+        change_type = change.get("change_type", "")
+        from_nation = change.get("from_nation")
+        to_nation = change.get("to_nation")
+        
+        # Get resolved provinces for this change
+        resolved_provinces = resolutions.get(i, [])
+        
+        if not resolved_provinces:
+            print(f"⚠️ No provinces resolved for change [{i}]: {change.get('location')}")
+            continue
+        
+        print(f"🗺️  Applying {change_type} to {len(resolved_provinces)} province(s)")
+        
+        for prov in resolved_provinces:
+            prov_id = prov["id"]
+            prov_name = prov["name"]
+            
+            # Get current state
+            current = _current_provinces_cache.get(prov_id, {})
+            current_owner = current.get("owner", "")
+            
+            # Apply the change type
+            update = apply_change_type(
+                change_type=change_type,
+                from_nation=from_nation,
+                to_nation=to_nation,
+                province_id=prov_id,
+                province_name=prov_name,
+                current_owner=current_owner
+            )
+            
+            if update:
+                province_updates.append(update)
+    
+    print(f"✓ Geographer: {len(province_updates)} province update(s) generated")
+    
+    return {"province_updates": province_updates}
+
+
+# Keep backward compatibility with old prose-based interface
+def interpret_territorial_changes_legacy(
+    territorial_description: str,
+    scenario_id: str = "rome",
+    current_provinces: Optional[List[Dict[str, Any]]] = None
+) -> Dict[str, Any]:
+    """
+    LEGACY: Interpret territorial changes from prose description.
+    
+    This is the old interface kept for backward compatibility.
+    New code should use interpret_territorial_changes with structured changes.
+    """
+    global _available_tags, _region_names_cache, _current_provinces_cache
+    
+    # Load available nation tags
+    _available_tags = get_scenario_tags(scenario_id)
+    _region_names_cache = get_all_region_names()
+    
+    _current_provinces_cache = {}
+    if current_provinces:
+        for p in current_provinces:
+            prov_id = p.get("id")
+            if prov_id is not None:
+                _current_provinces_cache[prov_id] = p
+    
+    if not territorial_description or territorial_description.strip() == "":
+        return {"province_updates": []}
+    
+    no_change_phrases = [
+        "no territorial changes",
+        "no significant territorial",
+        "borders remained",
+        "no changes occurred",
+        "territory unchanged"
+    ]
+    if any(phrase in territorial_description.lower() for phrase in no_change_phrases):
+        return {"province_updates": []}
+    
+    print(f"⚠️ Using legacy prose-based territorial interpretation")
+    print(f"   Consider updating to use structured territorial_changes")
+    
+    # Use the old prose-based system prompt
+    legacy_prompt = """You are a geographer assistant. Translate prose territorial descriptions into province updates.
+Query regions with get_available_regions and query_region_provinces, then return JSON with province_updates."""
+    
+    tags_text = "Available nation tags:\n"
+    if _available_tags:
+        for tag, info in _available_tags.items():
+            tags_text += f"  - {tag}: {info.get('name', 'Unknown')}\n"
+    
+    user_prompt = f"""=== TERRITORIAL CHANGES ===
+{territorial_description}
+
+=== {tags_text}
+
+Query relevant regions, then return JSON: {{"province_updates": [{{"id": 123, "name": "...", "owner": "TAG"}}]}}"""
+
+    messages = [
+        {"role": "system", "content": legacy_prompt},
+        {"role": "user", "content": user_prompt}
+    ]
+    
+    max_iterations = 10
+    iteration = 0
+    
+    response = llm_with_tools_required.invoke(messages)
+    
+    while response.tool_calls and iteration < max_iterations:
+        iteration += 1
+        messages.append(response)
+        
+        for tool_call in response.tool_calls:
+            tool_name = tool_call["name"]
+            tool_args = tool_call.get("args", {})
+            
+            if tool_name == "get_available_regions":
+                result = get_available_regions.invoke({})
+            elif tool_name == "query_region_provinces":
+                result = query_region_provinces.invoke(tool_args)
+            else:
+                result = f"Unknown tool: {tool_name}"
+            
+            messages.append({
+                "role": "tool",
+                "content": result,
+                "tool_call_id": tool_call["id"]
+            })
+        
+        response = llm_with_tools_auto.invoke(messages)
+    
+    content = response.content
+    if isinstance(content, list):
+        content = "\n".join(str(b) for b in content)
+    content = content.strip() if content else ""
+    
+    try:
+        if "```json" in content:
+            start = content.find("```json") + 7
+            end = content.find("```", start)
+            if end > start:
+                content = content[start:end].strip()
+        
+        if not content.startswith("{"):
+            brace_start = content.find("{")
+            if brace_start != -1:
+                depth = 0
+                for i, char in enumerate(content[brace_start:], brace_start):
+                    if char == "{":
+                        depth += 1
+                    elif char == "}":
+                        depth -= 1
+                        if depth == 0:
+                            content = content[brace_start:i+1]
+                            break
+        
+        result = json.loads(content)
         if "province_updates" not in result:
             result["province_updates"] = []
-        
-        # Validate province updates format
-        valid_updates = []
-        for update in result.get("province_updates", []):
-            if isinstance(update, dict) and "id" in update:
-                valid_update = {
-                    "id": update["id"],
-                    "name": update.get("name", f"Province {update['id']}"),
-                    "owner": update.get("owner", ""),
-                    "control": update.get("control", "")
-                }
-                # Include updates even if owner is empty (lost to untracked state)
-                # But require at least id to be valid
-                valid_updates.append(valid_update)
-        
-        result["province_updates"] = valid_updates
-        
         return result
         
     except json.JSONDecodeError as e:
-        print(f"Failed to parse geographer response: {e}")
-        print(f"Raw response: {content[:500] if content else 'Empty'}")
-        
-        # Return empty result on parse failure
-        return {
-            "province_updates": []
-        }
+        print(f"Failed to parse legacy geographer response: {e}")
+        return {"province_updates": []}

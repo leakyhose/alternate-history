@@ -14,7 +14,7 @@ class LogEntry(TypedDict):
     year_range: str                    # e.g., "630-650 AD" or "-630 AD" for initial
     narrative: str                     # Human-readable story
     divergences: List[str]             # Divergences active at this point
-    territorial_changes_description: str  # Prose describing territorial changes
+    territorial_changes_summary: str   # Prose summary of territorial changes (for display)
 
 
 class HistorianOutput(TypedDict, total=False):
@@ -25,11 +25,25 @@ class HistorianOutput(TypedDict, total=False):
     conditional_events: List[Dict[str, str]]
 
 
+class TerritorialChange(TypedDict, total=False):
+    """A single structured territorial change from the Dreamer.
+    
+    These describe NET territorial changes from period START to END,
+    not intermediate events during the period.
+    """
+    location: str           # Natural language description of WHERE
+    change_type: str        # CONQUEST | LOSS | TRANSFER
+    from_nation: str        # Nation losing territory (optional)
+    to_nation: str          # Nation gaining territory (optional)
+    context: str            # Brief explanation (optional)
+
+
 class DreamerOutput(TypedDict, total=False):
     """Output from the Dreamer agent."""
     rulers: Dict[str, RulerInfo]
     narrative: str
-    territorial_changes_description: str
+    territorial_changes: List[TerritorialChange]  # Structured changes for Geographer
+    territorial_changes_summary: str              # Human-readable summary for display
     updated_divergences: List[str]
     merged: bool
 
@@ -38,8 +52,7 @@ class ProvinceUpdate(TypedDict):
     """A single province update from the Geographer."""
     id: int
     name: str
-    owner: str
-    control: str
+    owner: str      # Empty string "" means UNTRACKED (lost to non-scenario nation)
 
 
 class GeographerOutput(TypedDict):
