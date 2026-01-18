@@ -28,8 +28,9 @@ export default function GameInfoPanel({
   // Check if we're in a streaming loading state
   const isDreaming = streamingPhase === 'dreaming'
   const isQuoting = streamingPhase === 'quoting'
+  const isIllustrating = streamingPhase === 'illustrating'
   const isMapping = streamingPhase === 'mapping'
-  const isStreaming = isDreaming || isQuoting || isMapping
+  const isStreaming = isDreaming || isQuoting || isIllustrating || isMapping
 
   // Get logs up to the selected point
   const visibleLogs = useMemo(() => {
@@ -57,7 +58,7 @@ export default function GameInfoPanel({
     return (
       <button
         onClick={() => setIsCollapsed(false)}
-        className="absolute top-32 right-5 bg-[#1a1a24] border-2 border-[#2a2a3a] p-3 z-30
+        className="absolute bottom-24 right-5 bg-[#1a1a24] border-2 border-[#2a2a3a] p-3 z-30
                    text-amber-400 hover:bg-[#2a2a3a] transition-colors"
       >
         ◀
@@ -66,7 +67,7 @@ export default function GameInfoPanel({
   }
 
   return (
-    <div className="absolute top-32 right-5 bottom-24 w-96 bg-[#1a1a24] border-2 border-[#2a2a3a]
+    <div className="absolute bottom-24 right-5 w-96 max-h-[60vh] bg-[#1a1a24] border-2 border-[#2a2a3a]
                     flex flex-col z-30 shadow-lg">
       {/* Header with tabs */}
       <div className="flex items-center justify-between border-b border-[#2a2a3a] px-2">
@@ -125,6 +126,14 @@ export default function GameInfoPanel({
           </div>
         )}
 
+        {isIllustrating && (
+          <div className="flex flex-col items-center justify-center py-4 mb-4 border-b border-[#2a2a3a]">
+            <div className="text-amber-400 text-sm font-medium animate-pulse">
+              Illustrator is painting ruler portraits...
+            </div>
+          </div>
+        )}
+
         {isMapping && (
           <div className="flex flex-col items-center justify-center py-4 mb-4 border-b border-[#2a2a3a]">
             <div className="text-amber-400 text-sm font-medium animate-pulse">
@@ -145,12 +154,24 @@ export default function GameInfoPanel({
                   {log.quotes && log.quotes.length > 0 && (
                     <div className="mt-3 space-y-2">
                       {log.quotes.map((q, qIdx) => (
-                        <div key={qIdx} className="bg-[#0a0a14] border-l-2 border-amber-600 pl-3 py-2 pr-2 rounded-r">
-                          <p className="text-gray-200 italic text-sm leading-relaxed">"{q.quote}"</p>
-                          <p className="text-amber-500 text-xs mt-1 font-medium">
-                            — {q.ruler_name}, {q.ruler_title}
-                            {q.tag && nationTags[q.tag] ? ` of ${nationTags[q.tag].name}` : q.tag ? ` of ${q.tag}` : ''}
-                          </p>
+                        <div key={qIdx} className="bg-[#0a0a14] border-l-2 border-amber-600 pl-3 py-2 pr-2 rounded-r flex items-start gap-3">
+                          {q.portrait_base64 && (
+                            <div className="flex-shrink-0">
+                              <img 
+                                src={`data:image/png;base64,${q.portrait_base64}`}
+                                alt={`Portrait of ${q.ruler_name}`}
+                                className="w-12 h-12 rounded border border-amber-600/30 object-cover"
+                                style={{ imageRendering: 'pixelated' }}
+                              />
+                            </div>
+                          )}
+                          <div className="flex-1 min-w-0">
+                            <p className="text-gray-200 italic text-sm leading-relaxed">&ldquo;{q.quote}&rdquo;</p>
+                            <p className="text-amber-500 text-xs mt-1 font-medium">
+                              — {q.ruler_name}, {q.ruler_title}
+                              {q.tag && nationTags[q.tag] ? ` of ${nationTags[q.tag].name}` : q.tag ? ` of ${q.tag}` : ''}
+                            </p>
+                          </div>
                         </div>
                       ))}
                     </div>

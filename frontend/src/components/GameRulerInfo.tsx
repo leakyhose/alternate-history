@@ -40,7 +40,7 @@ export default function GameRulerInfo({
   const nationName = nationTags[displayTag]?.name || displayTag
 
   return (
-    <div className="absolute bottom-5 left-5 min-w-60 max-w-64 bg-[#1a1a24] border-2 border-[#2a2a3a] p-4 shadow-[inset_0_0_0_1px_#0a0a10,0_2px_0_#0a0a10] text-amber-400 z-20">
+    <div className="absolute bottom-24 left-5 w-96 bg-[#1a1a24] border-2 border-[#2a2a3a] p-4 shadow-[inset_0_0_0_1px_#0a0a10,0_2px_0_#0a0a10] text-amber-400 z-20">
       {/* Country Name */}
       <h2 className="text-3xl font-bold text-center tracking-wide">
         {nationName}

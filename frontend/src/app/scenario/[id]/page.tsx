@@ -260,7 +260,21 @@ export default function ScenarioPage() {
                   break
 
                 case 'quotegiver_complete':
-                  // Update the log entry with quotes
+                  // Update the log entry with quotes (without portraits yet)
+                  setGameLogs(prev => {
+                    if (prev.length === 0) return prev
+                    const updated = [...prev]
+                    updated[updated.length - 1] = {
+                      ...updated[updated.length - 1],
+                      quotes: data.quotes
+                    }
+                    return updated
+                  })
+                  setStreamingPhase('illustrating')
+                  break
+
+                case 'illustrator_complete':
+                  // Update the log entry with enriched quotes (including portraits)
                   setGameLogs(prev => {
                     if (prev.length === 0) return prev
                     const updated = [...prev]
@@ -389,7 +403,21 @@ export default function ScenarioPage() {
                   break
 
                 case 'quotegiver_complete':
-                  // Update the latest log entry with quotes
+                  // Update the latest log entry with quotes (without portraits yet)
+                  setGameLogs(prev => {
+                    if (prev.length === 0) return prev
+                    const updated = [...prev]
+                    updated[updated.length - 1] = {
+                      ...updated[updated.length - 1],
+                      quotes: data.quotes
+                    }
+                    return updated
+                  })
+                  setStreamingPhase('illustrating')
+                  break
+
+                case 'illustrator_complete':
+                  // Update the latest log entry with enriched quotes (including portraits)
                   setGameLogs(prev => {
                     if (prev.length === 0) return prev
                     const updated = [...prev]
@@ -562,7 +590,21 @@ export default function ScenarioPage() {
                   break
 
                 case 'quotegiver_complete':
-                  // Update the latest log entry with quotes
+                  // Update the latest log entry with quotes (without portraits yet)
+                  setGameLogs(prev => {
+                    if (prev.length === 0) return prev
+                    const updated = [...prev]
+                    updated[updated.length - 1] = {
+                      ...updated[updated.length - 1],
+                      quotes: data.quotes
+                    }
+                    return updated
+                  })
+                  setStreamingPhase('illustrating')
+                  break
+
+                case 'illustrator_complete':
+                  // Update the latest log entry with enriched quotes (including portraits)
                   setGameLogs(prev => {
                     if (prev.length === 0) return prev
                     const updated = [...prev]

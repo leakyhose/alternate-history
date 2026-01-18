@@ -54,6 +54,7 @@ export interface Quote {
   ruler_name: string;
   ruler_title: string;
   quote: string;
+  portrait_base64?: string;  // Base64 encoded pixel art portrait (optional)
 }
 
 export interface LogEntry {
@@ -141,7 +142,7 @@ export interface ProvinceSnapshot {
 
 // Streaming types for SSE partial updates
 
-export type StreamingPhase = 'idle' | 'filtering' | 'dreaming' | 'quoting' | 'mapping' | 'complete';
+export type StreamingPhase = 'idle' | 'filtering' | 'dreaming' | 'quoting' | 'illustrating' | 'mapping' | 'complete';
 
 export interface StreamingState {
   phase: StreamingPhase;
@@ -180,6 +181,11 @@ export interface QuotegiverCompleteEvent {
   quotes: Quote[];
 }
 
+export interface IllustratorCompleteEvent {
+  event: 'illustrator_complete';
+  quotes: Quote[];  // Enriched quotes with portrait_base64
+}
+
 export interface CompleteEvent {
   event: 'complete';
   game_id: string;
@@ -206,6 +212,7 @@ export type StreamEvent =
   | FilterCompleteEvent
   | DreamerCompleteEvent
   | QuotegiverCompleteEvent
+  | IllustratorCompleteEvent
   | GeographerCompleteEvent
   | CompleteEvent
   | ErrorEvent

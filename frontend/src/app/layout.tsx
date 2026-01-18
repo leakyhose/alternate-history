@@ -2,8 +2,13 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Roman Story',
-  description: 'Interactive historical map of Rome',
+  title: 'Divergence',
+  description: 'Interactive historical map - explore alternate histories',
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 }
 
 export default function RootLayout({

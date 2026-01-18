@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface Scenario {
   id: string
@@ -26,26 +27,72 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-amber-400">
-      <h1 className="text-4xl font-bold mb-8">Historical Scenarios</h1>
+    <div className="min-h-screen flex bg-black">
+      {/* Left Side - Large Logo */}
+      <div className="w-1/2 flex items-center justify-center p-8">
+        <Image
+          src="/logo.png"
+          alt="Divergence Logo"
+          width={600}
+          height={600}
+          className="max-w-full max-h-[85vh]"
+          style={{ imageRendering: 'pixelated' }}
+          priority
+        />
+      </div>
 
-      {loading ? (
-        <p>Loading scenarios...</p>
-      ) : scenarios.length === 0 ? (
-        <p>No scenarios available</p>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {scenarios.map(scenario => (
-            <Link
-              key={scenario.id}
-              href={`/scenario/${scenario.id}`}
-              className="block p-6 bg-[#1a1a24] border-2 border-[#2a2a3a] hover:border-amber-400 transition-colors"
-            >
-              <h2 className="text-2xl font-bold text-center">{scenario.name}</h2>
-            </Link>
-          ))}
+      {/* Right Side - Title and Scenarios */}
+      <div className="w-1/2 flex flex-col justify-center p-8">
+        {/* Title */}
+        <div className="mb-12">
+          <h1 
+            className="text-9xl font-bold tracking-wider mb-2"
+            style={{ color: 'var(--color-pixel-amber)' }}
+          >
+            DIVERGENCE
+          </h1>
+          <p className="text-gray-500 text-lg tracking-wide">Select a scenario to begin</p>
         </div>
-      )}
+
+        {/* Scenarios List */}
+        {loading ? (
+          <div className="text-amber-400 text-xl animate-pulse">Loading scenarios...</div>
+        ) : scenarios.length === 0 ? (
+          <p className="text-gray-500 text-lg">No scenarios available</p>
+        ) : (
+          <div className="flex flex-col gap-4">
+            {scenarios.map(scenario => (
+              <Link
+                key={scenario.id}
+                href={`/scenario/${scenario.id}`}
+                className="group flex items-center gap-4 p-4 bg-[#0a0a14] border-2 border-[#2a2a3a] 
+                           hover:border-amber-400 transition-all duration-200 hover:bg-[#12121c]"
+              >
+                <div className="w-16 h-16 relative overflow-hidden border-2 border-[#2a2a3a] 
+                                group-hover:border-amber-400/50 transition-colors flex-shrink-0">
+                  <Image
+                    src={`/api/scenarios/${scenario.id}/logo`}
+                    alt={`${scenario.name} logo`}
+                    fill
+                    className="object-contain p-1"
+                    style={{ imageRendering: 'pixelated' }}
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.style.display = 'none'
+                    }}
+                  />
+                </div>
+                <h2 
+                  className="text-2xl font-bold text-gray-300 group-hover:text-amber-400 
+                             transition-colors tracking-wide"
+                >
+                  {scenario.name}
+                </h2>
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
