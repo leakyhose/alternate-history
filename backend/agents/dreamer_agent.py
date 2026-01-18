@@ -33,7 +33,7 @@ class DreamerOutput(BaseModel):
         description="Dictionary of nation tag -> ruler info. Only use valid tags: ROM, BYZ, ROW"
     )
     narrative: str = Field(
-        description="A compelling 2-4 paragraph narrative of what happened in this period"
+        description="A concise narrative of what happened in this period. 2-4 sentences, around 50-80 words."
     )
     territorial_changes_description: str = Field(
         description="SPECIFIC description of territorial changes with actual region/city names"
@@ -131,9 +131,9 @@ OUTPUT FORMAT (STRICT JSON):
       "dynasty": "Dynasty Name"
     }
   },
-  "narrative": "A compelling 2-4 paragraph narrative of what happened in this period. Include political developments, wars, ruler changes, and important events. Write in past tense as if recording history.",
-  "territorial_changes_description": "SPECIFIC description of territorial changes. Name actual regions and cities. Clearly distinguish permanent conquests from temporary occupations. If no changes, explain why (e.g., 'No territorial changes occurred as both empires were focused on internal matters').",
-  "updated_divergences": ["List of current divergences that will affect future events. Irrelevant divergences that wouldnt impact future events should be removed"],
+  "narrative": "A CONCISE narrative of 2-4 sentences (50-80 words max). Focus on the most important events: key battles, ruler changes, major political shifts. Write in past tense.",
+  "territorial_changes_description": "SPECIFIC description of territorial changes. Name actual regions and cities. Clearly distinguish permanent conquests from temporary occupations. If no changes, explain why briefly.",
+  "updated_divergences": ["List of current divergences that will affect future events"],
   "merged": false
 }
 
@@ -411,7 +411,7 @@ Generate a compelling narrative and return your decision as JSON."""
         if "rulers" not in result:
             result["rulers"] = rulers  # Keep existing rulers
         if "narrative" not in result:
-            result["narrative"] = f"Events of {current_year}-{end_year} AD unfolded..."
+            result["narrative"] = f"The period {current_year}-{end_year} AD saw continued developments."
         if "territorial_changes_description" not in result:
             result["territorial_changes_description"] = "No significant territorial changes occurred."
         if "updated_divergences" not in result:
@@ -437,7 +437,7 @@ Generate a compelling narrative and return your decision as JSON."""
         # Return a fallback response
         return {
             "rulers": rulers,
-            "narrative": f"[Error parsing response] The period {current_year}-{end_year} AD saw continued developments in the alternate timeline. The divergences continue to affect events.",
+            "narrative": f"The period {current_year}-{end_year} AD saw continued developments as divergences shaped events.",
             "territorial_changes_description": "Unable to determine territorial changes due to parsing error.",
             "updated_divergences": divergences,
             "merged": False
