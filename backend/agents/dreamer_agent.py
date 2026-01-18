@@ -18,6 +18,30 @@ load_dotenv()
 # Module-level variable to store available tags for tool access
 _available_tags: Dict[str, Dict[str, Any]] = {}
 
+# Map of accented characters to ASCII equivalents
+_TRANSLIT_MAP = {
+    'À': 'A', 'Á': 'A', 'Â': 'A', 'Ã': 'A', 'Ä': 'A', 'Å': 'A', 'Æ': 'AE',
+    'Ç': 'C', 'È': 'E', 'É': 'E', 'Ê': 'E', 'Ë': 'E',
+    'Ì': 'I', 'Í': 'I', 'Î': 'I', 'Ï': 'I',
+    'Ð': 'D', 'Ñ': 'N',
+    'Ò': 'O', 'Ó': 'O', 'Ô': 'O', 'Õ': 'O', 'Ö': 'O', 'Ø': 'O',
+    'Ù': 'U', 'Ú': 'U', 'Û': 'U', 'Ü': 'U',
+    'Ý': 'Y', 'Þ': 'TH', 'ß': 'ss',
+    'à': 'a', 'á': 'a', 'â': 'a', 'ã': 'a', 'ä': 'a', 'å': 'a', 'æ': 'ae',
+    'ç': 'c', 'è': 'e', 'é': 'e', 'ê': 'e', 'ë': 'e',
+    'ì': 'i', 'í': 'i', 'î': 'i', 'ï': 'i',
+    'ð': 'd', 'ñ': 'n',
+    'ò': 'o', 'ó': 'o', 'ô': 'o', 'õ': 'o', 'ö': 'o', 'ø': 'o',
+    'ù': 'u', 'ú': 'u', 'û': 'u', 'ü': 'u',
+    'ý': 'y', 'þ': 'th', 'ÿ': 'y',
+    'Œ': 'OE', 'œ': 'oe', 'Š': 'S', 'š': 's', 'Ž': 'Z', 'ž': 'z',
+    'ƒ': 'f', 'Ÿ': 'Y'
+}
+
+def _transliterate(s: str) -> str:
+    """Convert accented characters to ASCII equivalents."""
+    return ''.join(_TRANSLIT_MAP.get(c, c) for c in s)
+
 
 class RulerInfo(BaseModel):
     """Information about a ruler. DO NOT add extra fields like 'info'."""
@@ -41,7 +65,10 @@ class TerritorialChange(BaseModel):
     """
     location: str = Field(
         description="DETAILED natural language description of the location/region affected. "
-                    "Be as SPECIFIC as possible to help the geographer identify exact provinces: "
+                    "Be as SPECIFIC as possible to help the geographer identify exact provinces. "
+                    "**TAG-BASED SHORTCUTS:** Use 'ALL OF [TAG]' for all provinces of a nation (e.g., 'ALL OF ROM'), "
+                    "or 'ALL OF [TAG] EXCEPT [regions]' for all except some (e.g., 'ALL OF GAU EXCEPT Aquitania'). "
+                    "**NATURAL LANGUAGE:** For partial changes, use specific descriptions: "
                     "- Name multiple regions if applicable: 'Egypt, Cyrenaica, and Libya' "
                     "- Use geographic boundaries: 'Syria south of Antioch to the Egyptian border' "
                     "- Reference major cities: 'Asia Minor including Ephesus, Smyrna, and Pergamon' "
@@ -164,6 +191,23 @@ Describe NET changes from period START to END (not intermediate events).
 
 Each change needs:
 - location: DETAILED description - list ALL regions, use cities as landmarks, geographic boundaries
+  
+  **TAG-BASED SHORTCUTS (RECOMMENDED FOR LARGE TRANSFERS):**
+  You can use these special formats to refer to all provinces owned by a nation:
+  - "ALL OF [TAG]" - All provinces currently owned by that nation (e.g., "ALL OF ROM" = all Roman provinces)
+  - "ALL OF [TAG] EXCEPT [regions]" - All provinces except specified ones (e.g., "ALL OF ROM EXCEPT Italia and Sicily")
+  
+  These are useful for:
+  - Total conquests: "ALL OF GAU" when one nation fully absorbs another
+  - Near-total conquests: "ALL OF PAR EXCEPT Ctesiphon and Mesopotamia"
+  - Complete collapse: "ALL OF ROM" being lost
+  
+  **NATURAL LANGUAGE (FOR PARTIAL/SPECIFIC CHANGES):**
+  - Name multiple regions: 'Egypt, Cyrenaica, and Libya'
+  - Use geographic boundaries: 'Syria south of Antioch to the Egyptian border'
+  - Reference major cities: 'Asia Minor including Ephesus, Smyrna, and Pergamon'
+  - Use rivers/mountains: 'Mesopotamia east of the Euphrates'
+  
 - change_type: CONQUEST (gain from untracked) | LOSS (lose to untracked) | TRANSFER (between tracked nations)
 - from_nation: Nation losing territory (null for CONQUEST)
 - to_nation: Nation gaining territory (null for LOSS)
@@ -178,10 +222,13 @@ Each change needs:
 === RULER FORMAT ===
 Each ruler MUST have exactly these fields (no extras like "info"):
 - tag: The nation tag (e.g., CAN, USA, QUE)
-- name: The ruler's name
+- name: The ruler's name (ASCII ONLY - no accents like é, è, ñ, ü - use e, n, u instead)
 - title: Their title (Emperor, King, President, Prime Minister, etc.)
 - age: Their age in years (number)
-- dynasty: Dynasty or party name (can be empty string "")
+- dynasty: Dynasty or party name (can be empty string "") (ASCII ONLY - no accents)
+
+IMPORTANT: Use only ASCII characters (A-Z, a-z) for names and dynasties. 
+Convert accented names: Chrétien → Chretien, François → Francois, José → Jose, etc.
 
 === RULER RULES - CRITICAL ===
 - You MUST return ALL rulers in your output - never return empty rulers
@@ -414,6 +461,15 @@ Make it entertaining but plausible. Return JSON only."""
             # Fall back to existing rulers if empty
             if not result["rulers"]:
                 result["rulers"] = rulers
+        
+        # Sanitize ruler names and dynasties (remove accents)
+        if isinstance(result["rulers"], dict):
+            for tag, ruler in result["rulers"].items():
+                if isinstance(ruler, dict):
+                    if "name" in ruler:
+                        ruler["name"] = _transliterate(ruler["name"])
+                    if "dynasty" in ruler:
+                        ruler["dynasty"] = _transliterate(ruler["dynasty"])
 
         if "narrative" not in result:
             result["narrative"] = f"The period {current_year}-{end_year} AD saw continued developments."

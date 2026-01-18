@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
 
-from agents.filter_agent import filter_command
+from agents.filter_agent import filter_command, filter_continuation_divergence
 from workflows.graph import workflow, continue_workflow
 from workflows.nodes import get_current_provinces, reset_province_memory, get_province_memory, get_scenario_tags
 from util.scenario import load_scenario_metadata
@@ -64,6 +64,18 @@ class GameStateResponse(BaseModel):
     provinces: List[Dict[str, Any]]
     divergences: List[str]
     snapshots: Optional[List[Dict[str, Any]]] = None  # Province snapshots per log entry
+
+
+class FilterDivergenceRequest(BaseModel):
+    """Request to filter a divergence for an existing game."""
+    command: str  # The divergence to filter
+
+
+class FilterDivergenceResponse(BaseModel):
+    """Response after filtering a divergence."""
+    status: str  # 'accepted' or 'rejected'
+    reason: Optional[str] = None
+    alternative: Optional[str] = None
 
 
 # Endpoints
@@ -204,6 +216,46 @@ async def start_workflow(request: StartRequest) -> StartResponse:
         print(f"❌ Response serialization error: {e}")
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Response serialization error: {str(e)}")
+
+
+@router.post("/game/{game_id}/filter-divergence")
+async def filter_game_divergence(game_id: str, request: FilterDivergenceRequest) -> FilterDivergenceResponse:
+    """
+    Filter a divergence for an existing game.
+    
+    Checks if the divergence is relevant to the current era of the alternate timeline.
+    Events in the past (before the current game year) will be rejected.
+    """
+    game = get_game(game_id)
+    if not game:
+        raise HTTPException(status_code=404, detail="Game not found")
+    
+    if game.is_merged():
+        return FilterDivergenceResponse(
+            status="rejected",
+            reason="Timeline has merged back to real history",
+            alternative="Start a new alternate timeline"
+        )
+    
+    # Get current year from game state
+    current_year = game.get_current_year()
+    
+    # Load scenario metadata for filter validation
+    scenario_id = game.workflow_state.get("scenario_id", "rome")
+    scenario_metadata = load_scenario_metadata(scenario_id)
+    
+    # Filter the divergence
+    filter_result = filter_continuation_divergence(
+        request.command, 
+        current_year, 
+        scenario_metadata
+    )
+    
+    return FilterDivergenceResponse(
+        status=filter_result.get("status", "rejected"),
+        reason=filter_result.get("reason"),
+        alternative=filter_result.get("alternative")
+    )
 
 
 @router.post("/continue/{game_id}")

@@ -40,6 +40,7 @@ from util.province_memory import (
     get_areas_for_region,
     get_all_area_names,
     get_provinces_for_area,
+    load_areas,
 )
 from util.scenario import get_scenario_tags
 
@@ -144,7 +145,7 @@ def query_area_provinces(area_name: str) -> str:
     """
     Query the individual PROVINCES within a specific AREA.
     
-    USE SPARINGLY! You should almost always work at the AREA level.
+    ⚠️ USE SPARINGLY! You should almost always work at the AREA level.
     Only use this tool when you need to:
     - Split an area (e.g., "only the coastal provinces of Brittany")
     - Handle a very specific location that doesn't align with area boundaries
@@ -178,6 +179,110 @@ def query_area_provinces(area_name: str) -> str:
     return "\n".join(lines)
 
 
+@tool
+def query_tag_territories(tag: str) -> str:
+    """
+    Query ALL territories owned by a specific nation TAG.
+    
+    🎯 USE THIS TOOL when handling commands like:
+    - "All remaining X territory goes to Y"
+    - "All of X goes to Y except for Z"
+    - "The rest of X's holdings..."
+    - "X loses everything except..."
+    
+    This tool returns:
+    1. AREAS that the tag FULLY owns (all provinces in the area belong to the tag)
+    2. Individual PROVINCES from areas where the tag only PARTIALLY owns
+    
+    This is more efficient than querying regions one by one when you need to
+    know everything a tag owns.
+    
+    Args:
+        tag: The nation tag (e.g., 'USA', 'BYZ', 'FRA')
+        
+    Returns:
+        Structured list of fully-owned areas and partially-owned provinces
+    """
+    if not _current_provinces_cache:
+        return f"No province data loaded. Cannot query territories for tag '{tag}'."
+    
+    # Get all provinces owned by this tag
+    owned_province_ids = set()
+    for prov_id, prov_data in _current_provinces_cache.items():
+        if prov_data.get('owner') == tag:
+            owned_province_ids.add(prov_id)
+    
+    if not owned_province_ids:
+        return f"Tag '{tag}' does not own any tracked provinces."
+    
+    # Load all areas and categorize
+    all_areas = load_areas()
+    
+    fully_owned_areas = []
+    partial_provinces = []  # provinces from areas not fully owned
+    
+    for area_name, area_provinces in all_areas.items():
+        area_province_ids = {p['id'] for p in area_provinces}
+        
+        # How many provinces in this area does the tag own?
+        owned_in_area = area_province_ids & owned_province_ids
+        
+        if not owned_in_area:
+            # Tag owns nothing in this area
+            continue
+        elif owned_in_area == area_province_ids:
+            # Tag fully owns this area
+            fully_owned_areas.append({
+                'name': area_name,
+                'province_count': len(area_provinces)
+            })
+        else:
+            # Tag partially owns this area - list individual provinces
+            for p in area_provinces:
+                if p['id'] in owned_in_area:
+                    partial_provinces.append({
+                        'id': p['id'],
+                        'name': p['name'],
+                        'area': area_name
+                    })
+    
+    # Build response
+    lines = [f"Territories owned by {tag}:"]
+    lines.append("")
+    
+    if fully_owned_areas:
+        lines.append(f"FULLY OWNED AREAS ({len(fully_owned_areas)} areas):")
+        for area in sorted(fully_owned_areas, key=lambda x: x['name']):
+            lines.append(f"  - {area['name']} ({area['province_count']} provinces)")
+    else:
+        lines.append("FULLY OWNED AREAS: None")
+    
+    lines.append("")
+    
+    if partial_provinces:
+        # Group by area for readability
+        by_area = {}
+        for p in partial_provinces:
+            area = p['area']
+            if area not in by_area:
+                by_area[area] = []
+            by_area[area].append(p)
+        
+        lines.append(f"PARTIAL OWNERSHIP ({len(partial_provinces)} provinces in {len(by_area)} areas):")
+        for area_name in sorted(by_area.keys()):
+            area_provs = by_area[area_name]
+            lines.append(f"  {area_name}:")
+            for p in area_provs:
+                lines.append(f"    - ID {p['id']}: {p['name']}")
+    else:
+        lines.append("PARTIAL OWNERSHIP: None (all owned areas are fully owned)")
+    
+    lines.append("")
+    lines.append(f"TOTAL: {len(owned_province_ids)} provinces ({len(fully_owned_areas)} full areas + {len(partial_provinces)} individual provinces)")
+    
+    return "\n".join(lines)
+
+
 SYSTEM_PROMPT = """You are a geographer assistant for an alternate history simulation.
 Your job is to resolve natural language location descriptions to specific AREAS (and occasionally provinces).
 
@@ -186,17 +291,31 @@ GEOGRAPHICAL HIERARCHY:
 - AREAS: Medium subdivisions (Brittany, Lower Egypt, Bithynia) - use query_region_areas()
 - PROVINCES: Individual territories - use query_area_provinces() ONLY when necessary
 
-IMPORTANT: ALWAYS PREFER AREAS OVER PROVINCES!
+⚠️ IMPORTANT: ALWAYS PREFER AREAS OVER PROVINCES!
 - Areas are descriptive and map well to historical territorial changes
 - Most conquests, losses, and transfers happen at the area level
 - Only drill down to provinces for very specific edge cases (e.g., "just the city of Alexandria")
 
+🎯 QUERY BY TAG - USE query_tag_territories() WHEN:
+Commands reference a nation's EXISTING holdings rather than geographical locations:
+- "All remaining USA territory goes to Canada"
+- "All of BYZ goes to ARB except for Constantinople"  
+- "The rest of France's holdings in Italy..."
+- "X loses everything except for Y"
+- "Remaining territories of X are transferred to Y"
+
+The query_tag_territories() tool returns:
+1. FULLY OWNED AREAS - areas where the tag owns ALL provinces (use these as area names)
+2. PARTIAL PROVINCES - individual provinces from areas where the tag only owns some
+
+This is MUCH more efficient than scanning regions one-by-one when you need to know
+what a nation currently owns.
+
 WORKFLOW:
-1. Call get_available_regions() to see all regions
-2. For each territorial change, identify which REGION(s) are relevant
-3. Call query_region_areas() for those regions to see the areas
-4. Return AREA NAMES that match the location description
-5. ONLY use query_area_provinces() if you need to split an area or handle edge cases
+1. Determine if the change references GEOGRAPHY (use regions/areas) or a TAG's HOLDINGS (use query_tag_territories)
+2. For geography-based: Call get_available_regions() → query_region_areas() → return area names
+3. For tag-based: Call query_tag_territories(tag) → use the fully owned areas + partial provinces
+4. ONLY use query_area_provinces() if you need to split an area or handle edge cases
 
 OUTPUT FORMAT (return as final response):
 {
@@ -226,23 +345,24 @@ NOTES:
 - The change_index corresponds to the index of the territorial change in the input list
 
 EXAMPLES OF GOOD RESOLUTIONS:
-- "Egypt" -> areas: ["Lower Egypt", "Upper Egypt", "Nile Delta", ...]
-- "Gaul" -> areas: ["Brittany", "Normandy", "Aquitaine", ...]
-- "Constantinople" -> provinces: [{"id": 151, "name": "Thrace"}] (specific city)
-- "The Levant coast" -> areas: ["Syria", "Palestine", "Phoenicia"]
-- "Northern Italy" -> areas: ["Lombardy", "Venetia", "Piedmont"]"""
+- "Egypt" → areas: ["Lower Egypt", "Upper Egypt", "Nile Delta", ...]
+- "Gaul" → areas: ["Brittany", "Normandy", "Aquitaine", ...]
+- "Constantinople" → provinces: [{"id": 151, "name": "Thrace"}] (specific city)
+- "The Levant coast" → areas: ["Syria", "Palestine", "Phoenicia"]
+- "Northern Italy" → areas: ["Lombardy", "Venetia", "Piedmont"]
+- "All remaining USA territory" → query_tag_territories("USA") → use returned areas + provinces"""
 
 
 # Initialize LLM with timeout
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
+    model="gemini-3-flash-preview",
     google_api_key=os.getenv("GEMINI_API_KEY"),
     timeout=120,  # 2 minute timeout
     max_retries=2
 )
 
 # Tools for the geographer
-tools = [get_available_regions, query_region_areas, query_area_provinces]
+tools = [get_available_regions, query_region_areas, query_area_provinces, query_tag_territories]
 
 # Two versions: one that forces tool use, one that allows finishing
 llm_with_tools_required = llm.bind_tools(tools, tool_choice="any")
@@ -263,9 +383,9 @@ def apply_change_type(
     Returns a province update dict, or None if no change is needed.
     
     Change types:
-    - CONQUEST: Tracked nation gains from untracked -> owner = to_nation
-    - LOSS: Tracked nation loses to untracked -> owner = "" (UNTRACK the province)
-    - TRANSFER: Between tracked nations -> owner = to_nation
+    - CONQUEST: Tracked nation gains from untracked → owner = to_nation
+    - LOSS: Tracked nation loses to untracked → owner = "" (UNTRACK the province)
+    - TRANSFER: Between tracked nations → owner = to_nation
     """
     new_owner = current_owner
     
@@ -285,7 +405,7 @@ def apply_change_type(
             return None
             
     else:
-        print(f"Unknown change_type: {change_type}")
+        print(f"⚠️ Unknown change_type: {change_type}")
         return None
     
     if new_owner != current_owner:
@@ -365,12 +485,12 @@ Return your final JSON answer with areas and/or provinces for each change."""
     max_iterations = 15
     iteration = 0
     
-    print(f"Geographer: Resolving {len(territorial_changes)} location(s) to areas...")
+    print(f"🗺️  Geographer: Resolving {len(territorial_changes)} location(s) to areas...")
     response = llm_with_tools_required.invoke(messages)
     
     while response.tool_calls and iteration < max_iterations:
         iteration += 1
-        print(f"Geographer: Iteration {iteration}, executing {len(response.tool_calls)} tool calls")
+        print(f"🗺️  Geographer: Iteration {iteration}, executing {len(response.tool_calls)} tool calls")
         
         messages.append(response)
         
@@ -384,6 +504,8 @@ Return your final JSON answer with areas and/or provinces for each change."""
                 result = query_region_areas.invoke(tool_args)
             elif tool_name == "query_area_provinces":
                 result = query_area_provinces.invoke(tool_args)
+            elif tool_name == "query_tag_territories":
+                result = query_tag_territories.invoke(tool_args)
             else:
                 result = f"Unknown tool: {tool_name}"
             
@@ -452,7 +574,7 @@ Return your final JSON answer with areas and/or provinces for each change."""
         return resolutions
         
     except json.JSONDecodeError as e:
-        print(f"Failed to parse geographer response: {e}")
+        print(f"❌ Failed to parse geographer response: {e}")
         print(f"Raw response: {content[:500] if content else 'Empty'}")
         return {}
 
@@ -502,7 +624,7 @@ def interpret_territorial_changes(
     if not valid_changes:
         return {"province_updates": []}
     
-    print(f"Geographer: Processing {len(valid_changes)} territorial change(s)")
+    print(f"🗺️  Geographer: Processing {len(valid_changes)} territorial change(s)")
     for i, change in enumerate(valid_changes):
         print(f"    [{i}] {change.get('change_type')}: {change.get('location')} "
               f"(from: {change.get('from_nation')}, to: {change.get('to_nation')})")
@@ -538,11 +660,11 @@ def interpret_territorial_changes(
                 seen_ids.add(p['id'])
         
         if not unique_provinces:
-            print(f"No provinces resolved for change [{i}]: {change.get('location')}")
+            print(f"⚠️ No provinces resolved for change [{i}]: {change.get('location')}")
             continue
         
         area_info = f" (from {len(resolved_areas)} areas)" if resolved_areas else ""
-        print(f"Applying {change_type} to {len(unique_provinces)} province(s){area_info}")
+        print(f"🗺️  Applying {change_type} to {len(unique_provinces)} province(s){area_info}")
         
         for prov in unique_provinces:
             prov_id = prov["id"]
@@ -565,7 +687,7 @@ def interpret_territorial_changes(
             if update:
                 province_updates.append(update)
     
-    print(f"Geographer: {len(province_updates)} province update(s) generated")
+    print(f"✓ Geographer: {len(province_updates)} province update(s) generated")
     
     return {"province_updates": province_updates}
 
@@ -607,7 +729,7 @@ def interpret_territorial_changes_legacy(
     if any(phrase in territorial_description.lower() for phrase in no_change_phrases):
         return {"province_updates": []}
     
-    print(f"Using legacy prose-based territorial interpretation")
+    print(f"⚠️ Using legacy prose-based territorial interpretation")
     print(f"   Consider updating to use structured territorial_changes")
     
     # Use the old prose-based system prompt
@@ -651,6 +773,8 @@ Query relevant regions and areas, then return JSON: {{"province_updates": [{{"id
                 result = query_region_areas.invoke(tool_args)
             elif tool_name == "query_area_provinces":
                 result = query_area_provinces.invoke(tool_args)
+            elif tool_name == "query_tag_territories":
+                result = query_tag_territories.invoke(tool_args)
             else:
                 result = f"Unknown tool: {tool_name}"
             

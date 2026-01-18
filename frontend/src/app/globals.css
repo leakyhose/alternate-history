@@ -8,6 +8,17 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+  /* Limit to basic Latin - accented chars will use fallback font */
+  unicode-range: U+0020-007F;
+}
+
+/* Fallback for extended Latin (accents, etc.) - uses system font */
+@font-face {
+  font-family: 'Jersey 10';
+  src: local('Arial'), local('Helvetica');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+0080-00FF, U+0100-017F, U+0180-024F;
 }
 
 :root {

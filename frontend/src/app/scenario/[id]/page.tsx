@@ -350,6 +350,115 @@ export default function ScenarioPage() {
     }
   }, [gameId])
 
+  // Add a new divergence to an existing timeline
+  const handleAddDivergence = useCallback(async (command: string, yearsToProgress: number) => {
+    if (!gameId) return
+
+    setIsProcessing(true)
+    setInputError(null)
+    setInputAlternative(null)
+
+    try {
+      // First, filter the divergence to check if it's valid for the current era
+      const filterResponse = await fetch(`${BACKEND_URL}/game/${gameId}/filter-divergence`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ command })
+      })
+
+      if (!filterResponse.ok) {
+        let errorMessage = `Server error: ${filterResponse.status}`
+        try {
+          const errorData = await filterResponse.json()
+          errorMessage = errorData.detail || errorMessage
+        } catch {
+          errorMessage = `Server error: ${filterResponse.statusText}`
+        }
+        setInputError(errorMessage)
+        setIsProcessing(false)
+        return
+      }
+
+      const filterResult = await filterResponse.json()
+
+      if (filterResult.status === 'rejected') {
+        setInputError(filterResult.reason || 'Divergence was rejected')
+        setInputAlternative(filterResult.alternative || null)
+        setIsProcessing(false)
+        return
+      }
+
+      // If accepted, add the divergence and continue the game
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 300000) // 5 minutes
+
+      const response = await fetch(`${BACKEND_URL}/continue/${gameId}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          new_divergences: [command],
+          years_to_progress: yearsToProgress
+        }),
+        signal: controller.signal
+      })
+
+      clearTimeout(timeoutId)
+
+      if (!response.ok) {
+        let errorMessage = `Server error: ${response.status}`
+        try {
+          const errorData = await response.json()
+          errorMessage = errorData.detail || errorMessage
+        } catch {
+          errorMessage = `Server error: ${response.statusText}`
+        }
+        setInputError(errorMessage)
+        setIsProcessing(false)
+        return
+      }
+
+      const data: ContinueResponse = await response.json()
+
+      setGameYear(data.current_year)
+      setGameMerged(data.merged)
+      setGameLogs(data.logs)
+
+      if (data.result) {
+        setGameRulers(data.result.rulers)
+        setGameDivergences(data.result.divergences)
+      }
+
+      // Use snapshots from API response for timeline scrubbing
+      if (data.snapshots && data.snapshots.length > 0) {
+        setProvinceSnapshots(data.snapshots)
+        const latestSnapshot = data.snapshots[data.snapshots.length - 1]
+        setGameProvinces(latestSnapshot.provinces)
+      } else {
+        const provincesRes = await fetch(`/game/${gameId}/provinces`)
+        const provincesData = await provincesRes.json()
+        setGameProvinces(provincesData.provinces)
+      }
+
+      // Update timeline point to the newest log entry
+      setSelectedTimelinePoint({
+        timeline: 'alternate',
+        year: data.current_year,
+        logIndex: data.logs.length - 1
+      })
+
+      setYear(data.current_year)
+    } catch (err) {
+      console.error('Error adding divergence:', err)
+      if (err instanceof Error && err.name === 'AbortError') {
+        setInputError('Request timed out. The server is taking too long to respond.')
+      } else {
+        setInputError('Failed to connect to server')
+      }
+    } finally {
+      setIsProcessing(false)
+    }
+  }, [gameId])
+
   // Handle timeline point selection
   const handleTimelinePointSelect = useCallback((point: TimelinePoint) => {
     setSelectedTimelinePoint(point)
@@ -428,6 +537,19 @@ export default function ScenarioPage() {
     return gameRulers
   }, [gameMode, selectedTimelinePoint, provinceSnapshots, gameRulers])
 
+  // Determine if we're viewing the latest year of the alternate timeline
+  const isViewingLatestAltYear = useMemo(() => {
+    if (!gameMode || gameLogs.length === 0) return false
+    if (selectedTimelinePoint.timeline !== 'alternate') return false
+    // Check if we're on the latest log entry
+    return selectedTimelinePoint.logIndex === gameLogs.length - 1
+  }, [gameMode, gameLogs, selectedTimelinePoint])
+
+  // Show divergence input when:
+  // 1. No alternate timeline exists (not in game mode), OR
+  // 2. In game mode AND viewing the latest year of the alternate timeline
+  const showDivergenceInput = !gameMode || isViewingLatestAltYear
+
   const isLoading = !dataLoaded || !mapReady || year === null
 
   return (
@@ -492,15 +614,18 @@ export default function ScenarioPage() {
             />
           )}
 
-          {/* Divergence Input - always visible at bottom */}
-          <DivergenceInput
-            onSubmit={handleStartGame}
-            disabled={gameMode}
-            isProcessing={isProcessing}
-            error={inputError}
-            alternative={inputAlternative}
-            currentYear={gameMode ? gameYear : undefined}
-          />
+          {/* Divergence Input - show when no alternate timeline exists OR when viewing latest year of alternate */}
+          {showDivergenceInput && (
+            <DivergenceInput
+              onSubmit={gameMode ? handleAddDivergence : handleStartGame}
+              disabled={false}
+              isProcessing={isProcessing}
+              error={inputError}
+              alternative={inputAlternative}
+              currentYear={gameMode ? gameYear : undefined}
+              isAddingDivergence={gameMode}
+            />
+          )}
         </>
       )}
     </div>

@@ -97,8 +97,12 @@ export default function CountryInfo({
             <h2 className="text-3xl font-bold text-center tracking-wide">
                 {scenarioMetadata.tags[displayTag]?.name || displayTag}
             </h2>
+            {/* Hint */}
+            <div className="text-center text-gray-500 text-[10px] -mt-1 mb-1 italic">
+                Click on tag to select
+            </div>
 
-            <div className="border-t border-[#2a2a3a] my-3"></div>
+            <div className="border-t border-[#2a2a3a] my-2"></div>
 
             {/* Ruler */}
             <div className="text-center">
