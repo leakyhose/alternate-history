@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import type { LogEntry, TimelinePoint } from '@/types'
+import type { LogEntry, TimelinePoint, StreamingPhase } from '@/types'
 
 interface GameInfoPanelProps {
   logs: LogEntry[]
@@ -10,6 +10,7 @@ interface GameInfoPanelProps {
   merged: boolean
   onContinue: () => void
   isProcessing: boolean
+  streamingPhase?: StreamingPhase
 }
 
 export default function GameInfoPanel({
@@ -18,10 +19,16 @@ export default function GameInfoPanel({
   selectedTimelinePoint,
   merged,
   onContinue,
-  isProcessing
+  isProcessing,
+  streamingPhase = 'idle'
 }: GameInfoPanelProps) {
   const [activeTab, setActiveTab] = useState<'logs' | 'divergences'>('logs')
   const [isCollapsed, setIsCollapsed] = useState(false)
+
+  // Check if we're in a streaming loading state
+  const isDreaming = streamingPhase === 'dreaming'
+  const isMapping = streamingPhase === 'mapping'
+  const isStreaming = isDreaming || isMapping
 
   // Get logs up to the selected point
   const visibleLogs = useMemo(() => {
@@ -98,9 +105,33 @@ export default function GameInfoPanel({
 
       {/* Content */}
       <div className="flex-1 overflow-y-auto p-4">
+        {/* Streaming loading indicator */}
+        {isDreaming && (
+          <div className="flex flex-col items-center justify-center py-8 mb-4 border-b border-[#2a2a3a]">
+            <div className="relative w-12 h-12 mb-4">
+              <div className="absolute inset-0 border-4 border-amber-400/20 rounded-full"></div>
+              <div className="absolute inset-0 border-4 border-amber-400 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+            <div className="text-amber-400 text-base font-medium animate-pulse">
+              Dreamer is imagining alternate history...
+            </div>
+            <p className="text-gray-500 text-sm mt-2">
+              Crafting narrative and determining outcomes
+            </p>
+          </div>
+        )}
+
+        {isMapping && (
+          <div className="flex flex-col items-center justify-center py-4 mb-4 border-b border-[#2a2a3a]">
+            <div className="text-amber-400 text-sm font-medium animate-pulse">
+              Geographer is mapping territorial changes...
+            </div>
+          </div>
+        )}
+
         {activeTab === 'logs' && (
           <div className="space-y-4">
-            {visibleLogs.length === 0 ? (
+            {visibleLogs.length === 0 && !isStreaming ? (
               <p className="text-gray-500 text-center py-4 text-base">No history yet</p>
             ) : (
               [...visibleLogs].reverse().map((log, idx) => (

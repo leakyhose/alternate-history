@@ -1,10 +1,17 @@
+import json
+import asyncio
+
 from fastapi import APIRouter, HTTPException
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, AsyncGenerator
 
 from agents.filter_agent import filter_command, filter_continuation_divergence
 from workflows.graph import workflow, continue_workflow
-from workflows.nodes import get_current_provinces, reset_province_memory, get_province_memory, get_scenario_tags
+from workflows.nodes import (
+    get_current_provinces, reset_province_memory, get_province_memory, get_scenario_tags,
+    initialize_game_node, historian_node, dreamer_node, geographer_node, update_state_node
+)
 from util.scenario import load_scenario_metadata
 from models.game import (
     Game, create_game, get_game, delete_game, list_games,
@@ -216,6 +223,353 @@ async def start_workflow(request: StartRequest) -> StartResponse:
         print(f"❌ Response serialization error: {e}")
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Response serialization error: {str(e)}")
+
+
+@router.post("/start-stream")
+async def start_workflow_stream(request: StartRequest):
+    """
+    Start a new alternate history game with SSE streaming.
+
+    Emits events as each agent completes, allowing the frontend
+    to show partial results progressively.
+
+    Events:
+    - filter_complete: After filter accepts, includes year and game_id
+    - dreamer_complete: After dreamer, includes narrative, rulers, divergences
+    - geographer_complete: After geographer, includes provinces
+    - complete: After all done, includes final game state and snapshots
+    - rejected: If filter rejects the divergence
+    - error: On failure
+    """
+    async def event_generator() -> AsyncGenerator[str, None]:
+        game = None
+        try:
+            # Load scenario metadata for filter validation
+            scenario_metadata = load_scenario_metadata(request.scenario_id)
+
+            # Step 1: Filter validation
+            filter_result = filter_command(request.command, scenario_metadata)
+
+            if filter_result["status"] == "rejected":
+                yield f"data: {json.dumps({'event': 'rejected', 'reason': filter_result.get('reason'), 'alternative': filter_result.get('alternative')})}\n\n"
+                return
+
+            # Step 2: Extract year and create game
+            year = filter_result["year"]
+            game = create_game()
+
+            # Load nation tags from scenario metadata
+            scenario_tags = get_scenario_tags(request.scenario_id)
+            for tag, info in scenario_tags.items():
+                game.add_nation_tag(tag, info.get("name", tag), info.get("color", "#888888"))
+
+            # Emit filter_complete event
+            yield f"data: {json.dumps({'event': 'filter_complete', 'year': year, 'game_id': game.id, 'nation_tags': {tag: {'name': info.name, 'color': info.color} for tag, info in game.nation_tags.items()}})}\n\n"
+
+            # Small delay to allow frontend to process
+            await asyncio.sleep(0.1)
+
+            # Step 3: Run workflow nodes manually for streaming
+            # Initialize state
+            initial_state = {
+                "divergences": [request.command],
+                "scenario_id": request.scenario_id,
+                "start_year": year,
+                "years_to_progress": request.years_to_progress,
+                "filter_passed": True
+            }
+
+            # Capture initial province state BEFORE workflow runs (for Log 0)
+            from util.province_memory import ProvinceMemory
+            initial_memory = ProvinceMemory()
+            initial_memory.load_from_year(year, request.scenario_id)
+            initial_provinces = [
+                Province(id=p["id"], name=p["name"], owner=p["owner"], control=p.get("control", ""))
+                for p in initial_memory.get_all_provinces_as_dicts()
+            ]
+
+            # Load initial rulers
+            from workflows.nodes.initialize import _load_rulers_for_year
+            initial_rulers = _load_rulers_for_year(year, request.scenario_id)
+
+            # Run initialize node
+            state = {**initial_state}
+            state.update(initialize_game_node(state))
+
+            # Run historian node
+            state.update(historian_node(state))
+
+            # Run dreamer node
+            state.update(dreamer_node(state))
+
+            # Emit dreamer_complete event
+            dreamer_output = state.get("dreamer_output", {})
+            current_year = state.get("current_year", year)
+            years_to_progress = state.get("years_to_progress", 20)
+
+            # Build log entry from dreamer output
+            log_entry = {
+                "year_range": f"{current_year}-{current_year + years_to_progress} AD",
+                "narrative": dreamer_output.get("narrative", ""),
+                "divergences": dreamer_output.get("updated_divergences", []),
+                "territorial_changes_summary": dreamer_output.get("territorial_changes_summary", "")
+            }
+
+            # Serialize rulers for JSON
+            dreamer_rulers = dreamer_output.get("rulers", {})
+            serializable_rulers = {}
+            for tag, ruler in dreamer_rulers.items():
+                serializable_rulers[str(tag)] = {
+                    "name": str(ruler.get("name", "")),
+                    "title": str(ruler.get("title", "")),
+                    "age": int(ruler.get("age", 0)),
+                    "dynasty": str(ruler.get("dynasty", ""))
+                }
+
+            yield f"data: {json.dumps({'event': 'dreamer_complete', 'log_entry': log_entry, 'rulers': serializable_rulers, 'divergences': dreamer_output.get('updated_divergences', []), 'year_range': f'{current_year}-{current_year + years_to_progress} AD'})}\n\n"
+
+            await asyncio.sleep(0.1)
+
+            # Run geographer node
+            state.update(geographer_node(state))
+
+            # Run update_state node
+            state.update(update_state_node(state))
+
+            # Get current provinces after geographer
+            provinces = get_current_provinces()
+
+            # Emit geographer_complete event
+            yield f"data: {json.dumps({'event': 'geographer_complete', 'provinces': provinces})}\n\n"
+
+            await asyncio.sleep(0.1)
+
+            # Update game with final state
+            game.workflow_state = dict(state)
+
+            # Store province state
+            game.province_state = [
+                Province(id=p["id"], name=p["name"], owner=p["owner"], control=p.get("control", ""))
+                for p in provinces
+            ]
+
+            # Sync logs
+            game.full_logs = state.get("logs", [])
+
+            # Capture snapshots for timeline scrubbing
+            logs = state.get("logs", [])
+            rulers = state.get("rulers", {})
+            divergences = state.get("divergences", [])
+
+            # Log 0 (initial/historical): use the initial province state before any changes
+            if len(logs) > 0:
+                game.capture_snapshot(initial_provinces, initial_rulers, divergences)
+
+            # Log 1+ (after iterations): use the current province state
+            for i in range(1, len(logs)):
+                game.capture_snapshot(game.province_state, rulers, divergences)
+
+            # Build serializable logs for response
+            serializable_logs = []
+            for log in game.full_logs:
+                serializable_logs.append({
+                    "year_range": str(log.get("year_range", "")),
+                    "narrative": str(log.get("narrative", "")),
+                    "divergences": list(log.get("divergences", [])),
+                    "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", "")))
+                })
+
+            # Serialize final rulers
+            final_rulers = state.get("rulers", {})
+            serializable_final_rulers = {}
+            for tag, ruler in final_rulers.items():
+                serializable_final_rulers[str(tag)] = {
+                    "name": str(ruler.get("name", "")),
+                    "title": str(ruler.get("title", "")),
+                    "age": int(ruler.get("age", 0)),
+                    "dynasty": str(ruler.get("dynasty", ""))
+                }
+
+            # Get snapshots
+            snapshots = game.get_all_snapshots_as_dicts()
+
+            # Emit complete event
+            yield f"data: {json.dumps({'event': 'complete', 'game_id': game.id, 'current_year': int(state.get('current_year', year)), 'merged': bool(state.get('merged', False)), 'logs': serializable_logs, 'rulers': serializable_final_rulers, 'divergences': list(state.get('divergences', [])), 'snapshots': snapshots})}\n\n"
+
+        except Exception as e:
+            import traceback
+            print(f"❌ Streaming workflow error: {e}")
+            traceback.print_exc()
+
+            # Clean up game if created
+            if game:
+                delete_game(game.id)
+
+            yield f"data: {json.dumps({'event': 'error', 'message': str(e)})}\n\n"
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no"  # Disable nginx buffering
+        }
+    )
+
+
+@router.post("/continue-stream/{game_id}")
+async def continue_game_stream(game_id: str, request: ContinueRequest):
+    """
+    Continue an existing game with SSE streaming.
+
+    Events:
+    - dreamer_complete: After dreamer, includes narrative, rulers, divergences
+    - geographer_complete: After geographer, includes provinces
+    - complete: After all done, includes final game state and snapshots
+    - error: On failure
+    """
+    async def event_generator() -> AsyncGenerator[str, None]:
+        try:
+            game = get_game(game_id)
+            if not game:
+                yield f"data: {json.dumps({'event': 'error', 'message': 'Game not found'})}\n\n"
+                return
+
+            if game.is_merged():
+                yield f"data: {json.dumps({'event': 'error', 'message': 'Timeline has merged back to real history'})}\n\n"
+                return
+
+            # Prepare state for continuation
+            state = dict(game.workflow_state)
+            state["years_to_progress"] = request.years_to_progress
+
+            # Add new divergences if provided
+            if request.new_divergences:
+                current_divergences = state.get("divergences", [])
+                state["divergences"] = current_divergences + request.new_divergences
+
+            # Reload province memory from game state
+            reset_province_memory()
+            memory = get_province_memory()
+            if game.province_state:
+                for p in game.province_state:
+                    memory._provinces[p.id] = MemoryProvince(
+                        id=p.id,
+                        name=p.name,
+                        owner=p.owner,
+                        control=p.control
+                    )
+            else:
+                memory.load_from_year(state.get("current_year", state.get("start_year", 117)))
+
+            current_year = state.get("current_year", state.get("start_year"))
+            years_to_progress = state.get("years_to_progress", 20)
+
+            # Run historian node
+            state.update(historian_node(state))
+
+            # Run dreamer node
+            state.update(dreamer_node(state))
+
+            # Emit dreamer_complete event
+            dreamer_output = state.get("dreamer_output", {})
+
+            log_entry = {
+                "year_range": f"{current_year}-{current_year + years_to_progress} AD",
+                "narrative": dreamer_output.get("narrative", ""),
+                "divergences": dreamer_output.get("updated_divergences", []),
+                "territorial_changes_summary": dreamer_output.get("territorial_changes_summary", "")
+            }
+
+            dreamer_rulers = dreamer_output.get("rulers", {})
+            serializable_rulers = {}
+            for tag, ruler in dreamer_rulers.items():
+                serializable_rulers[str(tag)] = {
+                    "name": str(ruler.get("name", "")),
+                    "title": str(ruler.get("title", "")),
+                    "age": int(ruler.get("age", 0)),
+                    "dynasty": str(ruler.get("dynasty", ""))
+                }
+
+            yield f"data: {json.dumps({'event': 'dreamer_complete', 'log_entry': log_entry, 'rulers': serializable_rulers, 'divergences': dreamer_output.get('updated_divergences', []), 'year_range': f'{current_year}-{current_year + years_to_progress} AD'})}\n\n"
+
+            await asyncio.sleep(0.1)
+
+            # Run geographer node
+            state.update(geographer_node(state))
+
+            # Run update_state node
+            state.update(update_state_node(state))
+
+            # Get current provinces
+            provinces = get_current_provinces()
+
+            # Emit geographer_complete event
+            yield f"data: {json.dumps({'event': 'geographer_complete', 'provinces': provinces})}\n\n"
+
+            await asyncio.sleep(0.1)
+
+            # Update game state
+            game.workflow_state = dict(state)
+
+            game.province_state = [
+                Province(id=p["id"], name=p["name"], owner=p["owner"], control=p.get("control", ""))
+                for p in provinces
+            ]
+
+            # Append new log entry
+            workflow_logs = state.get("logs", [])
+            if workflow_logs:
+                new_log = workflow_logs[-1]
+                game.full_logs.append(new_log)
+
+            # Capture snapshot
+            rulers = state.get("rulers", {})
+            divergences = state.get("divergences", [])
+            game.capture_snapshot(game.province_state, rulers, divergences)
+
+            # Build serializable logs
+            serializable_logs = []
+            for log in game.full_logs:
+                serializable_logs.append({
+                    "year_range": str(log.get("year_range", "")),
+                    "narrative": str(log.get("narrative", "")),
+                    "divergences": list(log.get("divergences", [])),
+                    "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", "")))
+                })
+
+            # Serialize final rulers
+            final_rulers = state.get("rulers", {})
+            serializable_final_rulers = {}
+            for tag, ruler in final_rulers.items():
+                serializable_final_rulers[str(tag)] = {
+                    "name": str(ruler.get("name", "")),
+                    "title": str(ruler.get("title", "")),
+                    "age": int(ruler.get("age", 0)),
+                    "dynasty": str(ruler.get("dynasty", ""))
+                }
+
+            snapshots = game.get_all_snapshots_as_dicts()
+
+            # Emit complete event
+            yield f"data: {json.dumps({'event': 'complete', 'game_id': game.id, 'current_year': int(state.get('current_year', 0)), 'merged': bool(state.get('merged', False)), 'logs': serializable_logs, 'rulers': serializable_final_rulers, 'divergences': list(state.get('divergences', [])), 'snapshots': snapshots})}\n\n"
+
+        except Exception as e:
+            import traceback
+            print(f"❌ Continue streaming error: {e}")
+            traceback.print_exc()
+            yield f"data: {json.dumps({'event': 'error', 'message': str(e)})}\n\n"
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no"
+        }
+    )
 
 
 @router.post("/game/{game_id}/filter-divergence")

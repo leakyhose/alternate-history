@@ -18,7 +18,9 @@ import type {
   RulerInfo,
   GameProvince,
   TimelinePoint,
-  ProvinceSnapshot
+  ProvinceSnapshot,
+  StreamingPhase,
+  StreamEvent
 } from '@/types'
 
 // Direct backend URL for long-running workflow requests (bypasses Next.js proxy timeout)
@@ -94,6 +96,9 @@ export default function ScenarioPage() {
   const [inputError, setInputError] = useState<string | null>(null)
   const [inputAlternative, setInputAlternative] = useState<string | null>(null)
 
+  // Streaming state for progressive updates
+  const [streamingPhase, setStreamingPhase] = useState<StreamingPhase>('idle')
+
   // Load default scenario data
   useEffect(() => {
     if (!scenarioId) return
@@ -159,104 +164,138 @@ export default function ScenarioPage() {
       })
   }, [scenarioId])
 
-  // Start a new game
+  // Start a new game with SSE streaming
   const handleStartGame = useCallback(async (command: string, yearsToProgress: number) => {
     setIsProcessing(true)
     setInputError(null)
     setInputAlternative(null)
-
-    // Create AbortController with 5 minute timeout for long-running workflow
-    const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 300000) // 5 minutes
+    setStreamingPhase('filtering')
 
     try {
-      // Call backend directly to bypass Next.js proxy timeout
-      const response = await fetch(`${BACKEND_URL}/start`, {
+      // Use POST request with fetch for SSE (EventSource only supports GET)
+      const response = await fetch(`${BACKEND_URL}/start-stream`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           command,
           scenario_id: scenarioId,
           years_to_progress: yearsToProgress
-        }),
-        signal: controller.signal
+        })
       })
 
-      clearTimeout(timeoutId)
-
-      // Check for HTTP errors before parsing JSON
       if (!response.ok) {
         let errorMessage = `Server error: ${response.status}`
         try {
           const errorData = await response.json()
           errorMessage = errorData.detail || errorMessage
         } catch {
-          // Response wasn't JSON, use status text
           errorMessage = `Server error: ${response.statusText}`
         }
         setInputError(errorMessage)
         setIsProcessing(false)
+        setStreamingPhase('idle')
         return
       }
 
-      const data: StartResponse = await response.json()
-
-      if (data.status === 'rejected') {
-        setInputError(data.reason || 'Command was rejected')
-        setInputAlternative(data.alternative || null)
+      // Process the SSE stream
+      const reader = response.body?.getReader()
+      if (!reader) {
+        setInputError('Failed to read response stream')
         setIsProcessing(false)
+        setStreamingPhase('idle')
         return
       }
 
-      if (data.status === 'accepted' && data.game_id && data.result) {
-        // Capture branch start year from the response
-        const startYear = data.year || year || 0
-        setBranchStartYear(startYear)
+      const decoder = new TextDecoder()
+      let buffer = ''
 
-        // Switch to game mode
-        setGameId(data.game_id)
-        setGameMode(true)
-        setGameYear(data.result.current_year)
-        setGameMerged(data.result.merged)
-        setGameLogs(data.result.logs)
-        setGameRulers(data.result.rulers)
-        setGameDivergences(data.result.divergences)
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
 
-        // Use snapshots from API response for timeline scrubbing
-        if (data.snapshots && data.snapshots.length > 0) {
-          setProvinceSnapshots(data.snapshots)
-          // Set current provinces to the latest snapshot
-          const latestSnapshot = data.snapshots[data.snapshots.length - 1]
-          setGameProvinces(latestSnapshot.provinces)
-        } else {
-          // Fallback: fetch provinces separately
-          const provincesRes = await fetch(`/game/${data.game_id}/provinces`)
-          if (provincesRes.ok) {
-            const provincesData = await provincesRes.json()
-            setGameProvinces(provincesData.provinces)
-          } else {
-            console.error('Failed to fetch provinces:', provincesRes.status)
+        buffer += decoder.decode(value, { stream: true })
+        const lines = buffer.split('\n')
+        buffer = lines.pop() || '' // Keep incomplete line in buffer
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            try {
+              const data = JSON.parse(line.slice(6)) as StreamEvent
+
+              switch (data.event) {
+                case 'rejected':
+                  setInputError(data.reason || 'Command was rejected')
+                  setInputAlternative(data.alternative || null)
+                  setIsProcessing(false)
+                  setStreamingPhase('idle')
+                  return
+
+                case 'filter_complete':
+                  // Timeline branches immediately
+                  setBranchStartYear(data.year)
+                  setGameId(data.game_id)
+                  setGameMode(true)
+                  setGameNationTags(data.nation_tags)
+                  setYear(data.year)
+                  setStreamingPhase('dreaming')
+                  // Initialize with empty state until dreamer completes
+                  setGameLogs([])
+                  setGameRulers({})
+                  setGameDivergences([command])
+                  setSelectedTimelinePoint({
+                    timeline: 'alternate',
+                    year: data.year,
+                    logIndex: 0
+                  })
+                  break
+
+                case 'dreamer_complete':
+                  // Populate the panel with narrative and rulers
+                  setGameLogs([data.log_entry])
+                  setGameRulers(data.rulers)
+                  setGameDivergences(data.divergences)
+                  setStreamingPhase('mapping')
+                  break
+
+                case 'geographer_complete':
+                  // Map updates with provinces
+                  setGameProvinces(data.provinces)
+                  break
+
+                case 'complete':
+                  // Finalize everything
+                  setGameId(data.game_id)
+                  setGameYear(data.current_year)
+                  setGameMerged(data.merged)
+                  setGameLogs(data.logs)
+                  setGameRulers(data.rulers)
+                  setGameDivergences(data.divergences)
+                  setProvinceSnapshots(data.snapshots)
+                  if (data.snapshots && data.snapshots.length > 0) {
+                    const latestSnapshot = data.snapshots[data.snapshots.length - 1]
+                    setGameProvinces(latestSnapshot.provinces)
+                  }
+                  setSelectedTimelinePoint({
+                    timeline: 'alternate',
+                    year: data.current_year,
+                    logIndex: data.logs.length - 1
+                  })
+                  setYear(data.current_year)
+                  setIsProcessing(false)
+                  setStreamingPhase('idle')
+                  break
+
+                case 'error':
+                  setInputError(data.message)
+                  setIsProcessing(false)
+                  setStreamingPhase('idle')
+                  return
+              }
+            } catch (parseError) {
+              console.error('Error parsing SSE data:', parseError)
+            }
           }
         }
-
-        // Fetch full game state for nation tags
-        const gameStateRes = await fetch(`/game/${data.game_id}`)
-        if (gameStateRes.ok) {
-          const gameState = await gameStateRes.json()
-          setGameNationTags(gameState.nation_tags || {})
-        } else {
-          console.error('Failed to fetch game state:', gameStateRes.status)
-        }
-
-        // Set timeline point to the newest log entry
-        setSelectedTimelinePoint({
-          timeline: 'alternate',
-          year: data.result.current_year,
-          logIndex: data.result.logs.length - 1
-        })
-
-        // Update year to game year
-        setYear(data.result.current_year)
       }
     } catch (err) {
       console.error('Error starting game:', err)
@@ -265,35 +304,27 @@ export default function ScenarioPage() {
       } else {
         setInputError('Failed to connect to server')
       }
-    } finally {
       setIsProcessing(false)
+      setStreamingPhase('idle')
     }
-  }, [scenarioId, year])
+  }, [scenarioId])
 
-  // Continue the game
+  // Continue the game with SSE streaming
   const handleContinue = useCallback(async () => {
     if (!gameId) return
 
     setIsProcessing(true)
-
-    // Create AbortController with 5 minute timeout for long-running workflow
-    const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 300000) // 5 minutes
+    setStreamingPhase('dreaming')
 
     try {
-      // Call backend directly to bypass Next.js proxy timeout
-      const response = await fetch(`${BACKEND_URL}/continue/${gameId}`, {
+      const response = await fetch(`${BACKEND_URL}/continue-stream/${gameId}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           years_to_progress: 20
-        }),
-        signal: controller.signal
+        })
       })
 
-      clearTimeout(timeoutId)
-
-      // Check for HTTP errors before parsing JSON
       if (!response.ok) {
         let errorMessage = `Server error: ${response.status}`
         try {
@@ -304,59 +335,98 @@ export default function ScenarioPage() {
         }
         console.error('Error continuing game:', errorMessage)
         setIsProcessing(false)
+        setStreamingPhase('idle')
         return
       }
 
-      const data: ContinueResponse = await response.json()
-
-      setGameYear(data.current_year)
-      setGameMerged(data.merged)
-      setGameLogs(data.logs)
-
-      if (data.result) {
-        setGameRulers(data.result.rulers)
-        setGameDivergences(data.result.divergences)
+      const reader = response.body?.getReader()
+      if (!reader) {
+        console.error('Failed to read response stream')
+        setIsProcessing(false)
+        setStreamingPhase('idle')
+        return
       }
 
-      // Use snapshots from API response for timeline scrubbing
-      if (data.snapshots && data.snapshots.length > 0) {
-        setProvinceSnapshots(data.snapshots)
-        // Set current provinces to the latest snapshot
-        const latestSnapshot = data.snapshots[data.snapshots.length - 1]
-        setGameProvinces(latestSnapshot.provinces)
-      } else {
-        // Fallback: fetch provinces separately
-        const provincesRes = await fetch(`/game/${gameId}/provinces`)
-        const provincesData = await provincesRes.json()
-        setGameProvinces(provincesData.provinces)
+      const decoder = new TextDecoder()
+      let buffer = ''
+
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
+
+        buffer += decoder.decode(value, { stream: true })
+        const lines = buffer.split('\n')
+        buffer = lines.pop() || ''
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            try {
+              const data = JSON.parse(line.slice(6)) as StreamEvent
+
+              switch (data.event) {
+                case 'dreamer_complete':
+                  // Append new log entry (keep existing logs)
+                  setGameLogs(prev => [...prev, data.log_entry])
+                  setGameRulers(data.rulers)
+                  setGameDivergences(data.divergences)
+                  setStreamingPhase('mapping')
+                  break
+
+                case 'geographer_complete':
+                  setGameProvinces(data.provinces)
+                  break
+
+                case 'complete':
+                  setGameYear(data.current_year)
+                  setGameMerged(data.merged)
+                  setGameLogs(data.logs)
+                  setGameRulers(data.rulers)
+                  setGameDivergences(data.divergences)
+                  setProvinceSnapshots(data.snapshots)
+                  if (data.snapshots && data.snapshots.length > 0) {
+                    const latestSnapshot = data.snapshots[data.snapshots.length - 1]
+                    setGameProvinces(latestSnapshot.provinces)
+                  }
+                  setSelectedTimelinePoint({
+                    timeline: 'alternate',
+                    year: data.current_year,
+                    logIndex: data.logs.length - 1
+                  })
+                  setYear(data.current_year)
+                  setIsProcessing(false)
+                  setStreamingPhase('idle')
+                  break
+
+                case 'error':
+                  console.error('Continue stream error:', data.message)
+                  setIsProcessing(false)
+                  setStreamingPhase('idle')
+                  return
+              }
+            } catch (parseError) {
+              console.error('Error parsing SSE data:', parseError)
+            }
+          }
+        }
       }
-
-      // Update timeline point to the newest log entry
-      setSelectedTimelinePoint({
-        timeline: 'alternate',
-        year: data.current_year,
-        logIndex: data.logs.length - 1
-      })
-
-      // Update year
-      setYear(data.current_year)
     } catch (err) {
       console.error('Error continuing game:', err)
       if (err instanceof Error && err.name === 'AbortError') {
         console.error('Request timed out')
       }
-    } finally {
       setIsProcessing(false)
+      setStreamingPhase('idle')
     }
   }, [gameId])
 
-  // Add a new divergence to an existing timeline
+  // Add a new divergence to an existing timeline with SSE streaming
   const handleAddDivergence = useCallback(async (command: string, yearsToProgress: number) => {
     if (!gameId) return
 
     setIsProcessing(true)
     setInputError(null)
     setInputAlternative(null)
+    setStreamingPhase('filtering')
 
     try {
       // First, filter the divergence to check if it's valid for the current era
@@ -376,6 +446,7 @@ export default function ScenarioPage() {
         }
         setInputError(errorMessage)
         setIsProcessing(false)
+        setStreamingPhase('idle')
         return
       }
 
@@ -385,24 +456,21 @@ export default function ScenarioPage() {
         setInputError(filterResult.reason || 'Divergence was rejected')
         setInputAlternative(filterResult.alternative || null)
         setIsProcessing(false)
+        setStreamingPhase('idle')
         return
       }
 
-      // If accepted, add the divergence and continue the game
-      const controller = new AbortController()
-      const timeoutId = setTimeout(() => controller.abort(), 300000) // 5 minutes
+      // If accepted, add the divergence and continue with streaming
+      setStreamingPhase('dreaming')
 
-      const response = await fetch(`${BACKEND_URL}/continue/${gameId}`, {
+      const response = await fetch(`${BACKEND_URL}/continue-stream/${gameId}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           new_divergences: [command],
           years_to_progress: yearsToProgress
-        }),
-        signal: controller.signal
+        })
       })
-
-      clearTimeout(timeoutId)
 
       if (!response.ok) {
         let errorMessage = `Server error: ${response.status}`
@@ -414,39 +482,79 @@ export default function ScenarioPage() {
         }
         setInputError(errorMessage)
         setIsProcessing(false)
+        setStreamingPhase('idle')
         return
       }
 
-      const data: ContinueResponse = await response.json()
-
-      setGameYear(data.current_year)
-      setGameMerged(data.merged)
-      setGameLogs(data.logs)
-
-      if (data.result) {
-        setGameRulers(data.result.rulers)
-        setGameDivergences(data.result.divergences)
+      const reader = response.body?.getReader()
+      if (!reader) {
+        setInputError('Failed to read response stream')
+        setIsProcessing(false)
+        setStreamingPhase('idle')
+        return
       }
 
-      // Use snapshots from API response for timeline scrubbing
-      if (data.snapshots && data.snapshots.length > 0) {
-        setProvinceSnapshots(data.snapshots)
-        const latestSnapshot = data.snapshots[data.snapshots.length - 1]
-        setGameProvinces(latestSnapshot.provinces)
-      } else {
-        const provincesRes = await fetch(`/game/${gameId}/provinces`)
-        const provincesData = await provincesRes.json()
-        setGameProvinces(provincesData.provinces)
+      const decoder = new TextDecoder()
+      let buffer = ''
+
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
+
+        buffer += decoder.decode(value, { stream: true })
+        const lines = buffer.split('\n')
+        buffer = lines.pop() || ''
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            try {
+              const data = JSON.parse(line.slice(6)) as StreamEvent
+
+              switch (data.event) {
+                case 'dreamer_complete':
+                  setGameLogs(prev => [...prev, data.log_entry])
+                  setGameRulers(data.rulers)
+                  setGameDivergences(data.divergences)
+                  setStreamingPhase('mapping')
+                  break
+
+                case 'geographer_complete':
+                  setGameProvinces(data.provinces)
+                  break
+
+                case 'complete':
+                  setGameYear(data.current_year)
+                  setGameMerged(data.merged)
+                  setGameLogs(data.logs)
+                  setGameRulers(data.rulers)
+                  setGameDivergences(data.divergences)
+                  setProvinceSnapshots(data.snapshots)
+                  if (data.snapshots && data.snapshots.length > 0) {
+                    const latestSnapshot = data.snapshots[data.snapshots.length - 1]
+                    setGameProvinces(latestSnapshot.provinces)
+                  }
+                  setSelectedTimelinePoint({
+                    timeline: 'alternate',
+                    year: data.current_year,
+                    logIndex: data.logs.length - 1
+                  })
+                  setYear(data.current_year)
+                  setIsProcessing(false)
+                  setStreamingPhase('idle')
+                  break
+
+                case 'error':
+                  setInputError(data.message)
+                  setIsProcessing(false)
+                  setStreamingPhase('idle')
+                  return
+              }
+            } catch (parseError) {
+              console.error('Error parsing SSE data:', parseError)
+            }
+          }
+        }
       }
-
-      // Update timeline point to the newest log entry
-      setSelectedTimelinePoint({
-        timeline: 'alternate',
-        year: data.current_year,
-        logIndex: data.logs.length - 1
-      })
-
-      setYear(data.current_year)
     } catch (err) {
       console.error('Error adding divergence:', err)
       if (err instanceof Error && err.name === 'AbortError') {
@@ -454,8 +562,8 @@ export default function ScenarioPage() {
       } else {
         setInputError('Failed to connect to server')
       }
-    } finally {
       setIsProcessing(false)
+      setStreamingPhase('idle')
     }
   }, [gameId])
 
@@ -600,10 +708,15 @@ export default function ScenarioPage() {
             year={activeYear || year}
             onProvinceSelect={setSelectedTag}
             onReady={() => setMapReady(true)}
+            isStreamingMap={
+              (streamingPhase === 'mapping' || streamingPhase === 'dreaming') &&
+              selectedTimelinePoint.timeline === 'alternate' &&
+              (gameLogs.length === 0 || selectedTimelinePoint.logIndex === gameLogs.length - 1)
+            }
           />
 
-          {/* Game Info Panel - shows logs and divergences when in game mode */}
-          {gameMode && (
+          {/* Game Info Panel - shows logs and divergences when viewing alternate timeline */}
+          {gameMode && selectedTimelinePoint.timeline === 'alternate' && (
             <GameInfoPanel
               logs={gameLogs}
               divergences={gameDivergences}
@@ -611,6 +724,7 @@ export default function ScenarioPage() {
               merged={gameMerged}
               onContinue={handleContinue}
               isProcessing={isProcessing}
+              streamingPhase={streamingPhase}
             />
           )}
 

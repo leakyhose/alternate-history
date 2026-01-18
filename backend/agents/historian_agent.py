@@ -40,7 +40,7 @@ class HistorianOutput(BaseModel):
     )
 
 
-def build_system_prompt(country_names: List[str], is_future: bool) -> str:
+def build_system_prompt(country_names: List[str], is_future: bool, max_events: int) -> str:
     """Build a dynamic system prompt based on the countries involved."""
     countries_str = ", ".join(country_names) if country_names else "world history"
     
@@ -54,6 +54,8 @@ current trends and geopolitical dynamics. Present these as historical fact, not 
     return f"""You are an expert historian specializing in {countries_str}.
 {future_note}
 Provide historical context for the specified time period as factual events.
+
+IMPORTANT: Output a MAXIMUM of {max_events} conditional events. Only include the most significant events.
 
 Format your response as conditional events:
 - "condition": The circumstances or situation that existed
@@ -109,8 +111,11 @@ def get_historical_context(
     current_real_year = datetime.now().year
     is_future = start_year > current_real_year
     
+    # Calculate max events: 1 event per 5 years of the period
+    max_events = max(1, years_to_progress // 5)
+    
     # Build dynamic system prompt
-    system_prompt = build_system_prompt(country_names, is_future)
+    system_prompt = build_system_prompt(country_names, is_future, max_events)
     
     # Build user prompt
     countries_str = ", ".join(country_names) if country_names else "the region"
@@ -124,7 +129,7 @@ As a historian from this future era, report what major events occurred:
 - Territorial changes
 - Major diplomatic events
 
-Present these as established historical fact."""
+Present these as established historical fact. Include at most {max_events} events (the most significant ones only)."""
     else:
         user_prompt = f"""Provide the real historical context for {countries_str} during the period {start_year}-{end_year}.
 
@@ -132,7 +137,9 @@ What major events ACTUALLY happened during this period? Include:
 - Who was ruling and any succession changes
 - Major wars and their outcomes
 - Territorial changes
-- Important political events"""
+- Important political events
+
+Include at most {max_events} events (the most significant ones only)."""
 
     messages = [
         {"role": "system", "content": system_prompt},

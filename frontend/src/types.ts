@@ -130,3 +130,69 @@ export interface ProvinceSnapshot {
   rulers: Record<string, RulerInfo>;
   divergences: string[];
 }
+
+// Streaming types for SSE partial updates
+
+export type StreamingPhase = 'idle' | 'filtering' | 'dreaming' | 'mapping' | 'complete';
+
+export interface StreamingState {
+  phase: StreamingPhase;
+  year?: number;           // From filter
+  narrative?: string;      // From dreamer
+  rulers?: Record<string, RulerInfo>;
+  divergences?: string[];
+  provinces?: GameProvince[];
+  yearRange?: string;      // From dreamer (e.g., "117-137")
+  territorialChangesSummary?: string;
+}
+
+// SSE Event types from backend
+export interface FilterCompleteEvent {
+  event: 'filter_complete';
+  year: number;
+  game_id: string;
+  nation_tags: Record<string, { name: string; color: string }>;
+}
+
+export interface DreamerCompleteEvent {
+  event: 'dreamer_complete';
+  log_entry: LogEntry;
+  rulers: Record<string, RulerInfo>;
+  divergences: string[];
+  year_range: string;
+}
+
+export interface GeographerCompleteEvent {
+  event: 'geographer_complete';
+  provinces: GameProvince[];
+}
+
+export interface CompleteEvent {
+  event: 'complete';
+  game_id: string;
+  current_year: number;
+  merged: boolean;
+  logs: LogEntry[];
+  rulers: Record<string, RulerInfo>;
+  divergences: string[];
+  snapshots: ProvinceSnapshot[];
+}
+
+export interface ErrorEvent {
+  event: 'error';
+  message: string;
+}
+
+export interface RejectedEvent {
+  event: 'rejected';
+  reason: string;
+  alternative?: string;
+}
+
+export type StreamEvent =
+  | FilterCompleteEvent
+  | DreamerCompleteEvent
+  | GeographerCompleteEvent
+  | CompleteEvent
+  | ErrorEvent
+  | RejectedEvent;

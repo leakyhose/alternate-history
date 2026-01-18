@@ -25,9 +25,10 @@ interface MapCanvasProps {
   year?: number;
   onProvinceSelect?: (tag: string | null) => void;
   onReady?: () => void;
+  isStreamingMap?: boolean;  // When true, shows dimmed state while waiting for geographer
 }
 
-export default function MapCanvas({ defaultProvinceHistory, scenarioMetadata, year = 2, onProvinceSelect, onReady }: MapCanvasProps) {
+export default function MapCanvas({ defaultProvinceHistory, scenarioMetadata, year = 2, onProvinceSelect, onReady, isStreamingMap = false }: MapCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [gpuContext, setGpuContext] = useState<MapGpuContext | null>(null);
@@ -380,8 +381,18 @@ export default function MapCanvas({ defaultProvinceHistory, scenarioMetadata, ye
         ref={canvasRef}
         width={canvasSize.width}
         height={canvasSize.height}
-        className="block bg-black"
+        className={`block bg-black transition-opacity duration-300 ${isStreamingMap ? 'opacity-40' : 'opacity-100'}`}
       />
+      {/* Streaming overlay */}
+      {isStreamingMap && (
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="bg-black/50 px-6 py-4 rounded-lg">
+            <div className="text-amber-400 text-lg font-medium animate-pulse text-center">
+              Updating map...
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
