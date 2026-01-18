@@ -10,6 +10,16 @@ const nextConfig: NextConfig = {
   // Enable static file serving from public folder
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.vercel.app',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+      },
+    ],
   },
   // Increase timeout for long-running API requests
   httpAgentOptions: {

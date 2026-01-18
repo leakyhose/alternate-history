@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
+// Backend URL for API calls
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+
 interface Scenario {
   id: string
   name: string
@@ -14,7 +17,9 @@ export default function Home() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/api/scenarios')
+    const url = `${BACKEND_URL}/scenarios`
+    console.log('📋 Fetching scenarios from:', url)
+    fetch(url)
       .then(res => res.json())
       .then(data => {
         setScenarios(data)
@@ -71,7 +76,7 @@ export default function Home() {
                 <div className="w-16 h-16 relative overflow-hidden border-2 border-[#2a2a3a] 
                                 group-hover:border-amber-400/50 transition-colors flex-shrink-0">
                   <Image
-                    src={`/api/scenarios/${scenario.id}/logo`}
+                    src={`${BACKEND_URL}/scenarios/${scenario.id}/logo`}
                     alt={`${scenario.name} logo`}
                     fill
                     className="object-contain p-1"

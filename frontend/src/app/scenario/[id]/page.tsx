@@ -25,7 +25,13 @@ import type {
 
 // Direct backend URL for long-running workflow requests (bypasses Next.js proxy timeout)
 const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
-console.log('🔗 Backend URL configured as:', BACKEND_URL)
+
+// Debug: Log at module load time (this runs when JS is parsed)
+console.log('='.repeat(50))
+console.log('� ENV DEBUG AT BUILD TIME:')
+console.log('   process.env.NEXT_PUBLIC_API_URL =', process.env.NEXT_PUBLIC_API_URL)
+console.log('   BACKEND_URL =', BACKEND_URL)
+console.log('='.repeat(50))
 
 function PixelLoader() {
   const [frame, setFrame] = useState(0)
@@ -105,18 +111,19 @@ export default function ScenarioPage() {
   useEffect(() => {
     if (!scenarioId) return
 
+    console.log('📂 Loading scenario data from:', BACKEND_URL)
     Promise.all([
-      fetch(`/api/scenarios/${scenarioId}/provinces`, { cache: 'no-store' })
+      fetch(`${BACKEND_URL}/scenarios/${scenarioId}/provinces`, { cache: 'no-store' })
         .then(res => {
           if (!res.ok) throw new Error(`${res.status}`)
           return res.json()
         }),
-      fetch(`/api/scenarios/${scenarioId}/rulers`, { cache: 'no-store' })
+      fetch(`${BACKEND_URL}/scenarios/${scenarioId}/rulers`, { cache: 'no-store' })
         .then(res => {
           if (!res.ok) throw new Error(`${res.status}`)
           return res.json()
         }),
-      fetch(`/api/scenarios/${scenarioId}/metadata`, { cache: 'no-store' })
+      fetch(`${BACKEND_URL}/scenarios/${scenarioId}/metadata`, { cache: 'no-store' })
         .then(res => res.json())
         .catch(() => ({ name: scenarioId, tags: {} }))
     ])
