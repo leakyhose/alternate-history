@@ -42,10 +42,6 @@ class GeographerOutput(BaseModel):
         default_factory=list,
         description="List of province updates with id, name, owner, and control fields"
     )
-    reasoning: str = Field(
-        default="",
-        description="Brief explanation of how territorial changes were interpreted"
-    )
 
 
 @tool
@@ -173,14 +169,13 @@ Return a JSON object with:
   "province_updates": [
     {"id": 123, "name": "Province Name", "owner": "TAG", "control": ""},
     ...
-  ],
-  "reasoning": "Brief explanation of how you interpreted the changes"
+  ]
 }"""
 
 
 # Initialize LLM with timeout
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
+    model="gemini-3-flash-preview",
     google_api_key=os.getenv("GEMINI_API_KEY"),
     timeout=120,  # 2 minute timeout
     max_retries=2
@@ -220,7 +215,7 @@ def interpret_territorial_changes(
     
     # If no territorial changes described, return empty
     if not territorial_description or territorial_description.strip() == "":
-        return {"province_updates": [], "reasoning": "No territorial changes described."}
+        return {"province_updates": []}
     
     # Check for explicit "no changes" statements
     no_change_phrases = [
@@ -231,7 +226,7 @@ def interpret_territorial_changes(
         "territory unchanged"
     ]
     if any(phrase in territorial_description.lower() for phrase in no_change_phrases):
-        return {"province_updates": [], "reasoning": "Description indicates no territorial changes."}
+        return {"province_updates": []}
     
     # Format available tags for the prompt
     tags_text = "Available nation tags:\n"
@@ -375,8 +370,6 @@ Only update provinces that are CLEARLY affected by the described changes."""
         # Validate structure
         if "province_updates" not in result:
             result["province_updates"] = []
-        if "reasoning" not in result:
-            result["reasoning"] = ""
         
         # Validate province updates format
         valid_updates = []
@@ -402,6 +395,5 @@ Only update provinces that are CLEARLY affected by the described changes."""
         
         # Return empty result on parse failure
         return {
-            "province_updates": [],
-            "reasoning": f"Failed to parse territorial changes: {str(e)}"
+            "province_updates": []
         }
