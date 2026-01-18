@@ -165,6 +165,7 @@ export default function BranchingTimeline({
   const mainSliderPercent = yearToPercent(mainYear)
   const altSliderPercent = yearToPercent(altYear)
   const altMaxPercent = yearToPercent(altMaxYear)
+  const mainMaxPercent = yearToPercent(maxYear)  // Where the main timeline actually ends
 
   // Fill percentages
   const mainFillPercent = selectedTimelinePoint.timeline === 'alternate'
@@ -251,16 +252,22 @@ export default function BranchingTimeline({
           </button>
         </div>
 
-        {/* Main timeline track */}
+        {/* Main timeline track - only extends to maxYear, not effectiveMaxYear */}
         <div
           ref={mainTrackRef}
-          className="cursor-pointer relative h-2 bg-pixel-track border-[3px] border-pixel-dark shadow-[inset_0_0_0_2px_#4a4a6a]"
+          className="cursor-pointer relative h-2"
           onMouseDown={handleMainMouseDown}
         >
+          {/* Visible track portion (only to maxYear) */}
           <div
-            className="absolute top-0 left-0 h-full bg-pixel-amber"
-            style={{ width: `${mainFillPercent}%` }}
-          />
+            className="absolute top-0 left-0 h-full bg-pixel-track border-[3px] border-pixel-dark shadow-[inset_0_0_0_2px_#4a4a6a]"
+            style={{ width: `${mainMaxPercent}%` }}
+          >
+            <div
+              className="absolute top-0 left-0 h-full bg-pixel-amber"
+              style={{ width: `${(mainFillPercent / mainMaxPercent) * 100}%` }}
+            />
+          </div>
           {selectedTimelinePoint.timeline === 'main' && (
             <div
               className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-grab w-3 h-4 bg-pixel-knob border-[3px] border-pixel-dark"
@@ -297,11 +304,13 @@ export default function BranchingTimeline({
                   width: `${altMaxPercent - branchPercent}%`
                 }}
               >
-                {/* Fill within the visible track */}
-                <div
-                  className="absolute top-0 left-0 h-full bg-amber-600"
-                  style={{ width: `${altFillPercent}%` }}
-                />
+                {/* Fill within the visible track - only show when alt is selected */}
+                {isAltSelected && (
+                  <div
+                    className="absolute top-0 left-0 h-full bg-amber-600"
+                    style={{ width: `${altFillPercent}%` }}
+                  />
+                )}
               </div>
 
               {/* Knob positioned using full timeline coordinates */}
