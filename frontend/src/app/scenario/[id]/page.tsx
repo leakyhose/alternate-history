@@ -85,6 +85,7 @@ export default function ScenarioPage() {
   const [gameYear, setGameYear] = useState<number>(0)
   const [gameMerged, setGameMerged] = useState(false)
   const [gameNationTags, setGameNationTags] = useState<Record<string, { name: string; color: string }>>({})
+  const [gameYearsToProgress, setGameYearsToProgress] = useState<number>(5)  // Store the years used for this game)
 
   // Timeline branching state
   const [branchStartYear, setBranchStartYear] = useState<number | null>(null)
@@ -170,6 +171,7 @@ export default function ScenarioPage() {
     setInputError(null)
     setInputAlternative(null)
     setStreamingPhase('filtering')
+    setGameYearsToProgress(yearsToProgress)  // Store the years for future Continue calls
 
     try {
       // Use POST request with fetch for SSE (EventSource only supports GET)
@@ -254,6 +256,20 @@ export default function ScenarioPage() {
                   setGameLogs([data.log_entry])
                   setGameRulers(data.rulers)
                   setGameDivergences(data.divergences)
+                  setStreamingPhase('quoting')
+                  break
+
+                case 'quotegiver_complete':
+                  // Update the log entry with quotes
+                  setGameLogs(prev => {
+                    if (prev.length === 0) return prev
+                    const updated = [...prev]
+                    updated[updated.length - 1] = {
+                      ...updated[updated.length - 1],
+                      quotes: data.quotes
+                    }
+                    return updated
+                  })
                   setStreamingPhase('mapping')
                   break
 
@@ -321,7 +337,7 @@ export default function ScenarioPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          years_to_progress: 20
+          years_to_progress: gameYearsToProgress
         })
       })
 
@@ -369,6 +385,20 @@ export default function ScenarioPage() {
                   setGameLogs(prev => [...prev, data.log_entry])
                   setGameRulers(data.rulers)
                   setGameDivergences(data.divergences)
+                  setStreamingPhase('quoting')
+                  break
+
+                case 'quotegiver_complete':
+                  // Update the latest log entry with quotes
+                  setGameLogs(prev => {
+                    if (prev.length === 0) return prev
+                    const updated = [...prev]
+                    updated[updated.length - 1] = {
+                      ...updated[updated.length - 1],
+                      quotes: data.quotes
+                    }
+                    return updated
+                  })
                   setStreamingPhase('mapping')
                   break
 
@@ -417,7 +447,7 @@ export default function ScenarioPage() {
       setIsProcessing(false)
       setStreamingPhase('idle')
     }
-  }, [gameId])
+  }, [gameId, gameYearsToProgress])
 
   // Add a new divergence to an existing timeline with SSE streaming
   const handleAddDivergence = useCallback(async (command: string, yearsToProgress: number) => {
@@ -515,6 +545,20 @@ export default function ScenarioPage() {
                   setGameLogs(prev => [...prev, data.log_entry])
                   setGameRulers(data.rulers)
                   setGameDivergences(data.divergences)
+                  setStreamingPhase('quoting')
+                  break
+
+                case 'quotegiver_complete':
+                  // Update the latest log entry with quotes
+                  setGameLogs(prev => {
+                    if (prev.length === 0) return prev
+                    const updated = [...prev]
+                    updated[updated.length - 1] = {
+                      ...updated[updated.length - 1],
+                      quotes: data.quotes
+                    }
+                    return updated
+                  })
                   setStreamingPhase('mapping')
                   break
 
@@ -725,6 +769,8 @@ export default function ScenarioPage() {
               onContinue={handleContinue}
               isProcessing={isProcessing}
               streamingPhase={streamingPhase}
+              yearsToProgress={gameYearsToProgress}
+              nationTags={gameNationTags}
             />
           )}
 

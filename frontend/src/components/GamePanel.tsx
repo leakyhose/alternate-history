@@ -12,6 +12,7 @@ interface GamePanelProps {
   onContinue: () => void
   isProcessing: boolean
   nationTags?: Record<string, { name: string; color: string }>
+  yearsToProgress?: number
 }
 
 export default function GamePanel({
@@ -22,7 +23,8 @@ export default function GamePanel({
   merged,
   onContinue,
   isProcessing,
-  nationTags
+  nationTags,
+  yearsToProgress = 5
 }: GamePanelProps) {
   const [activeTab, setActiveTab] = useState<'logs' | 'rulers' | 'divergences'>('logs')
   const [isCollapsed, setIsCollapsed] = useState(false)
@@ -170,7 +172,7 @@ export default function GamePanel({
         </button>
         {!merged && (
           <p className="text-gray-500 text-sm text-center mt-2">
-            Advances the simulation by 20 years
+            Advances the simulation by {yearsToProgress} years
           </p>
         )}
       </div>

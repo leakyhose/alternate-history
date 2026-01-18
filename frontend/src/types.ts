@@ -49,11 +49,19 @@ export interface ScenarioMetadata {
 
 // Game/Workflow API types
 
+export interface Quote {
+  tag: string;
+  ruler_name: string;
+  ruler_title: string;
+  quote: string;
+}
+
 export interface LogEntry {
   year_range: string;
   narrative: string;
   divergences: string[];
   territorial_changes_summary: string;
+  quotes?: Quote[];
 }
 
 export interface RulerInfo {
@@ -133,7 +141,7 @@ export interface ProvinceSnapshot {
 
 // Streaming types for SSE partial updates
 
-export type StreamingPhase = 'idle' | 'filtering' | 'dreaming' | 'mapping' | 'complete';
+export type StreamingPhase = 'idle' | 'filtering' | 'dreaming' | 'quoting' | 'mapping' | 'complete';
 
 export interface StreamingState {
   phase: StreamingPhase;
@@ -167,6 +175,11 @@ export interface GeographerCompleteEvent {
   provinces: GameProvince[];
 }
 
+export interface QuotegiverCompleteEvent {
+  event: 'quotegiver_complete';
+  quotes: Quote[];
+}
+
 export interface CompleteEvent {
   event: 'complete';
   game_id: string;
@@ -192,6 +205,7 @@ export interface RejectedEvent {
 export type StreamEvent =
   | FilterCompleteEvent
   | DreamerCompleteEvent
+  | QuotegiverCompleteEvent
   | GeographerCompleteEvent
   | CompleteEvent
   | ErrorEvent

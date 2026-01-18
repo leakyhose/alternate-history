@@ -11,6 +11,8 @@ interface GameInfoPanelProps {
   onContinue: () => void
   isProcessing: boolean
   streamingPhase?: StreamingPhase
+  yearsToProgress?: number
+  nationTags?: Record<string, { name: string; color: string }>
 }
 
 export default function GameInfoPanel({
@@ -20,15 +22,18 @@ export default function GameInfoPanel({
   merged,
   onContinue,
   isProcessing,
-  streamingPhase = 'idle'
+  streamingPhase = 'idle',
+  yearsToProgress = 5,
+  nationTags = {}
 }: GameInfoPanelProps) {
   const [activeTab, setActiveTab] = useState<'logs' | 'divergences'>('logs')
   const [isCollapsed, setIsCollapsed] = useState(false)
 
   // Check if we're in a streaming loading state
   const isDreaming = streamingPhase === 'dreaming'
+  const isQuoting = streamingPhase === 'quoting'
   const isMapping = streamingPhase === 'mapping'
-  const isStreaming = isDreaming || isMapping
+  const isStreaming = isDreaming || isQuoting || isMapping
 
   // Get logs up to the selected point
   const visibleLogs = useMemo(() => {
@@ -121,6 +126,14 @@ export default function GameInfoPanel({
           </div>
         )}
 
+        {isQuoting && (
+          <div className="flex flex-col items-center justify-center py-4 mb-4 border-b border-[#2a2a3a]">
+            <div className="text-amber-400 text-sm font-medium animate-pulse">
+              Quotegiver is gathering ruler perspectives...
+            </div>
+          </div>
+        )}
+
         {isMapping && (
           <div className="flex flex-col items-center justify-center py-4 mb-4 border-b border-[#2a2a3a]">
             <div className="text-amber-400 text-sm font-medium animate-pulse">
@@ -142,6 +155,19 @@ export default function GameInfoPanel({
                     <div className="mt-2">
                       <div className="text-amber-600 text-sm font-bold uppercase mb-1">Territorial Changes</div>
                       <p className="text-gray-300 text-sm leading-relaxed">{log.territorial_changes_summary}</p>
+                    </div>
+                  )}
+                  {log.quotes && log.quotes.length > 0 && (
+                    <div className="mt-3 space-y-2">
+                      {log.quotes.map((q, qIdx) => (
+                        <div key={qIdx} className="bg-[#0a0a14] border-l-2 border-amber-600 pl-3 py-2 pr-2 rounded-r">
+                          <p className="text-gray-200 italic text-sm leading-relaxed">"{q.quote}"</p>
+                          <p className="text-amber-500 text-xs mt-1 font-medium">
+                            — {q.ruler_name}, {q.ruler_title}
+                            {q.tag && nationTags[q.tag] ? ` of ${nationTags[q.tag].name}` : q.tag ? ` of ${q.tag}` : ''}
+                          </p>
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>
@@ -182,7 +208,7 @@ export default function GameInfoPanel({
         </button>
         {!merged && selectedTimelinePoint.timeline === 'alternate' && !isViewingPast && (
           <p className="text-gray-500 text-sm text-center mt-2">
-            Advances the simulation by 20 years
+            Advances the simulation by {yearsToProgress} years
           </p>
         )}
       </div>
