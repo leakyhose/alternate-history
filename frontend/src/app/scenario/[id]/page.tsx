@@ -1,10 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useParams } from 'next/navigation'
 import MapCanvas from '@components/MapCanvas'
 import YearSlider from '@components/YearSlider'
 import CountryInfo from '@components/CountryInfo'
-import type { ProvinceHistory, RulerHistory } from '@/types'
+import type { ProvinceHistory, RulerHistory, ScenarioMetadata } from '@/types'
 
 function PixelLoader() {
   const [frame, setFrame] = useState(0)
@@ -29,49 +30,82 @@ function PixelLoader() {
   )
 }
 
-export default function RomePage() {
-  const [year, setYear] = useState(2)
+export default function ScenarioPage() {
+  const params = useParams()
+  const scenarioId = params.id as string
+
+  const [year, setYear] = useState<number | null>(null)
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
   const [defaultProvinceHistory, setDefaultProvinceHistory] = useState<ProvinceHistory | null>(null)
   const [defaultRulerHistory, setDefaultRulerHistory] = useState<RulerHistory | null>(null)
+  const [scenarioMetadata, setScenarioMetadata] = useState<ScenarioMetadata | null>(null)
+  const [yearRange, setYearRange] = useState<{ min: number; max: number } | null>(null)
   const [dataLoaded, setDataLoaded] = useState(false)
   const [mapReady, setMapReady] = useState(false)
 
   useEffect(() => {
+    if (!scenarioId) return
+
     Promise.all([
-      fetch("/api/rome/provinces", { cache: 'no-store' })
+      fetch(`/api/scenarios/${scenarioId}/provinces`, { cache: 'no-store' })
         .then(res => {
           if (!res.ok) throw new Error(`${res.status}`)
           return res.json()
         }),
-      fetch("/api/rome/rulers", { cache: 'no-store' })
+      fetch(`/api/scenarios/${scenarioId}/rulers`, { cache: 'no-store' })
         .then(res => {
           if (!res.ok) throw new Error(`${res.status}`)
           return res.json()
-        })
+        }),
+      fetch(`/api/scenarios/${scenarioId}/metadata`, { cache: 'no-store' })
+        .then(res => res.json())
+        .catch(() => ({ name: scenarioId, tags: {} }))
     ])
-      .then(([provinces, rulers]) => {
+      .then(([provinces, rulers, metadata]) => {
         setDefaultProvinceHistory(provinces)
         setDefaultRulerHistory(rulers)
+        setScenarioMetadata(metadata)
+
+        // Calculate year range from provinces data
+        const years = Object.keys(provinces).map(Number).filter(n => !isNaN(n))
+        if (years.length > 0) {
+          const minYear = Math.min(...years)
+          const maxYear = Math.max(...years) + 1 // +1 for "empty map" end year
+          setYearRange({ min: minYear, max: maxYear })
+          setYear(minYear) // Start at first year with data
+        }
+
         setDataLoaded(true)
       })
       .catch(err => {
         console.error(err)
         setDataLoaded(true)
       })
-  }, [])
+  }, [scenarioId])
 
-  const isLoading = !dataLoaded || !mapReady
+  const isLoading = !dataLoaded || !mapReady || year === null
 
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-black">
       {isLoading && <PixelLoader />}
-      {dataLoaded && (
+      {dataLoaded && yearRange && year !== null && (
         <>
-          <YearSlider onChange={setYear} initialValue={2} min={2} max={1453} />
-          <CountryInfo defaultRulerHistory={defaultRulerHistory} selectedTag={selectedTag} year={year} onTagChange={setSelectedTag} />
+          <YearSlider
+            onChange={setYear}
+            initialValue={year}
+            min={yearRange.min}
+            max={yearRange.max}
+          />
+          <CountryInfo
+            defaultRulerHistory={defaultRulerHistory}
+            scenarioMetadata={scenarioMetadata}
+            selectedTag={selectedTag}
+            year={year}
+            onTagChange={setSelectedTag}
+          />
           <MapCanvas
             defaultProvinceHistory={defaultProvinceHistory}
+            scenarioMetadata={scenarioMetadata}
             year={year}
             onProvinceSelect={setSelectedTag}
             onReady={() => setMapReady(true)}

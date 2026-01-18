@@ -36,3 +36,9 @@ export interface RulerHistoryEntry {
 export interface RulerHistory {
   [year: string]: RulerHistoryEntry[];
 }
+
+export interface ScenarioMetadata {
+  name: string;
+  description?: string;
+  tags: Record<string, { name: string; color: string }>;
+}
