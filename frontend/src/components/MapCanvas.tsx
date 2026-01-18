@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { MapGpuContext } from '@/lib/map-renderer/gpu-context';
-import type { MapMetadata, ProvinceHistory } from '@/types'
+import type { MapMetadata, ProvinceHistory, ScenarioMetadata } from '@/types'
 import { MapViewport } from '@/lib/map-renderer/viewport';
 
 // Pack RGB to u32 (0x00RRGGBB)
@@ -21,12 +21,13 @@ function hexToRgb(hex: string): [number, number, number] {
 
 interface MapCanvasProps {
   defaultProvinceHistory: ProvinceHistory | null;
+  scenarioMetadata?: ScenarioMetadata | null;
   year?: number;
   onProvinceSelect?: (tag: string | null) => void;
   onReady?: () => void;
 }
 
-export default function MapCanvas({ defaultProvinceHistory, year = 2, onProvinceSelect, onReady }: MapCanvasProps) {
+export default function MapCanvas({ defaultProvinceHistory, scenarioMetadata, year = 2, onProvinceSelect, onReady }: MapCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [gpuContext, setGpuContext] = useState<MapGpuContext | null>(null);
@@ -39,8 +40,14 @@ export default function MapCanvas({ defaultProvinceHistory, year = 2, onProvince
   const provinceTextureData = useRef<Uint16Array | null>(null);
   const provinceToTagMap = useRef<Map<number, string>>(new Map());
 
-  // Get color for a tag from metadata (returns dark gray for unknown tags, never 0)
-  const getTagColor = useCallback((tag: string, meta: MapMetadata): number => {
+  // Get color for a tag from scenario metadata, with fallback to map metadata
+  const getTagColor = useCallback((tag: string, meta: MapMetadata, scenarioMeta?: ScenarioMetadata | null): number => {
+    // First check scenario metadata for tag colors
+    if (scenarioMeta?.tags && scenarioMeta.tags[tag]) {
+      const [r, g, b] = hexToRgb(scenarioMeta.tags[tag].color);
+      return packColor(r, g, b);
+    }
+    // Fallback to map metadata (for backwards compatibility)
     if (meta.tags && meta.tags[tag]) {
       const [r, g, b] = hexToRgb(meta.tags[tag].color);
       return packColor(r, g, b);
@@ -159,12 +166,12 @@ export default function MapCanvas({ defaultProvinceHistory, year = 2, onProvince
 
         provinceToTagMap.current.set(provId, ownerTag);
 
-        const tagColor = getTagColor(ownerTag, metadata);
+        const tagColor = getTagColor(ownerTag, metadata, scenarioMetadata);
         primaryColors[provId] = tagColor;
         ownerColors[provId] = tagColor;
 
         if (province.CONTROL && province.CONTROL !== ownerTag) {
-          const occupierColor = getTagColor(province.CONTROL, metadata);
+          const occupierColor = getTagColor(province.CONTROL, metadata, scenarioMetadata);
           secondaryColors[provId] = occupierColor;
         } else {
           secondaryColors[provId] = 0;
@@ -176,7 +183,7 @@ export default function MapCanvas({ defaultProvinceHistory, year = 2, onProvince
     gpuContext.updateOwnerColors(ownerColors);
     gpuContext.updateSecondaryColors(secondaryColors);
     console.log(`Map updated for year ${year}, provinces: ${provinceToTagMap.current.size}`);
-  }, [year, gpuContext, metadata, defaultProvinceHistory, getTagColor]);
+  }, [year, gpuContext, metadata, defaultProvinceHistory, scenarioMetadata, getTagColor]);
 
   // Configure canvas and handle resize
   useEffect(() => {
