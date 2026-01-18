@@ -64,9 +64,10 @@ class ProvinceUpdate(TypedDict):
     owner: str      # Empty string "" means UNTRACKED (lost to non-scenario nation)
 
 
-class GeographerOutput(TypedDict):
+class GeographerOutput(TypedDict, total=False):
     """Output from the Geographer agent."""
     province_updates: List[ProvinceUpdate]
+    status: str     # Status message for logging only (not processed by workflow)
 
 
 class QuotegiverOutput(TypedDict):

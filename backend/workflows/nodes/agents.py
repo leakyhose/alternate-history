@@ -109,8 +109,14 @@ def geographer_node(state: WorkflowState) -> dict:
     """
     Geographer Agent: Translate territorial descriptions to province updates.
     
-    Interprets Dreamer's STRUCTURED territorial changes and converts to OWNER/CONTROL changes.
-    Uses tools to query regions and find province IDs, then applies change_type deterministically.
+    The Geographer uses ACTION TOOLS to directly apply territorial changes:
+    - transfer_areas: Move areas between nations
+    - transfer_provinces: Move specific provinces (rare)
+    - annex_nation: Transfer all territory from one nation to another
+    - untrack_areas/provinces: Mark territory as lost to untracked nations
+    
+    The agent processes changes one-by-one, calling tools as needed, then
+    returns the accumulated province updates.
     """
     dreamer_output = state.get("dreamer_output", {})
     territorial_changes = dreamer_output.get("territorial_changes", [])
