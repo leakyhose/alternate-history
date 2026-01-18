@@ -26,6 +26,7 @@ load_dotenv()
 # Module-level caches for tool access
 _region_names_cache: Optional[List[str]] = None
 _available_tags: Dict[str, Dict[str, Any]] = {}
+_current_provinces_cache: Dict[int, Dict[str, Any]] = {}  # province_id -> province data
 
 
 class ProvinceUpdate(BaseModel):
@@ -69,13 +70,14 @@ def get_available_regions() -> str:
 def query_region_provinces(region_name: str) -> str:
     """
     Query the provinces within a specific region.
-    Use this to get the province IDs and names for a region mentioned in territorial changes.
+    Returns province IDs, names, and their CURRENT owner/controller status.
+    Use this to find province IDs for regions mentioned in territorial changes.
     
     Args:
         region_name: The exact region name (e.g., 'egypt_region', 'syria_region')
         
     Returns:
-        List of provinces with their IDs in that region
+        List of provinces with their IDs, names, and current ownership status
     """
     provinces = get_provinces_for_region(region_name)
     
@@ -89,24 +91,20 @@ def query_region_provinces(region_name: str) -> str:
     
     lines = [f"Provinces in {region_name}:"]
     for p in provinces:
-        lines.append(f"  - ID: {p['id']}, Name: {p['name']}")
-    
-    return "\n".join(lines)
-
-
-@tool
-def get_nation_tags() -> str:
-    """
-    Get the valid nation tags that can be used as owner/control values.
-    Call this to ensure you're using valid tags for province updates.
-    """
-    if not _available_tags:
-        return "No nation tags defined. Use generic tags like 'ROM', 'BYZ', 'ARB'."
-    
-    lines = ["Valid nation tags:"]
-    for tag, info in _available_tags.items():
-        name = info.get("name", "Unknown")
-        lines.append(f"  - {tag}: {name}")
+        prov_id = p['id']
+        name = p['name']
+        
+        # Look up current state from cache
+        current = _current_provinces_cache.get(prov_id)
+        if current:
+            owner = current.get('owner', '?')
+            control = current.get('control', '')
+            if control and control != owner:
+                lines.append(f"  - ID {prov_id}: {name} [owner: {owner}, controlled by: {control}]")
+            else:
+                lines.append(f"  - ID {prov_id}: {name} [owner: {owner}]")
+        else:
+            lines.append(f"  - ID {prov_id}: {name} [not tracked]")
     
     return "\n".join(lines)
 
@@ -114,63 +112,37 @@ def get_nation_tags() -> str:
 SYSTEM_PROMPT = """You are a geographer assistant for an alternate history simulation.
 Your job is to translate prose descriptions of territorial changes into specific province-level updates.
 
-You will receive a territorial description from the Dreamer agent that describes what happened to various regions.
-Your task is to:
-1. Identify which regions are mentioned in the description
-2. Use the tools to find the corresponding region names and province IDs
-3. Determine if each change is PERMANENT (conquest) or TEMPORARY (occupation/contested)
-4. Create province update entries with the correct owner and control values
-
-OWNER vs CONTROL LOGIC:
-- PERMANENT changes (change OWNER):
-  - Language: "conquered", "annexed", "ceded to", "now belongs to", "permanently lost", "fell to"
-  - Set: owner = new_nation, control = ""
-  
-- TEMPORARY changes (set CONTROL, keep OWNER):
-  - Language: "occupied by", "contested", "under siege", "raided", "temporarily held", "disputed"
-  - Set: control = occupier (owner stays the same)
-  
-- CLEARING occupation (restore control to owner):
-  - Language: "liberated", "retook", "recovered", "restored control"
-  - Set: control = "" (cleared)
-
-- LOST TO UNTRACKED STATE:
-  - If a province is conquered by a state that does NOT have a valid nation tag (e.g., Bulgars, Avars, Slavs, etc.)
-  - Set: owner = "" (empty string), control = ""
-  - This marks the province as "lost" to an entity we don't track
-  - IMPORTANT: You can ONLY mark provinces as lost (owner="") if they are CURRENTLY TRACKED
-  - Example: If Bulgarians conquer Thrace but 'BUL' is not a valid tag, set owner = ""
-
-PROVINCE TRACKING RULES:
-- The game only tracks provinces owned by player nations (like Byzantium)
-- Provinces owned by external nations (Arabs, Persians, etc.) are NOT tracked unless conquered
-- CONQUESTS: When you conquer territory FROM untracked nations, include name + owner to ADD them
-- LOSSES: When losing territory TO untracked nations, ONLY include provinces that are currently tracked
-- If a province is not in the "currently tracked provinces" list, you CANNOT mark it as lost
-
 WORKFLOW:
-1. First, check the "Currently Tracked Provinces" list to see what provinces exist in the game state
-2. Use get_available_regions to see all available region names
-3. Identify which regions match the areas mentioned in the territorial description
-4. Use query_region_provinces to get the province IDs for each relevant region
-5. Use get_nation_tags to verify you're using valid nation tags
-6. Cross-reference: Only update/lose provinces that are currently tracked, but you CAN add new ones
+1. First, call get_available_regions to see all region names
+2. Identify which regions match the areas mentioned in the territorial description  
+3. Call query_region_provinces for each relevant region to get province IDs
+4. After gathering the province data, STOP calling tools and return your final JSON answer
 
-IMPORTANT:
-- Only create updates for provinces that are EXPLICITLY affected by the territorial changes
-- If no territorial changes are described, return an empty province_updates list
-- Be conservative - if the description is vague, don't make updates
-- Use the actual province IDs from the query results
-- Always include the province "name" field - this is required for adding new provinces
+WHEN TO CREATE UPDATES:
 
-OUTPUT FORMAT:
-Return a JSON object with:
+1. CONQUEST/ANNEXATION (nation gains new territory):
+   - If provinces are "[not tracked]" and a tracked nation (BYZ, ROM, etc.) conquers them → ADD them
+   - Set: owner = conquering_nation, control = ""
+
+2. LOSS TO UNTRACKED STATE (nation loses territory):
+   - If provinces are owned by a tracked nation and lost to an untracked state (Bulgars, Seljuks, etc.)
+   - Set: owner = "" (empty string), control = ""
+
+3. TRANSFER BETWEEN TRACKED NATIONS:
+   - If a province changes from one tracked nation to another
+   - Set: owner = new_nation, control = ""
+
+IMPORTANT: After you have queried the relevant regions, return your final answer as a JSON object. Do not keep calling tools.
+
+OUTPUT FORMAT (return this as your final response, not a tool call):
 {
   "province_updates": [
     {"id": 123, "name": "Province Name", "owner": "TAG", "control": ""},
     ...
   ]
-}"""
+}
+
+If there are no changes needed, return: {"province_updates": []}"""
 
 
 # Initialize LLM with timeout
@@ -182,8 +154,11 @@ llm = ChatGoogleGenerativeAI(
 )
 
 # Tools for the geographer
-tools = [get_available_regions, query_region_provinces, get_nation_tags]
-llm_with_tools = llm.bind_tools(tools)
+tools = [get_available_regions, query_region_provinces]
+
+# Two versions: one that forces tool use, one that allows finishing
+llm_with_tools_required = llm.bind_tools(tools, tool_choice="any")
+llm_with_tools_auto = llm.bind_tools(tools, tool_choice="auto")
 
 # Structured output version
 llm_structured = llm.with_structured_output(GeographerOutput)
@@ -205,13 +180,21 @@ def interpret_territorial_changes(
     Returns:
         Dict with province_updates list
     """
-    global _available_tags, _region_names_cache
+    global _available_tags, _region_names_cache, _current_provinces_cache
     
     # Load available nation tags
     _available_tags = get_scenario_tags(scenario_id)
     
     # Pre-load region names
     _region_names_cache = get_all_region_names()
+    
+    # Build province lookup cache from current provinces
+    _current_provinces_cache = {}
+    if current_provinces:
+        for p in current_provinces:
+            prov_id = p.get("id")
+            if prov_id is not None:
+                _current_provinces_cache[prov_id] = p
     
     # If no territorial changes described, return empty
     if not territorial_description or territorial_description.strip() == "":
@@ -236,53 +219,12 @@ def interpret_territorial_changes(
     else:
         tags_text += "  - Use standard tags: ROM, BYZ, ARB, etc.\n"
     
-    # Format currently tracked provinces
-    tracked_text = ""
-    if current_provinces:
-        # Group by owner for readability
-        by_owner = {}
-        for p in current_provinces:
-            owner = p.get("owner", "unknown")
-            if owner not in by_owner:
-                by_owner[owner] = []
-            by_owner[owner].append(p)
-        
-        tracked_text = f"\n=== CURRENTLY TRACKED PROVINCES ({len(current_provinces)} total) ===\n"
-        tracked_text += "These are the provinces currently in the game state. You can ONLY mark provinces as lost (owner='') if they appear here.\n"
-        for owner, provinces in by_owner.items():
-            tracked_text += f"\nOwned by {owner} ({len(provinces)} provinces):\n"
-            # Show just ID and name, limit to avoid token overflow
-            for p in provinces[:50]:
-                tracked_text += f"  - ID {p.get('id')}: {p.get('name', 'Unknown')}\n"
-            if len(provinces) > 50:
-                tracked_text += f"  ... and {len(provinces) - 50} more\n"
-    else:
-        tracked_text = "\n=== NO CURRENTLY TRACKED PROVINCES PROVIDED ===\n"
-        tracked_text += "Be cautious - only create province updates for conquests (adding new provinces).\n"
-    
-    user_prompt = f"""Interpret the following territorial changes and create province updates.
-
-=== TERRITORIAL CHANGES DESCRIPTION ===
+    user_prompt = f"""=== TERRITORIAL CHANGES ===
 {territorial_description}
 
 === {tags_text}
-{tracked_text}
 
-INSTRUCTIONS:
-1. FIRST check the "Currently Tracked Provinces" list above to see what provinces exist in the game
-2. Use get_available_regions to see all region names
-3. Identify regions that match the areas mentioned in the description
-4. Query each relevant region to get province IDs using query_region_provinces
-5. Create province_updates for affected provinces
-6. Use proper OWNER vs CONTROL logic based on the language used
-
-CRITICAL RULES:
-- CONQUESTS (adding provinces): Include id, name, and owner tag. These will be ADDED to tracking.
-- LOSSES (to untracked states): ONLY include provinces that appear in "Currently Tracked Provinces" above.
-- If a province ID is NOT in the tracked list, you CANNOT mark it as lost.
-
-If the description is too vague or doesn't specify actual regions, return an empty province_updates list.
-Only update provinces that are CLEARLY affected by the described changes."""
+Query the relevant regions to find province IDs, then return your final JSON answer with province_updates."""
 
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
@@ -293,10 +235,16 @@ Only update provinces that are CLEARLY affected by the described changes."""
     max_iterations = 10
     iteration = 0
     
-    response = llm_with_tools.invoke(messages)
+    print(f"🗺️  Geographer: Sending initial request to LLM...")
+    # First call: force tool use to ensure the model queries regions
+    response = llm_with_tools_required.invoke(messages)
+    print(f"🗺️  Geographer: Initial response - tool_calls: {len(response.tool_calls) if response.tool_calls else 0}, content length: {len(response.content) if response.content else 0}")
+    if not response.tool_calls:
+        print(f"🗺️  Geographer: No tool calls! Response content: {response.content[:500] if response.content else 'Empty'}")
     
     while response.tool_calls and iteration < max_iterations:
         iteration += 1
+        print(f"🗺️  Geographer: Iteration {iteration}, executing {len(response.tool_calls)} tool calls")
         
         # Add the AI response with tool calls
         messages.append(response)
@@ -311,8 +259,6 @@ Only update provinces that are CLEARLY affected by the described changes."""
                 result = get_available_regions.invoke({})
             elif tool_name == "query_region_provinces":
                 result = query_region_provinces.invoke(tool_args)
-            elif tool_name == "get_nation_tags":
-                result = get_nation_tags.invoke({})
             else:
                 result = f"Unknown tool: {tool_name}"
             
@@ -322,8 +268,8 @@ Only update provinces that are CLEARLY affected by the described changes."""
                 "tool_call_id": tool_call["id"]
             })
         
-        # Continue the conversation
-        response = llm_with_tools.invoke(messages)
+        # Subsequent calls: use "auto" so the model can choose to finish
+        response = llm_with_tools_auto.invoke(messages)
     
     # Extract the final response
     content = response.content
