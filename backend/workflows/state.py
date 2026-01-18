@@ -20,6 +20,7 @@ class LogEntry(TypedDict):
 class HistorianOutput(TypedDict, total=False):
     """Output from the Historian agent."""
     period: str
+    real_events: List[str]
     keep_in_mind: List[str]
     conditional_events: List[Dict[str, str]]
 

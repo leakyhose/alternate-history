@@ -1,9 +1,6 @@
-"""Agent nodes for the alternate history workflow.
-
-These are placeholder implementations that will be replaced
-with actual LLM calls in later phases.
-"""
+"""Agent nodes for the alternate history workflow."""
 from workflows.state import WorkflowState
+from agents.historian_agent import get_historical_context
 
 
 def historian_node(state: WorkflowState) -> dict:
@@ -12,30 +9,16 @@ def historian_node(state: WorkflowState) -> dict:
     
     The Historian does NOT see current alternate state - only provides
     the baseline of what would happen in real history.
-    
-    TODO: Implement actual LLM call (Phase 2)
     """
-    start_year = state.get("current_year", state.get("start_year"))
+    current_year = state.get("current_year", state.get("start_year"))
     years_to_progress = state.get("years_to_progress", 20)
     rulers = state.get("rulers", {})
     
-    # Get primary nation tag (first ruler)
-    primary_tag = list(rulers.keys())[0] if rulers else "ROM"
-    
-    # Placeholder output - replace with actual LLM call in Phase 2
-    historian_output = {
-        "period": f"{start_year}-{start_year + years_to_progress} AD",
-        "keep_in_mind": [
-            f"Placeholder: Real historical events for {start_year}-{start_year + years_to_progress} AD",
-            "This will be replaced with actual LLM-generated historical context"
-        ],
-        "conditional_events": [
-            {
-                "condition": "Placeholder condition",
-                "outcome": "Placeholder outcome - to be replaced with actual historical conditionals"
-            }
-        ]
-    }
+    historian_output = get_historical_context(
+        start_year=current_year,
+        years_to_progress=years_to_progress,
+        rulers=rulers
+    )
     
     return {
         "historian_output": historian_output
