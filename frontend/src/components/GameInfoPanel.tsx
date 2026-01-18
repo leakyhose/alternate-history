@@ -58,7 +58,7 @@ export default function GameInfoPanel({
     return (
       <button
         onClick={() => setIsCollapsed(false)}
-        className="absolute bottom-24 right-5 bg-[#1a1a24] border-2 border-[#2a2a3a] p-3 z-30
+        className="absolute bottom-5 right-5 bg-[#1a1a24] border-2 border-[#2a2a3a] p-3 z-30
                    text-amber-400 hover:bg-[#2a2a3a] transition-colors"
       >
         ◀
@@ -67,7 +67,7 @@ export default function GameInfoPanel({
   }
 
   return (
-    <div className="absolute bottom-24 right-5 w-96 max-h-[60vh] bg-[#1a1a24] border-2 border-[#2a2a3a]
+    <div className="absolute bottom-5 right-5 w-96 max-h-[60vh] bg-[#1a1a24] border-2 border-[#2a2a3a]
                     flex flex-col z-30 shadow-lg">
       {/* Header with tabs */}
       <div className="flex items-center justify-between border-b border-[#2a2a3a] px-2">
