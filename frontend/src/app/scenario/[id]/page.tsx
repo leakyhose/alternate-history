@@ -67,10 +67,29 @@ export default function ScenarioPage() {
         setScenarioMetadata(metadata)
 
         // Calculate year range from provinces data
-        const years = Object.keys(provinces).map(Number).filter(n => !isNaN(n))
+        // Find years where at least one province is owned by a scenario tag
+        const scenarioTags = new Set(Object.keys(metadata.tags || {}))
+        const years = Object.keys(provinces).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b)
+
         if (years.length > 0) {
-          const minYear = Math.min(...years)
-          const maxYear = Math.max(...years) + 1 // +1 for "empty map" end year
+          const minYear = years[0]
+
+          // Find the last year where any scenario tag owns at least one province
+          let lastActiveYear = minYear
+          for (const yr of years) {
+            const yearData = provinces[String(yr)]
+            if (yearData && Array.isArray(yearData)) {
+              const hasScenarioProvince = yearData.some(
+                (p: { OWNER?: string }) => p.OWNER && scenarioTags.has(p.OWNER)
+              )
+              if (hasScenarioProvince) {
+                lastActiveYear = yr
+              }
+            }
+          }
+
+          // +1 for "empty map" end year showing the scenario has ended
+          const maxYear = lastActiveYear + 1
           setYearRange({ min: minYear, max: maxYear })
           setYear(minYear) // Start at first year with data
         }
