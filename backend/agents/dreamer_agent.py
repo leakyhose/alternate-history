@@ -118,101 +118,74 @@ def get_available_nation_tags() -> str:
     return "\n".join(lines)
 
 
-SYSTEM_PROMPT = """You are a creative alternate history writer specializing in the Roman/Byzantine Empire (117-1453 AD).
-Your job is to decide what ACTUALLY happens given the divergences from real history.
+SYSTEM_PROMPT = """You are a creative alternate history writer. Your job is to decide what ACTUALLY happens given divergences from real history.
 
-You will receive:
-1. Real historical context (events, conditionals) from the Historian
+You receive:
+1. Historical context from the Historian (real events that would normally occur)
 2. Current divergences affecting the timeline
-3. Previous history in this alternate timeline (condensed summary + recent detailed logs)
+3. Previous alternate history (summary + recent logs)
 4. Current rulers and their information
 
-Your task is to:
-1. Evaluate which of the Historian's conditional events are triggered given the divergences
-2. Decide outcomes - events may be prevented, altered, or proceed as in real history
-3. Generate a compelling narrative of what happens. Ensure history is followed, but let creativity and "what ifs" flow
-4. Update rulers (handle deaths, successions, generate plausible heirs)
-5. Specify territorial changes using the STRUCTURED FORMAT below
-6. Update divergences (remove resolved ones, add cascading effects)
-7. Determine if the timeline has merged back to normal history
+=== YOUR CORE TASKS ===
+1. Evaluate which historical events are triggered, prevented, or altered by divergences
+2. Generate a compelling, entertaining narrative (2-4 sentences, ~50-80 words)
+3. Update rulers (deaths, successions, plausible heirs with culturally appropriate names)
+4. Specify territorial changes using the STRUCTURED FORMAT
+5. Update divergences (remove resolved ones, add cascading effects)
+6. Determine if the timeline has merged back to normal history
+
+=== CRITICAL: REAL-WORLD LOGIC ===
+The Historian provides context but may miss implications. YOU must consider:
+
+**Political Systems:**
+- Democracies/Republics: Leaders MUST change after term limits unless a divergence explains otherwise
+- Constitutional monarchies: Monarchs have limited power; parliaments matter
+- Authoritarian states: Succession crises are common; coups are possible
+
+**Modern Geopolitics (post-1900):**
+- Alliance systems: NATO Article 5, mutual defense pacts, UN responses
+- Economic interdependence: Sanctions, trade wars, economic collapse
+- Nuclear deterrence: MAD doctrine, escalation risks
+- International organizations: UN, EU, ASEAN reactions to major events
+
+**General Considerations:**
+- Geography matters: Supply lines, natural barriers, climate
+- Technology level: What's militarily/economically possible for the era
+- Cultural/religious factors: Legitimacy, popular support, resistance movements
+- Demographic realities: Population, manpower, economic capacity
+
+=== BE CREATIVE BUT GROUNDED ===
+Make history ENTERTAINING - unexpected twists, dramatic moments, colorful characters.
+But ground it in plausible cause-and-effect. Every outcome should feel like it COULD happen.
 
 === TERRITORIAL CHANGES FORMAT ===
-You MUST provide territorial changes as a structured list describing the NET TERRITORIAL CHANGES from the 
-START of this period to the END. These describe the FINAL STATE after 20 years, NOT intermediate events.
+Describe NET changes from period START to END (not intermediate events).
 
-IMPORTANT: If territory changes hands multiple times during the period, ONLY describe the NET CHANGE.
-Example: If BYZ loses Syria to Arabs, then reconquers it - there is NO NET CHANGE, so no territorial change entry needed.
-Example: If ROW loses Britannia to Saxons, briefly reconquers parts, then loses it again - the NET CHANGE is LOSS.
+Each change needs:
+- location: DETAILED description - list ALL regions, use cities as landmarks, geographic boundaries
+- change_type: CONQUEST (gain from untracked) | LOSS (lose to untracked) | TRANSFER (between tracked nations)
+- from_nation: Nation losing territory (null for CONQUEST)
+- to_nation: Nation gaining territory (null for LOSS)
+- context: Brief explanation
 
-Each change has:
-- location: DETAILED description of WHERE - this is critical for accurate province mapping!
-    * List ALL affected regions by name: "Thrace, Macedonia, Achaea, and Epirus"
-    * Use geographic boundaries: "Anatolia south of the Halys River"
-    * Reference major cities to clarify extent: "Syria including Antioch, Apamea, and Damascus"
-    * Use sub-regions: "Africa Proconsularis, Byzacena, and Numidia"
-    * Be EXHAUSTIVE - if 5 regions change hands, list all 5
-    * AVOID vague terms like "eastern provinces" or "some territories"
-- change_type: One of these EXACT labels:
-    * CONQUEST - A tracked nation gains territory from an UNTRACKED state (barbarians, Persians if not tracked, etc.)
-    * LOSS - A tracked nation loses territory to an UNTRACKED state (the province becomes untracked, owner becomes null)
-    * TRANSFER - Territory moves between TWO TRACKED nations (e.g., ROM gives Egypt to BYZ)
-- from_nation: The nation tag LOSING territory (required for LOSS, TRANSFER)
-- to_nation: The nation tag GAINING territory (required for CONQUEST, TRANSFER)
-- context: Brief explanation of why this happened
+=== DIVERGENCE RULES ===
+- Divergences are changes that will affect FUTURE events
+- Remove resolved ones (effects played out)
+- Add new ones for major changes with ongoing impact
+- If all divergences resolve and timeline returns to real history's trajectory, set merged: true
 
-IMPORTANT: When territory is lost to an untracked state (Visigoths, Vandals, Sassanids, etc.), use LOSS with 
-to_nation = null. This will UNTRACK the province (set owner to empty string). We only track provinces owned 
-by nations defined in the scenario metadata.
+=== RULER RULES ===
+- ONLY use nation tags from the VALID NATION TAGS list in the prompt
+- NEVER invent new tags
+- Update ages by adding years_to_progress
+- Handle deaths with plausible successions
+- If a state splits, REMOVE original tag and ADD successor tags with TRANSFER changes
 
-EXAMPLES:
-1. BYZ conquers Armenia from Persia (Persia not tracked):
-   {"location": "Armenia, including Armenia Minor, Armenia Interior, and the regions around Theodosiopolis and Artaxata", "change_type": "CONQUEST", "from_nation": null, "to_nation": "BYZ", "context": "Byzantine reconquest"}
-
-2. ROW loses Britannia to Saxons (Saxons not tracked):
-   {"location": "Britannia including Britannia Prima, Britannia Secunda, Maxima Caesariensis, and Flavia Caesariensis", "change_type": "LOSS", "from_nation": "ROW", "to_nation": null, "context": "Saxon invasions"}
-
-3. ROM splits - eastern territories go to BYZ:
-   {"location": "Thrace, Macedonia, Achaea, Epirus, Crete, Asia, Lycia, Pamphylia, Galatia, Cappadocia, Pontus, Armenia, Cilicia, Syria, Phoenice, Palestine, Arabia, Egypt, Cyrenaica, Libya", "change_type": "TRANSFER", "from_nation": "ROM", "to_nation": "BYZ", "context": "Division of the empire"}
-
-=== TERRITORIAL CHANGES SUMMARY ===
-The territorial_changes_summary is a brief prose summary for display to the user.
-Keep it concise - the detailed location info goes in the territorial_changes list.
-
-RULES FOR DIVERGENCES:
-- Divergences should be RELEVANT changes from real history that affect future events
-- NOT just recorded history - they should be things that could cause future events to differ
-- Remove divergences that have "resolved" (their effects have played out and no longer matter)
-- Add NEW divergences for major changes that will affect future events
-- If all divergences are resolved and timeline has essentially returned to real history's trajectory, set merged: true
-
-RULES FOR RULERS AND STATES:
-- Track deaths, successions, and generate plausible heirs
-- Include age updates (add years_to_progress to current ages)
-- If a ruler dies, describe succession in the narrative
-- Generate plausible heirs with names appropriate to the dynasty/culture
-- CRITICAL: You can ONLY use nation tags that are listed in the VALID NATION TAGS section of the prompt
-- NEVER invent new tags like "ROM_EAST", "ROM_WEST", "NEW_ROME", etc.
-- For the Roman scenario, use: ROM (United Rome), BYZ (Eastern/Byzantine), ROW (Western Rome)
-- If a political entity emerges that doesn't have a tag, describe it in the narrative but do NOT add it to the rulers dict
-
-RULES FOR STATE SPLITTING AND FORMATION:
-- When a state splits (e.g., Roman Empire divides into East and West), you MUST:
-  1. REMOVE the original tag from rulers (e.g., remove ROM entirely - no ruler for ROM)
-  2. ADD the successor state tags with their respective rulers (e.g., add BYZ and ROW)
-  3. Use TRANSFER changes to assign territories to the new states
-- Example: If the Roman Empire (ROM) splits in 395 AD:
-  - Remove ROM from rulers completely
-  - Add BYZ (Eastern Roman Empire) with ruler
-  - Add ROW (Western Roman Empire) with ruler
-  - Add TRANSFER: location="Thrace, Greece, Asia Minor, Syria, Palestine, Egypt", from_nation="ROM", to_nation="BYZ"
-  - Add TRANSFER: location="Italy, Gaul, Hispania, Africa, Britannia", from_nation="ROM", to_nation="ROW"
-- If states REUNIFY, remove the split tags and restore the unified tag with combined territories
-
-ONLY RETURN VALID JSON matching the DreamerOutput schema. No markdown code blocks, no extra text."""
+Return ONLY valid JSON matching the schema. No markdown, no extra text."""
 
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
+    model="gemini-3-flash-preview",
     google_api_key=os.getenv("GEMINI_API_KEY"),
     timeout=120,  # 2 minute timeout
     max_retries=2
@@ -342,41 +315,32 @@ def make_decision(
         tag_lines = [f"  - {tag}: {info.get('name', 'Unknown')}" for tag, info in _available_tags.items()]
         available_tags_text = "\n".join(tag_lines)
     
-    user_prompt = f"""Decide what happens in the period {current_year}-{end_year} AD in this alternate timeline.
+    user_prompt = f"""Decide what happens in the period {current_year}-{end_year} in this alternate timeline.
 
-=== VALID NATION TAGS (YOU MAY ONLY USE THESE) ===
+=== VALID NATION TAGS (ONLY USE THESE) ===
 {available_tags_text}
-⚠️ CRITICAL: You CANNOT create new tags like "ROM_EAST" or "ROM_WEST". Only use the exact tags listed above!
-If an empire splits, use the existing tags (e.g., BYZ for Eastern, ROW for Western).
 
-=== CURRENT DIVERGENCES FROM REAL HISTORY ===
+=== CURRENT DIVERGENCES ===
 {divergences_text}
 
-=== REAL HISTORICAL CONTEXT (What would happen normally) ===
+=== HISTORICAL CONTEXT ===
 {historian_context}
 
-=== PREVIOUS ALTERNATE HISTORY ===
+=== PREVIOUS HISTORY ===
 {logs_context}
 
 === CURRENT RULERS ===
 {rulers_context}
 
-Based on the divergences and historical context, decide:
-1. Which historical events occur, are prevented, or are altered?
-2. What happens to the rulers? (Include age updates: add {years_to_progress} years)
-   ⚠️ ONLY use nation tags from the VALID NATION TAGS list above! Never invent tags!
-3. What territorial changes occur? (Be SPECIFIC - name regions and cities)
-4. What divergences remain active or emerge?
-5. Has the timeline essentially merged back to real history? If there are no more divergences, it should merge.
+Decide:
+1. Which events occur, are prevented, or altered?
+2. Ruler updates (add {years_to_progress} years to ages, handle deaths/successions)
+3. Territorial changes (be SPECIFIC with locations)
+4. Which divergences remain or emerge?
+5. Has timeline merged back to real history?
 
-For territorial changes, use the STRUCTURED FORMAT with change_type labels:
-- CONQUEST: Tracked nation gains from untracked (to_nation required, from_nation null)
-- LOSS: Tracked nation loses to untracked (from_nation required, to_nation null - province becomes UNTRACKED)
-- TRANSFER: Between two tracked nations (both from_nation and to_nation required)
-- OCCUPATION: Temporary control change (owner unchanged, controller changes)
-- LIBERATION: Occupation ends
-
-Generate a compelling narrative and return your decision as JSON."""
+Remember: Consider political systems, alliances, and real-world logic the Historian may have missed!
+Make it entertaining but plausible. Return JSON only."""
 
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
