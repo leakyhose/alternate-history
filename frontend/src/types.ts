@@ -41,6 +41,10 @@ export interface ScenarioMetadata {
   name: string;
   description?: string;
   tags: Record<string, { name: string; color: string }>;
+  period?: {
+    start: number;
+    end: number;
+  };
 }
 
 // Game/Workflow API types

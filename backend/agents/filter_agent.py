@@ -1,14 +1,36 @@
 from dotenv import load_dotenv
 import os
 import json
-from typing import Optional, Union, Literal
+from typing import Optional, Union, Literal, Dict, Any
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from pydantic import BaseModel, Field
 
 load_dotenv()
 
-SYSTEM_PROMPT = """
+def build_system_prompt(scenario_name: str, period_start: int, period_end: int) -> str:
+    """Build a dynamic system prompt based on scenario metadata."""
+    return f"""
+You are a filtering agent for the prompts on an alternate history scenario: "{scenario_name}". You must determine whether the command satisfies certain rules.
+1. Related to {scenario_name}, from year {period_start} AD to year {period_end} AD.
+2. Specific enough. Vague prompts like "What if things were different" are not specific enough. The divergence should be specific enough that a year can be pinned down.
+However, where the user's intended start date can be guessed, allow it. Things like "What if X died early", you can just choose a time where it makes sense.
+3. Fantastical, ridiculous or ahistorical things are ALLOWED, as long as the other rules are satisfied. "What if they had dragons" is allowed.
+
+If doesn't satisfy the rules, set status to "rejected" with a reason and alternative.
+
+If satisfies the rules, set status to "accepted" with the year set to THE YEAR BEFORE the divergence event.
+CRITICAL: The year must be BEFORE the event happens, so the alternate history can diverge from that point.
+- If someone dies in 976 AD, return year 975 (the year BEFORE they die)
+- If someone is born in 500 AD, return year 499 (the year BEFORE they are born)  
+- If an event happens in 630 AD, return year 629 (the year BEFORE the event)
+The person or situation mentioned in the divergence MUST still exist/be alive at the returned year.
+The year MUST be within the period {period_start} AD to {period_end} AD.
+"""
+
+
+# Default system prompt for backwards compatibility
+DEFAULT_SYSTEM_PROMPT = """
 You are a filtering agent for the prompts on an alternate history of the Roman empire. You must determine whether the command satisfies certain rules.
 1. Related to Roman history, from the death of Trajan (117 AD) to the fall of Constantinople (1453 AD).
 2. Specific enough. "What if Rome never fell" is not specific enough. "What if the empire never split" is, as the year can be pinned down to final split of the empire not happening.
@@ -58,13 +80,28 @@ llm = ChatGoogleGenerativeAI(
 llm_structured = llm.with_structured_output(FilterOutput)
 
 
-def filter_command(command: str) -> dict:
+def filter_command(command: str, scenario_metadata: Optional[Dict[str, Any]] = None) -> dict:
     """
     Filters a command to determine if it's valid.
     Returns {"status": "accepted", "year": int} or {"status": "rejected", "reason": str, "alternative": str}
+    
+    Args:
+        command: The divergence/what-if scenario command
+        scenario_metadata: Optional scenario metadata with 'name' and 'period' fields
     """
+    # Build system prompt based on scenario metadata
+    if scenario_metadata and scenario_metadata.get("period") and scenario_metadata.get("name"):
+        period = scenario_metadata["period"]
+        system_prompt = build_system_prompt(
+            scenario_name=scenario_metadata["name"],
+            period_start=period.get("start", 2),
+            period_end=period.get("end", 1453)
+        )
+    else:
+        system_prompt = DEFAULT_SYSTEM_PROMPT
+    
     messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "system", "content": system_prompt},
         {"role": "user", "content": command}
     ]
     

@@ -110,29 +110,35 @@ export default function ScenarioPage() {
         setDefaultRulerHistory(rulers)
         setScenarioMetadata(metadata)
 
-        // Calculate year range from provinces data
-        const scenarioTags = new Set(Object.keys(metadata.tags || {}))
-        const years = Object.keys(provinces).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b)
+        // Use period from metadata if available, otherwise calculate from provinces data
+        if (metadata.period) {
+          setYearRange({ min: metadata.period.start, max: metadata.period.end })
+          setYear(metadata.period.start)
+        } else {
+          // Calculate year range from provinces data
+          const scenarioTags = new Set(Object.keys(metadata.tags || {}))
+          const years = Object.keys(provinces).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b)
 
-        if (years.length > 0) {
-          const minYear = years[0]
+          if (years.length > 0) {
+            const minYear = years[0]
 
-          let lastActiveYear = minYear
-          for (const yr of years) {
-            const yearData = provinces[String(yr)]
-            if (yearData && Array.isArray(yearData)) {
-              const hasScenarioProvince = yearData.some(
-                (p: { OWNER?: string }) => p.OWNER && scenarioTags.has(p.OWNER)
-              )
-              if (hasScenarioProvince) {
-                lastActiveYear = yr
+            let lastActiveYear = minYear
+            for (const yr of years) {
+              const yearData = provinces[String(yr)]
+              if (yearData && Array.isArray(yearData)) {
+                const hasScenarioProvince = yearData.some(
+                  (p: { OWNER?: string }) => p.OWNER && scenarioTags.has(p.OWNER)
+                )
+                if (hasScenarioProvince) {
+                  lastActiveYear = yr
+                }
               }
             }
-          }
 
-          const maxYear = lastActiveYear + 1
-          setYearRange({ min: minYear, max: maxYear })
-          setYear(minYear)
+            const maxYear = lastActiveYear + 1
+            setYearRange({ min: minYear, max: maxYear })
+            setYear(minYear)
+          }
         }
 
         setDataLoaded(true)

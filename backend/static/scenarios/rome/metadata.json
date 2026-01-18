@@ -1,8 +1,13 @@
 {
-  "name": "Roman Empire",
+  "name": "Roman Empire to Byzantine Empire",
   "tags": {
     "ROM": { "name": "Roman Empire", "color": "#D51C1F" },
     "BYZ": { "name": "Eastern Roman Empire", "color": "#820747" },
     "ROW": { "name": "Western Roman Empire", "color": "#960000" }
+  },
+
+  "period": {
+    "start": 2,
+    "end": 1453
   }
 }

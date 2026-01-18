@@ -5,6 +5,7 @@ from typing import List, Optional, Dict, Any
 from agents.filter_agent import filter_command
 from workflows.graph import workflow, continue_workflow
 from workflows.nodes import get_current_provinces, reset_province_memory, get_province_memory, get_scenario_tags
+from util.scenario import load_scenario_metadata
 from models.game import (
     Game, create_game, get_game, delete_game, list_games,
     TagInfo, Province
@@ -74,8 +75,11 @@ async def start_workflow(request: StartRequest) -> StartResponse:
     3. Run first workflow iteration
     4. Return game_id and initial state
     """
-    # Step 1: Filter validation
-    filter_result = filter_command(request.command)
+    # Load scenario metadata for filter validation
+    scenario_metadata = load_scenario_metadata(request.scenario_id)
+    
+    # Step 1: Filter validation with scenario metadata
+    filter_result = filter_command(request.command, scenario_metadata)
     
     if filter_result["status"] == "rejected":
         return StartResponse(
