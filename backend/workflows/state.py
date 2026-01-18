@@ -9,12 +9,21 @@ class RulerInfo(TypedDict):
     dynasty: str
 
 
+class Quote(TypedDict):
+    """A quote from a ruler."""
+    tag: str
+    ruler_name: str
+    ruler_title: str
+    quote: str
+
+
 class LogEntry(TypedDict):
     """A single log entry for the simulation history."""
     year_range: str                    # e.g., "630-650 AD" or "-630 AD" for initial
     narrative: str                     # Human-readable story
     divergences: List[str]             # Divergences active at this point
     territorial_changes_summary: str   # Prose summary of territorial changes (for display)
+    quotes: List[Quote]                # 1-2 quotes from relevant rulers
 
 
 class HistorianOutput(TypedDict, total=False):
@@ -60,6 +69,11 @@ class GeographerOutput(TypedDict):
     province_updates: List[ProvinceUpdate]
 
 
+class QuotegiverOutput(TypedDict):
+    """Output from the Quotegiver agent."""
+    quotes: List[Quote]
+
+
 class WorkflowState(TypedDict, total=False):
     """Main workflow state for the alternate history simulation."""
     
@@ -89,6 +103,7 @@ class WorkflowState(TypedDict, total=False):
     historian_output: HistorianOutput   # Era events/trends from Historian
     dreamer_output: DreamerOutput       # Changes/decisions from Dreamer
     territorial_changes: List[ProvinceUpdate]  # Changes for Geographer to apply
+    quotegiver_output: QuotegiverOutput # Quotes from the Quotegiver
     
     # Merge state
     merged: bool                    # True if timeline converged back (at current_year)

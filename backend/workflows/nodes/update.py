@@ -9,13 +9,14 @@ def update_state_node(state: WorkflowState) -> dict:
     Update workflow state after agent iteration.
     
     - Apply territorial changes to province memory
-    - Append new log entry
+    - Append new log entry (with quotes from quotegiver)
     - Update rulers and divergences from Dreamer output
     - Advance current_year
     - Condense old logs if needed
     - Check merge status
     """
     dreamer_output = state.get("dreamer_output", {})
+    quotegiver_output = state.get("quotegiver_output", {})
     territorial_changes = state.get("territorial_changes", [])
     current_year = state.get("current_year", state.get("start_year"))
     years_to_progress = state.get("years_to_progress", 20)
@@ -29,13 +30,14 @@ def update_state_node(state: WorkflowState) -> dict:
             applied = memory.apply_updates(territorial_changes)
             print(f"📍 Update: Applied {applied} province changes")
         
-        # Create new log entry
+        # Create new log entry with quotes
         new_year = current_year + years_to_progress
         new_log: LogEntry = {
             "year_range": f"{current_year}-{new_year} AD",
             "narrative": dreamer_output.get("narrative", ""),
             "divergences": dreamer_output.get("updated_divergences", []),
-            "territorial_changes_summary": dreamer_output.get("territorial_changes_summary", "")
+            "territorial_changes_summary": dreamer_output.get("territorial_changes_summary", ""),
+            "quotes": quotegiver_output.get("quotes", [])
         }
         logs.append(new_log)
         
@@ -61,7 +63,8 @@ def update_state_node(state: WorkflowState) -> dict:
             # Clear inter-agent data
             "historian_output": {},
             "dreamer_output": {},
-            "territorial_changes": []
+            "territorial_changes": [],
+            "quotegiver_output": {}
         }
     except Exception as e:
         print(f"❌ Update Error: {e}")

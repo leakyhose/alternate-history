@@ -10,7 +10,7 @@ from agents.filter_agent import filter_command, filter_continuation_divergence
 from workflows.graph import workflow, continue_workflow
 from workflows.nodes import (
     get_current_provinces, reset_province_memory, get_province_memory, get_scenario_tags,
-    initialize_game_node, historian_node, dreamer_node, geographer_node, update_state_node
+    initialize_game_node, historian_node, dreamer_node, geographer_node, quotegiver_node, update_state_node
 )
 from util.scenario import load_scenario_metadata
 from models.game import (
@@ -23,13 +23,23 @@ from workflows.state import LogEntry, RulerInfo
 router = APIRouter(tags=["workflow"])
 
 
+def safe_int(value, default=0):
+    """Safely convert a value to int, handling empty strings and None."""
+    if value is None or value == '':
+        return default
+    try:
+        return int(value)
+    except (ValueError, TypeError):
+        return default
+
+
 # Request/Response Models
 
 class StartRequest(BaseModel):
     """Request to start a new game."""
     command: str  # The divergence/what-if scenario
     scenario_id: str  # Which scenario to use (e.g., "rome")
-    years_to_progress: int = 20  # Default 20 years per iteration
+    years_to_progress: int = 5  # Default 5 years per iteration
 
 
 class StartResponse(BaseModel):
@@ -46,7 +56,7 @@ class StartResponse(BaseModel):
 class ContinueRequest(BaseModel):
     """Request to continue an existing game."""
     new_divergences: Optional[List[str]] = None  # Optional additional divergences
-    years_to_progress: int = 20
+    years_to_progress: int = 5
 
 
 class ContinueResponse(BaseModel):
@@ -188,7 +198,8 @@ async def start_workflow(request: StartRequest) -> StartResponse:
                 "year_range": str(log.get("year_range", "")),
                 "narrative": str(log.get("narrative", "")),
                 "divergences": list(log.get("divergences", [])),
-                "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", "")))
+                "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", ""))),
+                "quotes": list(log.get("quotes", []))
             })
         
         # Ensure rulers are serializable
@@ -198,7 +209,7 @@ async def start_workflow(request: StartRequest) -> StartResponse:
             serializable_rulers[str(tag)] = {
                 "name": str(ruler.get("name", "")),
                 "title": str(ruler.get("title", "")),
-                "age": int(ruler.get("age", 0)),
+                "age": safe_int(ruler.get("age"), 0),
                 "dynasty": str(ruler.get("dynasty", ""))
             }
         
@@ -302,17 +313,18 @@ async def start_workflow_stream(request: StartRequest):
             # Run dreamer node
             state.update(dreamer_node(state))
 
-            # Emit dreamer_complete event
+            # Emit dreamer_complete event (without quotes yet)
             dreamer_output = state.get("dreamer_output", {})
             current_year = state.get("current_year", year)
             years_to_progress = state.get("years_to_progress", 20)
 
-            # Build log entry from dreamer output
+            # Build log entry from dreamer output (quotes will be added after quotegiver)
             log_entry = {
                 "year_range": f"{current_year}-{current_year + years_to_progress} AD",
                 "narrative": dreamer_output.get("narrative", ""),
                 "divergences": dreamer_output.get("updated_divergences", []),
-                "territorial_changes_summary": dreamer_output.get("territorial_changes_summary", "")
+                "territorial_changes_summary": dreamer_output.get("territorial_changes_summary", ""),
+                "quotes": []
             }
 
             # Serialize rulers for JSON
@@ -322,11 +334,22 @@ async def start_workflow_stream(request: StartRequest):
                 serializable_rulers[str(tag)] = {
                     "name": str(ruler.get("name", "")),
                     "title": str(ruler.get("title", "")),
-                    "age": int(ruler.get("age", 0)),
+                    "age": safe_int(ruler.get("age"), 0),
                     "dynasty": str(ruler.get("dynasty", ""))
                 }
 
             yield f"data: {json.dumps({'event': 'dreamer_complete', 'log_entry': log_entry, 'rulers': serializable_rulers, 'divergences': dreamer_output.get('updated_divergences', []), 'year_range': f'{current_year}-{current_year + years_to_progress} AD'})}\n\n"
+
+            await asyncio.sleep(0.1)
+
+            # Run quotegiver node to generate quotes
+            state.update(quotegiver_node(state))
+
+            # Emit quotegiver_complete event
+            quotegiver_output = state.get("quotegiver_output", {})
+            quotes = quotegiver_output.get("quotes", [])
+
+            yield f"data: {json.dumps({'event': 'quotegiver_complete', 'quotes': quotes})}\n\n"
 
             await asyncio.sleep(0.1)
 
@@ -376,7 +399,8 @@ async def start_workflow_stream(request: StartRequest):
                     "year_range": str(log.get("year_range", "")),
                     "narrative": str(log.get("narrative", "")),
                     "divergences": list(log.get("divergences", [])),
-                    "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", "")))
+                    "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", ""))),
+                    "quotes": list(log.get("quotes", []))
                 })
 
             # Serialize final rulers
@@ -386,7 +410,7 @@ async def start_workflow_stream(request: StartRequest):
                 serializable_final_rulers[str(tag)] = {
                     "name": str(ruler.get("name", "")),
                     "title": str(ruler.get("title", "")),
-                    "age": int(ruler.get("age", 0)),
+                    "age": safe_int(ruler.get("age"), 0),
                     "dynasty": str(ruler.get("dynasty", ""))
                 }
 
@@ -479,7 +503,8 @@ async def continue_game_stream(game_id: str, request: ContinueRequest):
                 "year_range": f"{current_year}-{current_year + years_to_progress} AD",
                 "narrative": dreamer_output.get("narrative", ""),
                 "divergences": dreamer_output.get("updated_divergences", []),
-                "territorial_changes_summary": dreamer_output.get("territorial_changes_summary", "")
+                "territorial_changes_summary": dreamer_output.get("territorial_changes_summary", ""),
+                "quotes": []
             }
 
             dreamer_rulers = dreamer_output.get("rulers", {})
@@ -488,11 +513,22 @@ async def continue_game_stream(game_id: str, request: ContinueRequest):
                 serializable_rulers[str(tag)] = {
                     "name": str(ruler.get("name", "")),
                     "title": str(ruler.get("title", "")),
-                    "age": int(ruler.get("age", 0)),
+                    "age": safe_int(ruler.get("age"), 0),
                     "dynasty": str(ruler.get("dynasty", ""))
                 }
 
             yield f"data: {json.dumps({'event': 'dreamer_complete', 'log_entry': log_entry, 'rulers': serializable_rulers, 'divergences': dreamer_output.get('updated_divergences', []), 'year_range': f'{current_year}-{current_year + years_to_progress} AD'})}\n\n"
+
+            await asyncio.sleep(0.1)
+
+            # Run quotegiver node to generate quotes
+            state.update(quotegiver_node(state))
+
+            # Emit quotegiver_complete event
+            quotegiver_output = state.get("quotegiver_output", {})
+            quotes = quotegiver_output.get("quotes", [])
+
+            yield f"data: {json.dumps({'event': 'quotegiver_complete', 'quotes': quotes})}\n\n"
 
             await asyncio.sleep(0.1)
 
@@ -536,7 +572,8 @@ async def continue_game_stream(game_id: str, request: ContinueRequest):
                     "year_range": str(log.get("year_range", "")),
                     "narrative": str(log.get("narrative", "")),
                     "divergences": list(log.get("divergences", [])),
-                    "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", "")))
+                    "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", ""))),
+                    "quotes": list(log.get("quotes", []))
                 })
 
             # Serialize final rulers
@@ -546,7 +583,7 @@ async def continue_game_stream(game_id: str, request: ContinueRequest):
                 serializable_final_rulers[str(tag)] = {
                     "name": str(ruler.get("name", "")),
                     "title": str(ruler.get("title", "")),
-                    "age": int(ruler.get("age", 0)),
+                    "age": safe_int(ruler.get("age"), 0),
                     "dynasty": str(ruler.get("dynasty", ""))
                 }
 
@@ -697,7 +734,8 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
                 "year_range": str(log.get("year_range", "")),
                 "narrative": str(log.get("narrative", "")),
                 "divergences": list(log.get("divergences", [])),
-                "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", "")))
+                "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", ""))),
+                "quotes": list(log.get("quotes", []))
             })
         
         rulers = final_state.get("rulers", {})
@@ -706,7 +744,7 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
             serializable_rulers[str(tag)] = {
                 "name": str(ruler.get("name", "")),
                 "title": str(ruler.get("title", "")),
-                "age": int(ruler.get("age", 0)),
+                "age": safe_int(ruler.get("age"), 0),
                 "dynasty": str(ruler.get("dynasty", ""))
             }
         
@@ -752,7 +790,7 @@ async def get_game_state(game_id: str) -> GameStateResponse:
             serializable_rulers[str(tag)] = {
                 "name": str(ruler.get("name", "")),
                 "title": str(ruler.get("title", "")),
-                "age": int(ruler.get("age", 0)),
+                "age": safe_int(ruler.get("age"), 0),
                 "dynasty": str(ruler.get("dynasty", ""))
             }
         
@@ -763,7 +801,8 @@ async def get_game_state(game_id: str) -> GameStateResponse:
                 "year_range": str(log.get("year_range", "")),
                 "narrative": str(log.get("narrative", "")),
                 "divergences": list(log.get("divergences", [])),
-                "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", "")))
+                "territorial_changes_summary": str(log.get("territorial_changes_summary", log.get("territorial_changes_description", ""))),
+                "quotes": list(log.get("quotes", []))
             })
         
         return GameStateResponse(

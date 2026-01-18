@@ -1,0 +1,8162 @@
+{
+  "2020": [
+    {
+      "TAG": "AFG",
+      "NAME": "Ashraf Ghani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AGL",
+      "NAME": "Joao Lourenco",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ALB",
+      "NAME": "Ilir Meta",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ALG",
+      "NAME": "Abdelmadjid Tebboune",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ANB",
+      "NAME": "Gaston Browne",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ARM",
+      "NAME": "Armen Sarkissian",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AUS",
+      "NAME": "Scott Morrison",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AZE",
+      "NAME": "Ilham Aliyev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BBD",
+      "NAME": "Freundel Stuart",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEI",
+      "NAME": "Hassanal",
+      "DYNASTY": "Bolkiah",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEL",
+      "NAME": "Philippe",
+      "DYNASTY": "von Saxe-Coburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEN",
+      "NAME": "Patrice Talon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BFA",
+      "NAME": "Roch Marc Christian Kabor",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BGD",
+      "NAME": "Abdul Hamid",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHE",
+      "NAME": "Zeljko Komsic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHM",
+      "NAME": "Hubert Minnis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHR",
+      "NAME": "Hamad",
+      "DYNASTY": "Al Khalifa",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHU",
+      "NAME": "Jigme Khesar Namgyel",
+      "DYNASTY": "Wangchuck",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BLR",
+      "NAME": "Alexander Lukashenko",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BLZ",
+      "NAME": "Dean Barrow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BOL",
+      "NAME": "Jeanine Anez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BOT",
+      "NAME": "Mokgweetsi Masisi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BRZ",
+      "NAME": "Jair Bolsonaro",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BUL",
+      "NAME": "Rumen Radev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BUU",
+      "NAME": "Pierre Nkurunziza",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CAF",
+      "NAME": "Faustin-Archange Touadra",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CAN",
+      "NAME": "Justin Trudeau",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CDD",
+      "NAME": "Idriss Dby",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CHL",
+      "NAME": "Sebastin Piera Echenique",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CHN",
+      "NAME": "Xi Jinping",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CMO",
+      "NAME": "Azali Assoumani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CMR",
+      "NAME": "Paul Biya",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CNG",
+      "NAME": "Denis Sassou-Nguesso",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COK",
+      "NAME": "Henry Puna",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COL",
+      "NAME": "Ivn Duque Mrquez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COS",
+      "NAME": "Carlos Alvarado Quesada",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CPV",
+      "NAME": "Jorge Carlos Fonseca",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CRO",
+      "NAME": "Zoran Milanovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CUB",
+      "NAME": "Miguel Daz-Canel",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CYP",
+      "NAME": "Nicos Anastasiades",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CZE",
+      "NAME": "Milos Zeman",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DAN",
+      "NAME": "Margrethe II",
+      "DYNASTY": "von Glcksburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DGL",
+      "NAME": "Ibrahim Mohamed Solih",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DJI",
+      "NAME": "Ismal Omar Guelleh",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DMN",
+      "NAME": "Charles Savarin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DOM",
+      "NAME": "Danilo Medina",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DRC",
+      "NAME": "Flix Tshisekedi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ECU",
+      "NAME": "Lenn Moreno",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EGY",
+      "NAME": "Abdel Fattah el-Sisi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ELS",
+      "NAME": "Nayib Bukele",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EQG",
+      "NAME": "Teodoro Obiang Nguema Mbasogo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ERT",
+      "NAME": "Isaias Afewerki",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EST",
+      "NAME": "Kersti Kaljulaid",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ETH",
+      "NAME": "Sahle-Work Zewde",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ETI",
+      "NAME": "Francisco Guterres",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FIN",
+      "NAME": "Sauli Niinist",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FR2",
+      "NAME": "Emmanuel Macron",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FRM",
+      "NAME": "Tsai Ing-wen",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GAB",
+      "NAME": "Ali Bongo Ondimba",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GBI",
+      "NAME": "Jos Mrio Vaz",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GBR",
+      "NAME": "Elizabeth II",
+      "DYNASTY": "of Windsor",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GEO",
+      "NAME": "Salome Zurabichvili",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GER",
+      "NAME": "Frank-Walter Steinmeier",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GHA",
+      "NAME": "Nana Akufo-Addo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GMB",
+      "NAME": "Adama Barrow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GRE",
+      "NAME": "Prokopis Pavlopoulos",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GRN",
+      "NAME": "Keith Mitchell",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GTM",
+      "NAME": "Jimmy Morales",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GUI",
+      "NAME": "Alpha Cond",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GYA",
+      "NAME": "David Granger",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GZI",
+      "NAME": "Emmerson Mnangagwa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HAB",
+      "NAME": "Alexander Van der Bellen",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HAT",
+      "NAME": "Jovenel Mose",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HON",
+      "NAME": "Juan Orlando Hernndez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HUN",
+      "NAME": "Jnos der",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ICE",
+      "NAME": "Guni Jhannesson",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IDN",
+      "NAME": "Joko Widodo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "INI",
+      "NAME": "Ram Nath Kovind",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRA",
+      "NAME": "Ali Khamenei",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRE",
+      "NAME": "Michael Higgins",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRQ",
+      "NAME": "Barham Salih",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ISR",
+      "NAME": "Reuven Rivlin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ITA",
+      "NAME": "Sergio Mattarella",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IVO",
+      "NAME": "Alassane Ouattara",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JAI",
+      "NAME": "George Vella",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JAP",
+      "NAME": "Naruhito",
+      "DYNASTY": "Yamato",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JMC",
+      "NAME": "Andrew Holness",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JOR",
+      "NAME": "Abdullah II",
+      "DYNASTY": "Hashemite",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KEY",
+      "NAME": "Uhuru Kenyatta",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KHA",
+      "NAME": "Khaltmaagiin Battulga",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KHM",
+      "NAME": "Norodom Sihamoni",
+      "DYNASTY": "Norodom",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KIR",
+      "NAME": "Taneti Maamau",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KOS",
+      "NAME": "Hashim Thaci",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KUW",
+      "NAME": "Sabah IV",
+      "DYNASTY": "Al-Sabah",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KYR",
+      "NAME": "Sooronbay Jeenbekov",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KZK",
+      "NAME": "Kassym-Jomart Tokayev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LAO",
+      "NAME": "Bounnhang Vorachith",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LAP",
+      "NAME": "Alberto Fernndez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LBR",
+      "NAME": "George Weah",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LBY",
+      "NAME": "Aguila Saleh Issa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LEB",
+      "NAME": "Michel Aoun",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LES",
+      "NAME": "Letsie III",
+      "DYNASTY": "Moshesh",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LIT",
+      "NAME": "Gitanas Nauseda",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LTV",
+      "NAME": "Egils Levits",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LUX",
+      "NAME": "Henri I",
+      "DYNASTY": "de Bourbon-Parma",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MAC",
+      "NAME": "Stevo Pendarovski",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MAL",
+      "NAME": "Ibrahim Boubacar Keita",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MDG",
+      "NAME": "Andry Rajoelina",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MDV",
+      "NAME": "Igor Dodon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MEX",
+      "NAME": "Andrs Manuel Lpez Obrador",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MIC",
+      "NAME": "David Panuelo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MLA",
+      "NAME": "Abdullah",
+      "DYNASTY": "Bendahara",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MNM",
+      "NAME": "Win Myint",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MON",
+      "NAME": "Milo Dukanovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MOR",
+      "NAME": "Muhammad VI",
+      "DYNASTY": "Alaouite",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MRS",
+      "NAME": "Hilda Heine",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MRT",
+      "NAME": "Mohamed Ould Ghazouani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MTU",
+      "NAME": "Prithvirajsing Roopun",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MWI",
+      "NAME": "Peter Mutharika",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MZM",
+      "NAME": "Filipe Nyusi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NAU",
+      "NAME": "Lionel Aingimea",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NCR",
+      "NAME": "Daniel Ortega",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NED",
+      "NAME": "Willem-Alexander I",
+      "DYNASTY": "van Oranje",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NGR",
+      "NAME": "Mahamadou Issoufou",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NIG",
+      "NAME": "Muhammadu Buhari",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NIU",
+      "NAME": "Toke Talagi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NMB",
+      "NAME": "Hage Geinbob",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NOK",
+      "NAME": "Kim Jong-un",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NOR",
+      "NAME": "Harald V",
+      "DYNASTY": "von Glcksburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NPL",
+      "NAME": "Bidhya Devi Bhandari",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NZL",
+      "NAME": "Jacinda Ardern",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "OMA",
+      "NAME": "Qaboos",
+      "DYNASTY": "Al Said",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PAK",
+      "NAME": "Arif Alvi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PEU",
+      "NAME": "Martn Vizcarra",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PHI",
+      "NAME": "Rodrigo Duterte",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PLS",
+      "NAME": "Mahmoud Abbas",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PLU",
+      "NAME": "Thomas Remengesau Jr.",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PNG",
+      "NAME": "Peter O'Neill",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PNM",
+      "NAME": "Laurentino Cortizo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "POL",
+      "NAME": "Andrzej Duda",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "POR",
+      "NAME": "Marcelo Rebelo de Sousa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PRG",
+      "NAME": "Mario Abdo Bentez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "QTR",
+      "NAME": "Tamim bin Hamad",
+      "DYNASTY": "Al-Thani",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RMN",
+      "NAME": "Klaus Iohannis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RSA",
+      "NAME": "Cyril Ramaphosa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RUS",
+      "NAME": "Vladimir Putin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RWA",
+      "NAME": "Paul Kagame",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SAM",
+      "NAME": "Va'aletoa Sualauvi II",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SAU",
+      "NAME": "Salman",
+      "DYNASTY": "Sa'ud",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SER",
+      "NAME": "Tomislav Nikolic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SEY",
+      "NAME": "Danny Faure",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SGA",
+      "NAME": "Halimah Yacob",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SGL",
+      "NAME": "Macky Sall",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SIA",
+      "NAME": "Maha Vajiralongkorn",
+      "DYNASTY": "Chakri",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SKN",
+      "NAME": "Timothy Harris",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SKO",
+      "NAME": "Moon Jae-in",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SLM",
+      "NAME": "Manasseh Sogavare",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SLU",
+      "NAME": "Allen Chastanet",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SOM",
+      "NAME": "Mohamed Abdullahi Mohamed",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SPA",
+      "NAME": "Felipe VI",
+      "DYNASTY": "de Bourbon",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRA",
+      "NAME": "Julius Maada Bio",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRL",
+      "NAME": "Gotabaya Rajapaksa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRN",
+      "NAME": "Dsi Bouterse",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SSU",
+      "NAME": "Salva Kiir Mayardit",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "STP",
+      "NAME": "Evaristo Carvalho",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SUD",
+      "NAME": "Omar al-Bashir",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVG",
+      "NAME": "Ralph Gonsalves",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVK",
+      "NAME": "Zuzana Caputova",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVN",
+      "NAME": "Borut Pahor",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWE",
+      "NAME": "Carl XVI Gustaf",
+      "DYNASTY": "Bernadotte",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWI",
+      "NAME": "Ueli Maurer",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWZ",
+      "NAME": "Mswati III",
+      "DYNASTY": "Dlamini",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SYR",
+      "NAME": "Bashar al-Assad",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TGO",
+      "NAME": "Faure Gnassingb",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TJK",
+      "NAME": "Emomali Rahmon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TKY",
+      "NAME": "Recep Tayyip Erdogan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TNZ",
+      "NAME": "John Magufuli",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TOG",
+      "NAME": "Tupou VI",
+      "DYNASTY": "Tupou",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TRK",
+      "NAME": "Gurbanguly Berdimuhamedow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TRN",
+      "NAME": "Paula-Mae Weekes",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TUN",
+      "NAME": "Kais Saied",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TVL",
+      "NAME": "Kausea Natano",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UAE",
+      "NAME": "Khalifa bin Zayed Al Nahyan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UGA",
+      "NAME": "Yoweri Kaguta Museveni",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UKR",
+      "NAME": "Volodymyr Zelensky",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "URU",
+      "NAME": "Tabar Vsquez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "USA",
+      "NAME": "Donald Trump",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UZB",
+      "NAME": "Islam Karimov",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VIT",
+      "NAME": "George Konrote",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VNU",
+      "NAME": "Tallis Obed Moses",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VNZ",
+      "NAME": "Nicols Maduro",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VTN",
+      "NAME": "Nguyen Phu Trong",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "YEM",
+      "NAME": "Mahdi al-Mashat",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ZAM",
+      "NAME": "Edgar Lungu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    }
+  ],
+  "2021": [
+    {
+      "TAG": "AFG",
+      "NAME": "Ashraf Ghani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AGL",
+      "NAME": "Joao Lourenco",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ALB",
+      "NAME": "Ilir Meta",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ALG",
+      "NAME": "Abdelmadjid Tebboune",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ANB",
+      "NAME": "Gaston Browne",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ARM",
+      "NAME": "Armen Sarkissian",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AUS",
+      "NAME": "Scott Morrison",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AZE",
+      "NAME": "Ilham Aliyev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BBD",
+      "NAME": "Freundel Stuart",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEI",
+      "NAME": "Hassanal",
+      "DYNASTY": "Bolkiah",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEL",
+      "NAME": "Philippe",
+      "DYNASTY": "von Saxe-Coburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEN",
+      "NAME": "Patrice Talon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BFA",
+      "NAME": "Roch Marc Christian Kabor",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BGD",
+      "NAME": "Abdul Hamid",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHE",
+      "NAME": "Milorad Dodik",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHM",
+      "NAME": "Hubert Minnis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHR",
+      "NAME": "Hamad",
+      "DYNASTY": "Al Khalifa",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHU",
+      "NAME": "Jigme Khesar Namgyel",
+      "DYNASTY": "Wangchuck",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BLR",
+      "NAME": "Alexander Lukashenko",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BLZ",
+      "NAME": "Dean Barrow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BOL",
+      "NAME": "Luis Arce",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BOT",
+      "NAME": "Mokgweetsi Masisi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BRZ",
+      "NAME": "Jair Bolsonaro",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BUL",
+      "NAME": "Rumen Radev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BUU",
+      "NAME": "Évariste Ndayishimiye",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CAF",
+      "NAME": "Faustin-Archange Touadra",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CAN",
+      "NAME": "Justin Trudeau",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CDD",
+      "NAME": "Idriss Dby",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CHL",
+      "NAME": "Sebastin Piera Echenique",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CHN",
+      "NAME": "Xi Jinping",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CMO",
+      "NAME": "Azali Assoumani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CMR",
+      "NAME": "Paul Biya",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CNG",
+      "NAME": "Denis Sassou-Nguesso",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COK",
+      "NAME": "Henry Puna",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COL",
+      "NAME": "Ivn Duque Mrquez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COS",
+      "NAME": "Carlos Alvarado Quesada",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CPV",
+      "NAME": "Jorge Carlos Fonseca",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CRO",
+      "NAME": "Zoran Milanovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CUB",
+      "NAME": "Miguel Daz-Canel",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CYP",
+      "NAME": "Nicos Anastasiades",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CZE",
+      "NAME": "Milos Zeman",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DAN",
+      "NAME": "Margrethe II",
+      "DYNASTY": "von Glcksburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DGL",
+      "NAME": "Ibrahim Mohamed Solih",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DJI",
+      "NAME": "Ismal Omar Guelleh",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DMN",
+      "NAME": "Charles Savarin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DOM",
+      "NAME": "Luis Abinader",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DRC",
+      "NAME": "Flix Tshisekedi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ECU",
+      "NAME": "Lenn Moreno",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EGY",
+      "NAME": "Abdel Fattah el-Sisi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ELS",
+      "NAME": "Nayib Bukele",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EQG",
+      "NAME": "Teodoro Obiang Nguema Mbasogo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ERT",
+      "NAME": "Isaias Afewerki",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EST",
+      "NAME": "Kersti Kaljulaid",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ETH",
+      "NAME": "Sahle-Work Zewde",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ETI",
+      "NAME": "Francisco Guterres",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FIN",
+      "NAME": "Sauli Niinist",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FR2",
+      "NAME": "Emmanuel Macron",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FRM",
+      "NAME": "Tsai Ing-wen",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GAB",
+      "NAME": "Ali Bongo Ondimba",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GBI",
+      "NAME": "Umaro Sissoco Embal",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GBR",
+      "NAME": "Elizabeth II",
+      "DYNASTY": "of Windsor",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GEO",
+      "NAME": "Salome Zurabichvili",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GER",
+      "NAME": "Frank-Walter Steinmeier",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GHA",
+      "NAME": "Nana Akufo-Addo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GMB",
+      "NAME": "Adama Barrow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GRE",
+      "NAME": "Katerina Sakellaropoulou",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GRN",
+      "NAME": "Keith Mitchell",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GTM",
+      "NAME": "Alejandro Giammattei",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GUI",
+      "NAME": "Alpha Cond",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GYA",
+      "NAME": "Irfaan Ali",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GZI",
+      "NAME": "Emmerson Mnangagwa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HAB",
+      "NAME": "Alexander Van der Bellen",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HAT",
+      "NAME": "Jovenel Mose",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HON",
+      "NAME": "Juan Orlando Hernndez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HUN",
+      "NAME": "Jnos der",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ICE",
+      "NAME": "Guni Jhannesson",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IDN",
+      "NAME": "Joko Widodo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "INI",
+      "NAME": "Ram Nath Kovind",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRA",
+      "NAME": "Ali Khamenei",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRE",
+      "NAME": "Michael Higgins",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRQ",
+      "NAME": "Barham Salih",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ISR",
+      "NAME": "Reuven Rivlin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ITA",
+      "NAME": "Sergio Mattarella",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IVO",
+      "NAME": "Alassane Ouattara",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JAI",
+      "NAME": "George Vella",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JAP",
+      "NAME": "Naruhito",
+      "DYNASTY": "Yamato",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JMC",
+      "NAME": "Andrew Holness",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JOR",
+      "NAME": "Abdullah II",
+      "DYNASTY": "Hashemite",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KEY",
+      "NAME": "Uhuru Kenyatta",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KHA",
+      "NAME": "Khaltmaagiin Battulga",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KHM",
+      "NAME": "Norodom Sihamoni",
+      "DYNASTY": "Norodom",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KIR",
+      "NAME": "Taneti Maamau",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KOS",
+      "NAME": "Vjosa Osmani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KUW",
+      "NAME": "Nawaf I",
+      "DYNASTY": "Al-Sabah",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KYR",
+      "NAME": "Talant Mamytov",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KZK",
+      "NAME": "Kassym-Jomart Tokayev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LAO",
+      "NAME": "Bounnhang Vorachith",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LAP",
+      "NAME": "Alberto Fernndez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LBR",
+      "NAME": "George Weah",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LBY",
+      "NAME": "Aguila Saleh Issa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LEB",
+      "NAME": "Michel Aoun",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LES",
+      "NAME": "Letsie III",
+      "DYNASTY": "Moshesh",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LIT",
+      "NAME": "Gitanas Nauseda",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LTV",
+      "NAME": "Egils Levits",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LUX",
+      "NAME": "Henri I",
+      "DYNASTY": "de Bourbon-Parma",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MAC",
+      "NAME": "Stevo Pendarovski",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MAL",
+      "NAME": "Bah Ndaw",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MDG",
+      "NAME": "Andry Rajoelina",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MDV",
+      "NAME": "Maia Sandu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MEX",
+      "NAME": "Andrs Manuel Lpez Obrador",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MIC",
+      "NAME": "David Panuelo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MLA",
+      "NAME": "Abdullah",
+      "DYNASTY": "Bendahara",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MNM",
+      "NAME": "Win Myint",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MON",
+      "NAME": "Milo Dukanovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MOR",
+      "NAME": "Muhammad VI",
+      "DYNASTY": "Alaouite",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MRS",
+      "NAME": "David Kabua",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MRT",
+      "NAME": "Mohamed Ould Ghazouani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MTU",
+      "NAME": "Prithvirajsing Roopun",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MWI",
+      "NAME": "Lazarus Chakwera",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MZM",
+      "NAME": "Filipe Nyusi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NAU",
+      "NAME": "Lionel Aingimea",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NCR",
+      "NAME": "Daniel Ortega",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NED",
+      "NAME": "Willem-Alexander I",
+      "DYNASTY": "van Oranje",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NGR",
+      "NAME": "Mahamadou Issoufou",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NIG",
+      "NAME": "Muhammadu Buhari",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NIU",
+      "NAME": "Toke Talagi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NMB",
+      "NAME": "Hage Geinbob",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NOK",
+      "NAME": "Kim Jong-un",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NOR",
+      "NAME": "Harald V",
+      "DYNASTY": "von Glcksburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NPL",
+      "NAME": "Bidhya Devi Bhandari",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NZL",
+      "NAME": "Jacinda Ardern",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "OMA",
+      "NAME": "Haitham",
+      "DYNASTY": "Al Said",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PAK",
+      "NAME": "Arif Alvi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PEU",
+      "NAME": "Francisco Sagasti",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PHI",
+      "NAME": "Rodrigo Duterte",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PLS",
+      "NAME": "Mahmoud Abbas",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PLU",
+      "NAME": "Thomas Remengesau Jr.",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PNG",
+      "NAME": "Peter O'Neill",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PNM",
+      "NAME": "Laurentino Cortizo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "POL",
+      "NAME": "Andrzej Duda",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "POR",
+      "NAME": "Marcelo Rebelo de Sousa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PRG",
+      "NAME": "Mario Abdo Bentez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "QTR",
+      "NAME": "Tamim bin Hamad",
+      "DYNASTY": "Al-Thani",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RMN",
+      "NAME": "Klaus Iohannis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RSA",
+      "NAME": "Cyril Ramaphosa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RUS",
+      "NAME": "Vladimir Putin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RWA",
+      "NAME": "Paul Kagame",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SAM",
+      "NAME": "Va'aletoa Sualauvi II",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SAU",
+      "NAME": "Salman",
+      "DYNASTY": "Sa'ud",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SER",
+      "NAME": "Tomislav Nikolic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SEY",
+      "NAME": "Wavel Ramkalawan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SGA",
+      "NAME": "Halimah Yacob",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SGL",
+      "NAME": "Macky Sall",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SIA",
+      "NAME": "Maha Vajiralongkorn",
+      "DYNASTY": "Chakri",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SKN",
+      "NAME": "Timothy Harris",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SKO",
+      "NAME": "Moon Jae-in",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SLM",
+      "NAME": "Manasseh Sogavare",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SLU",
+      "NAME": "Allen Chastanet",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SOM",
+      "NAME": "Mohamed Abdullahi Mohamed",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SPA",
+      "NAME": "Felipe VI",
+      "DYNASTY": "de Bourbon",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRA",
+      "NAME": "Julius Maada Bio",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRL",
+      "NAME": "Gotabaya Rajapaksa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRN",
+      "NAME": "Chan Santokhi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SSU",
+      "NAME": "Salva Kiir Mayardit",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "STP",
+      "NAME": "Evaristo Carvalho",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SUD",
+      "NAME": "Omar al-Bashir",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVG",
+      "NAME": "Ralph Gonsalves",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVK",
+      "NAME": "Zuzana Caputova",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVN",
+      "NAME": "Borut Pahor",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWE",
+      "NAME": "Carl XVI Gustaf",
+      "DYNASTY": "Bernadotte",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWI",
+      "NAME": "Guy Pamelin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWZ",
+      "NAME": "Mswati III",
+      "DYNASTY": "Dlamini",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SYR",
+      "NAME": "Bashar al-Assad",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TGO",
+      "NAME": "Faure Gnassingb",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TJK",
+      "NAME": "Emomali Rahmon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TKY",
+      "NAME": "Recep Tayyip Erdogan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TNZ",
+      "NAME": "John Magufuli",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TOG",
+      "NAME": "Tupou VI",
+      "DYNASTY": "Tupou",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TRK",
+      "NAME": "Gurbanguly Berdimuhamedow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TRN",
+      "NAME": "Paula-Mae Weekes",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TUN",
+      "NAME": "Kais Saied",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TVL",
+      "NAME": "Kausea Natano",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UAE",
+      "NAME": "Khalifa bin Zayed Al Nahyan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UGA",
+      "NAME": "Yoweri Kaguta Museveni",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UKR",
+      "NAME": "Volodymyr Zelensky",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "URU",
+      "NAME": "Luis Lacalle Pou",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "USA",
+      "NAME": "Donald Trump",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UZB",
+      "NAME": "Islam Karimov",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VIT",
+      "NAME": "George Konrote",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VNU",
+      "NAME": "Tallis Obed Moses",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VNZ",
+      "NAME": "Nicols Maduro",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VTN",
+      "NAME": "Nguyen Phu Trong",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "YEM",
+      "NAME": "Mahdi al-Mashat",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ZAM",
+      "NAME": "Edgar Lungu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    }
+  ],
+  "2022": [
+    {
+      "TAG": "AFG",
+      "NAME": "Hibatullah Akhundzada",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AGL",
+      "NAME": "Joao Lourenco",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ALB",
+      "NAME": "Ilir Meta",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ALG",
+      "NAME": "Abdelmadjid Tebboune",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ANB",
+      "NAME": "Gaston Browne",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ARM",
+      "NAME": "Armen Sarkissian",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AUS",
+      "NAME": "Scott Morrison",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AZE",
+      "NAME": "Ilham Aliyev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BBD",
+      "NAME": "Freundel Stuart",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEI",
+      "NAME": "Hassanal",
+      "DYNASTY": "Bolkiah",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEL",
+      "NAME": "Philippe",
+      "DYNASTY": "von Saxe-Coburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEN",
+      "NAME": "Patrice Talon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BFA",
+      "NAME": "Roch Marc Christian Kabor",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BGD",
+      "NAME": "Abdul Hamid",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHE",
+      "NAME": "Zeljko Komsic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHM",
+      "NAME": "Philip Davis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHR",
+      "NAME": "Hamad",
+      "DYNASTY": "Al Khalifa",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHU",
+      "NAME": "Jigme Khesar Namgyel",
+      "DYNASTY": "Wangchuck",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BLR",
+      "NAME": "Alexander Lukashenko",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BLZ",
+      "NAME": "Dean Barrow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BOL",
+      "NAME": "Luis Arce",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BOT",
+      "NAME": "Mokgweetsi Masisi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BRZ",
+      "NAME": "Jair Bolsonaro",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BUL",
+      "NAME": "Rumen Radev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BUU",
+      "NAME": "Évariste Ndayishimiye",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CAF",
+      "NAME": "Faustin-Archange Touadra",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CAN",
+      "NAME": "Justin Trudeau",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CDD",
+      "NAME": "Mahamat Dby",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CHL",
+      "NAME": "Sebastin Piera Echenique",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CHN",
+      "NAME": "Xi Jinping",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CMO",
+      "NAME": "Azali Assoumani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CMR",
+      "NAME": "Paul Biya",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CNG",
+      "NAME": "Denis Sassou-Nguesso",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COK",
+      "NAME": "Henry Puna",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COL",
+      "NAME": "Ivn Duque Mrquez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COS",
+      "NAME": "Carlos Alvarado Quesada",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CPV",
+      "NAME": "Jos Maria Neves",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CRO",
+      "NAME": "Zoran Milanovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CUB",
+      "NAME": "Miguel Daz-Canel",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CYP",
+      "NAME": "Nicos Anastasiades",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CZE",
+      "NAME": "Milos Zeman",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DAN",
+      "NAME": "Margrethe II",
+      "DYNASTY": "von Glcksburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DGL",
+      "NAME": "Ibrahim Mohamed Solih",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DJI",
+      "NAME": "Ismal Omar Guelleh",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DMN",
+      "NAME": "Charles Savarin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DOM",
+      "NAME": "Luis Abinader",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DRC",
+      "NAME": "Flix Tshisekedi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ECU",
+      "NAME": "Guillermo Lasso",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EGY",
+      "NAME": "Abdel Fattah el-Sisi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ELS",
+      "NAME": "Nayib Bukele",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EQG",
+      "NAME": "Teodoro Obiang Nguema Mbasogo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ERT",
+      "NAME": "Isaias Afewerki",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EST",
+      "NAME": "Alar Karis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ETH",
+      "NAME": "Sahle-Work Zewde",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ETI",
+      "NAME": "Francisco Guterres",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FIN",
+      "NAME": "Sauli Niinist",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FR2",
+      "NAME": "Emmanuel Macron",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FRM",
+      "NAME": "Tsai Ing-wen",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GAB",
+      "NAME": "Ali Bongo Ondimba",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GBI",
+      "NAME": "Umaro Sissoco Embal",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GBR",
+      "NAME": "Elizabeth II",
+      "DYNASTY": "of Windsor",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GEO",
+      "NAME": "Salome Zurabichvili",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GER",
+      "NAME": "Frank-Walter Steinmeier",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GHA",
+      "NAME": "Nana Akufo-Addo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GMB",
+      "NAME": "Adama Barrow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GRE",
+      "NAME": "Katerina Sakellaropoulou",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GRN",
+      "NAME": "Keith Mitchell",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GTM",
+      "NAME": "Alejandro Giammattei",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GUI",
+      "NAME": "Mamady Doumbouya",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GYA",
+      "NAME": "Irfaan Ali",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GZI",
+      "NAME": "Emmerson Mnangagwa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HAB",
+      "NAME": "Alexander Van der Bellen",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HAT",
+      "NAME": "Ariel Henry",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HON",
+      "NAME": "Juan Orlando Hernndez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HUN",
+      "NAME": "Jnos der",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ICE",
+      "NAME": "Guni Jhannesson",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IDN",
+      "NAME": "Joko Widodo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "INI",
+      "NAME": "Ram Nath Kovind",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRA",
+      "NAME": "Ali Khamenei",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRE",
+      "NAME": "Michael Higgins",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRQ",
+      "NAME": "Barham Salih",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ISR",
+      "NAME": "Isaac Herzog",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ITA",
+      "NAME": "Sergio Mattarella",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IVO",
+      "NAME": "Alassane Ouattara",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JAI",
+      "NAME": "George Vella",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JAP",
+      "NAME": "Naruhito",
+      "DYNASTY": "Yamato",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JMC",
+      "NAME": "Andrew Holness",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JOR",
+      "NAME": "Abdullah II",
+      "DYNASTY": "Hashemite",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KEY",
+      "NAME": "Uhuru Kenyatta",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KHA",
+      "NAME": "Ukhnaagiin Khrelskh",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KHM",
+      "NAME": "Norodom Sihamoni",
+      "DYNASTY": "Norodom",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KIR",
+      "NAME": "Taneti Maamau",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KOS",
+      "NAME": "Vjosa Osmani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KUW",
+      "NAME": "Nawaf I",
+      "DYNASTY": "Al-Sabah",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KYR",
+      "NAME": "Sadyr Japarov",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KZK",
+      "NAME": "Kassym-Jomart Tokayev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LAO",
+      "NAME": "Bounnhang Vorachith",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LAP",
+      "NAME": "Alberto Fernndez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LBR",
+      "NAME": "George Weah",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LBY",
+      "NAME": "Aguila Saleh Issa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LEB",
+      "NAME": "Michel Aoun",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LES",
+      "NAME": "Letsie III",
+      "DYNASTY": "Moshesh",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LIT",
+      "NAME": "Gitanas Nauseda",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LTV",
+      "NAME": "Egils Levits",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LUX",
+      "NAME": "Henri I",
+      "DYNASTY": "de Bourbon-Parma",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MAC",
+      "NAME": "Stevo Pendarovski",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MAL",
+      "NAME": "Assimi Goita",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MDG",
+      "NAME": "Andry Rajoelina",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MDV",
+      "NAME": "Maia Sandu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MEX",
+      "NAME": "Andrs Manuel Lpez Obrador",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MIC",
+      "NAME": "David Panuelo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MLA",
+      "NAME": "Abdullah",
+      "DYNASTY": "Bendahara",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MNM",
+      "NAME": "Myint Swe",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MON",
+      "NAME": "Milo Dukanovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MOR",
+      "NAME": "Muhammad VI",
+      "DYNASTY": "Alaouite",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MRS",
+      "NAME": "David Kabua",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MRT",
+      "NAME": "Mohamed Ould Ghazouani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MTU",
+      "NAME": "Prithvirajsing Roopun",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MWI",
+      "NAME": "Lazarus Chakwera",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MZM",
+      "NAME": "Filipe Nyusi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NAU",
+      "NAME": "Lionel Aingimea",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NCR",
+      "NAME": "Daniel Ortega",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NED",
+      "NAME": "Willem-Alexander I",
+      "DYNASTY": "van Oranje",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NGR",
+      "NAME": "Mohamed Bazoum",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NIG",
+      "NAME": "Muhammadu Buhari",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NIU",
+      "NAME": "Toke Talagi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NMB",
+      "NAME": "Hage Geinbob",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NOK",
+      "NAME": "Kim Jong-un",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NOR",
+      "NAME": "Harald V",
+      "DYNASTY": "von Glcksburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NPL",
+      "NAME": "Bidhya Devi Bhandari",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NZL",
+      "NAME": "Jacinda Ardern",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "OMA",
+      "NAME": "Haitham",
+      "DYNASTY": "Al Said",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PAK",
+      "NAME": "Arif Alvi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PEU",
+      "NAME": "Pedro Castillo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PHI",
+      "NAME": "Rodrigo Duterte",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PLS",
+      "NAME": "Mahmoud Abbas",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PLU",
+      "NAME": "Surangel Whipps Jr.",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PNG",
+      "NAME": "Peter O'Neill",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PNM",
+      "NAME": "Laurentino Cortizo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "POL",
+      "NAME": "Andrzej Duda",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "POR",
+      "NAME": "Marcelo Rebelo de Sousa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PRG",
+      "NAME": "Mario Abdo Bentez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "QTR",
+      "NAME": "Tamim bin Hamad",
+      "DYNASTY": "Al-Thani",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RMN",
+      "NAME": "Klaus Iohannis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RSA",
+      "NAME": "Cyril Ramaphosa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RUS",
+      "NAME": "Vladimir Putin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RWA",
+      "NAME": "Paul Kagame",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SAM",
+      "NAME": "Va'aletoa Sualauvi II",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SAU",
+      "NAME": "Salman",
+      "DYNASTY": "Sa'ud",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SER",
+      "NAME": "Tomislav Nikolic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SEY",
+      "NAME": "Wavel Ramkalawan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SGA",
+      "NAME": "Halimah Yacob",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SGL",
+      "NAME": "Macky Sall",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SIA",
+      "NAME": "Maha Vajiralongkorn",
+      "DYNASTY": "Chakri",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SKN",
+      "NAME": "Timothy Harris",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SKO",
+      "NAME": "Moon Jae-in",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SLM",
+      "NAME": "Manasseh Sogavare",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SLU",
+      "NAME": "Philip J. Pierre",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SOM",
+      "NAME": "Mohamed Abdullahi Mohamed",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SPA",
+      "NAME": "Felipe VI",
+      "DYNASTY": "de Bourbon",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRA",
+      "NAME": "Julius Maada Bio",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRL",
+      "NAME": "Gotabaya Rajapaksa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRN",
+      "NAME": "Chan Santokhi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SSU",
+      "NAME": "Salva Kiir Mayardit",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "STP",
+      "NAME": "Carlos Vila Nova",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SUD",
+      "NAME": "Omar al-Bashir",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVG",
+      "NAME": "Ralph Gonsalves",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVK",
+      "NAME": "Zuzana Caputova",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVN",
+      "NAME": "Borut Pahor",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWE",
+      "NAME": "Carl XVI Gustaf",
+      "DYNASTY": "Bernadotte",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWI",
+      "NAME": "Ignazio Cassis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWZ",
+      "NAME": "Mswati III",
+      "DYNASTY": "Dlamini",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SYR",
+      "NAME": "Bashar al-Assad",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TGO",
+      "NAME": "Faure Gnassingb",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TJK",
+      "NAME": "Emomali Rahmon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TKY",
+      "NAME": "Recep Tayyip Erdogan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TNZ",
+      "NAME": "Samia Suluhu Hassan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TOG",
+      "NAME": "Tupou VI",
+      "DYNASTY": "Tupou",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TRK",
+      "NAME": "Gurbanguly Berdimuhamedow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TRN",
+      "NAME": "Paula-Mae Weekes",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TUN",
+      "NAME": "Kais Saied",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TVL",
+      "NAME": "Kausea Natano",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UAE",
+      "NAME": "Khalifa bin Zayed Al Nahyan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UGA",
+      "NAME": "Yoweri Kaguta Museveni",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UKR",
+      "NAME": "Volodymyr Zelensky",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "URU",
+      "NAME": "Luis Lacalle Pou",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "USA",
+      "NAME": "Joe Biden",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UZB",
+      "NAME": "Islam Karimov",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VIT",
+      "NAME": "Wiliame Katonivere",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VNU",
+      "NAME": "Tallis Obed Moses",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VNZ",
+      "NAME": "Nicols Maduro",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VTN",
+      "NAME": "Nguyen Xuan Phuc",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "YEM",
+      "NAME": "Mahdi al-Mashat",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ZAM",
+      "NAME": "Hakainde Hichilema",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    }
+  ],
+  "2023": [
+    {
+      "TAG": "AFG",
+      "NAME": "Hibatullah Akhundzada",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AGL",
+      "NAME": "Joao Lourenco",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ALB",
+      "NAME": "Bajram Begaj",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ALG",
+      "NAME": "Abdelmadjid Tebboune",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ANB",
+      "NAME": "Gaston Browne",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ARM",
+      "NAME": "Vahagn Khachaturyan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AUS",
+      "NAME": "Anthony Albanese",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AZE",
+      "NAME": "Ilham Aliyev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BBD",
+      "NAME": "Freundel Stuart",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEI",
+      "NAME": "Hassanal",
+      "DYNASTY": "Bolkiah",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEL",
+      "NAME": "Philippe",
+      "DYNASTY": "von Saxe-Coburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEN",
+      "NAME": "Patrice Talon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BFA",
+      "NAME": "Ibrahim Traor",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BGD",
+      "NAME": "Abdul Hamid",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHE",
+      "NAME": "Zeljka Cvijanovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHM",
+      "NAME": "Philip Davis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHR",
+      "NAME": "Hamad",
+      "DYNASTY": "Al Khalifa",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHU",
+      "NAME": "Jigme Khesar Namgyel",
+      "DYNASTY": "Wangchuck",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BLR",
+      "NAME": "Alexander Lukashenko",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BLZ",
+      "NAME": "Dean Barrow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BOL",
+      "NAME": "Luis Arce",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BOT",
+      "NAME": "Mokgweetsi Masisi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BRZ",
+      "NAME": "Luiz Incio Lula da Silva",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BUL",
+      "NAME": "Rumen Radev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BUU",
+      "NAME": "Évariste Ndayishimiye",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CAF",
+      "NAME": "Faustin-Archange Touadra",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CAN",
+      "NAME": "Justin Trudeau",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CDD",
+      "NAME": "Mahamat Dby",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CHL",
+      "NAME": "Gabriel Boric",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CHN",
+      "NAME": "Xi Jinping",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CMO",
+      "NAME": "Azali Assoumani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CMR",
+      "NAME": "Paul Biya",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CNG",
+      "NAME": "Denis Sassou-Nguesso",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COK",
+      "NAME": "Henry Puna",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COL",
+      "NAME": "Ivn Duque Mrquez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COS",
+      "NAME": "Rodrigo Chaves Robles",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CPV",
+      "NAME": "Jos Maria Neves",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CRO",
+      "NAME": "Zoran Milanovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CUB",
+      "NAME": "Miguel Daz-Canel",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CYP",
+      "NAME": "Nicos Anastasiades",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CZE",
+      "NAME": "Milos Zeman",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DAN",
+      "NAME": "Margrethe II",
+      "DYNASTY": "von Glcksburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DGL",
+      "NAME": "Ibrahim Mohamed Solih",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DJI",
+      "NAME": "Ismal Omar Guelleh",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DMN",
+      "NAME": "Charles Savarin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DOM",
+      "NAME": "Luis Abinader",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DRC",
+      "NAME": "Flix Tshisekedi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ECU",
+      "NAME": "Guillermo Lasso",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EGY",
+      "NAME": "Abdel Fattah el-Sisi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ELS",
+      "NAME": "Nayib Bukele",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EQG",
+      "NAME": "Teodoro Obiang Nguema Mbasogo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ERT",
+      "NAME": "Isaias Afewerki",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EST",
+      "NAME": "Alar Karis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ETH",
+      "NAME": "Sahle-Work Zewde",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ETI",
+      "NAME": "Jos Ramos-Horta",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FIN",
+      "NAME": "Sauli Niinist",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FR2",
+      "NAME": "Emmanuel Macron",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FRM",
+      "NAME": "Tsai Ing-wen",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GAB",
+      "NAME": "Ali Bongo Ondimba",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GBI",
+      "NAME": "Umaro Sissoco Embal",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GBR",
+      "NAME": "Charles III",
+      "DYNASTY": "of Windsor",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GEO",
+      "NAME": "Salome Zurabichvili",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GER",
+      "NAME": "Frank-Walter Steinmeier",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GHA",
+      "NAME": "Nana Akufo-Addo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GMB",
+      "NAME": "Adama Barrow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GRE",
+      "NAME": "Katerina Sakellaropoulou",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GRN",
+      "NAME": "Keith Mitchell",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GTM",
+      "NAME": "Alejandro Giammattei",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GUI",
+      "NAME": "Mamady Doumbouya",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GYA",
+      "NAME": "Irfaan Ali",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GZI",
+      "NAME": "Emmerson Mnangagwa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HAB",
+      "NAME": "Alexander Van der Bellen",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HAT",
+      "NAME": "Ariel Henry",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HON",
+      "NAME": "Xiomara Castro",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HUN",
+      "NAME": "Katalin Novk",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ICE",
+      "NAME": "Guni Jhannesson",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IDN",
+      "NAME": "Joko Widodo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "INI",
+      "NAME": "Droupadi Murmu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRA",
+      "NAME": "Ali Khamenei",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRE",
+      "NAME": "Michael Higgins",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRQ",
+      "NAME": "Abdul Latif Rashid",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ISR",
+      "NAME": "Isaac Herzog",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ITA",
+      "NAME": "Sergio Mattarella",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IVO",
+      "NAME": "Alassane Ouattara",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JAI",
+      "NAME": "George Vella",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JAP",
+      "NAME": "Naruhito",
+      "DYNASTY": "Yamato",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JMC",
+      "NAME": "Andrew Holness",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JOR",
+      "NAME": "Abdullah II",
+      "DYNASTY": "Hashemite",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KEY",
+      "NAME": "William Ruto",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KHA",
+      "NAME": "Ukhnaagiin Khrelskh",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KHM",
+      "NAME": "Norodom Sihamoni",
+      "DYNASTY": "Norodom",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KIR",
+      "NAME": "Taneti Maamau",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KOS",
+      "NAME": "Vjosa Osmani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KUW",
+      "NAME": "Nawaf I",
+      "DYNASTY": "Al-Sabah",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KYR",
+      "NAME": "Sadyr Japarov",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KZK",
+      "NAME": "Kassym-Jomart Tokayev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LAO",
+      "NAME": "Bounnhang Vorachith",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LAP",
+      "NAME": "Alberto Fernndez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LBR",
+      "NAME": "George Weah",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LBY",
+      "NAME": "Aguila Saleh Issa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LEB",
+      "NAME": "Michel Aoun",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LES",
+      "NAME": "Letsie III",
+      "DYNASTY": "Moshesh",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LIT",
+      "NAME": "Gitanas Nauseda",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LTV",
+      "NAME": "Egils Levits",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LUX",
+      "NAME": "Henri I",
+      "DYNASTY": "de Bourbon-Parma",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MAC",
+      "NAME": "Stevo Pendarovski",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MAL",
+      "NAME": "Assimi Goita",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MDG",
+      "NAME": "Andry Rajoelina",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MDV",
+      "NAME": "Maia Sandu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MEX",
+      "NAME": "Andrs Manuel Lpez Obrador",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MIC",
+      "NAME": "David Panuelo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MLA",
+      "NAME": "Abdullah",
+      "DYNASTY": "Bendahara",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MNM",
+      "NAME": "Myint Swe",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MON",
+      "NAME": "Milo Dukanovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MOR",
+      "NAME": "Muhammad VI",
+      "DYNASTY": "Alaouite",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MRS",
+      "NAME": "David Kabua",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MRT",
+      "NAME": "Mohamed Ould Ghazouani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MTU",
+      "NAME": "Prithvirajsing Roopun",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MWI",
+      "NAME": "Lazarus Chakwera",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MZM",
+      "NAME": "Filipe Nyusi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NAU",
+      "NAME": "Russ Kun",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NCR",
+      "NAME": "Daniel Ortega",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NED",
+      "NAME": "Willem-Alexander I",
+      "DYNASTY": "van Oranje",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NGR",
+      "NAME": "Mohamed Bazoum",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NIG",
+      "NAME": "Muhammadu Buhari",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NIU",
+      "NAME": "Toke Talagi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NMB",
+      "NAME": "Hage Geinbob",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NOK",
+      "NAME": "Kim Jong-un",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NOR",
+      "NAME": "Harald V",
+      "DYNASTY": "von Glcksburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NPL",
+      "NAME": "Bidhya Devi Bhandari",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NZL",
+      "NAME": "Jacinda Ardern",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "OMA",
+      "NAME": "Haitham",
+      "DYNASTY": "Al Said",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PAK",
+      "NAME": "Arif Alvi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PEU",
+      "NAME": "Dina Boluarte",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PHI",
+      "NAME": "Bongbong Marcos",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PLS",
+      "NAME": "Mahmoud Abbas",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PLU",
+      "NAME": "Surangel Whipps Jr.",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PNG",
+      "NAME": "Peter O'Neill",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PNM",
+      "NAME": "Laurentino Cortizo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "POL",
+      "NAME": "Andrzej Duda",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "POR",
+      "NAME": "Marcelo Rebelo de Sousa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PRG",
+      "NAME": "Mario Abdo Bentez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "QTR",
+      "NAME": "Tamim bin Hamad",
+      "DYNASTY": "Al-Thani",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RMN",
+      "NAME": "Klaus Iohannis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RSA",
+      "NAME": "Cyril Ramaphosa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RUS",
+      "NAME": "Vladimir Putin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RWA",
+      "NAME": "Paul Kagame",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SAM",
+      "NAME": "Va'aletoa Sualauvi II",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SAU",
+      "NAME": "Salman",
+      "DYNASTY": "Sa'ud",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SER",
+      "NAME": "Tomislav Nikolic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SEY",
+      "NAME": "Wavel Ramkalawan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SGA",
+      "NAME": "Halimah Yacob",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SGL",
+      "NAME": "Macky Sall",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SIA",
+      "NAME": "Maha Vajiralongkorn",
+      "DYNASTY": "Chakri",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SKN",
+      "NAME": "Terrence Drew",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SKO",
+      "NAME": "Yoon Suk-yeol",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SLM",
+      "NAME": "Manasseh Sogavare",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SLU",
+      "NAME": "Philip J. Pierre",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SOM",
+      "NAME": "Hassan Sheikh Mohamud",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SPA",
+      "NAME": "Felipe VI",
+      "DYNASTY": "de Bourbon",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRA",
+      "NAME": "Julius Maada Bio",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRL",
+      "NAME": "Ranil Wickremesinghe",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRN",
+      "NAME": "Chan Santokhi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SSU",
+      "NAME": "Salva Kiir Mayardit",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "STP",
+      "NAME": "Carlos Vila Nova",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SUD",
+      "NAME": "Omar al-Bashir",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVG",
+      "NAME": "Ralph Gonsalves",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVK",
+      "NAME": "Zuzana Caputova",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVN",
+      "NAME": "Natasa Pirc Musar",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWE",
+      "NAME": "Carl XVI Gustaf",
+      "DYNASTY": "Bernadotte",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWI",
+      "NAME": "Alain Berset",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWZ",
+      "NAME": "Mswati III",
+      "DYNASTY": "Dlamini",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SYR",
+      "NAME": "Bashar al-Assad",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TGO",
+      "NAME": "Faure Gnassingb",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TJK",
+      "NAME": "Emomali Rahmon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TKY",
+      "NAME": "Recep Tayyip Erdogan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TNZ",
+      "NAME": "Samia Suluhu Hassan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TOG",
+      "NAME": "Tupou VI",
+      "DYNASTY": "Tupou",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TRK",
+      "NAME": "Serdar Berdimuhamedow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TRN",
+      "NAME": "Paula-Mae Weekes",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TUN",
+      "NAME": "Kais Saied",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TVL",
+      "NAME": "Kausea Natano",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UAE",
+      "NAME": "Khalifa bin Zayed Al Nahyan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UGA",
+      "NAME": "Yoweri Kaguta Museveni",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UKR",
+      "NAME": "Volodymyr Zelensky",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "URU",
+      "NAME": "Luis Lacalle Pou",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "USA",
+      "NAME": "Joe Biden",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UZB",
+      "NAME": "Islam Karimov",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VIT",
+      "NAME": "Wiliame Katonivere",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VNU",
+      "NAME": "Nikenike Vurobaravu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VNZ",
+      "NAME": "Nicols Maduro",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VTN",
+      "NAME": "Nguyen Xuan Phuc",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "YEM",
+      "NAME": "Mahdi al-Mashat",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ZAM",
+      "NAME": "Hakainde Hichilema",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    }
+  ],
+  "2024": [
+    {
+      "TAG": "AFG",
+      "NAME": "Hibatullah Akhundzada",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AGL",
+      "NAME": "Joao Lourenco",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ALB",
+      "NAME": "Bajram Begaj",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ALG",
+      "NAME": "Abdelmadjid Tebboune",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ANB",
+      "NAME": "Gaston Browne",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ARM",
+      "NAME": "Vahagn Khachaturyan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AUS",
+      "NAME": "Anthony Albanese",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AZE",
+      "NAME": "Ilham Aliyev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BBD",
+      "NAME": "Freundel Stuart",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEI",
+      "NAME": "Hassanal",
+      "DYNASTY": "Bolkiah",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEL",
+      "NAME": "Philippe",
+      "DYNASTY": "von Saxe-Coburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEN",
+      "NAME": "Patrice Talon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BFA",
+      "NAME": "Ibrahim Traor",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BGD",
+      "NAME": "Mohammed Shahabuddin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHE",
+      "NAME": "Zeljka Cvijanovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHM",
+      "NAME": "Philip Davis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHR",
+      "NAME": "Hamad",
+      "DYNASTY": "Al Khalifa",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHU",
+      "NAME": "Jigme Khesar Namgyel",
+      "DYNASTY": "Wangchuck",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BLR",
+      "NAME": "Alexander Lukashenko",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BLZ",
+      "NAME": "Dean Barrow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BOL",
+      "NAME": "Luis Arce",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BOT",
+      "NAME": "Mokgweetsi Masisi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BRZ",
+      "NAME": "Luiz Incio Lula da Silva",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BUL",
+      "NAME": "Rumen Radev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BUU",
+      "NAME": "Évariste Ndayishimiye",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CAF",
+      "NAME": "Faustin-Archange Touadra",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CAN",
+      "NAME": "Justin Trudeau",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CDD",
+      "NAME": "Mahamat Dby",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CHL",
+      "NAME": "Gabriel Boric",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CHN",
+      "NAME": "Xi Jinping",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CMO",
+      "NAME": "Azali Assoumani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CMR",
+      "NAME": "Paul Biya",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CNG",
+      "NAME": "Denis Sassou-Nguesso",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COK",
+      "NAME": "Henry Puna",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COL",
+      "NAME": "Ivn Duque Mrquez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COS",
+      "NAME": "Rodrigo Chaves Robles",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CPV",
+      "NAME": "Jos Maria Neves",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CRO",
+      "NAME": "Zoran Milanovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CUB",
+      "NAME": "Miguel Daz-Canel",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CYP",
+      "NAME": "Nikos Christodoulides",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CZE",
+      "NAME": "Petr Pavel",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DAN",
+      "NAME": "Margrethe II",
+      "DYNASTY": "von Glcksburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DGL",
+      "NAME": "Mohamed Muizzu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DJI",
+      "NAME": "Ismal Omar Guelleh",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DMN",
+      "NAME": "Sylvanie Burton",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DOM",
+      "NAME": "Luis Abinader",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DRC",
+      "NAME": "Flix Tshisekedi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ECU",
+      "NAME": "Daniel Noboa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EGY",
+      "NAME": "Abdel Fattah el-Sisi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ELS",
+      "NAME": "Nayib Bukele",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EQG",
+      "NAME": "Teodoro Obiang Nguema Mbasogo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ERT",
+      "NAME": "Isaias Afewerki",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EST",
+      "NAME": "Alar Karis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ETH",
+      "NAME": "Sahle-Work Zewde",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ETI",
+      "NAME": "Jos Ramos-Horta",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FIN",
+      "NAME": "Sauli Niinist",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FR2",
+      "NAME": "Emmanuel Macron",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FRM",
+      "NAME": "Tsai Ing-wen",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GAB",
+      "NAME": "Brice Oligui",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GBI",
+      "NAME": "Umaro Sissoco Embal",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GBR",
+      "NAME": "Charles III",
+      "DYNASTY": "of Windsor",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GEO",
+      "NAME": "Salome Zurabichvili",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GER",
+      "NAME": "Frank-Walter Steinmeier",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GHA",
+      "NAME": "Nana Akufo-Addo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GMB",
+      "NAME": "Adama Barrow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GRE",
+      "NAME": "Katerina Sakellaropoulou",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GRN",
+      "NAME": "Keith Mitchell",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GTM",
+      "NAME": "Alejandro Giammattei",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GUI",
+      "NAME": "Mamady Doumbouya",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GYA",
+      "NAME": "Irfaan Ali",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GZI",
+      "NAME": "Emmerson Mnangagwa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HAB",
+      "NAME": "Alexander Van der Bellen",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HAT",
+      "NAME": "Ariel Henry",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HON",
+      "NAME": "Xiomara Castro",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HUN",
+      "NAME": "Katalin Novk",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ICE",
+      "NAME": "Guni Jhannesson",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IDN",
+      "NAME": "Joko Widodo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "INI",
+      "NAME": "Droupadi Murmu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRA",
+      "NAME": "Ali Khamenei",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRE",
+      "NAME": "Michael Higgins",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRQ",
+      "NAME": "Abdul Latif Rashid",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ISR",
+      "NAME": "Isaac Herzog",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ITA",
+      "NAME": "Sergio Mattarella",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IVO",
+      "NAME": "Alassane Ouattara",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JAI",
+      "NAME": "George Vella",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JAP",
+      "NAME": "Naruhito",
+      "DYNASTY": "Yamato",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JMC",
+      "NAME": "Andrew Holness",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JOR",
+      "NAME": "Abdullah II",
+      "DYNASTY": "Hashemite",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KEY",
+      "NAME": "William Ruto",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KHA",
+      "NAME": "Ukhnaagiin Khrelskh",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KHM",
+      "NAME": "Norodom Sihamoni",
+      "DYNASTY": "Norodom",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KIR",
+      "NAME": "Taneti Maamau",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KOS",
+      "NAME": "Vjosa Osmani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KUW",
+      "NAME": "Mishal I",
+      "DYNASTY": "Al-Sabah",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KYR",
+      "NAME": "Sadyr Japarov",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KZK",
+      "NAME": "Kassym-Jomart Tokayev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LAO",
+      "NAME": "Bounnhang Vorachith",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LAP",
+      "NAME": "Javier Milei",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LBR",
+      "NAME": "George Weah",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LBY",
+      "NAME": "Aguila Saleh Issa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LEB",
+      "NAME": "Michel Aoun",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LES",
+      "NAME": "Letsie III",
+      "DYNASTY": "Moshesh",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LIT",
+      "NAME": "Gitanas Nauseda",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LTV",
+      "NAME": "Edgars Rinkevics",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LUX",
+      "NAME": "Henri I",
+      "DYNASTY": "de Bourbon-Parma",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MAC",
+      "NAME": "Stevo Pendarovski",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MAL",
+      "NAME": "Assimi Goita",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MDG",
+      "NAME": "Andry Rajoelina",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MDV",
+      "NAME": "Maia Sandu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MEX",
+      "NAME": "Andrs Manuel Lpez Obrador",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MIC",
+      "NAME": "Wesley Simina",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MLA",
+      "NAME": "Abdullah",
+      "DYNASTY": "Bendahara",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MNM",
+      "NAME": "Myint Swe",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MON",
+      "NAME": "Jakov Milatovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MOR",
+      "NAME": "Muhammad VI",
+      "DYNASTY": "Alaouite",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MRS",
+      "NAME": "David Kabua",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MRT",
+      "NAME": "Mohamed Ould Ghazouani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MTU",
+      "NAME": "Prithvirajsing Roopun",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MWI",
+      "NAME": "Lazarus Chakwera",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MZM",
+      "NAME": "Filipe Nyusi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NAU",
+      "NAME": "David Adeang",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NCR",
+      "NAME": "Daniel Ortega",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NED",
+      "NAME": "Willem-Alexander I",
+      "DYNASTY": "van Oranje",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NGR",
+      "NAME": "Abdourahamane Tchiani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NIG",
+      "NAME": "Bola Tinubu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NIU",
+      "NAME": "Toke Talagi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NMB",
+      "NAME": "Hage Geinbob",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NOK",
+      "NAME": "Kim Jong-un",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NOR",
+      "NAME": "Harald V",
+      "DYNASTY": "von Glcksburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NPL",
+      "NAME": "Ram Chandra Poudel",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NZL",
+      "NAME": "Christopher Luxon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "OMA",
+      "NAME": "Haitham",
+      "DYNASTY": "Al Said",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PAK",
+      "NAME": "Arif Alvi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PEU",
+      "NAME": "Dina Boluarte",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PHI",
+      "NAME": "Bongbong Marcos",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PLS",
+      "NAME": "Mahmoud Abbas",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PLU",
+      "NAME": "Surangel Whipps Jr.",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PNG",
+      "NAME": "Peter O'Neill",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PNM",
+      "NAME": "Laurentino Cortizo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "POL",
+      "NAME": "Andrzej Duda",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "POR",
+      "NAME": "Marcelo Rebelo de Sousa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PRG",
+      "NAME": "Santiago Pena",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "QTR",
+      "NAME": "Tamim bin Hamad",
+      "DYNASTY": "Al-Thani",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RMN",
+      "NAME": "Klaus Iohannis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RSA",
+      "NAME": "Cyril Ramaphosa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RUS",
+      "NAME": "Vladimir Putin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RWA",
+      "NAME": "Paul Kagame",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SAM",
+      "NAME": "Va'aletoa Sualauvi II",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SAU",
+      "NAME": "Salman",
+      "DYNASTY": "Sa'ud",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SER",
+      "NAME": "Tomislav Nikolic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SEY",
+      "NAME": "Wavel Ramkalawan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SGA",
+      "NAME": "Tharman Shanmugaratnam",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SGL",
+      "NAME": "Macky Sall",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SIA",
+      "NAME": "Maha Vajiralongkorn",
+      "DYNASTY": "Chakri",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SKN",
+      "NAME": "Terrence Drew",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SKO",
+      "NAME": "Yoon Suk-yeol",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SLM",
+      "NAME": "Manasseh Sogavare",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SLU",
+      "NAME": "Philip J. Pierre",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SOM",
+      "NAME": "Hassan Sheikh Mohamud",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SPA",
+      "NAME": "Felipe VI",
+      "DYNASTY": "de Bourbon",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRA",
+      "NAME": "Julius Maada Bio",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRL",
+      "NAME": "Ranil Wickremesinghe",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRN",
+      "NAME": "Chan Santokhi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SSU",
+      "NAME": "Salva Kiir Mayardit",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "STP",
+      "NAME": "Carlos Vila Nova",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SUD",
+      "NAME": "Omar al-Bashir",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVG",
+      "NAME": "Ralph Gonsalves",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVK",
+      "NAME": "Zuzana Caputova",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVN",
+      "NAME": "Natasa Pirc Musar",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWE",
+      "NAME": "Carl XVI Gustaf",
+      "DYNASTY": "Bernadotte",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWI",
+      "NAME": "Beat Jans",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWZ",
+      "NAME": "Mswati III",
+      "DYNASTY": "Dlamini",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SYR",
+      "NAME": "Bashar al-Assad",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TGO",
+      "NAME": "Faure Gnassingb",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TJK",
+      "NAME": "Emomali Rahmon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TKY",
+      "NAME": "Recep Tayyip Erdogan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TNZ",
+      "NAME": "Samia Suluhu Hassan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TOG",
+      "NAME": "Tupou VI",
+      "DYNASTY": "Tupou",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TRK",
+      "NAME": "Serdar Berdimuhamedow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TRN",
+      "NAME": "Christine Kangaloo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TUN",
+      "NAME": "Kais Saied",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TVL",
+      "NAME": "Kausea Natano",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UAE",
+      "NAME": "Khalifa bin Zayed Al Nahyan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UGA",
+      "NAME": "Yoweri Kaguta Museveni",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UKR",
+      "NAME": "Volodymyr Zelensky",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "URU",
+      "NAME": "Luis Lacalle Pou",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "USA",
+      "NAME": "Joe Biden",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UZB",
+      "NAME": "Islam Karimov",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VIT",
+      "NAME": "Wiliame Katonivere",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VNU",
+      "NAME": "Nikenike Vurobaravu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VNZ",
+      "NAME": "Nicols Maduro",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VTN",
+      "NAME": "Vo Van Thuong",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "YEM",
+      "NAME": "Mahdi al-Mashat",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ZAM",
+      "NAME": "Hakainde Hichilema",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    }
+  ],
+  "2025": [
+    {
+      "TAG": "AFG",
+      "NAME": "Hibatullah Akhundzada",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AGL",
+      "NAME": "Joao Lourenco",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ALB",
+      "NAME": "Bajram Begaj",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ALG",
+      "NAME": "Abdelmadjid Tebboune",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ANB",
+      "NAME": "Gaston Browne",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ARM",
+      "NAME": "Vahagn Khachaturyan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AUS",
+      "NAME": "Anthony Albanese",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "AZE",
+      "NAME": "Ilham Aliyev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BBD",
+      "NAME": "Freundel Stuart",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEI",
+      "NAME": "Hassanal",
+      "DYNASTY": "Bolkiah",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEL",
+      "NAME": "Philippe",
+      "DYNASTY": "von Saxe-Coburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BEN",
+      "NAME": "Patrice Talon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BFA",
+      "NAME": "Ibrahim Traor",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BGD",
+      "NAME": "Mohammed Shahabuddin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHE",
+      "NAME": "Zeljka Cvijanovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHM",
+      "NAME": "Philip Davis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHR",
+      "NAME": "Hamad",
+      "DYNASTY": "Al Khalifa",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BHU",
+      "NAME": "Jigme Khesar Namgyel",
+      "DYNASTY": "Wangchuck",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BLR",
+      "NAME": "Alexander Lukashenko",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BLZ",
+      "NAME": "Dean Barrow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BOL",
+      "NAME": "Luis Arce",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BOT",
+      "NAME": "Duma Boko",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BRZ",
+      "NAME": "Luiz Incio Lula da Silva",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BUL",
+      "NAME": "Rumen Radev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "BUU",
+      "NAME": "Évariste Ndayishimiye",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CAF",
+      "NAME": "Faustin-Archange Touadra",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CAN",
+      "NAME": "Justin Trudeau",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CDD",
+      "NAME": "Mahamat Dby",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CHL",
+      "NAME": "Gabriel Boric",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CHN",
+      "NAME": "Xi Jinping",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CMO",
+      "NAME": "Azali Assoumani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CMR",
+      "NAME": "Paul Biya",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CNG",
+      "NAME": "Denis Sassou-Nguesso",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COK",
+      "NAME": "Henry Puna",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COL",
+      "NAME": "Ivn Duque Mrquez",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "COS",
+      "NAME": "Rodrigo Chaves Robles",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CPV",
+      "NAME": "Jos Maria Neves",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CRO",
+      "NAME": "Zoran Milanovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CUB",
+      "NAME": "Miguel Daz-Canel",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CYP",
+      "NAME": "Nikos Christodoulides",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "CZE",
+      "NAME": "Petr Pavel",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DAN",
+      "NAME": "Frederik X",
+      "DYNASTY": "von Glcksburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DGL",
+      "NAME": "Mohamed Muizzu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DJI",
+      "NAME": "Ismal Omar Guelleh",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DMN",
+      "NAME": "Sylvanie Burton",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DOM",
+      "NAME": "Luis Abinader",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "DRC",
+      "NAME": "Flix Tshisekedi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ECU",
+      "NAME": "Daniel Noboa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EGY",
+      "NAME": "Abdel Fattah el-Sisi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ELS",
+      "NAME": "Nayib Bukele",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EQG",
+      "NAME": "Teodoro Obiang Nguema Mbasogo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ERT",
+      "NAME": "Isaias Afewerki",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "EST",
+      "NAME": "Alar Karis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ETH",
+      "NAME": "Taye Atske Selassie",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ETI",
+      "NAME": "Jos Ramos-Horta",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FIN",
+      "NAME": "Alexander Stubb",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FR2",
+      "NAME": "Emmanuel Macron",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "FRM",
+      "NAME": "Lai Ching-te",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GAB",
+      "NAME": "Brice Oligui",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GBI",
+      "NAME": "Umaro Sissoco Embal",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GBR",
+      "NAME": "Charles III",
+      "DYNASTY": "of Windsor",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GEO",
+      "NAME": "Salome Zurabichvili",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GER",
+      "NAME": "Frank-Walter Steinmeier",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GHA",
+      "NAME": "Nana Akufo-Addo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GMB",
+      "NAME": "Adama Barrow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GRE",
+      "NAME": "Katerina Sakellaropoulou",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GRN",
+      "NAME": "Keith Mitchell",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GTM",
+      "NAME": "Bernardo Arvalo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GUI",
+      "NAME": "Mamady Doumbouya",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GYA",
+      "NAME": "Irfaan Ali",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "GZI",
+      "NAME": "Emmerson Mnangagwa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HAB",
+      "NAME": "Alexander Van der Bellen",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HAT",
+      "NAME": "Leslie Voltaire",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HON",
+      "NAME": "Xiomara Castro",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "HUN",
+      "NAME": "Tams Sulyok",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ICE",
+      "NAME": "Halla Tmasdttir",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IDN",
+      "NAME": "Prabowo Subianto",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "INI",
+      "NAME": "Droupadi Murmu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRA",
+      "NAME": "Ali Khamenei",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRE",
+      "NAME": "Michael Higgins",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IRQ",
+      "NAME": "Abdul Latif Rashid",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ISR",
+      "NAME": "Isaac Herzog",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ITA",
+      "NAME": "Sergio Mattarella",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "IVO",
+      "NAME": "Alassane Ouattara",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JAI",
+      "NAME": "Myriam Spiteri Debono",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JAP",
+      "NAME": "Naruhito",
+      "DYNASTY": "Yamato",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JMC",
+      "NAME": "Andrew Holness",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "JOR",
+      "NAME": "Abdullah II",
+      "DYNASTY": "Hashemite",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KEY",
+      "NAME": "William Ruto",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KHA",
+      "NAME": "Ukhnaagiin Khrelskh",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KHM",
+      "NAME": "Norodom Sihamoni",
+      "DYNASTY": "Norodom",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KIR",
+      "NAME": "Taneti Maamau",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KOS",
+      "NAME": "Vjosa Osmani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KUW",
+      "NAME": "Mishal I",
+      "DYNASTY": "Al-Sabah",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KYR",
+      "NAME": "Sadyr Japarov",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "KZK",
+      "NAME": "Kassym-Jomart Tokayev",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LAO",
+      "NAME": "Bounnhang Vorachith",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LAP",
+      "NAME": "Javier Milei",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LBR",
+      "NAME": "Joseph Boakai",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LBY",
+      "NAME": "Aguila Saleh Issa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LEB",
+      "NAME": "Michel Aoun",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LES",
+      "NAME": "Letsie III",
+      "DYNASTY": "Moshesh",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LIT",
+      "NAME": "Gitanas Nauseda",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LTV",
+      "NAME": "Edgars Rinkevics",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "LUX",
+      "NAME": "Henri I",
+      "DYNASTY": "de Bourbon-Parma",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MAC",
+      "NAME": "Gordana Siljanovska-Davkova",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MAL",
+      "NAME": "Assimi Goita",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MDG",
+      "NAME": "Andry Rajoelina",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MDV",
+      "NAME": "Maia Sandu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MEX",
+      "NAME": "Claudia Sheinbaum",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MIC",
+      "NAME": "Wesley Simina",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MLA",
+      "NAME": "Ibrahim",
+      "DYNASTY": "Temenggong",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MNM",
+      "NAME": "Myint Swe",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MON",
+      "NAME": "Jakov Milatovic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MOR",
+      "NAME": "Muhammad VI",
+      "DYNASTY": "Alaouite",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MRS",
+      "NAME": "Hilda Heine",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MRT",
+      "NAME": "Mohamed Ould Ghazouani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MTU",
+      "NAME": "Prithvirajsing Roopun",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MWI",
+      "NAME": "Lazarus Chakwera",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "MZM",
+      "NAME": "Filipe Nyusi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NAU",
+      "NAME": "David Adeang",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NCR",
+      "NAME": "Daniel Ortega",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NED",
+      "NAME": "Willem-Alexander I",
+      "DYNASTY": "van Oranje",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NGR",
+      "NAME": "Abdourahamane Tchiani",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NIG",
+      "NAME": "Bola Tinubu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NIU",
+      "NAME": "Toke Talagi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NMB",
+      "NAME": "Nangolo Mbumba",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NOK",
+      "NAME": "Kim Jong-un",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NOR",
+      "NAME": "Harald V",
+      "DYNASTY": "von Glcksburg",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NPL",
+      "NAME": "Ram Chandra Poudel",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "NZL",
+      "NAME": "Christopher Luxon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "OMA",
+      "NAME": "Haitham",
+      "DYNASTY": "Al Said",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PAK",
+      "NAME": "Asif Ali Zardari",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PEU",
+      "NAME": "Dina Boluarte",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PHI",
+      "NAME": "Bongbong Marcos",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PLS",
+      "NAME": "Mahmoud Abbas",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PLU",
+      "NAME": "Surangel Whipps Jr.",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PNG",
+      "NAME": "Peter O'Neill",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PNM",
+      "NAME": "Jos Ral Mulino",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "POL",
+      "NAME": "Andrzej Duda",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "POR",
+      "NAME": "Marcelo Rebelo de Sousa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "PRG",
+      "NAME": "Santiago Pena",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "QTR",
+      "NAME": "Tamim bin Hamad",
+      "DYNASTY": "Al-Thani",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RMN",
+      "NAME": "Klaus Iohannis",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RSA",
+      "NAME": "Cyril Ramaphosa",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RUS",
+      "NAME": "Vladimir Putin",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "RWA",
+      "NAME": "Paul Kagame",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SAM",
+      "NAME": "Va'aletoa Sualauvi II",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SAU",
+      "NAME": "Salman",
+      "DYNASTY": "Sa'ud",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SER",
+      "NAME": "Tomislav Nikolic",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SEY",
+      "NAME": "Wavel Ramkalawan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SGA",
+      "NAME": "Tharman Shanmugaratnam",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SGL",
+      "NAME": "Bassirou Diomaye Faye",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SIA",
+      "NAME": "Maha Vajiralongkorn",
+      "DYNASTY": "Chakri",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SKN",
+      "NAME": "Terrence Drew",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SKO",
+      "NAME": "Yoon Suk-yeol",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SLM",
+      "NAME": "Jeremiah Manele",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SLU",
+      "NAME": "Philip J. Pierre",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SOM",
+      "NAME": "Hassan Sheikh Mohamud",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SPA",
+      "NAME": "Felipe VI",
+      "DYNASTY": "de Bourbon",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRA",
+      "NAME": "Julius Maada Bio",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRL",
+      "NAME": "Anura Kumara Dissanayake",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SRN",
+      "NAME": "Chan Santokhi",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SSU",
+      "NAME": "Salva Kiir Mayardit",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "STP",
+      "NAME": "Carlos Vila Nova",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SUD",
+      "NAME": "Omar al-Bashir",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVG",
+      "NAME": "Ralph Gonsalves",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVK",
+      "NAME": "Peter Pellegrini",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SVN",
+      "NAME": "Natasa Pirc Musar",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWE",
+      "NAME": "Carl XVI Gustaf",
+      "DYNASTY": "Bernadotte",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWI",
+      "NAME": "Beat Jans",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SWZ",
+      "NAME": "Mswati III",
+      "DYNASTY": "Dlamini",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "SYR",
+      "NAME": "Bashar al-Assad",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TGO",
+      "NAME": "Faure Gnassingb",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TJK",
+      "NAME": "Emomali Rahmon",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TKY",
+      "NAME": "Recep Tayyip Erdogan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TNZ",
+      "NAME": "Samia Suluhu Hassan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TOG",
+      "NAME": "Tupou VI",
+      "DYNASTY": "Tupou",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TRK",
+      "NAME": "Serdar Berdimuhamedow",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TRN",
+      "NAME": "Christine Kangaloo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TUN",
+      "NAME": "Kais Saied",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "TVL",
+      "NAME": "Feleti Teo",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UAE",
+      "NAME": "Khalifa bin Zayed Al Nahyan",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UGA",
+      "NAME": "Yoweri Kaguta Museveni",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UKR",
+      "NAME": "Volodymyr Zelensky",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "URU",
+      "NAME": "Luis Lacalle Pou",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "USA",
+      "NAME": "Joe Biden",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "UZB",
+      "NAME": "Islam Karimov",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VIT",
+      "NAME": "Naiqama Lalabalavu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VNU",
+      "NAME": "Nikenike Vurobaravu",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VNZ",
+      "NAME": "Nicols Maduro",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "VTN",
+      "NAME": "Luong Cuong",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "YEM",
+      "NAME": "Mahdi al-Mashat",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    },
+    {
+      "TAG": "ZAM",
+      "NAME": "Hakainde Hichilema",
+      "DYNASTY": "",
+      "TITLE": "",
+      "AGE": ""
+    }
+  ]
+}

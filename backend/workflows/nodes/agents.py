@@ -3,6 +3,7 @@ from workflows.state import WorkflowState
 from agents.historian_agent import get_historical_context
 from agents.dreamer_agent import make_decision
 from agents.geographer_agent import interpret_territorial_changes
+from agents.quotegiver_agent import generate_quotes
 from util.scenario import get_scenario_tags
 from workflows.nodes.memory import get_province_memory
 
@@ -140,4 +141,54 @@ def geographer_node(state: WorkflowState) -> dict:
             "territorial_changes": [],
             "error": str(e),
             "error_node": "geographer"
+        }
+
+
+def quotegiver_node(state: WorkflowState) -> dict:
+    """
+    Quotegiver Agent: Generate memorable quotes from relevant rulers.
+    
+    Analyzes the narrative and territorial changes, selects 1-2 most relevant
+    rulers, and generates quotes from their perspective.
+    """
+    dreamer_output = state.get("dreamer_output", {})
+    rulers = state.get("rulers", dreamer_output.get("rulers", {}))
+    current_year = state.get("current_year", state.get("start_year"))
+    years_to_progress = state.get("years_to_progress", 20)
+    scenario_id = state.get("scenario_id", "rome")
+    
+    year_range = f"{current_year}-{current_year + years_to_progress} AD"
+    
+    print(f"💬 Quotegiver: generating quotes for {year_range}")
+    
+    # Get available nation tags from scenario metadata
+    available_tags = get_scenario_tags(scenario_id)
+    
+    narrative = dreamer_output.get("narrative", "")
+    territorial_summary = dreamer_output.get("territorial_changes_summary", "")
+    
+    try:
+        quotes = generate_quotes(
+            narrative=narrative,
+            territorial_changes_summary=territorial_summary,
+            rulers=rulers,
+            available_tags=available_tags,
+            year_range=year_range
+        )
+        
+        print(f"✓ Quotegiver: {len(quotes)} quotes generated")
+        
+        return {
+            "quotegiver_output": {
+                "quotes": quotes
+            }
+        }
+    except Exception as e:
+        print(f"❌ Quotegiver Error: {e}")
+        return {
+            "quotegiver_output": {
+                "quotes": []
+            },
+            "error": str(e),
+            "error_node": "quotegiver"
         }

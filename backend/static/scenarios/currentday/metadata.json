@@ -1,0 +1,789 @@
+{
+  "name": "Current Day",
+  "tags": {
+    "AFG": {
+      "name": "Afghanistan",
+      "color": "#933296"
+    },
+    "AGL": {
+      "name": "Angola",
+      "color": "#572C33"
+    },
+    "ALB": {
+      "name": "Albania",
+      "color": "#707731"
+    },
+    "ALG": {
+      "name": "Algiers",
+      "color": "#773170"
+    },
+    "ANB": {
+      "name": "Antigua And Barbuda",
+      "color": "#483928"
+    },
+    "ARM": {
+      "name": "Armenia",
+      "color": "#743289"
+    },
+    "AUS": {
+      "name": "Australia",
+      "color": "#8B3A3A"
+    },
+    "AZE": {
+      "name": "Azerbaijan",
+      "color": "#407931"
+    },
+    "BBD": {
+      "name": "Barbados",
+      "color": "#328D40"
+    },
+    "BEI": {
+      "name": "Brunei",
+      "color": "#62302E"
+    },
+    "BEL": {
+      "name": "Belgium",
+      "color": "#7B6A1A"
+    },
+    "BEN": {
+      "name": "Benin",
+      "color": "#60652F"
+    },
+    "BFA": {
+      "name": "Burkina Faso",
+      "color": "#492938"
+    },
+    "BGD": {
+      "name": "Bangladesh",
+      "color": "#823250"
+    },
+    "BHE": {
+      "name": "Bosnia And Herzegovina",
+      "color": "#5D7030"
+    },
+    "BHM": {
+      "name": "Bahama",
+      "color": "#84326A"
+    },
+    "BHR": {
+      "name": "Bahrain",
+      "color": "#325F8F"
+    },
+    "BHU": {
+      "name": "Bhutan",
+      "color": "#505E2E"
+    },
+    "BLR": {
+      "name": "Belarus",
+      "color": "#4C692F"
+    },
+    "BLZ": {
+      "name": "Belize",
+      "color": "#2D5C48"
+    },
+    "BOL": {
+      "name": "Bolivia",
+      "color": "#86324C"
+    },
+    "BOT": {
+      "name": "Botswana",
+      "color": "#8B7832"
+    },
+    "BRZ": {
+      "name": "Brazil",
+      "color": "#428E32"
+    },
+    "BUL": {
+      "name": "Bulgaria",
+      "color": "#4D402A"
+    },
+    "BUU": {
+      "name": "Burundi",
+      "color": "#973256"
+    },
+    "CAF": {
+      "name": "Central Africa",
+      "color": "#4C2A4D"
+    },
+    "CAN": {
+      "name": "Canada",
+      "color": "#8B0000"
+    },
+    "CDD": {
+      "name": "Chad",
+      "color": "#906532"
+    },
+    "CHL": {
+      "name": "Chile",
+      "color": "#432A4F"
+    },
+    "CHN": {
+      "name": "China",
+      "color": "#397F32"
+    },
+    "CMO": {
+      "name": "Comores",
+      "color": "#3A2F6A"
+    },
+    "CMR": {
+      "name": "Cameroon",
+      "color": "#2C5741"
+    },
+    "CNG": {
+      "name": "Congo",
+      "color": "#773170"
+    },
+    "COK": {
+      "name": "Cook Islands",
+      "color": "#306A4F"
+    },
+    "COL": {
+      "name": "Colombia",
+      "color": "#3A2949"
+    },
+    "COS": {
+      "name": "Costa Rica",
+      "color": "#953279"
+    },
+    "CPV": {
+      "name": "Cape Verde",
+      "color": "#5B2D41"
+    },
+    "CRO": {
+      "name": "Croatia",
+      "color": "#883632"
+    },
+    "CUB": {
+      "name": "Cuba",
+      "color": "#592D5C"
+    },
+    "CYP": {
+      "name": "Cyprus",
+      "color": "#562C42"
+    },
+    "CZE": {
+      "name": "Czechrepublic",
+      "color": "#2A3A5A"
+    },
+    "DAN": {
+      "name": "Denmark",
+      "color": "#442D59"
+    },
+    "DGL": {
+      "name": "Maldives",
+      "color": "#283847"
+    },
+    "DJI": {
+      "name": "Djibouti",
+      "color": "#323B93"
+    },
+    "DMN": {
+      "name": "Dominica",
+      "color": "#848632"
+    },
+    "DOM": {
+      "name": "Dominican Republic",
+      "color": "#2E604F"
+    },
+    "DRC": {
+      "name": "Dem. Rep. Congo",
+      "color": "#533C2B"
+    },
+    "ECU": {
+      "name": "Ecuador",
+      "color": "#2B4351"
+    },
+    "EGY": {
+      "name": "Egypt",
+      "color": "#6B2A2A"
+    },
+    "ELS": {
+      "name": "El Salvador",
+      "color": "#2D5935"
+    },
+    "EQG": {
+      "name": "Equatorial Guinea",
+      "color": "#4E2A37"
+    },
+    "ERT": {
+      "name": "Eritrea",
+      "color": "#6D3287"
+    },
+    "EST": {
+      "name": "Estonia",
+      "color": "#478A32"
+    },
+    "ETH": {
+      "name": "Ethiopia",
+      "color": "#2A5A2A"
+    },
+    "ETI": {
+      "name": "East Timor",
+      "color": "#315A75"
+    },
+    "FIN": {
+      "name": "Finland",
+      "color": "#2A3A5A"
+    },
+    "FR2": {
+      "name": "Modern France",
+      "color": "#7F3253"
+    },
+    "FRM": {
+      "name": "Taiwan",
+      "color": "#75327E"
+    },
+    "GAB": {
+      "name": "Gabon",
+      "color": "#424628"
+    },
+    "GBI": {
+      "name": "Guinea-Bissau",
+      "color": "#563F2C"
+    },
+    "GBR": {
+      "name": "Great Britain",
+      "color": "#7B3F3F"
+    },
+    "GEO": {
+      "name": "Georgia",
+      "color": "#723072"
+    },
+    "GER": {
+      "name": "Germany",
+      "color": "#2C2C2C"
+    },
+    "GHA": {
+      "name": "Ghana",
+      "color": "#4B3293"
+    },
+    "GMB": {
+      "name": "Gambia",
+      "color": "#4B2F68"
+    },
+    "GRE": {
+      "name": "Greece",
+      "color": "#3A4A6B"
+    },
+    "GRN": {
+      "name": "Grenada",
+      "color": "#2F5F69"
+    },
+    "GTM": {
+      "name": "Guatemala",
+      "color": "#317176"
+    },
+    "GUI": {
+      "name": "Guinea",
+      "color": "#873268"
+    },
+    "GYA": {
+      "name": "Guyana",
+      "color": "#753531"
+    },
+    "GZI": {
+      "name": "Zimbabwe",
+      "color": "#493B29"
+    },
+    "HAB": {
+      "name": "Austria",
+      "color": "#2F4E65"
+    },
+    "HAT": {
+      "name": "Haiti",
+      "color": "#30496D"
+    },
+    "HON": {
+      "name": "Honduras",
+      "color": "#853285"
+    },
+    "HUN": {
+      "name": "Hungary",
+      "color": "#3A5A4A"
+    },
+    "ICE": {
+      "name": "Iceland",
+      "color": "#4F8432"
+    },
+    "IDN": {
+      "name": "Indonesia",
+      "color": "#27442A"
+    },
+    "INI": {
+      "name": "India",
+      "color": "#6E7D32"
+    },
+    "IRA": {
+      "name": "Iran",
+      "color": "#30356D"
+    },
+    "IRE": {
+      "name": "Ireland",
+      "color": "#2A5A4A"
+    },
+    "IRQ": {
+      "name": "Iraq",
+      "color": "#6B2030"
+    },
+    "ISR": {
+      "name": "Israel",
+      "color": "#2A3A6B"
+    },
+    "ITA": {
+      "name": "Italy",
+      "color": "#2E5A3A"
+    },
+    "IVO": {
+      "name": "Ivory Coast",
+      "color": "#284637"
+    },
+    "JAI": {
+      "name": "Malta",
+      "color": "#27442A"
+    },
+    "JAP": {
+      "name": "Japan",
+      "color": "#7B2030"
+    },
+    "JMC": {
+      "name": "Jamaica",
+      "color": "#34562C"
+    },
+    "JOR": {
+      "name": "Jordania",
+      "color": "#30715A"
+    },
+    "KEY": {
+      "name": "Kenya",
+      "color": "#5C3072"
+    },
+    "KHA": {
+      "name": "Mongolkhanate",
+      "color": "#928932"
+    },
+    "KHM": {
+      "name": "Khmer",
+      "color": "#893283"
+    },
+    "KIR": {
+      "name": "Kiribati",
+      "color": "#873284"
+    },
+    "KOS": {
+      "name": "Kosovo",
+      "color": "#30376A"
+    },
+    "KUW": {
+      "name": "Kuwait",
+      "color": "#82326B"
+    },
+    "KYR": {
+      "name": "Kyrgyzstan",
+      "color": "#402626"
+    },
+    "KZK": {
+      "name": "Kazakhstan",
+      "color": "#487030"
+    },
+    "LAO": {
+      "name": "Laos",
+      "color": "#2C5732"
+    },
+    "LAP": {
+      "name": "La Plata",
+      "color": "#282D46"
+    },
+    "LBR": {
+      "name": "Liberia",
+      "color": "#83326A"
+    },
+    "LBY": {
+      "name": "Libya",
+      "color": "#7C3F31"
+    },
+    "LEB": {
+      "name": "Lebanon",
+      "color": "#65342F"
+    },
+    "LES": {
+      "name": "Lesotho",
+      "color": "#3B306A"
+    },
+    "LIT": {
+      "name": "Lithuania",
+      "color": "#714530"
+    },
+    "LTV": {
+      "name": "Latvia",
+      "color": "#6F305D"
+    },
+    "LUX": {
+      "name": "Luxembourgh",
+      "color": "#374427"
+    },
+    "MAC": {
+      "name": "Macedonia",
+      "color": "#4A2A5A"
+    },
+    "MAL": {
+      "name": "Mali",
+      "color": "#4D2C56"
+    },
+    "MDG": {
+      "name": "Madagascar",
+      "color": "#329570"
+    },
+    "MDV": {
+      "name": "Moldova",
+      "color": "#893249"
+    },
+    "MEX": {
+      "name": "Mexico",
+      "color": "#2A4A3A"
+    },
+    "MIC": {
+      "name": "Micronesia",
+      "color": "#432927"
+    },
+    "MLA": {
+      "name": "Malaysia",
+      "color": "#2A2B4E"
+    },
+    "MNM": {
+      "name": "Myanmar",
+      "color": "#305C72"
+    },
+    "MON": {
+      "name": "Montenegro",
+      "color": "#2C3456"
+    },
+    "MOR": {
+      "name": "Morocco",
+      "color": "#5F2E2F"
+    },
+    "MRS": {
+      "name": "Marshall Islands",
+      "color": "#854E32"
+    },
+    "MRT": {
+      "name": "Mauritania",
+      "color": "#306C52"
+    },
+    "MTU": {
+      "name": "Mauritius",
+      "color": "#424A29"
+    },
+    "MWI": {
+      "name": "Malawi",
+      "color": "#314177"
+    },
+    "MZM": {
+      "name": "Mozambique",
+      "color": "#88324A"
+    },
+    "NAU": {
+      "name": "Nauru",
+      "color": "#494629"
+    },
+    "NCR": {
+      "name": "Nicaragua",
+      "color": "#423B27"
+    },
+    "NED": {
+      "name": "Netherlands",
+      "color": "#29424A"
+    },
+    "NGR": {
+      "name": "Niger",
+      "color": "#283848"
+    },
+    "NIG": {
+      "name": "Nigeria",
+      "color": "#72305C"
+    },
+    "NIU": {
+      "name": "Niue",
+      "color": "#5D2D40"
+    },
+    "NMB": {
+      "name": "Namibia",
+      "color": "#2A434D"
+    },
+    "NOK": {
+      "name": "North Korea",
+      "color": "#2D505B"
+    },
+    "NOR": {
+      "name": "Norway",
+      "color": "#6B2A2A"
+    },
+    "NPL": {
+      "name": "Nepal",
+      "color": "#2C4C2A"
+    },
+    "NZL": {
+      "name": "Zealandia",
+      "color": "#2A3A5A"
+    },
+    "OMA": {
+      "name": "Oman",
+      "color": "#8A7632"
+    },
+    "PAK": {
+      "name": "Pakistan",
+      "color": "#1A4A2A"
+    },
+    "PEU": {
+      "name": "Peru",
+      "color": "#592D50"
+    },
+    "PHI": {
+      "name": "Philippines",
+      "color": "#317174"
+    },
+    "PLS": {
+      "name": "Palestine",
+      "color": "#4F632E"
+    },
+    "PLU": {
+      "name": "Palau",
+      "color": "#717531"
+    },
+    "PNG": {
+      "name": "Papua New Guinea",
+      "color": "#933296"
+    },
+    "PNM": {
+      "name": "Panama",
+      "color": "#799532"
+    },
+    "POL": {
+      "name": "Poland",
+      "color": "#7B2A3A"
+    },
+    "POR": {
+      "name": "Portugal",
+      "color": "#2E5A2E"
+    },
+    "PRG": {
+      "name": "Paraguay",
+      "color": "#522D2B"
+    },
+    "QTR": {
+      "name": "Qatar",
+      "color": "#326D7E"
+    },
+    "REB": {
+      "name": "Rebel Scum",
+      "color": "#2F695F"
+    },
+    "RMN": {
+      "name": "Romania",
+      "color": "#4F2C57"
+    },
+    "RSA": {
+      "name": "South Africa",
+      "color": "#442949"
+    },
+    "RUS": {
+      "name": "Russia",
+      "color": "#3D5A6B"
+    },
+    "RWA": {
+      "name": "Rwanda",
+      "color": "#572C42"
+    },
+    "SAM": {
+      "name": "Samoa",
+      "color": "#672F5F"
+    },
+    "SAU": {
+      "name": "Saudi Arabia",
+      "color": "#2A4A2A"
+    },
+    "SER": {
+      "name": "Serbia",
+      "color": "#437531"
+    },
+    "SEY": {
+      "name": "Seychelles",
+      "color": "#5E9032"
+    },
+    "SGA": {
+      "name": "Singapore",
+      "color": "#493174"
+    },
+    "SGL": {
+      "name": "Senegal",
+      "color": "#5F672F"
+    },
+    "SIA": {
+      "name": "Siam",
+      "color": "#352D59"
+    },
+    "SKN": {
+      "name": "St. Kitts And Nevis",
+      "color": "#423A27"
+    },
+    "SKO": {
+      "name": "South Korea",
+      "color": "#5B2D5D"
+    },
+    "SLM": {
+      "name": "Solomon Islands",
+      "color": "#3F263F"
+    },
+    "SLU": {
+      "name": "St. Lucia",
+      "color": "#317433"
+    },
+    "SOM": {
+      "name": "Somalia",
+      "color": "#7C7131"
+    },
+    "SPA": {
+      "name": "Spain",
+      "color": "#8B7500"
+    },
+    "SRA": {
+      "name": "Sierra Leone",
+      "color": "#7C3F31"
+    },
+    "SRL": {
+      "name": "Sri Lanka",
+      "color": "#7D7332"
+    },
+    "SRN": {
+      "name": "Suriname",
+      "color": "#6A3B30"
+    },
+    "SSU": {
+      "name": "South Sudan",
+      "color": "#323880"
+    },
+    "STP": {
+      "name": "Sao Tome And Principe",
+      "color": "#434D2A"
+    },
+    "SUD": {
+      "name": "Sudan",
+      "color": "#897132"
+    },
+    "SVG": {
+      "name": "St. Vincent And The Grenadines",
+      "color": "#32854E"
+    },
+    "SVK": {
+      "name": "Slovakia",
+      "color": "#374227"
+    },
+    "SVN": {
+      "name": "Slovenia",
+      "color": "#53492B"
+    },
+    "SWE": {
+      "name": "Sweden",
+      "color": "#3A5A7B"
+    },
+    "SWI": {
+      "name": "Switzerland",
+      "color": "#80326C"
+    },
+    "SWZ": {
+      "name": "Swaziland",
+      "color": "#326B82"
+    },
+    "SYR": {
+      "name": "Syria",
+      "color": "#313F7A"
+    },
+    "TGO": {
+      "name": "Togo",
+      "color": "#5A462D"
+    },
+    "TJK": {
+      "name": "Tajikistan",
+      "color": "#764E31"
+    },
+    "TKY": {
+      "name": "Turkey",
+      "color": "#2A4E36"
+    },
+    "TNZ": {
+      "name": "Tanzania",
+      "color": "#317851"
+    },
+    "TOG": {
+      "name": "Tonga",
+      "color": "#7D7332"
+    },
+    "TRK": {
+      "name": "Turkmenistan",
+      "color": "#773141"
+    },
+    "TRN": {
+      "name": "Trinidad And Tobago",
+      "color": "#3D294B"
+    },
+    "TUN": {
+      "name": "Tunisia",
+      "color": "#5D2F68"
+    },
+    "TVL": {
+      "name": "Tuvalu",
+      "color": "#2D5A55"
+    },
+    "UAE": {
+      "name": "Unitedarabemirates",
+      "color": "#374126"
+    },
+    "UGA": {
+      "name": "Uganda",
+      "color": "#2A4D3F"
+    },
+    "UKR": {
+      "name": "Ukraine",
+      "color": "#3A4A6B"
+    },
+    "URU": {
+      "name": "Uruguay",
+      "color": "#404026"
+    },
+    "USA": {
+      "name": "United States",
+      "color": "#2C3E50"
+    },
+    "UZB": {
+      "name": "Uzbekistan",
+      "color": "#63306A"
+    },
+    "VIT": {
+      "name": "Viti",
+      "color": "#4B3293"
+    },
+    "VNU": {
+      "name": "Vanuatu",
+      "color": "#8D7D32"
+    },
+    "VNZ": {
+      "name": "Venezuela",
+      "color": "#314475"
+    },
+    "VTN": {
+      "name": "Vietnam",
+      "color": "#27423A"
+    },
+    "YEM": {
+      "name": "Yemen",
+      "color": "#2D5D3B"
+    },
+    "ZAM": {
+      "name": "Zambia",
+      "color": "#2E5E3C"
+    }
+  },
+  "period": {
+    "start": 2020,
+    "end": 2025
+  }
+}

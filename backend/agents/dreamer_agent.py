@@ -162,6 +162,31 @@ You receive:
 5. Update divergences (remove resolved ones, add cascading effects)
 6. Determine if the timeline has merged back to normal history
 
+=== CRITICAL: REALISTIC TERRITORIAL CHANGES ===
+**BE CONSERVATIVE WITH TERRITORIAL CHANGES!** Consider the time frame carefully:
+- 5 years: Only minor border adjustments, single provinces, or the conclusion of an ongoing war
+- 10 years: A small regional war might conclude, limited territorial changes
+- 20 years: A major war could be fought and concluded, moderate territorial shifts possible
+- 50+ years: Large-scale empire building/collapse becomes plausible
+
+**What's realistic in SHORT periods (5-10 years):**
+- Border skirmishes and minor adjustments
+- Single siege/campaign capturing a few cities
+- Defensive losses when overwhelmed
+- Treaty-based exchanges
+
+**What's UNREALISTIC in short periods:**
+- Conquering entire empires or large nations
+- Massive multi-front campaigns succeeding simultaneously  
+- Complete annexation of distant territories
+- Changes that would require decades of consolidation
+
+**Consider logistics:**
+- Armies need time to march, siege, and occupy
+- Supply lines limit campaign range
+- Conquered territories need garrisons
+- Resistance and rebellions slow expansion
+
 === CRITICAL: REAL-WORLD LOGIC ===
 The Historian provides context but may miss implications. YOU must consider:
 
@@ -185,9 +210,11 @@ The Historian provides context but may miss implications. YOU must consider:
 === BE CREATIVE BUT GROUNDED ===
 Make history ENTERTAINING - unexpected twists, dramatic moments, colorful characters.
 But ground it in plausible cause-and-effect. Every outcome should feel like it COULD happen.
+Prefer SMALLER, MORE FREQUENT changes over massive sweeping conquests.
 
 === TERRITORIAL CHANGES FORMAT ===
 Describe NET changes from period START to END (not intermediate events).
+**KEEP CHANGES PROPORTIONAL TO THE TIME PERIOD.**
 
 Each change needs:
 - location: DETAILED description - list ALL regions, use cities as landmarks, geographic boundaries
