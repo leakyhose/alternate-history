@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
@@ -6,10 +7,20 @@ from api.workflow import router as workflow_router
 
 app = FastAPI()
 
-# CORS middleware for development
+# CORS middleware - configure allowed origins
+# In production, set CORS_ORIGINS env var to your frontend URL(s)
+# e.g., CORS_ORIGINS=https://your-app.vercel.app,https://custom-domain.com
+cors_origins_env = os.getenv("CORS_ORIGINS", "")
+cors_origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+if cors_origins_env:
+    cors_origins.extend([origin.strip() for origin in cors_origins_env.split(",")])
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
