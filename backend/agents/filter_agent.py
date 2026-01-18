@@ -97,8 +97,10 @@ def filter_command(command: str, scenario_metadata: Optional[Dict[str, Any]] = N
             period_start=period.get("start", 2),
             period_end=period.get("end", 1453)
         )
+        print(f"✅ Using dynamic prompt for scenario: {scenario_metadata.get('name')}, period: {period}")
     else:
         system_prompt = DEFAULT_SYSTEM_PROMPT
+        print(f"⚠️ Using DEFAULT prompt. Metadata received: {scenario_metadata}")
     
     messages = [
         {"role": "system", "content": system_prompt},

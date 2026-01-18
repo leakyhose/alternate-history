@@ -1,6 +1,7 @@
 """Filter node for validating user divergences."""
 from workflows.state import WorkflowState
 from agents.filter_agent import filter_command
+from util.scenario import load_scenario_metadata
 
 
 def filter_node(state: WorkflowState) -> dict:
@@ -22,8 +23,12 @@ def filter_node(state: WorkflowState) -> dict:
     user_command = divergences[0]
     print(f"🔍 Filter: \"{user_command}\"")
     
+    # Load scenario metadata for filter validation
+    scenario_id = state.get("scenario_id")
+    scenario_metadata = load_scenario_metadata(scenario_id) if scenario_id else None
+    
     try:
-        filter_result = filter_command(user_command)
+        filter_result = filter_command(user_command, scenario_metadata)
     except Exception as e:
         print(f"❌ Filter Error: {e}")
         return {

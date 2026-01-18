@@ -432,7 +432,9 @@ async def get_game_rulers(game_id: str) -> dict:
 @router.post("/start-legacy")
 async def start_workflow_legacy(request: StartRequest) -> StartResponse:
     """Legacy start endpoint (without game tracking)."""
-    filter_result = filter_command(request.command)
+    # Load scenario metadata for filter validation
+    scenario_metadata = load_scenario_metadata(request.scenario_id)
+    filter_result = filter_command(request.command, scenario_metadata)
     
     if filter_result["status"] == "rejected":
         return StartResponse(
