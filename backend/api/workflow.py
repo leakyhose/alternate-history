@@ -9,6 +9,7 @@ from models.game import (
     Game, create_game, get_game, delete_game, list_games,
     TagInfo, Province
 )
+from util.province_memory import Province as MemoryProvince
 from workflows.state import LogEntry, RulerInfo
 
 router = APIRouter(tags=["workflow"])
@@ -118,21 +119,53 @@ async def start_workflow(request: StartRequest) -> StartResponse:
         game.full_logs = final_state.get("logs", [])
         
     except Exception as e:
+        import traceback
+        print(f"❌ Workflow error: {e}")
+        traceback.print_exc()
         delete_game(game.id)
         raise HTTPException(status_code=500, detail=str(e))
     
-    return StartResponse(
-        status="accepted",
-        game_id=game.id,
-        year=year,
-        result={
-            "current_year": final_state.get("current_year", year),
-            "merged": final_state.get("merged", False),
-            "rulers": final_state.get("rulers", {}),
-            "logs": final_state.get("logs", []),
-            "divergences": final_state.get("divergences", [])
-        }
-    )
+    # Build response with explicit type handling
+    try:
+        # Ensure logs are serializable
+        logs = final_state.get("logs", [])
+        serializable_logs = []
+        for log in logs:
+            serializable_logs.append({
+                "year_range": str(log.get("year_range", "")),
+                "narrative": str(log.get("narrative", "")),
+                "divergences": list(log.get("divergences", [])),
+                "territorial_changes_description": str(log.get("territorial_changes_description", ""))
+            })
+        
+        # Ensure rulers are serializable
+        rulers = final_state.get("rulers", {})
+        serializable_rulers = {}
+        for tag, ruler in rulers.items():
+            serializable_rulers[str(tag)] = {
+                "name": str(ruler.get("name", "")),
+                "title": str(ruler.get("title", "")),
+                "age": int(ruler.get("age", 0)),
+                "dynasty": str(ruler.get("dynasty", ""))
+            }
+        
+        return StartResponse(
+            status="accepted",
+            game_id=game.id,
+            year=year,
+            result={
+                "current_year": int(final_state.get("current_year", year)),
+                "merged": bool(final_state.get("merged", False)),
+                "rulers": serializable_rulers,
+                "logs": serializable_logs,
+                "divergences": list(final_state.get("divergences", []))
+            }
+        )
+    except Exception as e:
+        import traceback
+        print(f"❌ Response serialization error: {e}")
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Response serialization error: {str(e)}")
 
 
 @router.post("/continue/{game_id}")
@@ -169,8 +202,14 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
     reset_province_memory()
     memory = get_province_memory()
     if game.province_state:
+        # Convert models.game.Province to util.province_memory.Province
         for p in game.province_state:
-            memory._provinces[p.id] = p
+            memory._provinces[p.id] = MemoryProvince(
+                id=p.id,
+                name=p.name,
+                owner=p.owner,
+                control=p.control
+            )
     else:
         memory.load_from_year(state.get("current_year", state.get("start_year", 117)))
     
@@ -191,18 +230,47 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
         game.full_logs = final_state.get("logs", [])
         
     except Exception as e:
+        import traceback
+        print(f"❌ Continue workflow error: {e}")
+        traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
     
-    return ContinueResponse(
-        status="continued",
-        current_year=final_state.get("current_year", 0),
-        merged=final_state.get("merged", False),
-        logs=game.full_logs,
-        result={
-            "rulers": final_state.get("rulers", {}),
-            "divergences": final_state.get("divergences", [])
-        }
-    )
+    # Build serializable response
+    try:
+        serializable_logs = []
+        for log in game.full_logs:
+            serializable_logs.append({
+                "year_range": str(log.get("year_range", "")),
+                "narrative": str(log.get("narrative", "")),
+                "divergences": list(log.get("divergences", [])),
+                "territorial_changes_description": str(log.get("territorial_changes_description", ""))
+            })
+        
+        rulers = final_state.get("rulers", {})
+        serializable_rulers = {}
+        for tag, ruler in rulers.items():
+            serializable_rulers[str(tag)] = {
+                "name": str(ruler.get("name", "")),
+                "title": str(ruler.get("title", "")),
+                "age": int(ruler.get("age", 0)),
+                "dynasty": str(ruler.get("dynasty", ""))
+            }
+        
+        return ContinueResponse(
+            status="continued",
+            current_year=int(final_state.get("current_year", 0)),
+            merged=bool(final_state.get("merged", False)),
+            logs=serializable_logs,
+            result={
+                "rulers": serializable_rulers,
+                "divergences": list(final_state.get("divergences", []))
+            }
+        )
+    except Exception as e:
+        import traceback
+        print(f"❌ Continue response serialization error: {e}")
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Response serialization error: {str(e)}")
 
 
 @router.get("/game/{game_id}")
@@ -218,23 +286,50 @@ async def get_game_state(game_id: str) -> GameStateResponse:
     
     state = game.workflow_state
     
-    return GameStateResponse(
-        id=game.id,
-        scenario_id=state.get("scenario_id", "rome"),
-        current_year=game.get_current_year(),
-        merged=game.is_merged(),
-        rulers=state.get("rulers", {}),
-        nation_tags={
-            tag: {"name": info.name, "color": info.color}
-            for tag, info in game.nation_tags.items()
-        },
-        logs=game.full_logs,
-        provinces=[
-            {"id": p.id, "name": p.name, "owner": p.owner, "control": p.control}
-            for p in game.province_state
-        ],
-        divergences=state.get("divergences", [])
-    )
+    try:
+        # Serialize rulers
+        rulers = state.get("rulers", {})
+        serializable_rulers = {}
+        for tag, ruler in rulers.items():
+            serializable_rulers[str(tag)] = {
+                "name": str(ruler.get("name", "")),
+                "title": str(ruler.get("title", "")),
+                "age": int(ruler.get("age", 0)),
+                "dynasty": str(ruler.get("dynasty", ""))
+            }
+        
+        # Serialize logs
+        serializable_logs = []
+        for log in game.full_logs:
+            serializable_logs.append({
+                "year_range": str(log.get("year_range", "")),
+                "narrative": str(log.get("narrative", "")),
+                "divergences": list(log.get("divergences", [])),
+                "territorial_changes_description": str(log.get("territorial_changes_description", ""))
+            })
+        
+        return GameStateResponse(
+            id=game.id,
+            scenario_id=state.get("scenario_id", "rome"),
+            current_year=game.get_current_year(),
+            merged=game.is_merged(),
+            rulers=serializable_rulers,
+            nation_tags={
+                tag: {"name": info.name, "color": info.color}
+                for tag, info in game.nation_tags.items()
+            },
+            logs=serializable_logs,
+            provinces=[
+                {"id": p.id, "name": p.name, "owner": p.owner, "control": p.control}
+                for p in game.province_state
+            ],
+            divergences=list(state.get("divergences", []))
+        )
+    except Exception as e:
+        import traceback
+        print(f"❌ Get game state error: {e}")
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Serialization error: {str(e)}")
 
 
 @router.delete("/game/{game_id}")
@@ -255,10 +350,77 @@ async def list_games_endpoint(user_id: Optional[str] = None) -> dict:
                 "id": g.id,
                 "created_at": g.created_at.isoformat(),
                 "current_year": g.get_current_year(),
-                "merged": g.is_merged()
+                "merged": g.is_merged(),
+                "scenario_id": g.workflow_state.get("scenario_id", "rome")
             }
             for g in games
         ]
+    }
+
+
+@router.get("/game/{game_id}/provinces")
+async def get_game_provinces(game_id: str) -> dict:
+    """
+    Get current province state for a game.
+    
+    Returns provinces as a list of {id, name, owner, control}.
+    Useful for map rendering when you just need province data.
+    """
+    game = get_game(game_id)
+    if not game:
+        raise HTTPException(status_code=404, detail="Game not found")
+    
+    return {
+        "game_id": game_id,
+        "current_year": game.get_current_year(),
+        "provinces": [
+            {"id": p.id, "name": p.name, "owner": p.owner, "control": p.control}
+            for p in game.province_state
+        ]
+    }
+
+
+@router.get("/game/{game_id}/logs")
+async def get_game_logs(game_id: str, limit: Optional[int] = None) -> dict:
+    """
+    Get logs for a game.
+    
+    Args:
+        game_id: The game ID
+        limit: Optional limit on number of logs to return (most recent first)
+    """
+    game = get_game(game_id)
+    if not game:
+        raise HTTPException(status_code=404, detail="Game not found")
+    
+    logs = game.full_logs
+    if limit and limit > 0:
+        logs = logs[-limit:]
+    
+    return {
+        "game_id": game_id,
+        "total_logs": len(game.full_logs),
+        "logs": logs
+    }
+
+
+@router.get("/game/{game_id}/rulers")
+async def get_game_rulers(game_id: str) -> dict:
+    """
+    Get current rulers for a game.
+    """
+    game = get_game(game_id)
+    if not game:
+        raise HTTPException(status_code=404, detail="Game not found")
+    
+    return {
+        "game_id": game_id,
+        "current_year": game.get_current_year(),
+        "rulers": game.workflow_state.get("rulers", {}),
+        "nation_tags": {
+            tag: {"name": info.name, "color": info.color}
+            for tag, info in game.nation_tags.items()
+        }
     }
 
 
