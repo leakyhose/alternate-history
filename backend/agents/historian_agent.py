@@ -11,62 +11,47 @@ import json
 from typing import Dict, List, Any
 
 from langchain_google_genai import ChatGoogleGenerativeAI
+from pydantic import BaseModel, Field
 
 load_dotenv()
 
-SYSTEM_PROMPT = """You are a historian specializing in the Roman/Byzantine Empire (117-1453).
-Your job is to provide REAL historical context for a specific time period.
 
-You will be given:
-- A start year
-- Years to progress (how long the period covers)
-- Current rulers and their info. All information should concern the states these rulers rule.
+class ConditionalEvent(BaseModel):
+    """A conditional historical event."""
+    condition: str = Field(description="The condition that triggers this event")
+    outcome: str = Field(description="What happens if the condition is met")
+
+
+class HistorianOutput(BaseModel):
+    """Structured output from the Historian agent."""
+    period: str = Field(description="The year range as a string (e.g., '630-650')")
+    conditional_events: List[ConditionalEvent] = Field(
+        description="Historical events with their conditions/triggers"
+    )
+
+
+SYSTEM_PROMPT = """You are a historian specializing in the Roman/Byzantine Empire (117-1453).
+Provide historical context as conditional events for a specific time period.
+
+You will be given a start year, years to progress, and current rulers.
 
 Your response must include:
 1. "period": The year range as a string (e.g., "630-650")
-2. "real_events": Key events that actually happened in this period in real history
-3. "keep_in_mind": General trends of this era. Dont get into specifics or not events here. This part should be short.
-4. "conditional_events": Things that happened with their triggers. These events MUST have actually happened as their triggers happened, should include the biggest events/trends of this era. 
+2. "conditional_events": Historical events with their conditions. Format each as:
+   - "condition": What circumstance or situation led to this event
+   - "outcome": What actually happened as a result
 
-Important guidelines:
-- Include succession crises, wars, invasions, major political changes
-- Note any "fragile" historical moments
-- Be specific with dates when known
-
-ONLY RETURN VALID JSON. No markdown, no extra text.
-
-Example output:
-{
-  "period": "630-650",
-  "real_events": [
-    "634: Arab invasions begin after Byzantine-Sassanid exhaustion",
-    "636: Battle of Yarmouk - Byzantines lose Syria",
-    "641: Heraclius dies, succession crisis begins",
-    "642: Arabs conquer Egypt"
-  ],
-  "keep_in_mind": [
-    "Byzantium and Persia should be exhausted from decades of war",
-    "Religious tensions in eastern provinces",
-    "Arab armies are highly mobile and motivated by religious zeal",
-    "Byzantine navy is the key to defending Constantinople"
-  ],
-  "conditional_events": [
-    {
-      "condition": "Empire exhausted from Persian wars",
-      "outcome": "Arab conquests proceed rapidly through weakened eastern defenses"
-    },
-    {
-      "condition": "Heraclius dies before securing succession",
-      "outcome": "Civil war between Constantine III and Heraclonas, further weakening defense"
-    },
-  ]
-}
+Focus on major events: succession crises, wars, invasions, political changes, territorial shifts.
+Be specific with dates when known.
 """
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash-lite",
     google_api_key=os.getenv("GEMINI_API_KEY")
 )
+
+# Create structured output version
+llm_structured = llm.with_structured_output(HistorianOutput)
 
 
 def get_historical_context(
@@ -108,10 +93,25 @@ Current rulers:
 
 What actually happened in real history during this period? What trends and events should be kept in mind?"""
 
-    response = llm.invoke([
+    messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": user_prompt}
-    ])
+    ]
+    
+    # Try structured output first
+    try:
+        result = llm_structured.invoke(messages)
+        # Convert to dict, handling nested ConditionalEvent objects
+        return {
+            "period": result.period,
+            "conditional_events": [ce.model_dump() for ce in result.conditional_events]
+        }
+    except Exception as e:
+        print(f"Structured output failed for historian: {e}")
+        print("Falling back to JSON parsing...")
+    
+    # Fallback to manual parsing
+    response = llm.invoke(messages)
     
     try:
         # Clean up response - sometimes LLMs wrap JSON in markdown
@@ -132,7 +132,5 @@ What actually happened in real history during this period? What trends and event
         print(f"Raw response: {response.content[:500]}")
         return {
             "period": f"{start_year}-{end_year}",
-            "real_events": [],
-            "keep_in_mind": ["Failed to parse historian response"],
             "conditional_events": []
         }

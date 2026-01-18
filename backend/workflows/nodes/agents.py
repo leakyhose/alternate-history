@@ -1,6 +1,8 @@
 """Agent nodes for the alternate history workflow."""
 from workflows.state import WorkflowState
 from agents.historian_agent import get_historical_context
+from agents.dreamer_agent import make_decision
+from util.scenario import get_scenario_tags
 
 
 def historian_node(state: WorkflowState) -> dict:
@@ -30,8 +32,7 @@ def dreamer_node(state: WorkflowState) -> dict:
     Dreamer Agent: Make creative decisions based on divergences.
     
     Synthesizes divergences + historian context to decide what actually happens.
-    
-    TODO: Implement actual LLM call (Phase 3)
+    Only allows nation tags defined in the scenario metadata.
     """
     historian_output = state.get("historian_output", {})
     divergences = state.get("divergences", [])
@@ -40,21 +41,22 @@ def dreamer_node(state: WorkflowState) -> dict:
     rulers = state.get("rulers", {})
     current_year = state.get("current_year", state.get("start_year"))
     years_to_progress = state.get("years_to_progress", 20)
+    scenario_id = state.get("scenario_id", "rome")
     
-    # Placeholder output - replace with actual LLM call in Phase 3
-    end_year = current_year + years_to_progress
+    # Get available nation tags from scenario metadata
+    available_tags = get_scenario_tags(scenario_id)
     
-    dreamer_output = {
-        "rulers": rulers,  # Keep rulers unchanged for now
-        "narrative": f"[Placeholder narrative for {current_year}-{end_year} AD] " \
-                    f"The divergence '{divergences[0] if divergences else 'unknown'}' " \
-                    "continues to affect the timeline. This will be replaced with " \
-                    "actual LLM-generated narrative.",
-        "territorial_changes_description": "Placeholder: No territorial changes in this period. " \
-                                          "This will be replaced with actual territorial descriptions.",
-        "updated_divergences": divergences,  # Keep divergences unchanged for now
-        "merged": False
-    }
+    # Call the actual Dreamer agent
+    dreamer_output = make_decision(
+        historian_output=historian_output,
+        divergences=divergences,
+        condensed_logs=condensed_logs,
+        recent_logs=logs,
+        rulers=rulers,
+        current_year=current_year,
+        years_to_progress=years_to_progress,
+        available_tags=available_tags
+    )
     
     return {
         "dreamer_output": dreamer_output
