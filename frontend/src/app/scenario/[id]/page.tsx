@@ -420,7 +420,7 @@ export default function ScenarioPage() {
 
     if (selectedTimelinePoint.logIndex !== undefined) {
       const snapshot = provinceSnapshots[selectedTimelinePoint.logIndex]
-      if (snapshot) {
+      if (snapshot && snapshot.rulers && Object.keys(snapshot.rulers).length > 0) {
         return snapshot.rulers
       }
     }
@@ -467,6 +467,7 @@ export default function ScenarioPage() {
               rulers={activeRulers}
               nationTags={gameNationTags}
               selectedTag={selectedTag}
+              onTagChange={setSelectedTag}
             />
           )}
 

@@ -106,7 +106,7 @@ export default function CountryInfo({
                     {displayInfo.name}
                 </div>
                 <div className="text-amber-600 text-sm mt-1">
-                    {displayInfo.dynasty} dynasty · {displayInfo.age} years old
+                    {displayInfo.dynasty ? `${displayInfo.dynasty} · ` : ''}{displayInfo.age} years old
                 </div>
             </div>
         </div>

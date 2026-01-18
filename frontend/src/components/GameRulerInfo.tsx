@@ -1,27 +1,35 @@
 'use client'
 
+import { useEffect, useMemo } from 'react'
 import type { RulerInfo } from '@/types'
 
 interface GameRulerInfoProps {
   rulers: Record<string, RulerInfo>
   nationTags: Record<string, { name: string; color: string }>
   selectedTag?: string | null
+  onTagChange: (tag: string) => void
 }
 
 export default function GameRulerInfo({
   rulers,
   nationTags,
-  selectedTag
+  selectedTag,
+  onTagChange
 }: GameRulerInfoProps) {
-  // If a tag is selected, show that ruler first
-  const orderedTags = Object.keys(rulers).sort((a, b) => {
-    if (a === selectedTag) return -1
-    if (b === selectedTag) return 1
-    return 0
-  })
+  const availableTags = useMemo(() => Object.keys(rulers), [rulers])
 
-  // Show only the selected ruler or first ruler if none selected
-  const displayTag = selectedTag && rulers[selectedTag] ? selectedTag : orderedTags[0]
+  // Auto-select first available tag when none selected or selected tag has no ruler
+  useEffect(() => {
+    if (availableTags.length > 0) {
+      if (!selectedTag || !rulers[selectedTag]) {
+        const firstTag = availableTags[0]
+        onTagChange(firstTag)
+      }
+    }
+  }, [selectedTag, rulers, availableTags, onTagChange])
+
+  // Show the selected ruler or first ruler if none selected
+  const displayTag = selectedTag && rulers[selectedTag] ? selectedTag : availableTags[0]
   const displayRuler = displayTag ? rulers[displayTag] : null
 
   if (!displayRuler) {
@@ -45,21 +53,12 @@ export default function GameRulerInfo({
           {displayRuler.name}
         </div>
         <div className="text-amber-600 text-sm mt-1">
-          {displayRuler.dynasty} dynasty · {displayRuler.age} years old
+          {displayRuler.dynasty ? `${displayRuler.dynasty} · ` : ''}{displayRuler.age} years old
         </div>
         <div className="text-gray-400 text-xs mt-1">
           {displayRuler.title}
         </div>
       </div>
-
-      {/* Show count of other rulers if multiple */}
-      {orderedTags.length > 1 && (
-        <div className="border-t border-[#2a2a3a] mt-3 pt-2 text-center">
-          <span className="text-gray-500 text-xs">
-            +{orderedTags.length - 1} other {orderedTags.length - 1 === 1 ? 'ruler' : 'rulers'}
-          </span>
-        </div>
-      )}
     </div>
   )
 }

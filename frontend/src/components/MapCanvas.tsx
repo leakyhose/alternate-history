@@ -161,7 +161,7 @@ export default function MapCanvas({ defaultProvinceHistory, scenarioMetadata, ye
     // Apply historical data for this year
     const yearStr = String(year);
     const yearData = defaultProvinceHistory[yearStr];
-    
+
     provinceToTagMap.current.clear();
     
     if (yearData && Array.isArray(yearData)) {

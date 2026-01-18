@@ -132,7 +132,7 @@ export default function GamePanel({
                   </div>
                   <div className="text-gray-200 text-xl font-bold mt-1">{ruler.name}</div>
                   <div className="text-gray-400 text-base mt-1">
-                    {ruler.title} • {ruler.dynasty} dynasty • Age {ruler.age}
+                    {ruler.title}{ruler.dynasty ? ` • ${ruler.dynasty}` : ''} • Age {ruler.age}
                   </div>
                 </div>
               ))
