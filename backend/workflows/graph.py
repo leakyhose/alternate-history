@@ -9,6 +9,7 @@ from workflows.nodes import (
     update_state_node,
     should_continue
 )
+from util.workflow_logger import workflow_logger
 
 
 def build_graph() -> StateGraph:

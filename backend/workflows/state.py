@@ -50,6 +50,11 @@ class GeographerOutput(TypedDict):
 class WorkflowState(TypedDict, total=False):
     """Main workflow state for the alternate history simulation."""
     
+    # Filter state (from filter node)
+    filter_passed: bool             # True if divergence passed filter
+    filter_reason: str              # Reason for rejection (if rejected)
+    filter_alternative: str         # Alternative suggestion (if rejected)
+    
     # Scenario identification
     scenario_id: str                # Which scenario folder to use (e.g., "rome")
     
@@ -74,4 +79,8 @@ class WorkflowState(TypedDict, total=False):
     
     # Merge state
     merged: bool                    # True if timeline converged back (at current_year)
+    
+    # Error handling
+    error: str                      # Error message if something went wrong
+    error_node: str                 # Which node produced the error
 
