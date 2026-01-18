@@ -450,54 +450,67 @@ export default function ScenarioPage() {
   }, [gameId, gameYearsToProgress])
 
   // Add a new divergence to an existing timeline with SSE streaming
+  // If command is empty, just continue without adding a new divergence
   const handleAddDivergence = useCallback(async (command: string, yearsToProgress: number) => {
     if (!gameId) return
 
     setIsProcessing(true)
     setInputError(null)
     setInputAlternative(null)
-    setStreamingPhase('filtering')
+
+    // Only filter if there's a command (new divergence)
+    if (command) {
+      setStreamingPhase('filtering')
+
+      try {
+        // First, filter the divergence to check if it's valid for the current era
+        const filterResponse = await fetch(`${BACKEND_URL}/game/${gameId}/filter-divergence`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ command })
+        })
+
+        if (!filterResponse.ok) {
+          let errorMessage = `Server error: ${filterResponse.status}`
+          try {
+            const errorData = await filterResponse.json()
+            errorMessage = errorData.detail || errorMessage
+          } catch {
+            errorMessage = `Server error: ${filterResponse.statusText}`
+          }
+          setInputError(errorMessage)
+          setIsProcessing(false)
+          setStreamingPhase('idle')
+          return
+        }
+
+        const filterResult = await filterResponse.json()
+
+        if (filterResult.status === 'rejected') {
+          setInputError(filterResult.reason || 'Divergence was rejected')
+          setInputAlternative(filterResult.alternative || null)
+          setIsProcessing(false)
+          setStreamingPhase('idle')
+          return
+        }
+      } catch (error) {
+        console.error('Error filtering divergence:', error)
+        setInputError('Failed to validate divergence')
+        setIsProcessing(false)
+        setStreamingPhase('idle')
+        return
+      }
+    }
+
+    // Continue with streaming (with or without new divergence)
+    setStreamingPhase('dreaming')
 
     try {
-      // First, filter the divergence to check if it's valid for the current era
-      const filterResponse = await fetch(`${BACKEND_URL}/game/${gameId}/filter-divergence`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ command })
-      })
-
-      if (!filterResponse.ok) {
-        let errorMessage = `Server error: ${filterResponse.status}`
-        try {
-          const errorData = await filterResponse.json()
-          errorMessage = errorData.detail || errorMessage
-        } catch {
-          errorMessage = `Server error: ${filterResponse.statusText}`
-        }
-        setInputError(errorMessage)
-        setIsProcessing(false)
-        setStreamingPhase('idle')
-        return
-      }
-
-      const filterResult = await filterResponse.json()
-
-      if (filterResult.status === 'rejected') {
-        setInputError(filterResult.reason || 'Divergence was rejected')
-        setInputAlternative(filterResult.alternative || null)
-        setIsProcessing(false)
-        setStreamingPhase('idle')
-        return
-      }
-
-      // If accepted, add the divergence and continue with streaming
-      setStreamingPhase('dreaming')
-
       const response = await fetch(`${BACKEND_URL}/continue-stream/${gameId}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          new_divergences: [command],
+          new_divergences: command ? [command] : [],
           years_to_progress: yearsToProgress
         })
       })
@@ -766,10 +779,8 @@ export default function ScenarioPage() {
               divergences={gameDivergences}
               selectedTimelinePoint={selectedTimelinePoint}
               merged={gameMerged}
-              onContinue={handleContinue}
               isProcessing={isProcessing}
               streamingPhase={streamingPhase}
-              yearsToProgress={gameYearsToProgress}
               nationTags={gameNationTags}
             />
           )}

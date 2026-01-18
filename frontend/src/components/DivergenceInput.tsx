@@ -34,14 +34,31 @@ export default function DivergenceInput({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (command.trim() && !disabled && !isProcessing) {
+    if (!disabled && !isProcessing) {
+      // Allow empty command for continuing without new divergence
       onSubmit(command.trim(), yearsToProgress)
       setCommand('')  // Clear input after submission
     }
   }
 
+  // Determine placeholder and button text based on state
+  const getPlaceholderText = () => {
+    if (isAddingDivergence) {
+      return `Add divergence or press Enter to continue ${yearsToProgress} years...`
+    }
+    return "Enter a what-if scenario to begin..."
+  }
+
+  const getButtonText = () => {
+    if (isProcessing) return '...'
+    if (isAddingDivergence) {
+      return command.trim() ? 'Add & Continue' : 'Continue →'
+    }
+    return 'Start'
+  }
+
   return (
-    <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[500px] max-w-[90vw] bg-[#1a1a24]/95 border-2 border-[#2a2a3a] p-3 z-30 rounded shadow-lg">
+    <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[600px] max-w-[90vw] bg-[#1a1a24]/95 border-2 border-[#2a2a3a] p-3 z-30 rounded shadow-lg">
       {/* Error/Alternative display */}
       {error && (
         <div className="mb-2 p-2 bg-red-900/50 border border-red-700 rounded text-red-200 text-xs">
@@ -58,7 +75,7 @@ export default function DivergenceInput({
       {isProcessing && (
         <div className="mb-2 flex items-center gap-2 text-amber-400 text-sm">
           <div className="animate-pulse">●</div>
-          <span>Processing divergence...</span>
+          <span>Processing...</span>
         </div>
       )}
 
@@ -77,9 +94,7 @@ export default function DivergenceInput({
             type="text"
             value={command}
             onChange={(e) => setCommand(e.target.value)}
-            placeholder={isAddingDivergence 
-              ? `Add a new divergence from ${currentYear} AD...` 
-              : "Enter a what-if scenario..."}
+            placeholder={getPlaceholderText()}
             disabled={disabled || isProcessing}
             className="w-full bg-[#0a0a14] border border-[#2a2a3a] text-amber-100 px-3 py-2 rounded text-sm
                        placeholder:text-gray-500 focus:border-amber-500/50 focus:outline-none
@@ -89,7 +104,7 @@ export default function DivergenceInput({
 
         {/* Years selector */}
         <div className="flex items-center gap-1">
-          <label className="text-amber-400 text-xs whitespace-nowrap">Years:</label>
+          <label className="text-gray-500 text-xs whitespace-nowrap">Years:</label>
           <select
             value={yearsToProgress}
             onChange={(e) => setYearsToProgress(Number(e.target.value))}
@@ -108,12 +123,14 @@ export default function DivergenceInput({
         {/* Submit button */}
         <button
           type="submit"
-          disabled={disabled || isProcessing || !command.trim()}
-          className="bg-amber-600 hover:bg-amber-500 text-black font-bold px-4 py-2 rounded text-sm
+          disabled={disabled || isProcessing || (!isAddingDivergence && !command.trim())}
+          className={`font-bold px-4 py-2 rounded text-sm transition-colors
                      disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed
-                     transition-colors"
+                     ${isAddingDivergence && !command.trim() 
+                       ? 'bg-[#2a2a3a] hover:bg-[#3a3a4a] text-amber-400 border border-amber-600/50' 
+                       : 'bg-amber-600 hover:bg-amber-500 text-black'}`}
         >
-          {isProcessing ? '...' : isAddingDivergence ? 'Add' : 'Start'}
+          {getButtonText()}
         </button>
       </form>
     </div>

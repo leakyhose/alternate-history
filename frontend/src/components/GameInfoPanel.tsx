@@ -8,10 +8,8 @@ interface GameInfoPanelProps {
   divergences: string[]
   selectedTimelinePoint: TimelinePoint
   merged: boolean
-  onContinue: () => void
   isProcessing: boolean
   streamingPhase?: StreamingPhase
-  yearsToProgress?: number
   nationTags?: Record<string, { name: string; color: string }>
 }
 
@@ -20,10 +18,8 @@ export default function GameInfoPanel({
   divergences,
   selectedTimelinePoint,
   merged,
-  onContinue,
   isProcessing,
   streamingPhase = 'idle',
-  yearsToProgress = 5,
   nationTags = {}
 }: GameInfoPanelProps) {
   const [activeTab, setActiveTab] = useState<'logs' | 'divergences'>('logs')
@@ -69,42 +65,37 @@ export default function GameInfoPanel({
     )
   }
 
-  const isViewingPast = selectedTimelinePoint.timeline === 'alternate' &&
-    selectedTimelinePoint.logIndex !== undefined &&
-    selectedTimelinePoint.logIndex < logs.length - 1
-
   return (
     <div className="absolute top-32 right-5 bottom-24 w-96 bg-[#1a1a24] border-2 border-[#2a2a3a]
                     flex flex-col z-30 shadow-lg">
-      {/* Header */}
-      <div className="flex items-center justify-end p-2 border-b border-[#2a2a3a]">
+      {/* Header with tabs */}
+      <div className="flex items-center justify-between border-b border-[#2a2a3a] px-2">
+        {/* Compact tabs */}
+        <div className="flex gap-1 py-1">
+          <button
+            onClick={() => setActiveTab('logs')}
+            className={`px-3 py-1 text-xs font-medium rounded transition-colors
+              ${activeTab === 'logs'
+                ? 'text-amber-400 bg-[#2a2a3a]'
+                : 'text-gray-500 hover:text-gray-300'}`}
+          >
+            History ({visibleLogs.length})
+          </button>
+          <button
+            onClick={() => setActiveTab('divergences')}
+            className={`px-3 py-1 text-xs font-medium rounded transition-colors
+              ${activeTab === 'divergences'
+                ? 'text-amber-400 bg-[#2a2a3a]'
+                : 'text-gray-500 hover:text-gray-300'}`}
+          >
+            Divergences ({visibleDivergences.length})
+          </button>
+        </div>
         <button
           onClick={() => setIsCollapsed(true)}
-          className="text-gray-400 hover:text-amber-400 px-2"
+          className="text-gray-500 hover:text-amber-400 px-2 py-1"
         >
           ▶
-        </button>
-      </div>
-
-      {/* Tabs */}
-      <div className="flex border-b border-[#2a2a3a]">
-        <button
-          onClick={() => setActiveTab('logs')}
-          className={`flex-1 py-3 px-4 text-base font-medium transition-colors
-            ${activeTab === 'logs'
-              ? 'text-amber-400 border-b-2 border-amber-400'
-              : 'text-gray-400 hover:text-amber-200'}`}
-        >
-          History ({visibleLogs.length})
-        </button>
-        <button
-          onClick={() => setActiveTab('divergences')}
-          className={`flex-1 py-3 px-4 text-base font-medium transition-colors
-            ${activeTab === 'divergences'
-              ? 'text-amber-400 border-b-2 border-amber-400'
-              : 'text-gray-400 hover:text-amber-200'}`}
-        >
-          Divergences ({visibleDivergences.length})
         </button>
       </div>
 
@@ -151,12 +142,6 @@ export default function GameInfoPanel({
                 <div key={idx} className="border-b border-[#2a2a3a] pb-4 last:border-b-0">
                   <div className="text-amber-400 font-bold mb-2 text-base">{log.year_range}</div>
                   <p className="text-gray-200 text-base leading-relaxed mb-3">{log.narrative}</p>
-                  {log.territorial_changes_summary && (
-                    <div className="mt-2">
-                      <div className="text-amber-600 text-sm font-bold uppercase mb-1">Territorial Changes</div>
-                      <p className="text-gray-300 text-sm leading-relaxed">{log.territorial_changes_summary}</p>
-                    </div>
-                  )}
                   {log.quotes && log.quotes.length > 0 && (
                     <div className="mt-3 space-y-2">
                       {log.quotes.map((q, qIdx) => (
@@ -190,26 +175,6 @@ export default function GameInfoPanel({
               ))
             )}
           </div>
-        )}
-      </div>
-
-      {/* Continue Button */}
-      <div className="p-4 border-t border-[#2a2a3a] bg-[#1a1a24]">
-        <button
-          onClick={onContinue}
-          disabled={isProcessing || merged || selectedTimelinePoint.timeline === 'main' || isViewingPast}
-          className="w-full bg-amber-600 hover:bg-amber-500 text-black font-bold py-4 rounded text-lg
-                     disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed
-                     transition-colors"
-        >
-          {isProcessing ? 'Processing...'
-            : merged ? 'Timeline Merged'
-            : 'Continue Timeline →'}
-        </button>
-        {!merged && selectedTimelinePoint.timeline === 'alternate' && !isViewingPast && (
-          <p className="text-gray-500 text-sm text-center mt-2">
-            Advances the simulation by {yearsToProgress} years
-          </p>
         )}
       </div>
     </div>

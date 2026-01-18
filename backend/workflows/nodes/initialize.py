@@ -104,12 +104,9 @@ def _generate_initial_narrative(year: int, scenario_id: str = "rome") -> str:
     metadata = load_scenario_metadata(scenario_id)
     scenario_name = metadata.get("name", "the world")
     
-    return f"{scenario_name} in {year} AD. " \
-           f"This summary describes the state of the world before the divergence begins. " \
-           f"[Placeholder - will be replaced with historical context generation]"
+    return f"{scenario_name} in {year} AD."
 
 
 def _generate_initial_territorial_summary(year: int, scenario_id: str = "rome") -> str:
     """Generate placeholder territorial summary for a year."""
-    return f"Territorial state as of {year} AD. " \
-           f"[Placeholder - will be replaced with actual territorial analysis]"
+    return f"Territorial state as of {year} AD."
