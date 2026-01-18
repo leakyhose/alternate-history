@@ -78,10 +78,13 @@ export default function BranchingTimeline({
   }, [branchStartYear, yearToPercent])
 
   // Get the log index for a given year on the alternate timeline
+  // We use the END year of each log to determine the snapshot to show.
+  // This means: years before the end of a generation show the PREVIOUS snapshot,
+  // and only at/after the end year do we show that generation's snapshot.
   const getLogIndexForYear = useCallback((year: number): number => {
     for (let i = logs.length - 1; i >= 0; i--) {
-      const startYear = parseStartYear(logs[i].year_range)
-      if (year >= startYear) return i
+      const endYear = parseEndYear(logs[i].year_range)
+      if (endYear <= year) return i
     }
     return 0
   }, [logs])
