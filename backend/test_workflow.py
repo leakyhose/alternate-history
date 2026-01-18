@@ -8,7 +8,8 @@ Then enter a divergence prompt when asked. The script will:
 1. Run the filter agent (accepted/rejected + year)
 2. If accepted, run the historian agent
 3. Then run the dreamer agent
-4. Display all outputs
+4. Then run the geographer agent
+5. Display all outputs
 """
 import json
 import os
@@ -17,6 +18,7 @@ from pprint import pprint
 from agents.filter_agent import filter_command
 from agents.historian_agent import get_historical_context
 from agents.dreamer_agent import make_decision
+from agents.geographer_agent import interpret_territorial_changes
 from util.scenario import get_scenario_tags
 
 # Get the backend directory path
@@ -117,12 +119,12 @@ def test_workflow(divergence: str, years_to_progress: int = 20):
     print("STEP 2: HISTORIAN AGENT")
     print("="*60)
     print(f"Period: {start_year}-{start_year + years_to_progress} AD")
+    print("(Reports REAL history only - no alternate timeline knowledge)")
     print("-"*40)
     
     historian_output = get_historical_context(
         start_year=start_year,
-        years_to_progress=years_to_progress,
-        rulers=rulers
+        years_to_progress=years_to_progress
     )
     
     print("Historian Output:")
@@ -177,6 +179,36 @@ def test_workflow(divergence: str, years_to_progress: int = 20):
     
     print(f"\nMerged: {dreamer_output.get('merged', False)}")
     
+    # Step 4: Geographer Agent
+    territorial_description = dreamer_output.get("territorial_changes_description", "")
+    
+    print("\n" + "="*60)
+    print("STEP 4: GEOGRAPHER AGENT")
+    print("="*60)
+    print(f"Input territorial description:")
+    print(f"  {territorial_description[:200]}..." if len(territorial_description) > 200 else f"  {territorial_description}")
+    print("-"*40)
+    
+    geographer_output = interpret_territorial_changes(
+        territorial_description=territorial_description,
+        scenario_id=scenario_id,
+        current_provinces=None  # In full workflow, this would be from province memory
+    )
+    
+    print("\nGeographer Output:")
+    print(f"\nReasoning: {geographer_output.get('reasoning', 'None')}")
+    
+    province_updates = geographer_output.get("province_updates", [])
+    print(f"\nProvince Updates ({len(province_updates)} total):")
+    if province_updates:
+        for update in province_updates[:20]:  # Show first 20
+            control_str = f", control: {update['control']}" if update.get('control') else ""
+            print(f"  ID {update['id']} ({update['name']}): owner={update['owner']}{control_str}")
+        if len(province_updates) > 20:
+            print(f"  ... and {len(province_updates) - 20} more")
+    else:
+        print("  No province updates needed")
+
     print("\n" + "="*60)
     print("WORKFLOW COMPLETE")
     print("="*60)
@@ -184,7 +216,8 @@ def test_workflow(divergence: str, years_to_progress: int = 20):
     return {
         "filter": filter_result,
         "historian": historian_output,
-        "dreamer": dreamer_output
+        "dreamer": dreamer_output,
+        "geographer": geographer_output
     }
 
 
