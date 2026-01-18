@@ -16,6 +16,7 @@ jsonpatch==1.33
 jsonpointer==3.0.0
 langchain==1.2.4
 langchain-core==1.2.7
+langchain-google-genai==4.2.0
 langchain-openai==1.1.7
 langgraph==1.0.6
 langgraph-checkpoint==4.0.0
@@ -28,6 +29,7 @@ ormsgpack==1.12.1
 packaging==25.0
 pydantic==2.12.5
 pydantic_core==2.41.5
+python-dotenv==1.2.1
 PyYAML==6.0.3
 regex==2026.1.15
 requests==2.32.5
