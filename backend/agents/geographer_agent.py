@@ -135,11 +135,24 @@ You will receive STRUCTURED territorial changes with:
 YOUR ONLY JOB is to find which province IDs match each location description.
 You do NOT need to interpret intent - the change_type already tells us what to do.
 
+IMPORTANT - CAREFUL CONSIDERATION:
+- Think carefully about each territorial change before resolving it.
+- Consider the historical and geographical context of the location.
+- Many province names may be obscure, archaic, or use historical names that differ from modern ones.
+- If a province name seems unfamiliar, try to deduce its likely location based on:
+  * The region it's in (e.g., a province in "egypt_region" is likely in Egypt)
+  * Historical context (ancient city names, Latin/Greek names, etc.)
+  * Neighboring provinces you do recognize
+- When in doubt, include provinces that could plausibly match rather than excluding them.
+- For broad locations like "Egypt" or "Gaul", include ALL provinces in the relevant region(s).
+- For specific locations like "Alexandria" or "along the Danube", be more selective.
+
 WORKFLOW:
 1. First, call get_available_regions to see all region names
 2. For each territorial change, identify which regions match the location description
 3. Call query_region_provinces for each relevant region to get province IDs
-4. Return the list of province IDs for each change
+4. Carefully review the province names - even if unfamiliar, consider if they fit the location
+5. Return the list of province IDs for each change
 
 OUTPUT FORMAT (return as final response):
 {
@@ -158,7 +171,7 @@ The change_index corresponds to the index of the territorial change in the input
 
 # Initialize LLM with timeout
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     google_api_key=os.getenv("GEMINI_API_KEY"),
     timeout=120,  # 2 minute timeout
     max_retries=2
