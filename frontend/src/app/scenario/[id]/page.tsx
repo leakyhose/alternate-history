@@ -1,21 +1,24 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useMemo } from 'react'
 import { useParams } from 'next/navigation'
 import MapCanvas from '@components/MapCanvas'
-import YearSlider from '@components/YearSlider'
 import CountryInfo from '@components/CountryInfo'
 import DivergenceInput from '@components/DivergenceInput'
-import GamePanel from '@components/GamePanel'
-import type { 
-  ProvinceHistory, 
-  RulerHistory, 
-  ScenarioMetadata, 
-  StartResponse, 
+import BranchingTimeline from '@components/BranchingTimeline'
+import GameInfoPanel from '@components/GameInfoPanel'
+import GameRulerInfo from '@components/GameRulerInfo'
+import type {
+  ProvinceHistory,
+  RulerHistory,
+  ScenarioMetadata,
+  StartResponse,
   ContinueResponse,
   LogEntry,
   RulerInfo,
-  GameProvince
+  GameProvince,
+  TimelinePoint,
+  ProvinceSnapshot
 } from '@/types'
 
 // Direct backend URL for long-running workflow requests (bypasses Next.js proxy timeout)
@@ -81,6 +84,11 @@ export default function ScenarioPage() {
   const [gameMerged, setGameMerged] = useState(false)
   const [gameNationTags, setGameNationTags] = useState<Record<string, { name: string; color: string }>>({})
 
+  // Timeline branching state
+  const [branchStartYear, setBranchStartYear] = useState<number | null>(null)
+  const [selectedTimelinePoint, setSelectedTimelinePoint] = useState<TimelinePoint>({ timeline: 'main', year: 0 })
+  const [provinceSnapshots, setProvinceSnapshots] = useState<ProvinceSnapshot[]>([])
+
   // Processing state
   const [isProcessing, setIsProcessing] = useState(false)
   const [inputError, setInputError] = useState<string | null>(null)
@@ -114,6 +122,7 @@ export default function ScenarioPage() {
         if (metadata.period) {
           setYearRange({ min: metadata.period.start, max: metadata.period.end })
           setYear(metadata.period.start)
+          setSelectedTimelinePoint({ timeline: 'main', year: metadata.period.start })
         } else {
           // Calculate year range from provinces data
           const scenarioTags = new Set(Object.keys(metadata.tags || {}))
@@ -138,6 +147,7 @@ export default function ScenarioPage() {
             const maxYear = lastActiveYear + 1
             setYearRange({ min: minYear, max: maxYear })
             setYear(minYear)
+            setSelectedTimelinePoint({ timeline: 'main', year: minYear })
           }
         }
 
@@ -148,6 +158,15 @@ export default function ScenarioPage() {
         setDataLoaded(true)
       })
   }, [scenarioId])
+
+  // Cache province snapshot when entering game mode or continuing
+  const cacheSnapshot = useCallback((logIndex: number, provinces: GameProvince[], rulers: Record<string, RulerInfo>, divergences: string[]) => {
+    setProvinceSnapshots(prev => {
+      const newSnapshots = [...prev]
+      newSnapshots[logIndex] = { logIndex, provinces, rulers, divergences }
+      return newSnapshots
+    })
+  }, [])
 
   // Start a new game
   const handleStartGame = useCallback(async (command: string, yearsToProgress: number) => {
@@ -199,6 +218,10 @@ export default function ScenarioPage() {
       }
 
       if (data.status === 'accepted' && data.game_id && data.result) {
+        // Capture branch start year from the response
+        const startYear = data.year || year || 0
+        setBranchStartYear(startYear)
+
         // Switch to game mode
         setGameId(data.game_id)
         setGameMode(true)
@@ -213,6 +236,16 @@ export default function ScenarioPage() {
         if (provincesRes.ok) {
           const provincesData = await provincesRes.json()
           setGameProvinces(provincesData.provinces)
+
+          // Cache snapshot for the first log entry
+          if (data.result.logs.length > 0) {
+            cacheSnapshot(
+              data.result.logs.length - 1,
+              provincesData.provinces,
+              data.result.rulers,
+              data.result.divergences
+            )
+          }
         } else {
           console.error('Failed to fetch provinces:', provincesRes.status)
         }
@@ -225,6 +258,13 @@ export default function ScenarioPage() {
         } else {
           console.error('Failed to fetch game state:', gameStateRes.status)
         }
+
+        // Set timeline point to the newest log entry
+        setSelectedTimelinePoint({
+          timeline: 'alternate',
+          year: data.result.current_year,
+          logIndex: data.result.logs.length - 1
+        })
 
         // Update year to game year
         setYear(data.result.current_year)
@@ -239,7 +279,7 @@ export default function ScenarioPage() {
     } finally {
       setIsProcessing(false)
     }
-  }, [scenarioId])
+  }, [scenarioId, year, cacheSnapshot])
 
   // Continue the game
   const handleContinue = useCallback(async () => {
@@ -294,6 +334,23 @@ export default function ScenarioPage() {
       const provincesData = await provincesRes.json()
       setGameProvinces(provincesData.provinces)
 
+      // Cache snapshot for the new log entry
+      if (data.logs.length > 0 && data.result) {
+        cacheSnapshot(
+          data.logs.length - 1,
+          provincesData.provinces,
+          data.result.rulers,
+          data.result.divergences
+        )
+      }
+
+      // Update timeline point to the newest log entry
+      setSelectedTimelinePoint({
+        timeline: 'alternate',
+        year: data.current_year,
+        logIndex: data.logs.length - 1
+      })
+
       // Update year
       setYear(data.current_year)
     } catch (err) {
@@ -304,17 +361,85 @@ export default function ScenarioPage() {
     } finally {
       setIsProcessing(false)
     }
-  }, [gameId])
+  }, [gameId, cacheSnapshot])
 
-  // Determine which province history to use
-  const activeProvinceHistory = gameMode && gameProvinces.length > 0
-    ? gameProvincesToHistory(gameProvinces, gameYear)
-    : defaultProvinceHistory
+  // Handle timeline point selection
+  const handleTimelinePointSelect = useCallback((point: TimelinePoint) => {
+    setSelectedTimelinePoint(point)
+
+    if (point.timeline === 'main') {
+      // Switch to viewing historical data at selected year
+      setYear(point.year)
+    } else if (point.logIndex !== undefined) {
+      // Switch to viewing alternate timeline at selected log point
+      const snapshot = provinceSnapshots[point.logIndex]
+      if (snapshot) {
+        setGameProvinces(snapshot.provinces)
+        setGameRulers(snapshot.rulers)
+        setGameDivergences(snapshot.divergences)
+      }
+      setYear(point.year)
+    }
+  }, [provinceSnapshots])
+
+  // Handle year change from timeline (for main timeline dragging)
+  const handleYearChange = useCallback((newYear: number) => {
+    setYear(newYear)
+  }, [])
+
+  // Determine which province history to use based on selected timeline point
+  const activeProvinceHistory = useMemo(() => {
+    if (!gameMode) {
+      return defaultProvinceHistory
+    }
+
+    if (selectedTimelinePoint.timeline === 'main') {
+      // Show historical data when main timeline is selected
+      return defaultProvinceHistory
+    }
+
+    // Show game provinces for alternate timeline
+    if (gameProvinces.length > 0) {
+      return gameProvincesToHistory(gameProvinces, gameYear)
+    }
+
+    return defaultProvinceHistory
+  }, [gameMode, selectedTimelinePoint, defaultProvinceHistory, gameProvinces, gameYear])
+
+  // Determine the active year for the map
+  const activeYear = useMemo(() => {
+    if (!gameMode) return year
+
+    if (selectedTimelinePoint.timeline === 'main') {
+      return selectedTimelinePoint.year
+    }
+
+    // For alternate timeline, use the game year
+    return gameYear
+  }, [gameMode, selectedTimelinePoint, year, gameYear])
 
   // In game mode, use game nation tags for colors (merge with scenario)
   const activeMetadata = gameMode && Object.keys(gameNationTags).length > 0
     ? { ...scenarioMetadata, tags: { ...scenarioMetadata?.tags, ...gameNationTags } }
     : scenarioMetadata
+
+  // Get rulers to display based on selected timeline point
+  const activeRulers = useMemo(() => {
+    if (!gameMode) return {}
+
+    if (selectedTimelinePoint.timeline === 'main') {
+      return {}  // Don't show game rulers when viewing main timeline
+    }
+
+    if (selectedTimelinePoint.logIndex !== undefined) {
+      const snapshot = provinceSnapshots[selectedTimelinePoint.logIndex]
+      if (snapshot) {
+        return snapshot.rulers
+      }
+    }
+
+    return gameRulers
+  }, [gameMode, selectedTimelinePoint, provinceSnapshots, gameRulers])
 
   const isLoading = !dataLoaded || !mapReady || year === null
 
@@ -323,45 +448,59 @@ export default function ScenarioPage() {
       {isLoading && <PixelLoader />}
       {dataLoaded && yearRange && year !== null && (
         <>
-          {/* Year slider - only show when not in game mode */}
-          {!gameMode && (
-            <YearSlider
-              onChange={setYear}
-              initialValue={year}
-              min={yearRange.min}
-              max={yearRange.max}
+          {/* Branching Timeline - replaces YearSlider and handles both modes */}
+          <BranchingTimeline
+            minYear={yearRange.min}
+            maxYear={yearRange.max}
+            selectedYear={year}
+            onYearChange={handleYearChange}
+            gameMode={gameMode}
+            branchStartYear={branchStartYear || undefined}
+            logs={gameLogs}
+            merged={gameMerged}
+            currentGameYear={gameYear}
+            selectedTimelinePoint={selectedTimelinePoint}
+            onTimelinePointSelect={handleTimelinePointSelect}
+          />
+
+          {/* Country info - show in history mode or when viewing main timeline in game mode */}
+          {(!gameMode || selectedTimelinePoint.timeline === 'main') && (
+            <CountryInfo
+              defaultRulerHistory={defaultRulerHistory}
+              scenarioMetadata={activeMetadata as ScenarioMetadata}
+              selectedTag={selectedTag}
+              year={activeYear || year}
+              onTagChange={setSelectedTag}
             />
           )}
 
-          {/* Country info - show in both modes but position differently when game panel is open */}
-          <CountryInfo
-            defaultRulerHistory={gameMode ? null : defaultRulerHistory}
-            scenarioMetadata={activeMetadata as ScenarioMetadata}
-            selectedTag={selectedTag}
-            year={year}
-            onTagChange={setSelectedTag}
-          />
+          {/* Game Ruler Info - show when viewing alternate timeline */}
+          {gameMode && selectedTimelinePoint.timeline === 'alternate' && (
+            <GameRulerInfo
+              rulers={activeRulers}
+              nationTags={gameNationTags}
+              selectedTag={selectedTag}
+            />
+          )}
 
           {/* Map */}
           <MapCanvas
             defaultProvinceHistory={activeProvinceHistory}
             scenarioMetadata={activeMetadata as ScenarioMetadata}
-            year={year}
+            year={activeYear || year}
             onProvinceSelect={setSelectedTag}
             onReady={() => setMapReady(true)}
           />
 
-          {/* Game Panel - shows logs, rulers, divergences when in game mode */}
+          {/* Game Info Panel - shows logs and divergences when in game mode */}
           {gameMode && (
-            <GamePanel
+            <GameInfoPanel
               logs={gameLogs}
-              rulers={gameRulers}
               divergences={gameDivergences}
-              currentYear={gameYear}
+              selectedTimelinePoint={selectedTimelinePoint}
               merged={gameMerged}
               onContinue={handleContinue}
               isProcessing={isProcessing}
-              nationTags={gameNationTags}
             />
           )}
 

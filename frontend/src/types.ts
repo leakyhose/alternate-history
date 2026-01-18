@@ -113,3 +113,18 @@ export interface GameProvince {
   owner: string;
   control: string;
 }
+
+// Timeline Branching types
+
+export interface TimelinePoint {
+  timeline: 'main' | 'alternate';
+  year: number;
+  logIndex?: number;  // For alternate timeline points
+}
+
+export interface ProvinceSnapshot {
+  logIndex: number;
+  provinces: GameProvince[];
+  rulers: Record<string, RulerInfo>;
+  divergences: string[];
+}
