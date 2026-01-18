@@ -23,9 +23,10 @@ interface MapCanvasProps {
   defaultProvinceHistory: ProvinceHistory | null;
   year?: number;
   onProvinceSelect?: (tag: string | null) => void;
+  onReady?: () => void;
 }
 
-export default function MapCanvas({ defaultProvinceHistory, year = 2, onProvinceSelect }: MapCanvasProps) {
+export default function MapCanvas({ defaultProvinceHistory, year = 2, onProvinceSelect, onReady }: MapCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [gpuContext, setGpuContext] = useState<MapGpuContext | null>(null);
@@ -106,6 +107,7 @@ export default function MapCanvas({ defaultProvinceHistory, year = 2, onProvince
 
         setGpuContext(ctx);
         setIsLoading(false);
+        onReady?.();
       } catch (err) {
         console.error('Initialization error:', err);
         setError(err instanceof Error ? err.message : 'Unknown error');
@@ -332,14 +334,7 @@ export default function MapCanvas({ defaultProvinceHistory, year = 2, onProvince
   }
 
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center w-full h-full bg-gray-900 text-gray-200">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4" />
-          <p>Loading map...</p>
-        </div>
-      </div>
-    );
+    return null;
   }
 
   return (

@@ -77,42 +77,38 @@ export default function YearSlider({
   };
 
   return (
-    <div className="absolute top-0 left-1/2 w-2/3 -translate-x-1/2 z-50 select-none pointer-events-auto px-4 pt-8">
+    <div className="absolute top-8 left-1/2 w-2/3 -translate-x-1/2 z-50 select-none pointer-events-auto px-4">
       <div className="relative bg-[#1a1a24] border-2 border-[#2a2a3a] p-2 shadow-[0_2px_0_#0a0a10]">
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-full bg-[#1a1a24] border-2 border-b-0 border-[#2a2a3a] px-2 py-1 flex items-center gap-2">
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-[-2px] bg-[#1a1a24] border-2 border-b-0 border-[#2a2a3a] px-[3px] py-[1px] flex items-center gap-[2px]">
           {/* Left arrow */}
           <button
             onClick={decrementYear}
             className={`outline-none border-none focus:outline-none focus:border-none active:outline-none text-amber-400 hover:text-amber-300 transition-opacity ${year <= min ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
             style={{ imageRendering: 'pixelated' }}
           >
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-              <rect x="6" y="2" width="2" height="2" />
-              <rect x="4" y="4" width="2" height="2" />
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor">
+              <rect x="4" y="0" width="2" height="2" />
+              <rect x="2" y="2" width="2" height="2" />
+              <rect x="0" y="4" width="2" height="2" />
               <rect x="2" y="6" width="2" height="2" />
-              <rect x="4" y="8" width="2" height="2" />
-              <rect x="6" y="10" width="2" height="2" />
-              <rect x="6" y="4" width="2" height="6" />
             </svg>
           </button>
-          
-          <span className="text-amber-400 font-bold text-xl tracking-wide leading-none whitespace-nowrap drop-shadow-[1px_1px_0_#000]">
+
+          <span className="text-amber-400 font-bold text-xl tracking-wide leading-none whitespace-nowrap">
             {year}
           </span>
-          
+
           {/* Right arrow */}
           <button
             onClick={incrementYear}
             className={`outline-none border-none focus:outline-none focus:border-none active:outline-none text-amber-400 hover:text-amber-300 transition-opacity ${year >= max ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
             style={{ imageRendering: 'pixelated' }}
           >
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor">
+              <rect x="2" y="0" width="2" height="2" />
               <rect x="4" y="2" width="2" height="2" />
               <rect x="6" y="4" width="2" height="2" />
-              <rect x="8" y="6" width="2" height="2" />
-              <rect x="6" y="8" width="2" height="2" />
-              <rect x="4" y="10" width="2" height="2" />
-              <rect x="4" y="4" width="2" height="6" />
+              <rect x="4" y="6" width="2" height="2" />
             </svg>
           </button>
         </div>
