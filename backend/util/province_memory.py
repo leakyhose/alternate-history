@@ -10,6 +10,10 @@ from typing import Dict, List, Optional
 from dataclasses import dataclass, asdict
 
 
+# Get the backend directory path (parent of util/)
+_BACKEND_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
 @dataclass
 class Province:
     """Represents a single province."""
@@ -39,7 +43,7 @@ class ProvinceMemory:
     
     def _get_provinces_file_path(self, scenario_id: str) -> str:
         """Get path to provinces.json for a scenario."""
-        return os.path.join("static", "scenarios", scenario_id, "provinces.json")
+        return os.path.join(_BACKEND_DIR, "static", "scenarios", scenario_id, "provinces.json")
     
     def load_from_year(self, year: int, scenario_id: str = "rome") -> bool:
         """
@@ -140,24 +144,60 @@ class ProvinceMemory:
         """
         Apply a batch of province updates.
         
+        If a province doesn't exist but has a valid owner tag, it will be ADDED
+        to the tracked provinces (represents conquest from an untracked nation).
+        
         Args:
-            updates: List of dicts with keys: id, owner (optional), control (optional)
+            updates: List of dicts with keys: id, name (optional), owner (optional), control (optional)
             
         Returns:
-            Number of provinces successfully updated
+            Number of provinces successfully updated or added
         """
         count = 0
+        added = []
+        failed = []
+        
         for update in updates:
             province_id = update.get("id")
             if province_id is None:
                 continue
             
+            # Try to update existing province
             if self.update_province(
                 province_id,
                 owner=update.get("owner"),
                 control=update.get("control")
             ):
                 count += 1
+            else:
+                # Province doesn't exist - check if we should add it
+                owner = update.get("owner", "")
+                
+                if owner:
+                    # Province has an owner - this is a conquest from an untracked nation
+                    # Add it to our tracked provinces
+                    name = update.get("name", f"Province {province_id}")
+                    new_province = Province(
+                        id=province_id,
+                        name=name,
+                        owner=owner,
+                        control=update.get("control", "")
+                    )
+                    self._provinces[province_id] = new_province
+                    added.append(f"ID {province_id} ({name})")
+                    count += 1
+                else:
+                    # Province has no owner and doesn't exist - can't mark as "lost"
+                    # because we weren't tracking it anyway
+                    failed.append(f"ID {province_id} ({update.get('name', 'unknown')})")
+        
+        if added:
+            print(f"  📍 Added {len(added)} newly conquered provinces to tracking: {', '.join(added[:5])}")
+            if len(added) > 5:
+                print(f"      ... and {len(added) - 5} more")
+        
+        if failed:
+            print(f"  ⚠ Skipped {len(failed)} provinces (not tracked and no owner specified): {', '.join(failed)}")
         
         return count
     
@@ -209,7 +249,7 @@ def load_region_provinces() -> Dict[str, List[dict]]:
     if _region_provinces is not None:
         return _region_provinces
     
-    file_path = os.path.join("static", "region_provinces.json")
+    file_path = os.path.join(_BACKEND_DIR, "static", "region_provinces.json")
     try:
         with open(file_path, 'r') as f:
             _region_provinces = json.load(f)

@@ -3,13 +3,16 @@ import json
 import os
 from typing import Dict
 
+# Get the backend directory path (parent of util/)
+_BACKEND_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # Scenario data cache
 _scenario_metadata_cache: Dict[str, dict] = {}
 
 
 def get_scenario_path(scenario_id: str) -> str:
     """Get the path to a scenario's data folder."""
-    return os.path.join("static", "scenarios", scenario_id)
+    return os.path.join(_BACKEND_DIR, "static", "scenarios", scenario_id)
 
 
 def load_scenario_metadata(scenario_id: str) -> dict:
