@@ -331,7 +331,7 @@ export default function MapCanvas({ defaultProvinceHistory, scenarioMetadata, ye
   
   if (error) {
     return (
-      <div className="flex items-center justify-center w-full h-full bg-red-950 text-red-200">
+      <div className="absolute inset-0 flex items-center justify-center w-full h-full bg-red-950 text-red-200 z-0">
         <div className="text-center">
           <h2 className="text-xl font-bold mb-2">WebGPU Error</h2>
           <p>{error}</p>
@@ -345,7 +345,7 @@ export default function MapCanvas({ defaultProvinceHistory, scenarioMetadata, ye
   }
 
   return (
-    <div ref={containerRef} className="w-full h-full overflow-hidden bg-black">
+    <div ref={containerRef} className="absolute inset-0 w-full h-full overflow-hidden bg-black z-0">
       <canvas
         ref={canvasRef}
         width={canvasSize.width}
