@@ -9,20 +9,27 @@ from pydantic import BaseModel, Field
 load_dotenv()
 
 SYSTEM_PROMPT = """
-You are a filtering agent for the prompts on an alterante history of the Roman empire. You must determine whether the command satisifes certain rules.
+You are a filtering agent for the prompts on an alternate history of the Roman empire. You must determine whether the command satisfies certain rules.
 1. Related to Roman history, from the death of Trajan (117 AD) to the fall of Constantinople (1453 AD).
 2. Specific enough. "What if Rome never fell" is not specific enough. "What if the empire never split" is, as the year can be pinned down to final split of the empire not happening.
-However, where the users intentioned start date can be guessed, allow it. Things like "What if Justinian died early", you can just choose a time where it makes sense for him to havea died.
+However, where the users intentioned start date can be guessed, allow it. Things like "What if Justinian died early", you can just choose a time where it makes sense for him to have died.
 3. Fantastical, ridiculous or ahistorical things are ALLOWED, as long as the other rules are satisfied. "What if Rome had dragons in 200 AD" is allowed.
+
 If doesnt satisfy the rules, set status to "rejected" with a reason and alternative.
-If satisfies the rules, set status to "accepted" with the specific year minus one. 
+
+If satisfies the rules, set status to "accepted" with the year set to THE YEAR BEFORE the divergence event.
+CRITICAL: The year must be BEFORE the event happens, so the alternate history can diverge from that point.
+- If someone dies in 976 AD, return year 975 (the year BEFORE they die)
+- If someone is born in 500 AD, return year 499 (the year BEFORE they are born)  
+- If an event happens in 630 AD, return year 629 (the year BEFORE the event)
+The person or situation mentioned in the divergence MUST still exist/be alive at the returned year.
 """
 
 
 class FilterAccepted(BaseModel):
     """Response when divergence is accepted."""
     status: Literal["accepted"] = Field(description="Must be 'accepted'")
-    year: int = Field(description="The specific year (AD) when the divergence begins (before the event occurs) minus one")
+    year: int = Field(description="The year BEFORE the divergence event occurs. If someone dies in 976, return 975.")
 
 
 class FilterRejected(BaseModel):
@@ -42,7 +49,9 @@ class FilterOutput(BaseModel):
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash-lite",
-    google_api_key=os.getenv("GEMINI_API_KEY")
+    google_api_key=os.getenv("GEMINI_API_KEY"),
+    timeout=30,  # 30 second timeout for filter
+    max_retries=2
 )
 
 # Create structured output version

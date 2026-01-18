@@ -142,7 +142,9 @@ ONLY RETURN VALID JSON. No markdown code blocks, no extra text."""
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
-    google_api_key=os.getenv("GEMINI_API_KEY")
+    google_api_key=os.getenv("GEMINI_API_KEY"),
+    timeout=120,  # 2 minute timeout
+    max_retries=2
 )
 
 # Create a structured output version of the LLM

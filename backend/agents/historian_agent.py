@@ -2,8 +2,16 @@
 Historian Agent - Provides real historical context for a time period.
 
 The Historian does NOT see the alternate timeline. It only provides
-the baseline of what would happen in real history, giving the Dreamer
+the baseline of what ACTUALLY happened in real history, giving the Dreamer
 context to make decisions about how divergences alter events.
+
+IMPORTANT: The Historian has NO knowledge of:
+- Current divergences
+- Alternate timeline rulers  
+- Previous alternate history events
+- What the Dreamer decided in past iterations
+
+It purely reports real history.
 """
 from dotenv import load_dotenv
 import os
@@ -30,24 +38,32 @@ class HistorianOutput(BaseModel):
     )
 
 
-SYSTEM_PROMPT = """You are a historian specializing in the Roman/Byzantine Empire (117-1453).
-Provide historical context as conditional events for a specific time period.
+SYSTEM_PROMPT = """You are a historian specializing in the Roman/Byzantine Empire (117-1453 AD).
+Your role is to provide REAL historical context for a specific time period.
 
-You will be given a start year, years to progress, and current rulers.
+CRITICAL: You report ONLY what actually happened in real history. You have NO knowledge of any alternate timelines, divergences, or "what if" scenarios. You are purely a reference for actual historical events.
 
 Your response must include:
 1. "period": The year range as a string (e.g., "630-650")
-2. "conditional_events": Historical events with their conditions. Format each as:
-   - "condition": What circumstance or situation led to this event
-   - "outcome": What actually happened as a result
+2. "conditional_events": Real historical events framed as conditions and outcomes. Format each as:
+   - "condition": The historical circumstances or situation that existed
+   - "outcome": What actually happened in real history as a result
 
-Focus on major events: succession crises, wars, invasions, political changes, territorial shifts.
-Be specific with dates when known.
-"""
+Focus on major events relevant to the Roman/Byzantine world:
+- Succession crises and ruler changes
+- Wars and military campaigns
+- Invasions by external powers
+- Political and administrative changes
+- Major territorial gains or losses
+- Important treaties and diplomatic events
+
+Be specific with dates when known. Report what ACTUALLY happened, not hypotheticals."""
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash-lite",
-    google_api_key=os.getenv("GEMINI_API_KEY")
+    google_api_key=os.getenv("GEMINI_API_KEY"),
+    timeout=60,  # 1 minute timeout
+    max_retries=2
 )
 
 # Create structured output version
@@ -56,42 +72,32 @@ llm_structured = llm.with_structured_output(HistorianOutput)
 
 def get_historical_context(
     start_year: int,
-    years_to_progress: int,
-    rulers: Dict[str, Any]
+    years_to_progress: int
 ) -> Dict[str, Any]:
     """
     Get real historical context for a time period.
     
+    NOTE: This function intentionally does NOT take any alternate timeline
+    information (rulers, divergences, etc.) - only the time period.
+    
     Args:
         start_year: The starting year of the period
         years_to_progress: How many years the period covers
-        rulers: Dict of current rulers keyed by nation tag
         
     Returns:
-        Dict with period, real_events, keep_in_mind, and conditional_events
+        Dict with period and conditional_events from real history
     """
     end_year = start_year + years_to_progress
-    
-    # Format ruler info for the prompt
-    ruler_info = ""
-    if rulers:
-        ruler_lines = []
-        for tag, info in rulers.items():
-            name = info.get("name", "Unknown")
-            title = info.get("title", "Ruler")
-            age = info.get("age", "unknown age")
-            dynasty = info.get("dynasty", "unknown dynasty")
-            ruler_lines.append(f"- {tag}: {name}, {title}, age {age}, {dynasty} dynasty")
-        ruler_info = "\n".join(ruler_lines)
-    else:
-        ruler_info = "No rulers specified"
-    
-    user_prompt = f"""Provide historical context for the period {start_year}-{end_year}.
 
-Current rulers:
-{ruler_info}
+    user_prompt = f"""Provide the real historical context for the Byzantine/Roman Empire during the period {start_year}-{end_year} AD.
 
-What actually happened in real history during this period? What trends and events should be kept in mind?"""
+What major events ACTUALLY happened in real history during this period? Include:
+- Who was ruling and any succession changes
+- Major wars and their outcomes
+- Territorial changes
+- Important political events
+
+Report only factual history - no speculation or alternate scenarios."""
 
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
