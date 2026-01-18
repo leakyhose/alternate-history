@@ -25,6 +25,7 @@ import type {
 
 // Direct backend URL for long-running workflow requests (bypasses Next.js proxy timeout)
 const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+console.log('🔗 Backend URL configured as:', BACKEND_URL)
 
 function PixelLoader() {
   const [frame, setFrame] = useState(0)
@@ -175,7 +176,9 @@ export default function ScenarioPage() {
 
     try {
       // Use POST request with fetch for SSE (EventSource only supports GET)
-      const response = await fetch(`${BACKEND_URL}/start-stream`, {
+      const url = `${BACKEND_URL}/start-stream`
+      console.log('🚀 Starting game - POST to:', url)
+      const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -184,6 +187,7 @@ export default function ScenarioPage() {
           years_to_progress: yearsToProgress
         })
       })
+      console.log('📡 Response status:', response.status, response.statusText)
 
       if (!response.ok) {
         let errorMessage = `Server error: ${response.status}`
@@ -347,13 +351,16 @@ export default function ScenarioPage() {
     setStreamingPhase('dreaming')
 
     try {
-      const response = await fetch(`${BACKEND_URL}/continue-stream/${gameId}`, {
+      const url = `${BACKEND_URL}/continue-stream/${gameId}`
+      console.log('🔄 Continuing game - POST to:', url)
+      const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           years_to_progress: gameYearsToProgress
         })
       })
+      console.log('📡 Response status:', response.status, response.statusText)
 
       if (!response.ok) {
         let errorMessage = `Server error: ${response.status}`
@@ -492,11 +499,14 @@ export default function ScenarioPage() {
 
       try {
         // First, filter the divergence to check if it's valid for the current era
-        const filterResponse = await fetch(`${BACKEND_URL}/game/${gameId}/filter-divergence`, {
+        const filterUrl = `${BACKEND_URL}/game/${gameId}/filter-divergence`
+        console.log('🔍 Filtering divergence - POST to:', filterUrl)
+        const filterResponse = await fetch(filterUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ command })
         })
+        console.log('📡 Filter response status:', filterResponse.status, filterResponse.statusText)
 
         if (!filterResponse.ok) {
           let errorMessage = `Server error: ${filterResponse.status}`
@@ -534,7 +544,9 @@ export default function ScenarioPage() {
     setStreamingPhase('dreaming')
 
     try {
-      const response = await fetch(`${BACKEND_URL}/continue-stream/${gameId}`, {
+      const url = `${BACKEND_URL}/continue-stream/${gameId}`
+      console.log('➕ Adding divergence - POST to:', url)
+      const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -542,6 +554,7 @@ export default function ScenarioPage() {
           years_to_progress: yearsToProgress
         })
       })
+      console.log('📡 Response status:', response.status, response.statusText)
 
       if (!response.ok) {
         let errorMessage = `Server error: ${response.status}`
