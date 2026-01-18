@@ -7,20 +7,11 @@ from api.workflow import router as workflow_router
 
 app = FastAPI()
 
-# CORS middleware - configure allowed origins
-# In production, set CORS_ORIGINS env var to your frontend URL(s)
-# e.g., CORS_ORIGINS=https://your-app.vercel.app,https://custom-domain.com
-cors_origins_env = os.getenv("CORS_ORIGINS", "")
-cors_origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
-if cors_origins_env:
-    cors_origins.extend([origin.strip() for origin in cors_origins_env.split(",")])
-
+# CORS middleware - allow all origins for hackathon demo
+# In production, you'd want to restrict this to specific domains
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=cors_origins,
+    allow_origins=["*"],  # Allow all origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
