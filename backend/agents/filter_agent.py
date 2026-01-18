@@ -27,7 +27,7 @@ Rules:
    However, where the user's intended start date can be guessed, allow it. Things like "What if X died early", you can just choose a time where it makes sense.
 4. Fantastical, ridiculous or ahistorical things are ALLOWED, as long as the other rules are satisfied.
 
-If doesn't satisfy the rules, set status to "rejected" with a reason and alternative.
+If doesn't satisfy the rules, set status to "rejected" with a SUCCINCT reason (1 sentence max) and an alternative.
 
 If satisfies the rules, set status to "accepted" with the year set to THE YEAR BEFORE the divergence event.
 CRITICAL: The year must be BEFORE the event happens, so the alternate history can diverge from that point.
@@ -48,7 +48,7 @@ class FilterAccepted(BaseModel):
 class FilterRejected(BaseModel):
     """Response when divergence is rejected."""
     status: Literal["rejected"] = Field(description="Must be 'rejected'")
-    reason: str = Field(description="Short, concise reason for rejection")
+    reason: str = Field(description="Very short, succinct reason for rejection (1 sentence max)")
     alternative: str = Field(description="User's prompt altered to be valid")
 
 

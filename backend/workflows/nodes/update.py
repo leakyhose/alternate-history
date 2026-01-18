@@ -43,8 +43,9 @@ def update_state_node(state: WorkflowState) -> dict:
         if should_condense(logs):
             logs, condensed_logs = condense_logs(logs, condensed_logs)
         
-        # Get updated values from dreamer
-        updated_rulers = dreamer_output.get("rulers", state.get("rulers", {}))
+        # Get updated values from dreamer - fall back to existing if empty
+        dreamer_rulers = dreamer_output.get("rulers", {})
+        updated_rulers = dreamer_rulers if dreamer_rulers else state.get("rulers", {})
         updated_divergences = dreamer_output.get("updated_divergences", state.get("divergences", []))
         merged = dreamer_output.get("merged", False)
         

@@ -20,11 +20,12 @@ _available_tags: Dict[str, Dict[str, Any]] = {}
 
 
 class RulerInfo(BaseModel):
-    """Information about a ruler."""
+    """Information about a ruler. DO NOT add extra fields like 'info'."""
+    tag: str = Field(description="The nation tag (e.g., CAN, USA, QUE)")
     name: str = Field(description="The ruler's name")
-    title: str = Field(description="The ruler's title (e.g., Emperor, King)")
-    age: int = Field(description="The ruler's age")
-    dynasty: str = Field(description="The dynasty name")
+    title: str = Field(description="The ruler's title (e.g., Emperor, King, President, Prime Minister)")
+    age: int = Field(description="The ruler's age in years")
+    dynasty: str = Field(default="", description="The dynasty or political party. Leave empty if not applicable.")
 
 
 class TerritorialChange(BaseModel):
@@ -77,8 +78,8 @@ class TerritorialChange(BaseModel):
 
 class DreamerOutput(BaseModel):
     """Structured output from the Dreamer agent."""
-    rulers: Dict[str, RulerInfo] = Field(
-        description="Dictionary of nation tag -> ruler info. Only use valid tags from scenario metadata."
+    rulers: List[RulerInfo] = Field(
+        description="REQUIRED: List of ALL rulers. You MUST return EVERY ruler from the input, with ages updated (+years_to_progress). If a ruler died, replace with successor. Each ruler needs: tag, name, title, age, dynasty."
     )
     narrative: str = Field(
         description="A concise narrative of what happened in this period. 2-4 sentences, around 50-80 words."
@@ -174,11 +175,21 @@ Each change needs:
 - Add new ones for major changes with ongoing impact
 - If all divergences resolve and timeline returns to real history's trajectory, set merged: true
 
-=== RULER RULES ===
-- ONLY use nation tags from the VALID NATION TAGS list in the prompt
+=== RULER FORMAT ===
+Each ruler MUST have exactly these fields (no extras like "info"):
+- tag: The nation tag (e.g., CAN, USA, QUE)
+- name: The ruler's name
+- title: Their title (Emperor, King, President, Prime Minister, etc.)
+- age: Their age in years (number)
+- dynasty: Dynasty or party name (can be empty string "")
+
+=== RULER RULES - CRITICAL ===
+- You MUST return ALL rulers in your output - never return empty rulers
+- Copy ALL rulers from CURRENT RULERS input, updating each one
+- Update ages by adding years_to_progress to each ruler's age
+- If a ruler would die (old age, assassination, etc.), replace with a plausible successor
+- ONLY use nation tags from the VALID NATION TAGS list
 - NEVER invent new tags
-- Update ages by adding years_to_progress
-- Handle deaths with plausible successions
 - If a state splits, REMOVE original tag and ADD successor tags with TRANSFER changes
 
 Return ONLY valid JSON matching the schema. No markdown, no extra text."""
@@ -190,13 +201,6 @@ llm = ChatGoogleGenerativeAI(
     timeout=120,  # 2 minute timeout
     max_retries=2
 )
-
-# Create a structured output version of the LLM
-llm_structured = llm.with_structured_output(DreamerOutput)
-
-# Bind tools to LLM for tag lookup (fallback mode)
-tools = [get_available_nation_tags]
-llm_with_tools = llm.bind_tools(tools)
 
 
 def format_historian_output(historian_output: Dict[str, Any]) -> str:
@@ -264,8 +268,9 @@ def format_rulers(rulers: Dict[str, Dict[str, Any]]) -> str:
         name = info.get("name", "Unknown")
         title = info.get("title", "Ruler")
         age = info.get("age", "unknown")
-        dynasty = info.get("dynasty", "unknown")
-        lines.append(f"  - {tag}: {name}, {title}, age {age}, {dynasty} dynasty")
+        dynasty = info.get("dynasty", "")
+        dynasty_str = f", {dynasty}" if dynasty else ""
+        lines.append(f"  - {tag}: {name}, {title}, age {age}{dynasty_str}")
     
     return "\n".join(lines)
 
@@ -334,7 +339,7 @@ def make_decision(
 
 Decide:
 1. Which events occur, are prevented, or altered?
-2. Ruler updates (add {years_to_progress} years to ages, handle deaths/successions)
+2. Ruler updates - CRITICAL: Return ALL rulers with ages += {years_to_progress}. Handle deaths with successions.
 3. Territorial changes (be SPECIFIC with locations)
 4. Which divergences remain or emerge?
 5. Has timeline merged back to real history?
@@ -346,66 +351,10 @@ Make it entertaining but plausible. Return JSON only."""
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": user_prompt}
     ]
-    
-    # Try structured output first for guaranteed JSON compliance
-    try:
-        structured_response = llm_structured.invoke(messages)
-        
-        # Convert Pydantic model to dict
-        result = {
-            "rulers": {tag: ruler.model_dump() for tag, ruler in structured_response.rulers.items()},
-            "narrative": structured_response.narrative,
-            "territorial_changes": [change.model_dump() for change in structured_response.territorial_changes],
-            "territorial_changes_summary": structured_response.territorial_changes_summary,
-            "updated_divergences": structured_response.updated_divergences,
-            "merged": structured_response.merged
-        }
-        
-        # Validate that all ruler tags are in available_tags
-        if available_tags:
-            valid_tags = set(available_tags.keys())
-            invalid_tags = [tag for tag in result["rulers"].keys() if tag not in valid_tags]
-            if invalid_tags:
-                print(f"Warning: Dreamer created invalid tags: {invalid_tags}. Removing them.")
-                for tag in invalid_tags:
-                    del result["rulers"][tag]
-        
-        return result
-        
-    except Exception as structured_error:
-        print(f"Structured output failed: {structured_error}")
-        print("Falling back to tool-based approach...")
-    
-    # Fallback: Call LLM with tools - handle potential tool calls
-    response = llm_with_tools.invoke(messages)
-    
-    # Check if the model wants to call a tool
-    max_tool_iterations = 3
-    iteration = 0
-    while response.tool_calls and iteration < max_tool_iterations:
-        iteration += 1
-        # Add the AI message with tool calls
-        messages.append(response)
-        
-        # Execute each tool call and add results
-        for tool_call in response.tool_calls:
-            tool_name = tool_call["name"]
-            if tool_name == "get_available_nation_tags":
-                tool_result = get_available_nation_tags.invoke({})
-                messages.append({
-                    "role": "tool",
-                    "content": tool_result,
-                    "tool_call_id": tool_call["id"]
-                })
-        
-        # Continue the conversation
-        response = llm_with_tools.invoke(messages)
-    
-    # If response still has tool calls but no content, try once more without tools
-    if not response.content or (isinstance(response.content, str) and not response.content.strip()):
-        # Fallback: Call without tools to get final response
-        response = llm.invoke(messages)
-    
+
+    # Call LLM directly and parse JSON manually (more reliable than structured output)
+    response = llm.invoke(messages)
+
     try:
         # Get content - handle both string and list responses
         content = response.content
@@ -453,26 +402,39 @@ Make it entertaining but plausible. Return JSON only."""
         # Validate required fields - handle both old and new format for backward compatibility
         if "rulers" not in result:
             result["rulers"] = rulers  # Keep existing rulers
+        else:
+            # Convert list format to dict format if needed
+            if isinstance(result["rulers"], list):
+                rulers_dict = {}
+                for ruler in result["rulers"]:
+                    if isinstance(ruler, dict) and "tag" in ruler:
+                        tag = ruler.pop("tag")
+                        rulers_dict[tag] = ruler
+                result["rulers"] = rulers_dict
+            # Fall back to existing rulers if empty
+            if not result["rulers"]:
+                result["rulers"] = rulers
+
         if "narrative" not in result:
             result["narrative"] = f"The period {current_year}-{end_year} AD saw continued developments."
-        
+
         # Handle territorial changes - support both old and new format
         if "territorial_changes" not in result:
             result["territorial_changes"] = []
         if "territorial_changes_summary" not in result:
             # Fall back to old field name if present
             result["territorial_changes_summary"] = result.get(
-                "territorial_changes_description", 
+                "territorial_changes_description",
                 "No significant territorial changes occurred."
             )
-        
+
         if "updated_divergences" not in result:
             result["updated_divergences"] = divergences  # Keep existing
         if "merged" not in result:
             result["merged"] = False
-        
+
         # Validate that all ruler tags are in available_tags
-        if available_tags:
+        if available_tags and isinstance(result["rulers"], dict):
             valid_tags = set(available_tags.keys())
             invalid_tags = [tag for tag in result["rulers"].keys() if tag not in valid_tags]
             if invalid_tags:

@@ -16645,6 +16645,24 @@
       "name": "Gwich'in"
     }
   ],
+  "Northwest Territories": [
+    {
+      "id": 1812,
+      "name": "Northwest Territories"
+    },
+    {
+      "id": 3108,
+      "name": "Siglit"
+    },
+    {
+      "id": 4926,
+      "name": "Sahtu"
+    },
+    {
+      "id": 3099,
+      "name": "Katlodeeche"
+    }
+  ],
   "Northern Alaska": [
     {
       "id": 3105,
