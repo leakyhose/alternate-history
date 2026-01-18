@@ -33,6 +33,7 @@ class StartResponse(BaseModel):
     reason: Optional[str] = None
     alternative: Optional[str] = None
     result: Optional[Dict[str, Any]] = None
+    snapshots: Optional[List[Dict[str, Any]]] = None  # Province snapshots per log entry
 
 
 class ContinueRequest(BaseModel):
@@ -48,6 +49,7 @@ class ContinueResponse(BaseModel):
     merged: bool
     logs: List[Dict[str, Any]]
     result: Optional[Dict[str, Any]] = None
+    snapshots: Optional[List[Dict[str, Any]]] = None  # Province snapshots per log entry
 
 
 class GameStateResponse(BaseModel):
@@ -61,6 +63,7 @@ class GameStateResponse(BaseModel):
     logs: List[Dict[str, Any]]
     provinces: List[Dict[str, Any]]
     divergences: List[str]
+    snapshots: Optional[List[Dict[str, Any]]] = None  # Province snapshots per log entry
 
 
 # Endpoints
@@ -107,6 +110,20 @@ async def start_workflow(request: StartRequest) -> StartResponse:
             "filter_passed": True  # Already passed filter
         }
         
+        # Capture initial province state BEFORE workflow runs (for Log 0)
+        # Load provinces from scenario data for the start year
+        from util.province_memory import ProvinceMemory
+        initial_memory = ProvinceMemory()
+        initial_memory.load_from_year(year, request.scenario_id)
+        initial_provinces = [
+            Province(id=p["id"], name=p["name"], owner=p["owner"], control=p.get("control", ""))
+            for p in initial_memory.get_all_provinces_as_dicts()
+        ]
+        
+        # Load initial rulers
+        from workflows.nodes.initialize import _load_rulers_for_year
+        initial_rulers = _load_rulers_for_year(year, request.scenario_id)
+        
         final_state = workflow.invoke(initial_state)
         
         # Update game with final state
@@ -122,6 +139,20 @@ async def start_workflow(request: StartRequest) -> StartResponse:
         # Sync logs
         game.full_logs = final_state.get("logs", [])
         
+        # Capture snapshots for timeline scrubbing
+        logs = final_state.get("logs", [])
+        rulers = final_state.get("rulers", {})
+        divergences = final_state.get("divergences", [])
+        
+        # Log 0 (initial/historical): use the initial province state before any changes
+        if len(logs) > 0:
+            game.capture_snapshot(initial_provinces, initial_rulers, divergences)
+        
+        # Log 1+ (after iterations): use the current province state
+        # For initial workflow, there's only Log 0 (initial) and Log 1 (first iteration)
+        for i in range(1, len(logs)):
+            game.capture_snapshot(game.province_state, rulers, divergences)
+        
     except Exception as e:
         import traceback
         print(f"❌ Workflow error: {e}")
@@ -131,10 +162,9 @@ async def start_workflow(request: StartRequest) -> StartResponse:
     
     # Build response with explicit type handling
     try:
-        # Ensure logs are serializable
-        logs = final_state.get("logs", [])
+        # Ensure logs are serializable - use game.full_logs for complete history
         serializable_logs = []
-        for log in logs:
+        for log in game.full_logs:
             serializable_logs.append({
                 "year_range": str(log.get("year_range", "")),
                 "narrative": str(log.get("narrative", "")),
@@ -153,6 +183,9 @@ async def start_workflow(request: StartRequest) -> StartResponse:
                 "dynasty": str(ruler.get("dynasty", ""))
             }
         
+        # Get snapshots for timeline scrubbing
+        snapshots = game.get_all_snapshots_as_dicts()
+        
         return StartResponse(
             status="accepted",
             game_id=game.id,
@@ -163,7 +196,8 @@ async def start_workflow(request: StartRequest) -> StartResponse:
                 "rulers": serializable_rulers,
                 "logs": serializable_logs,
                 "divergences": list(final_state.get("divergences", []))
-            }
+            },
+            snapshots=snapshots
         )
     except Exception as e:
         import traceback
@@ -230,8 +264,18 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
             for p in provinces
         ]
         
-        # Sync logs
-        game.full_logs = final_state.get("logs", [])
+        # Append only the NEW log entry to full_logs (don't overwrite with condensed logs)
+        # The workflow state logs may be condensed, but we keep the full history in game.full_logs
+        workflow_logs = final_state.get("logs", [])
+        if workflow_logs:
+            # The newest log is the last one in the workflow logs
+            new_log = workflow_logs[-1]
+            game.full_logs.append(new_log)
+        
+        # Capture snapshot for the new log entry
+        rulers = final_state.get("rulers", {})
+        divergences = final_state.get("divergences", [])
+        game.capture_snapshot(game.province_state, rulers, divergences)
         
     except Exception as e:
         import traceback
@@ -260,6 +304,9 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
                 "dynasty": str(ruler.get("dynasty", ""))
             }
         
+        # Get all snapshots for timeline scrubbing
+        snapshots = game.get_all_snapshots_as_dicts()
+        
         return ContinueResponse(
             status="continued",
             current_year=int(final_state.get("current_year", 0)),
@@ -268,7 +315,8 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
             result={
                 "rulers": serializable_rulers,
                 "divergences": list(final_state.get("divergences", []))
-            }
+            },
+            snapshots=snapshots
         )
     except Exception as e:
         import traceback
@@ -327,7 +375,8 @@ async def get_game_state(game_id: str) -> GameStateResponse:
                 {"id": p.id, "name": p.name, "owner": p.owner, "control": p.control}
                 for p in game.province_state
             ],
-            divergences=list(state.get("divergences", []))
+            divergences=list(state.get("divergences", [])),
+            snapshots=game.get_all_snapshots_as_dicts()
         )
     except Exception as e:
         import traceback

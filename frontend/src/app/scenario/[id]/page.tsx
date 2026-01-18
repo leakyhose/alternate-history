@@ -159,15 +159,6 @@ export default function ScenarioPage() {
       })
   }, [scenarioId])
 
-  // Cache province snapshot when entering game mode or continuing
-  const cacheSnapshot = useCallback((logIndex: number, provinces: GameProvince[], rulers: Record<string, RulerInfo>, divergences: string[]) => {
-    setProvinceSnapshots(prev => {
-      const newSnapshots = [...prev]
-      newSnapshots[logIndex] = { logIndex, provinces, rulers, divergences }
-      return newSnapshots
-    })
-  }, [])
-
   // Start a new game
   const handleStartGame = useCallback(async (command: string, yearsToProgress: number) => {
     setIsProcessing(true)
@@ -231,23 +222,21 @@ export default function ScenarioPage() {
         setGameRulers(data.result.rulers)
         setGameDivergences(data.result.divergences)
 
-        // Fetch provinces for the game
-        const provincesRes = await fetch(`/game/${data.game_id}/provinces`)
-        if (provincesRes.ok) {
-          const provincesData = await provincesRes.json()
-          setGameProvinces(provincesData.provinces)
-
-          // Cache snapshot for the first log entry
-          if (data.result.logs.length > 0) {
-            cacheSnapshot(
-              data.result.logs.length - 1,
-              provincesData.provinces,
-              data.result.rulers,
-              data.result.divergences
-            )
-          }
+        // Use snapshots from API response for timeline scrubbing
+        if (data.snapshots && data.snapshots.length > 0) {
+          setProvinceSnapshots(data.snapshots)
+          // Set current provinces to the latest snapshot
+          const latestSnapshot = data.snapshots[data.snapshots.length - 1]
+          setGameProvinces(latestSnapshot.provinces)
         } else {
-          console.error('Failed to fetch provinces:', provincesRes.status)
+          // Fallback: fetch provinces separately
+          const provincesRes = await fetch(`/game/${data.game_id}/provinces`)
+          if (provincesRes.ok) {
+            const provincesData = await provincesRes.json()
+            setGameProvinces(provincesData.provinces)
+          } else {
+            console.error('Failed to fetch provinces:', provincesRes.status)
+          }
         }
 
         // Fetch full game state for nation tags
@@ -279,7 +268,7 @@ export default function ScenarioPage() {
     } finally {
       setIsProcessing(false)
     }
-  }, [scenarioId, year, cacheSnapshot])
+  }, [scenarioId, year])
 
   // Continue the game
   const handleContinue = useCallback(async () => {
@@ -329,19 +318,17 @@ export default function ScenarioPage() {
         setGameDivergences(data.result.divergences)
       }
 
-      // Fetch updated provinces
-      const provincesRes = await fetch(`/game/${gameId}/provinces`)
-      const provincesData = await provincesRes.json()
-      setGameProvinces(provincesData.provinces)
-
-      // Cache snapshot for the new log entry
-      if (data.logs.length > 0 && data.result) {
-        cacheSnapshot(
-          data.logs.length - 1,
-          provincesData.provinces,
-          data.result.rulers,
-          data.result.divergences
-        )
+      // Use snapshots from API response for timeline scrubbing
+      if (data.snapshots && data.snapshots.length > 0) {
+        setProvinceSnapshots(data.snapshots)
+        // Set current provinces to the latest snapshot
+        const latestSnapshot = data.snapshots[data.snapshots.length - 1]
+        setGameProvinces(latestSnapshot.provinces)
+      } else {
+        // Fallback: fetch provinces separately
+        const provincesRes = await fetch(`/game/${gameId}/provinces`)
+        const provincesData = await provincesRes.json()
+        setGameProvinces(provincesData.provinces)
       }
 
       // Update timeline point to the newest log entry
@@ -361,7 +348,7 @@ export default function ScenarioPage() {
     } finally {
       setIsProcessing(false)
     }
-  }, [gameId, cacheSnapshot])
+  }, [gameId])
 
   // Handle timeline point selection
   const handleTimelinePointSelect = useCallback((point: TimelinePoint) => {

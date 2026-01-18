@@ -76,6 +76,7 @@ export interface StartResponse {
     logs: LogEntry[];
     divergences: string[];
   };
+  snapshots?: ProvinceSnapshot[];  // Province snapshots per log entry
 }
 
 export interface ContinueResponse {
@@ -88,6 +89,7 @@ export interface ContinueResponse {
     divergences: string[];
     message?: string;
   };
+  snapshots?: ProvinceSnapshot[];  // Province snapshots per log entry
 }
 
 export interface GameState {
@@ -105,6 +107,7 @@ export interface GameState {
     control: string;
   }>;
   divergences: string[];
+  snapshots?: ProvinceSnapshot[];  // Province snapshots per log entry
 }
 
 export interface GameProvince {
@@ -123,7 +126,6 @@ export interface TimelinePoint {
 }
 
 export interface ProvinceSnapshot {
-  logIndex: number;
   provinces: GameProvince[];
   rulers: Record<string, RulerInfo>;
   divergences: string[];

@@ -24,6 +24,14 @@ class Province:
 
 
 @dataclass
+class ProvinceSnapshot:
+    """Snapshot of province state at a specific log entry."""
+    provinces: List[Province]
+    rulers: Dict[str, RulerInfo]
+    divergences: List[str]
+
+
+@dataclass
 class Game:
     """
     Represents an alternate history simulation session.
@@ -34,6 +42,7 @@ class Game:
     - Current workflow state
     - Province state (in-memory, not in WorkflowState)
     - Full log history
+    - Province history (snapshots per log entry for timeline scrubbing)
     """
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
     created_at: datetime = field(default_factory=datetime.utcnow)
@@ -50,6 +59,10 @@ class Game:
     
     # Full log history for UI
     full_logs: List[LogEntry] = field(default_factory=list)
+    
+    # Province snapshots per log entry (for timeline scrubbing)
+    # Index corresponds to log entry index
+    province_snapshots: List[ProvinceSnapshot] = field(default_factory=list)
     
     def add_nation_tag(self, tag: str, name: str, color: str) -> None:
         """Register a new nation tag."""
@@ -80,6 +93,46 @@ class Game:
     def is_merged(self) -> bool:
         """Check if timeline has merged back to real history."""
         return self.workflow_state.get("merged", False)
+    
+    def capture_snapshot(self, provinces: List[Province], rulers: Dict[str, RulerInfo], divergences: List[str]) -> None:
+        """Capture a province snapshot for the current log entry.
+        
+        Should be called after each workflow iteration to preserve state for timeline scrubbing.
+        """
+        snapshot = ProvinceSnapshot(
+            provinces=list(provinces),  # Make a copy
+            rulers=dict(rulers),
+            divergences=list(divergences)
+        )
+        self.province_snapshots.append(snapshot)
+    
+    def get_snapshot(self, log_index: int) -> Optional[ProvinceSnapshot]:
+        """Get the province snapshot for a specific log entry."""
+        if 0 <= log_index < len(self.province_snapshots):
+            return self.province_snapshots[log_index]
+        return None
+    
+    def get_all_snapshots_as_dicts(self) -> List[Dict[str, Any]]:
+        """Get all snapshots serialized for API response."""
+        return [
+            {
+                "provinces": [
+                    {"id": p.id, "name": p.name, "owner": p.owner, "control": p.control}
+                    for p in snapshot.provinces
+                ],
+                "rulers": {
+                    tag: {
+                        "name": ruler.get("name", ""),
+                        "title": ruler.get("title", ""),
+                        "age": ruler.get("age", 0),
+                        "dynasty": ruler.get("dynasty", "")
+                    }
+                    for tag, ruler in snapshot.rulers.items()
+                },
+                "divergences": snapshot.divergences
+            }
+            for snapshot in self.province_snapshots
+        ]
     
     def to_dict(self) -> Dict[str, Any]:
         """Serialize game state for API response."""
