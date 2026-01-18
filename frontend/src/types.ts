@@ -30,6 +30,7 @@ export interface RulerHistoryEntry {
   NAME: string;
   DYNASTY: string;
   TITLE: string;
+  AGE: string;
 }
 
 export interface RulerHistory {

@@ -75,7 +75,8 @@ export default function CountryInfo({ defaultRulerHistory, selectedTag, year, on
             info: {
                 name: ruler.NAME,
                 dynasty: ruler.DYNASTY,
-                title: ruler.TITLE
+                title: ruler.TITLE,
+                age: ruler.AGE
             }
         };
     }, [selectedTag, year, defaultRulerHistory, metadata, onTagChange]);
@@ -88,14 +89,16 @@ export default function CountryInfo({ defaultRulerHistory, selectedTag, year, on
     const displayInfo = rulerInfo.info;
 
     return (
-        <div className="absolute bottom-5 left-5 w-60 bg-[#1a1a24] border-2 border-[#2a2a3a] p-4 shadow-[inset_0_0_0_1px_#0a0a10,0_2px_0_#0a0a10] text-amber-400">
-            <h2 className=" text-4xl font-bold mb-2 text-center">{metadata?.tags![displayTag]?.name || displayTag}</h2>
-            <div className="space-y-1 text-2xl text-center">
-                <p><div className="text-amber-600 text-lg">Emperor</div>
-                    <div className='text-3xl'>{displayInfo.name}</div>
-                    <div className="text-lg text-amber-600">of the </div> 
-                    <div className='text-2xl'>{displayInfo.dynasty}</div>
-                    <div className="text-lg text-amber-600">dynasty</div></p>
+        <div className="absolute bottom-5 left-5 min-w-60 max-w-72 bg-[#1a1a24] border-2 border-[#2a2a3a] p-4 shadow-[inset_0_0_0_1px_#0a0a10,0_2px_0_#0a0a10] text-amber-400">
+            {/* Country Name */}
+            <h2 className="text-3xl font-bold text-center tracking-wide">{metadata?.tags![displayTag]?.name || displayTag}</h2>
+            
+            <div className="border-t border-[#2a2a3a] my-3"></div>
+            
+            {/* Ruler */}
+            <div className="text-center">
+                <div className={`font-semibold leading-tight ${displayInfo.name.length > 15 ? 'text-4xl' : 'text-5xl'}`}>{displayInfo.name}</div>
+                <div className="text-amber-600 text-sm mt-1">{displayInfo.dynasty} dynasty · {displayInfo.age} years old</div>
             </div>
         </div>
     );
