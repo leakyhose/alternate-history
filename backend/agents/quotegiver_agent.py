@@ -1,14 +1,13 @@
 """
 Quotegiver Agent - Generates memorable quotes from rulers.
 
-The Quotegiver analyzes the narrative and selects 1-2 most relevant rulers,
-then generates brief, memorable quotes as if spoken by those rulers at the
-end of the period.
+Analyzes the narrative and selects 1-2 relevant rulers, then generates
+brief, memorable quotes from their perspective.
 """
 from dotenv import load_dotenv
 import os
 import json
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from pydantic import BaseModel, Field
@@ -18,51 +17,38 @@ load_dotenv()
 
 class Quote(BaseModel):
     """A quote from a ruler."""
-    tag: str = Field(description="The nation tag of the ruler giving the quote")
-    ruler_name: str = Field(description="The name of the ruler")
-    ruler_title: str = Field(description="The title of the ruler")
-    quote: str = Field(description="A 1-sentence memorable quote in the ruler's voice")
+    tag: str = Field(description="Nation tag of the ruler")
+    ruler_name: str = Field(description="Name of the ruler")
+    ruler_title: str = Field(description="Title of the ruler")
+    quote: str = Field(description="1-sentence memorable quote")
 
 
 class QuotegiverOutput(BaseModel):
     """Structured output from the Quotegiver agent."""
-    quotes: List[Quote] = Field(
-        description="1-2 quotes from the most relevant rulers for this period's events",
-        min_length=1,
-        max_length=2
-    )
+    quotes: List[Quote] = Field(description="1-2 quotes from relevant rulers", min_length=1, max_length=2)
 
 
-SYSTEM_PROMPT = """You are a historical quote writer. Given a narrative of events and a list of rulers, 
-you select 1-2 rulers whose perspectives are most relevant to the events described, then write 
-brief, memorable quotes as if spoken by those rulers.
+SYSTEM_PROMPT = """You are a historical quote writer. Given a narrative and rulers list,
+select 1-2 rulers whose nations are most affected, then write memorable quotes.
 
-=== YOUR TASK ===
-1. Analyze the narrative to identify the most impactful events
-2. Select 1-2 rulers (by their nation tag) whose nations are most affected or involved
-3. Write a 1-sentence quote for each selected ruler that captures their perspective
-
-=== QUOTE GUIDELINES ===
+GUIDELINES:
 - Quotes should feel historically authentic to the era and culture
-- Capture the ruler's personality, concerns, or triumph
 - Keep each quote to a SINGLE SENTENCE (15-30 words)
-- The quote should relate to the events in the narrative
-- Use first person ("I", "We") as if the ruler is speaking
-- Make quotes memorable, quotable, and dramatic
+- Use first person ("I", "We")
+- Make quotes memorable and dramatic
 
-=== EXAMPLES ===
-- "We have shown the world that Rome's legions cannot be stopped by mere walls." - A triumphant conqueror
-- "Let them come - we shall meet them as our fathers did, with steel and fire." - A defiant defender
-- "In this treaty lies the foundation of a new age of peace." - A diplomatic ruler
-- "The gods have abandoned those who abandoned their duty to the Empire." - A vengeful emperor
+EXAMPLES:
+- "We have shown the world that Rome's legions cannot be stopped by mere walls."
+- "Let them come - we shall meet them as our fathers did, with steel and fire."
+- "In this treaty lies the foundation of a new age of peace."
 
-Return ONLY valid JSON matching the schema. No markdown, no extra text."""
+Return ONLY valid JSON matching the schema."""
 
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash-lite",
     google_api_key=os.getenv("GEMINI_API_KEY"),
-    timeout=30,  # 30 second timeout - this is a quick task
+    timeout=30,
     max_retries=2
 )
 
@@ -71,20 +57,12 @@ def format_rulers_for_quote(rulers: Dict[str, Dict[str, Any]], available_tags: D
     """Format rulers list for the prompt."""
     if not rulers:
         return "No rulers available."
-    
+
     lines = []
     for tag, info in rulers.items():
-        name = info.get("name", "Unknown")
-        title = info.get("title", "Ruler")
-        age = info.get("age", "unknown")
-        dynasty = info.get("dynasty", "")
-        
-        # Get nation name from tags
-        nation_name = available_tags.get(tag, {}).get("name", tag)
-        
-        dynasty_str = f" of {dynasty}" if dynasty else ""
-        lines.append(f"  - {tag} ({nation_name}): {name}{dynasty_str}, {title}, age {age}")
-    
+        nation = available_tags.get(tag, {}).get("name", tag)
+        dynasty = f" of {info.get('dynasty')}" if info.get("dynasty") else ""
+        lines.append(f"  - {tag} ({nation}): {info.get('name', '?')}{dynasty}, {info.get('title', '?')}, age {info.get('age', '?')}")
     return "\n".join(lines)
 
 
@@ -95,65 +73,41 @@ def generate_quotes(
     available_tags: Dict[str, Dict[str, Any]],
     year_range: str
 ) -> List[Dict[str, Any]]:
-    """
-    Generate 1-2 memorable quotes from the most relevant rulers.
-    
-    Args:
-        narrative: The narrative of events from the Dreamer
-        territorial_changes_summary: Summary of territorial changes
-        rulers: Current rulers by nation tag (at end of period)
-        available_tags: Dict of valid nation tags with metadata
-        year_range: The year range string (e.g., "117-137 AD")
-        
-    Returns:
-        List of quote dicts with tag, ruler_name, ruler_title, and quote
-    """
+    """Generate 1-2 memorable quotes from the most relevant rulers."""
     if not rulers:
         return []
-    
-    rulers_context = format_rulers_for_quote(rulers, available_tags)
-    
-    user_prompt = f"""Generate 1-2 memorable quotes from rulers for this period: {year_range}
+
+    rulers_ctx = format_rulers_for_quote(rulers, available_tags)
+    territorial = territorial_changes_summary or "No significant territorial changes."
+
+    user_prompt = f"""Generate 1-2 memorable quotes from rulers for: {year_range}
 
 === AVAILABLE RULERS ===
-{rulers_context}
+{rulers_ctx}
 
-=== NARRATIVE OF EVENTS ===
+=== NARRATIVE ===
 {narrative}
 
 === TERRITORIAL CHANGES ===
-{territorial_changes_summary if territorial_changes_summary else "No significant territorial changes."}
+{territorial}
 
-Select 1-2 of the most relevant rulers (those whose nations are most involved in or affected by these events) and write a memorable 1-sentence quote from each one's perspective at the end of this period.
+Select 1-2 relevant rulers and write a 1-sentence quote from each.
 
-Return JSON only with this format:
-{{
-  "quotes": [
-    {{"tag": "TAG", "ruler_name": "Name", "ruler_title": "Title", "quote": "The quote here."}}
-  ]
-}}"""
+Return JSON: {{"quotes": [{{"tag": "TAG", "ruler_name": "Name", "ruler_title": "Title", "quote": "The quote."}}]}}"""
 
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": user_prompt}
     ]
-    
+
     try:
         response = llm.invoke(messages)
-        
-        # Get content - handle both string and list responses
         content = response.content
         if isinstance(content, list):
-            text_parts = []
-            for block in content:
-                if isinstance(block, dict):
-                    text_parts.append(block.get("text", ""))
-                else:
-                    text_parts.append(str(block))
-            content = "\n".join(text_parts)
-        content = content.strip() if content else ""
-        
-        # Clean up response - sometimes LLMs wrap JSON in markdown
+            content = "\n".join(b.get("text", "") if isinstance(b, dict) else str(b) for b in content)
+        content = (content or "").strip()
+
+        # Extract JSON from markdown
         if "```json" in content:
             start = content.find("```json") + 7
             end = content.find("```", start)
@@ -164,40 +118,37 @@ Return JSON only with this format:
             end = content.find("```", start)
             if end > start:
                 content = content[start:end].strip()
-        
-        # Find JSON by looking for opening brace
+
         if not content.startswith("{"):
-            brace_start = content.find("{")
-            if brace_start != -1:
+            brace = content.find("{")
+            if brace != -1:
                 depth = 0
-                for i, char in enumerate(content[brace_start:], brace_start):
-                    if char == "{":
+                for i, c in enumerate(content[brace:], brace):
+                    if c == "{":
                         depth += 1
-                    elif char == "}":
+                    elif c == "}":
                         depth -= 1
                         if depth == 0:
-                            content = content[brace_start:i+1]
+                            content = content[brace:i+1]
                             break
-        
+
         result = json.loads(content)
         quotes = result.get("quotes", [])
-        
-        # Validate quotes - ensure they reference valid rulers
-        valid_quotes = []
-        for quote in quotes[:2]:  # Max 2 quotes
-            tag = quote.get("tag", "")
+
+        # Validate and enrich quotes with actual ruler info
+        valid = []
+        for q in quotes[:2]:
+            tag = q.get("tag", "")
             if tag in rulers:
-                # Use actual ruler info from state
                 ruler = rulers[tag]
-                valid_quotes.append({
+                valid.append({
                     "tag": tag,
-                    "ruler_name": ruler.get("name", quote.get("ruler_name", "Unknown")),
-                    "ruler_title": ruler.get("title", quote.get("ruler_title", "Ruler")),
-                    "quote": quote.get("quote", "")
+                    "ruler_name": ruler.get("name", q.get("ruler_name", "Unknown")),
+                    "ruler_title": ruler.get("title", q.get("ruler_title", "Ruler")),
+                    "quote": q.get("quote", "")
                 })
-        
-        return valid_quotes if valid_quotes else []
-        
-    except (json.JSONDecodeError, Exception) as e:
+        return valid
+
+    except Exception as e:
         print(f"Failed to generate quotes: {e}")
         return []
