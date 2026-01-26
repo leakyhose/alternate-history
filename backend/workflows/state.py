@@ -106,6 +106,9 @@ class WorkflowState(TypedDict, total=False):
     start_year: int                 # Year when divergence begins (user-provided)
     years_to_progress: int          # Years remaining to simulate
     current_year: int               # Year after this iteration completes
+
+    # Divergences (user-provided alternate history changes)
+    divergences: List[str]          # List of divergence commands
     
     # Ruler tracking - Dict keyed by nation tag (supports empire splits)
     # e.g., {"ROM": {...}, "ROM_EAST": {...}}
