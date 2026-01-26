@@ -3,7 +3,7 @@ import json
 import os
 import logging
 from typing import Optional, Any
-from datetime import datetime
+from datetime import datetime, timezone
 
 from kafka import KafkaProducer
 from kafka.errors import KafkaError
@@ -82,7 +82,7 @@ def produce_timeline_event(
         "event_type": "timeline_event",
         "game_id": game_id,
         "iteration": iteration,
-        "timestamp": datetime.now(datetime.timezone.utc).isoformat() + "Z",
+        "timestamp": datetime.now(timezone.utc).isoformat() + "Z",
         "scenario_id": scenario_id,
         "year_range": year_range,
         "filter_result": filter_result,
