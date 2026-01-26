@@ -91,7 +91,11 @@ class IllustratorOutput(TypedDict):
 
 class WorkflowState(TypedDict, total=False):
     """Main workflow state for the alternate history simulation."""
-    
+
+    # Game identification (for Kafka events)
+    game_id: str                    # Unique identifier for this game session
+    iteration: int                  # Current iteration number (1, 2, 3, ...)
+
     # Filter state (from filter node)
     filter_passed: bool             # True if divergence passed filter
     filter_reason: str              # Reason for rejection (if rejected)
