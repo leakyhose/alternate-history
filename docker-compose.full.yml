@@ -122,6 +122,20 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
+  geographer:
+    build:
+      context: ./backend
+      dockerfile: ../docker/Dockerfile.geographer
+    container_name: geographer
+    env_file:
+      - ./backend/.env
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+    depends_on:
+      kafka:
+        condition: service_healthy
+    restart: unless-stopped
+
 volumes:
   kafka_data:
   redis_data:
