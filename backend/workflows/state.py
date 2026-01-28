@@ -23,39 +23,43 @@ class LogEntry(TypedDict):
     year_range: str                    # e.g., "630-650 AD" or "-630 AD" for initial
     narrative: str                     # Human-readable story
     divergences: List[str]             # Divergences active at this point
-    territorial_changes_summary: str   # Prose summary of territorial changes (for display)
     quotes: List[Quote]                # 1-2 quotes from relevant rulers
 
 
-class HistorianOutput(TypedDict, total=False):
-    """Output from the Historian agent."""
-    period: str
-    real_events: List[str]
-    keep_in_mind: List[str]
-    conditional_events: List[Dict[str, str]]
+class WriterOutput(TypedDict, total=False):
+    """Output from the Writer agent."""
+    narrative: str                     # 100-200 word narrative
+    updated_divergences: List[str]     # Divergences still affecting the timeline
+    new_divergences: List[str]         # New butterfly effects from this period
+    merged: bool                       # True if timeline merged back to real history
 
 
 class TerritorialChange(TypedDict, total=False):
-    """A single structured territorial change from the Dreamer.
+    """A single structured territorial change from the Cartographer.
     
     These describe NET territorial changes from period START to END,
     not intermediate events during the period.
+    
+    Change types and required fields:
+    - CONQUEST: location, to_nation, context (gained from untracked nation)
+    - LOSS: location, from_nation, context (lost to untracked nation)
+    - TRANSFER: location, from_nation, to_nation, context (between tracked nations)
     """
-    location: str           # Natural language description of WHERE
+    location: str           # VERY SPECIFIC location description for Geographer
     change_type: str        # CONQUEST | LOSS | TRANSFER
-    from_nation: str        # Nation losing territory (optional)
-    to_nation: str          # Nation gaining territory (optional)
-    context: str            # Brief explanation (optional)
+    from_nation: str        # Nation losing territory (required for LOSS, TRANSFER)
+    to_nation: str          # Nation gaining territory (required for CONQUEST, TRANSFER)
+    context: str            # Brief explanation
 
 
-class DreamerOutput(TypedDict, total=False):
-    """Output from the Dreamer agent."""
-    rulers: Dict[str, RulerInfo]
-    narrative: str
+class CartographerOutput(TypedDict, total=False):
+    """Output from the Cartographer agent."""
     territorial_changes: List[TerritorialChange]  # Structured changes for Geographer
-    territorial_changes_summary: str              # Human-readable summary for display
-    updated_divergences: List[str]
-    merged: bool
+
+
+class RulerUpdatesOutput(TypedDict, total=False):
+    """Output from the Ruler Updates agent."""
+    rulers: Dict[str, RulerInfo]  # Updated rulers with ages, deaths, successions
 
 
 class ProvinceUpdate(TypedDict):
@@ -118,9 +122,13 @@ class WorkflowState(TypedDict, total=False):
     logs: List[LogEntry]            # Full logs for frontend display
     condensed_logs: str             # Summarized older logs for agent context
     
-    # Inter-agent data (not persisted long-term)
-    historian_output: HistorianOutput   # Era events/trends from Historian
-    dreamer_output: DreamerOutput       # Changes/decisions from Dreamer
+    # Inter-agent data (cleared after each iteration)
+    # Main pipeline: Writer -> Cartographer -> Ruler Updates
+    writer_output: WriterOutput             # Narrative, divergences, merged from Writer
+    cartographer_output: CartographerOutput # Territorial changes from Cartographer
+    ruler_updates_output: RulerUpdatesOutput # Updated rulers from Ruler Updates
+    
+    # Microservice outputs (Quotegiver, Geographer, Illustrator)
     territorial_changes: List[ProvinceUpdate]  # Changes for Geographer to apply
     quotegiver_output: QuotegiverOutput # Quotes from the Quotegiver
     illustrator_output: IllustratorOutput  # Portraits from the Illustrator
