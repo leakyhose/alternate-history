@@ -1,3 +1,6 @@
+# Development: Infrastructure only
+# Usage: docker-compose up -d
+
 version: '3.8'
 
 services:
@@ -17,7 +20,6 @@ services:
       KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
-      # Topic settings
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
@@ -43,7 +45,6 @@ services:
       kafka:
         condition: service_healthy
 
-  # Creates topics on startup - runs once then exits
   kafka-init:
     image: apache/kafka:latest
     container_name: kafka-init
@@ -53,13 +54,10 @@ services:
     entrypoint: ["/bin/sh", "-c"]
     command: |
       "
-      echo 'Creating Kafka topics'
       /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic timeline.events --partitions 6 --replication-factor 1
       /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic quotes.ready --partitions 3 --replication-factor 1
       /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic provinces.updated --partitions 3 --replication-factor 1
       /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic portraits.ready --partitions 3 --replication-factor 1
-      echo 'Topics created:'
-      /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --list
       "
 
   redis:
