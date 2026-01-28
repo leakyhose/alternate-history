@@ -1,12 +1,9 @@
 """Agent nodes for the workflow."""
-import concurrent.futures
 from workflows.state import WorkflowState
 from agents.writer_agent import write_narrative
 from agents.cartographer_agent import extract_territorial_changes
 from agents.ruler_updates_agent import update_rulers
-from agents.geographer_agent import interpret_territorial_changes
 from util.scenario import get_scenario_tags
-from workflows.nodes.memory import get_province_memory
 
 
 def writer_node(state: WorkflowState) -> dict:
@@ -96,30 +93,6 @@ def ruler_updates_node(state: WorkflowState) -> dict:
         return {"ruler_updates_output": {"rulers": fallback_rulers}, "error": str(e), "error_node": "ruler_updates"}
 
 
-def geographer_node(state: WorkflowState) -> dict:
-    """Translate territorial changes to province updates."""
-    cartographer_output = state.get("cartographer_output", {})
-    territorial_changes = cartographer_output.get("territorial_changes", [])
-    scenario_id = state.get("scenario_id", "rome")
-
-    print(f"[Geographer] Processing changes")
-    memory = get_province_memory()
-    current_provinces = memory.get_all_provinces_as_dicts()
-
-    try:
-        geographer_output = interpret_territorial_changes(
-            territorial_changes=territorial_changes,
-            scenario_id=scenario_id,
-            current_provinces=current_provinces
-        )
-        province_updates = geographer_output.get("province_updates", [])
-        print(f"[Geographer] Done: {len(province_updates)} updates")
-        return {"territorial_changes": province_updates}
-    except Exception as e:
-        print(f"[Geographer] ERROR: {e}")
-        return {"territorial_changes": [], "error": str(e), "error_node": "geographer"}
-
-
 def illustrator_node(state: WorkflowState) -> dict:
     """Generate portraits for quoted rulers."""
     from util.portrait_cache import (
@@ -178,20 +151,3 @@ def illustrator_node(state: WorkflowState) -> dict:
     return {"illustrator_output": {"portraits": portraits, "enriched_quotes": enriched_quotes}}
 
 
-# Parallel execution helpers
-
-def _run_geographer(state: WorkflowState) -> dict:
-    cartographer_output = state.get("cartographer_output", {})
-    territorial_changes = cartographer_output.get("territorial_changes", [])
-    scenario_id = state.get("scenario_id", "rome")
-
-    memory = get_province_memory()
-    current_provinces = memory.get_all_provinces_as_dicts()
-
-    try:
-        geographer_output = interpret_territorial_changes(
-            territorial_changes=territorial_changes, scenario_id=scenario_id, current_provinces=current_provinces
-        )
-        return {"province_updates": geographer_output.get("province_updates", []), "error": None}
-    except Exception as e:
-        return {"province_updates": [], "error": str(e)}
