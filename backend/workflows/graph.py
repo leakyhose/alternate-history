@@ -2,7 +2,7 @@
 Simplified workflow graph for the event-driven architecture.
 
 This workflow runs the CORE pipeline only:
-  Filter -> Initialize -> Historian -> Dreamer -> Kafka
+  Filter -> Initialize -> Writer -> Cartographer -> Ruler Updates -> Kafka
 
 The auxiliary processing (Quotegiver, Geographer, Illustrator) is now
 handled by separate microservices that consume from Kafka.
@@ -12,8 +12,9 @@ from workflows.state import WorkflowState
 from workflows.nodes import (
     filter_node,
     initialize_game_node,
-    historian_node,
-    dreamer_node,
+    writer_node,
+    cartographer_node,
+    ruler_updates_node,
 )
 from workflows.nodes.kafka import produce_to_kafka_node
 
@@ -25,10 +26,11 @@ def build_graph() -> StateGraph:
     Flow:
     1. filter_node: Validate user divergence
     2. initialize_game_node: Set up game state, load provinces/rulers
-    3. historian_node: Get real historical context for the period
-    4. dreamer_node: Make creative decisions based on divergences
-    5. produce_to_kafka_node: Publish TimelineEvent to Kafka
-    6. END
+    3. writer_node: Create the alternate history narrative
+    4. cartographer_node: Extract territorial changes from narrative
+    5. ruler_updates_node: Update rulers based on narrative
+    6. produce_to_kafka_node: Publish TimelineEvent to Kafka
+    7. END
 
     Note: Quotegiver, Geographer, and Illustrator are now separate
     microservices that consume from the timeline.events Kafka topic.
@@ -38,8 +40,9 @@ def build_graph() -> StateGraph:
     # Add core nodes only
     graph.add_node("filter", filter_node)
     graph.add_node("initialize", initialize_game_node)
-    graph.add_node("historian", historian_node)
-    graph.add_node("dreamer", dreamer_node)
+    graph.add_node("writer", writer_node)
+    graph.add_node("cartographer", cartographer_node)
+    graph.add_node("ruler_updates", ruler_updates_node)
     graph.add_node("produce_to_kafka", produce_to_kafka_node)
 
     # Set entry point
@@ -56,14 +59,17 @@ def build_graph() -> StateGraph:
         }
     )
 
-    # Initialize -> Historian
-    graph.add_edge("initialize", "historian")
+    # Initialize -> Writer
+    graph.add_edge("initialize", "writer")
 
-    # Historian -> Dreamer
-    graph.add_edge("historian", "dreamer")
+    # Writer -> Cartographer
+    graph.add_edge("writer", "cartographer")
 
-    # Dreamer -> Kafka
-    graph.add_edge("dreamer", "produce_to_kafka")
+    # Cartographer -> Ruler Updates
+    graph.add_edge("cartographer", "ruler_updates")
+
+    # Ruler Updates -> Kafka
+    graph.add_edge("ruler_updates", "produce_to_kafka")
 
     # Kafka -> END (single iteration, frontend will call /continue for more)
     graph.add_edge("produce_to_kafka", END)
@@ -79,24 +85,27 @@ def build_continue_graph() -> StateGraph:
     already exists.
 
     Flow:
-    1. historian_node
-    2. dreamer_node
-    3. produce_to_kafka_node
-    4. END
+    1. writer_node
+    2. cartographer_node
+    3. ruler_updates_node
+    4. produce_to_kafka_node
+    5. END
     """
     graph = StateGraph(WorkflowState)
 
     # Add nodes (skip filter and initialize)
-    graph.add_node("historian", historian_node)
-    graph.add_node("dreamer", dreamer_node)
+    graph.add_node("writer", writer_node)
+    graph.add_node("cartographer", cartographer_node)
+    graph.add_node("ruler_updates", ruler_updates_node)
     graph.add_node("produce_to_kafka", produce_to_kafka_node)
 
     # Set entry point
-    graph.set_entry_point("historian")
+    graph.set_entry_point("writer")
 
     # Define edges
-    graph.add_edge("historian", "dreamer")
-    graph.add_edge("dreamer", "produce_to_kafka")
+    graph.add_edge("writer", "cartographer")
+    graph.add_edge("cartographer", "ruler_updates")
+    graph.add_edge("ruler_updates", "produce_to_kafka")
     graph.add_edge("produce_to_kafka", END)
 
     return graph.compile()
