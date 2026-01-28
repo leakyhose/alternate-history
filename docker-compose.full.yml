@@ -136,6 +136,23 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
+  illustrator:
+    build:
+      context: ./backend
+      dockerfile: ../docker/Dockerfile.illustrator
+    container_name: illustrator
+    env_file:
+      - ./backend/.env
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      kafka:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
 volumes:
   kafka_data:
   redis_data:
