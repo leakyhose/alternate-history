@@ -47,6 +47,7 @@ def produce_timeline_event(
     filter_result: dict,
     historian_context: dict,
     dreamer_decision: dict,
+    current_provinces: list = None,
 ) -> bool:
     """Produce a TimelineEvent to Kafka."""
     producer = get_producer()
@@ -61,6 +62,7 @@ def produce_timeline_event(
         "filter_result": filter_result,
         "historian_context": historian_context,
         "dreamer_decision": dreamer_decision,
+        "current_provinces": current_provinces or [],
     }
 
     try:

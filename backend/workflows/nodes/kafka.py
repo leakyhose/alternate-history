@@ -1,6 +1,7 @@
 """Kafka producer node for the workflow."""
 from workflows.state import WorkflowState
 from util.kafka_producer import produce_timeline_event
+from workflows.nodes.memory import get_current_provinces
 
 
 def produce_to_kafka_node(state: WorkflowState) -> dict:
@@ -40,6 +41,7 @@ def produce_to_kafka_node(state: WorkflowState) -> dict:
             filter_result=filter_result,
             historian_context={},
             dreamer_decision=decision,
+            current_provinces=get_current_provinces(),
         )
         print(f"[Kafka] {'Published' if success else 'FAILED'} event: game={game_id}, iteration={iteration}")
 
