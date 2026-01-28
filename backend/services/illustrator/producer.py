@@ -28,6 +28,7 @@ class PortraitsProducer:
             key_serializer=lambda k: k.encode("utf-8") if k else None,
             acks=1,
             retries=3,
+            max_request_size=5 * 1024 * 1024,  # 5MB for portrait images
         )
 
     def produce_portraits(

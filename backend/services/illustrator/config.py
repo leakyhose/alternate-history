@@ -19,7 +19,7 @@ REDIS_PORTRAIT_TTL_SECONDS = 24 * 60 * 60  # 24 hours
 
 # LLM settings
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL = "gemini-2.5-flash-preview-05-20"
+GEMINI_MODEL = "gemini-2.5-flash-image"
 
 # Processing settings
 MAX_PORTRAITS_PER_EVENT = 2

@@ -63,6 +63,34 @@ def cache_portrait(
         return False
 
 
+def store_portrait_for_event(
+    game_id: str,
+    iteration: int,
+    ruler_name: str,
+    portrait_base64: str,
+) -> str:
+    """Store a portrait in Redis and return the key."""
+    try:
+        client = get_redis_client()
+        key = f"portrait:event:{game_id}:{iteration}:{ruler_name}"
+        client.setex(key, REDIS_PORTRAIT_TTL_SECONDS, portrait_base64)
+        logger.info(f"Stored portrait: {key}")
+        return key
+    except redis.RedisError as e:
+        logger.error(f"Redis store error: {e}")
+        return ""
+
+
+def get_portrait_by_key(key: str) -> Optional[str]:
+    """Get a portrait by its Redis key."""
+    try:
+        client = get_redis_client()
+        return client.get(key)
+    except redis.RedisError as e:
+        logger.error(f"Redis get error: {e}")
+        return None
+
+
 def close_redis() -> None:
     """Close Redis connection."""
     global _redis_client
