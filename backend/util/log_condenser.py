@@ -157,7 +157,6 @@ Period: {log.get('year_range', 'Unknown')}
 {log.get('narrative', 'No narrative.')}
 
 Active Divergences: {', '.join(log.get('divergences', [])) or 'None'}
-Territorial Changes: {log.get('territorial_changes_summary', log.get('territorial_changes_description', 'None recorded.'))}
 """
         formatted_entries.append(entry.strip())
     
@@ -200,7 +199,6 @@ def check_context_budget(
     logs_text = ""
     for log in logs:
         logs_text += log.get("narrative", "")
-        logs_text += log.get("territorial_changes_summary", log.get("territorial_changes_description", ""))
     logs_tokens = estimate_token_count(logs_text)
     
     total_tokens = condensed_tokens + logs_tokens

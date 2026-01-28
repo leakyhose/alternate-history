@@ -18,10 +18,6 @@ def serialize_log(log: Dict[str, Any]) -> Dict[str, Any]:
         "year_range": str(log.get("year_range", "")),
         "narrative": str(log.get("narrative", "")),
         "divergences": list(log.get("divergences", [])),
-        "territorial_changes_summary": str(
-            log.get("territorial_changes_summary",
-                    log.get("territorial_changes_description", ""))
-        ),
         "quotes": list(log.get("quotes", []))
     }
 
@@ -68,3 +64,42 @@ def serialize_province(province) -> Dict[str, Any]:
 def serialize_provinces(provinces: List) -> List[Dict[str, Any]]:
     """Convert a list of provinces to JSON-serializable format."""
     return [serialize_province(p) for p in provinces]
+
+
+def build_log_entry(
+    year_range: str,
+    narrative: str,
+    divergences: List[str],
+    quotes: List[Dict[str, Any]],
+) -> Dict[str, Any]:
+    """Build a log entry dict for the simulation history."""
+    return {
+        "year_range": year_range,
+        "narrative": narrative,
+        "divergences": divergences,
+        "quotes": quotes,
+    }
+
+
+def build_province_snapshots(
+    logs: List[Dict[str, Any]],
+    provinces: List[Dict[str, Any]],
+    rulers: Dict[str, Dict[str, Any]],
+    divergences: List[str],
+) -> List[Dict[str, Any]]:
+    """Build province snapshots for timeline navigation.
+    
+    Each snapshot captures the state at a particular log entry.
+    For now, we just have one snapshot per log (the latest state).
+    In the future, we could track intermediate states.
+    """
+    snapshots = []
+    for i, log in enumerate(logs):
+        snapshots.append({
+            "log_index": i,
+            "year_range": log.get("year_range", ""),
+            "provinces": serialize_provinces(provinces),
+            "rulers": serialize_rulers(rulers),
+            "divergences": divergences,
+        })
+    return snapshots

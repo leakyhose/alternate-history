@@ -68,7 +68,7 @@ def format_rulers_for_quote(rulers: Dict[str, Dict[str, Any]], available_tags: D
 
 def generate_quotes(
     narrative: str,
-    territorial_changes_summary: str,
+    territorial_changes_summary: str,  # DEPRECATED - kept for compatibility, not used
     rulers: Dict[str, Dict[str, Any]],
     available_tags: Dict[str, Dict[str, Any]],
     year_range: str
@@ -78,7 +78,6 @@ def generate_quotes(
         return []
 
     rulers_ctx = format_rulers_for_quote(rulers, available_tags)
-    territorial = territorial_changes_summary or "No significant territorial changes."
 
     user_prompt = f"""Generate 1-2 memorable quotes from rulers for: {year_range}
 
@@ -87,9 +86,6 @@ def generate_quotes(
 
 === NARRATIVE ===
 {narrative}
-
-=== TERRITORIAL CHANGES ===
-{territorial}
 
 Select 1-2 relevant rulers and write a 1-sentence quote from each.
 

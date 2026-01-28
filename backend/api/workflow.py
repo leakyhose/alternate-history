@@ -32,9 +32,14 @@ async def start_workflow(request: StartRequest) -> StartResponse:
     """
     Start a new alternate history game.
 
-    Runs the core pipeline (Filter -> Historian -> Dreamer) and publishes
-    a TimelineEvent to Kafka. Returns minimal data - the frontend should
-    connect via WebSocket to receive full updates from the Aggregator service.
+    Runs the main loop pipeline:
+    Filter -> Initialize -> Writer -> Cartographer -> Ruler Updates -> Kafka
+    
+    Returns minimal response. Frontend will get full state via WebSocket
+    from the Aggregator service (consuming from Kafka microservices).
+    
+    NOTE: Quotegiver, Geographer, Illustrator are separate microservices
+    that consume from Kafka - they are NOT called here.
     """
     scenario_metadata = load_scenario_metadata(request.scenario_id)
     filter_result = filter_command(request.command, scenario_metadata)
@@ -51,7 +56,8 @@ async def start_workflow(request: StartRequest) -> StartResponse:
     _setup_game_tags(game, request.scenario_id)
 
     try:
-        # Run the simplified workflow (Filter -> Historian -> Dreamer -> Kafka)
+        # Run the core workflow (Filter -> Writer -> Cartographer -> Ruler Updates -> Kafka)
+        # This produces a TimelineEvent to Kafka for microservices to consume
         final_state = workflow.invoke({
             "game_id": game.id,
             "iteration": 1,
@@ -62,8 +68,9 @@ async def start_workflow(request: StartRequest) -> StartResponse:
             "filter_passed": True
         })
 
-        # Store workflow state for continue operations
+        # Store minimal workflow state for continue operations
         game.workflow_state = dict(final_state)
+        game.workflow_state["scenario_id"] = request.scenario_id
 
     except Exception as e:
         import traceback
@@ -72,19 +79,15 @@ async def start_workflow(request: StartRequest) -> StartResponse:
         delete_game(game.id)
         raise HTTPException(status_code=500, detail=str(e))
 
-    # Return minimal response - frontend gets full state via WebSocket
+    # Return minimal response - frontend gets full data via WebSocket
     return StartResponse(
         status="started",
         game_id=game.id,
         year=year,
         result={
             "scenario_id": request.scenario_id,
-            "iteration": final_state.get("iteration", 1),
-            "years_to_progress": request.years_to_progress,
-            "nation_tags": {
-                tag: {"name": info.name, "color": info.color}
-                for tag, info in game.nation_tags.items()
-            }
+            "iteration": 1,
+            "message": "Timeline event published to Kafka. Await WebSocket for full state."
         }
     )
 
@@ -94,9 +97,14 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
     """
     Continue an existing game for more iterations.
 
-    Runs the continue workflow (Historian -> Dreamer -> Kafka) and publishes
-    a TimelineEvent to Kafka. Returns minimal data - the frontend receives
-    full updates via WebSocket from the Aggregator.
+    Runs the main loop pipeline:
+    Writer -> Cartographer -> Ruler Updates -> Kafka
+    
+    Returns minimal response. Frontend will get full state via WebSocket
+    from the Aggregator service (consuming from Kafka microservices).
+    
+    NOTE: Quotegiver, Geographer, Illustrator are separate microservices
+    that consume from Kafka - they are NOT called here.
     """
     game = get_game(game_id)
     if not game:
@@ -118,9 +126,14 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
         state["divergences"] = state.get("divergences", []) + request.new_divergences
 
     try:
-        # Run the simplified continue workflow (Historian -> Dreamer -> Kafka)
+        # Run the continue workflow (Writer -> Cartographer -> Ruler Updates -> Kafka)
+        # This produces a TimelineEvent to Kafka for microservices to consume
         final_state = continue_workflow.invoke(state)
         game.workflow_state = dict(final_state)
+
+        current_year = final_state.get("current_year", state.get("current_year", 0))
+        iteration = final_state.get("iteration", 1)
+        merged = final_state.get("merged", False)
 
     except Exception as e:
         import traceback
@@ -128,15 +141,15 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
 
-    # Return minimal response - frontend gets full state via WebSocket
+    # Return minimal response - frontend gets full data via WebSocket
     return ContinueResponse(
-        status="iteration_started",
-        current_year=int(final_state.get("current_year", 0)),
-        merged=bool(final_state.get("merged", False)),
+        status="iteration_complete",
+        current_year=current_year,
+        merged=merged,
         logs=[],
         result={
-            "iteration": final_state.get("iteration", 1),
-            "years_to_progress": request.years_to_progress
+            "iteration": iteration,
+            "message": "Timeline event published to Kafka. Await WebSocket for full state."
         }
     )
 
