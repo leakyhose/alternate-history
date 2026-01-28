@@ -44,7 +44,7 @@ def initialize_game_node(state: WorkflowState) -> dict:
             "year_range": f"-{start_year} AD",
             "narrative": _generate_initial_narrative(start_year, scenario_id),
             "divergences": divergences.copy(),
-            "territorial_changes_summary": _generate_initial_territorial_summary(start_year, scenario_id)
+            "quotes": []  # No quotes for initial log
         }
         
         return {
@@ -55,6 +55,10 @@ def initialize_game_node(state: WorkflowState) -> dict:
             "current_year": start_year,
             "years_to_progress": years_to_progress,
             "merged": False,
+            # Clear all agent outputs
+            "writer_output": {},
+            "cartographer_output": {},
+            "ruler_updates_output": {},
             "historian_output": {},
             "dreamer_output": {},
             "territorial_changes": []
@@ -105,8 +109,3 @@ def _generate_initial_narrative(year: int, scenario_id: str = "rome") -> str:
     scenario_name = metadata.get("name", "the world")
     
     return f"{scenario_name} in {year} AD."
-
-
-def _generate_initial_territorial_summary(year: int, scenario_id: str = "rome") -> str:
-    """Generate placeholder territorial summary for a year."""
-    return f"Territorial state as of {year} AD."

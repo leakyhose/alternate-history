@@ -1,108 +1,159 @@
 """Agent nodes for the alternate history workflow."""
 import concurrent.futures
 from workflows.state import WorkflowState
-from agents.historian_agent import get_historical_context
-from agents.dreamer_agent import make_decision
+from agents.writer_agent import write_narrative
+from agents.cartographer_agent import extract_territorial_changes
+from agents.ruler_updates_agent import update_rulers
 from agents.geographer_agent import interpret_territorial_changes
 from agents.quotegiver_agent import generate_quotes
 from agents.illustrator_agent import generate_portraits, enrich_quotes_with_portraits
 from util.scenario import get_scenario_tags
 from workflows.nodes.memory import get_province_memory
 
-def historian_node(state: WorkflowState) -> dict:
-    """
-    Historian Agent: Provide real historical context for the period.
-    
-    The Historian does NOT see current alternate state - only provides
-    the baseline of what ACTUALLY happened in real history.
-    """
-    current_year = state.get("current_year", state.get("start_year"))
-    years_to_progress = state.get("years_to_progress", 20)
-    scenario_id = state.get("scenario_id", "rome")
-    
-    # Get nation tags for the scenario
-    tags = get_scenario_tags(scenario_id)
-    
-    print(f"[Historian] {current_year}-{current_year + years_to_progress} AD")
-    
-    try:
-        historian_output = get_historical_context(
-            start_year=current_year,
-            years_to_progress=years_to_progress,
-            tags=tags
-        )
-        
-        events_count = len(historian_output.get("conditional_events", []))
-        print(f"[Historian] Done: {events_count} conditional events")
-        
-        return {
-            "historian_output": historian_output
-        }
-    except Exception as e:
-        print(f"[Historian] ERROR: {e}")
-        return {
-            "historian_output": {
-                "period": f"{current_year}-{current_year + years_to_progress}",
-                "conditional_events": []
-            },
-            "error": str(e),
-            "error_node": "historian"
-        }
 
-
-def dreamer_node(state: WorkflowState) -> dict:
+def writer_node(state: WorkflowState) -> dict:
     """
-    Dreamer Agent: Make creative decisions based on divergences.
+    Writer Agent: Create the alternate history narrative.
     
-    Synthesizes divergences + historian context to decide what actually happens.
-    Only allows nation tags defined in the scenario metadata.
+    The Writer considers real history, current divergences, and past events
+    to craft an eventful but grounded narrative (100-200 words).
+    
+    Outputs: narrative, updated_divergences, merged
     """
-    historian_output = state.get("historian_output", {})
     divergences = state.get("divergences", [])
     condensed_logs = state.get("condensed_logs", "")
     logs = state.get("logs", [])
-    rulers = state.get("rulers", {})
     current_year = state.get("current_year", state.get("start_year"))
     years_to_progress = state.get("years_to_progress", 20)
     scenario_id = state.get("scenario_id", "rome")
     
-    print(f"[Dreamer] {current_year}-{current_year + years_to_progress} AD")
+    print(f"[Writer] {current_year}-{current_year + years_to_progress} AD")
     
     # Get available nation tags from scenario metadata
     available_tags = get_scenario_tags(scenario_id)
     
     try:
-        dreamer_output = make_decision(
-            historian_output=historian_output,
+        writer_output = write_narrative(
             divergences=divergences,
             condensed_logs=condensed_logs,
             recent_logs=logs,
-            rulers=rulers,
             current_year=current_year,
             years_to_progress=years_to_progress,
             available_tags=available_tags
         )
         
-        merged = dreamer_output.get('merged', False)
-        div_count = len(dreamer_output.get("updated_divergences", []))
-        print(f"[Dreamer] Done: {div_count} divergences, merged={merged}")
+        merged = writer_output.get('merged', False)
+        div_count = len(writer_output.get("updated_divergences", []))
+        print(f"[Writer] Done: {div_count} divergences, merged={merged}")
         
         return {
-            "dreamer_output": dreamer_output
+            "writer_output": writer_output
         }
     except Exception as e:
-        print(f"[Dreamer] ERROR: {e}")
+        print(f"[Writer] ERROR: {e}")
         return {
-            "dreamer_output": {
-                "rulers": rulers,
-                "narrative": f"[Error in Dreamer agent: {str(e)}]",
-                "territorial_changes": [],
-                "territorial_changes_summary": "",
+            "writer_output": {
+                "narrative": f"[Error in Writer agent: {str(e)}]",
                 "updated_divergences": divergences,
                 "merged": False
             },
             "error": str(e),
-            "error_node": "dreamer"
+            "error_node": "writer"
+        }
+
+
+def cartographer_node(state: WorkflowState) -> dict:
+    """
+    Cartographer Agent: Extract territorial changes from the narrative.
+    
+    Reads the Writer's narrative and identifies territorial changes,
+    structuring them for the Geographer microservice to process.
+    
+    Outputs: territorial_changes (list)
+    """
+    writer_output = state.get("writer_output", {})
+    narrative = writer_output.get("narrative", "")
+    current_year = state.get("current_year", state.get("start_year"))
+    years_to_progress = state.get("years_to_progress", 20)
+    scenario_id = state.get("scenario_id", "rome")
+    
+    year_range = f"{current_year}-{current_year + years_to_progress}"
+    
+    # Get available nation tags for validation
+    available_tags = get_scenario_tags(scenario_id)
+    
+    print(f"[Cartographer] Extracting territorial changes for {year_range} AD")
+    
+    try:
+        cartographer_output = extract_territorial_changes(
+            narrative=narrative,
+            year_range=year_range,
+            available_tags=available_tags
+        )
+        
+        changes_count = len(cartographer_output.get("territorial_changes", []))
+        print(f"[Cartographer] Done: {changes_count} territorial changes")
+        
+        return {
+            "cartographer_output": cartographer_output
+        }
+    except Exception as e:
+        print(f"[Cartographer] ERROR: {e}")
+        return {
+            "cartographer_output": {
+                "territorial_changes": []
+            },
+            "error": str(e),
+            "error_node": "cartographer"
+        }
+
+
+def ruler_updates_node(state: WorkflowState) -> dict:
+    """
+    Ruler Updates Agent: Update rulers based on the narrative.
+    
+    Takes the current rulers, the Writer's narrative, and the year range
+    to produce an updated rulers list with aged rulers, deaths, and successions.
+    
+    Outputs: rulers (dict)
+    """
+    rulers = state.get("rulers", {})
+    writer_output = state.get("writer_output", {})
+    narrative = writer_output.get("narrative", "")
+    current_year = state.get("current_year", state.get("start_year"))
+    years_to_progress = state.get("years_to_progress", 20)
+    
+    print(f"[Ruler Updates] Updating rulers for {current_year}-{current_year + years_to_progress} AD")
+    
+    try:
+        ruler_output = update_rulers(
+            current_rulers=rulers,
+            narrative=narrative,
+            current_year=current_year,
+            years_to_progress=years_to_progress
+        )
+        
+        rulers_count = len(ruler_output.get("rulers", {}))
+        print(f"[Ruler Updates] Done: {rulers_count} rulers")
+        
+        return {
+            "ruler_updates_output": ruler_output
+        }
+    except Exception as e:
+        print(f"[Ruler Updates] ERROR: {e}")
+        # Fallback: just age existing rulers
+        fallback_rulers = {}
+        for tag, info in rulers.items():
+            fallback_rulers[tag] = {
+                "name": info.get("name", "Unknown"),
+                "title": info.get("title", "Ruler"),
+                "age": info.get("age", 30) + years_to_progress,
+                "dynasty": info.get("dynasty", "")
+            }
+        return {
+            "ruler_updates_output": {"rulers": fallback_rulers},
+            "error": str(e),
+            "error_node": "ruler_updates"
         }
 
 
@@ -119,8 +170,8 @@ def geographer_node(state: WorkflowState) -> dict:
     The agent processes changes one-by-one, calling tools as needed, then
     returns the accumulated province updates.
     """
-    dreamer_output = state.get("dreamer_output", {})
-    territorial_changes = dreamer_output.get("territorial_changes", [])
+    cartographer_output = state.get("cartographer_output", {})
+    territorial_changes = cartographer_output.get("territorial_changes", [])
     scenario_id = state.get("scenario_id", "rome")
     
     print(f"[Geographer] Processing territorial changes")
@@ -155,16 +206,16 @@ def quotegiver_node(state: WorkflowState) -> dict:
     """
     Quotegiver Agent: Generate memorable quotes from relevant rulers.
     
-    Analyzes the narrative and territorial changes, selects 1-2 most relevant
-    rulers, and generates quotes from their perspective.
+    Analyzes the narrative and selects 1-2 most relevant rulers,
+    and generates quotes from their perspective.
     
-    IMPORTANT: Uses rulers from dreamer_output (AFTER the time period), not
-    the state's rulers (which are from BEFORE the time period).
+    IMPORTANT: Uses rulers from ruler_updates_output (AFTER the time period).
     """
-    dreamer_output = state.get("dreamer_output", {})
-    # Use rulers from dreamer output - these are the rulers AFTER the time period
-    # (with updated ages, successors for deceased rulers, etc.)
-    rulers = dreamer_output.get("rulers", state.get("rulers", {}))
+    writer_output = state.get("writer_output", {})
+    ruler_updates_output = state.get("ruler_updates_output", {})
+    
+    # Use rulers from ruler updates output - these are the rulers AFTER the time period
+    rulers = ruler_updates_output.get("rulers", state.get("rulers", {}))
     current_year = state.get("current_year", state.get("start_year"))
     years_to_progress = state.get("years_to_progress", 20)
     scenario_id = state.get("scenario_id", "rome")
@@ -176,13 +227,12 @@ def quotegiver_node(state: WorkflowState) -> dict:
     # Get available nation tags from scenario metadata
     available_tags = get_scenario_tags(scenario_id)
     
-    narrative = dreamer_output.get("narrative", "")
-    territorial_summary = dreamer_output.get("territorial_changes_summary", "")
+    narrative = writer_output.get("narrative", "")
     
     try:
         quotes = generate_quotes(
             narrative=narrative,
-            territorial_changes_summary=territorial_summary,
+            territorial_changes_summary="",  # No longer used
             rulers=rulers,
             available_tags=available_tags,
             year_range=year_range
@@ -313,8 +363,9 @@ def illustrator_node(state: WorkflowState) -> dict:
 
 def _run_quotegiver(state: WorkflowState) -> dict:
     """Internal function to run quotegiver (for parallel execution)."""
-    dreamer_output = state.get("dreamer_output", {})
-    rulers = dreamer_output.get("rulers", state.get("rulers", {}))
+    writer_output = state.get("writer_output", {})
+    ruler_updates_output = state.get("ruler_updates_output", {})
+    rulers = ruler_updates_output.get("rulers", state.get("rulers", {}))
     current_year = state.get("current_year", state.get("start_year"))
     years_to_progress = state.get("years_to_progress", 20)
     scenario_id = state.get("scenario_id", "rome")
@@ -322,13 +373,12 @@ def _run_quotegiver(state: WorkflowState) -> dict:
     year_range = f"{current_year}-{current_year + years_to_progress} AD"
     available_tags = get_scenario_tags(scenario_id)
     
-    narrative = dreamer_output.get("narrative", "")
-    territorial_summary = dreamer_output.get("territorial_changes_summary", "")
+    narrative = writer_output.get("narrative", "")
     
     try:
         quotes = generate_quotes(
             narrative=narrative,
-            territorial_changes_summary=territorial_summary,
+            territorial_changes_summary="",  # No longer used
             rulers=rulers,
             available_tags=available_tags,
             year_range=year_range
@@ -340,8 +390,8 @@ def _run_quotegiver(state: WorkflowState) -> dict:
 
 def _run_geographer(state: WorkflowState) -> dict:
     """Internal function to run geographer (for parallel execution)."""
-    dreamer_output = state.get("dreamer_output", {})
-    territorial_changes = dreamer_output.get("territorial_changes", [])
+    cartographer_output = state.get("cartographer_output", {})
+    territorial_changes = cartographer_output.get("territorial_changes", [])
     scenario_id = state.get("scenario_id", "rome")
     
     # Get current province state for context
@@ -364,7 +414,7 @@ def parallel_quote_geo_node(state: WorkflowState) -> dict:
     """
     Parallel Node: Run Quotegiver and Geographer concurrently.
     
-    Both agents only depend on dreamer_output, so they can run in parallel.
+    Both agents depend on writer/cartographer outputs, so they can run in parallel.
     This saves significant time since they don't need to wait for each other.
     """
     current_year = state.get("current_year", state.get("start_year"))

@@ -10,12 +10,17 @@ def update_state_node(state: WorkflowState) -> dict:
     
     - Apply territorial changes to province memory
     - Append new log entry (with quotes from quotegiver/illustrator)
-    - Update rulers and divergences from Dreamer output
+    - Update rulers and divergences from Writer/Ruler Updates output
     - Advance current_year
     - Condense old logs if needed
     - Check merge status
+    
+    NOTE: This node is used in the NON-Kafka workflow (legacy).
+    The Kafka workflow uses produce_to_kafka_node instead.
     """
-    dreamer_output = state.get("dreamer_output", {})
+    # Get outputs from new pipeline
+    writer_output = state.get("writer_output", {})
+    ruler_updates_output = state.get("ruler_updates_output", {})
     quotegiver_output = state.get("quotegiver_output", {})
     illustrator_output = state.get("illustrator_output", {})
     territorial_changes = state.get("territorial_changes", [])
@@ -39,9 +44,8 @@ def update_state_node(state: WorkflowState) -> dict:
         new_year = current_year + years_to_progress
         new_log: LogEntry = {
             "year_range": f"{current_year}-{new_year} AD",
-            "narrative": dreamer_output.get("narrative", ""),
-            "divergences": dreamer_output.get("updated_divergences", []),
-            "territorial_changes_summary": dreamer_output.get("territorial_changes_summary", ""),
+            "narrative": writer_output.get("narrative", ""),
+            "divergences": writer_output.get("updated_divergences", []),
             "quotes": quotes
         }
         logs.append(new_log)
@@ -50,24 +54,27 @@ def update_state_node(state: WorkflowState) -> dict:
         if should_condense(logs):
             logs, condensed_logs = condense_logs(logs, condensed_logs)
         
-        # Get updated values from dreamer - fall back to existing if empty
-        dreamer_rulers = dreamer_output.get("rulers", {})
-        updated_rulers = dreamer_rulers if dreamer_rulers else state.get("rulers", {})
-        updated_divergences = dreamer_output.get("updated_divergences", state.get("divergences", []))
-        merged = dreamer_output.get("merged", False)
+        # Get updated values
+        updated_rulers = ruler_updates_output.get("rulers", state.get("rulers", {}))
+        # Merge updated_divergences (kept from input) with new_divergences (butterfly effects)
+        updated_divergences = writer_output.get("updated_divergences", [])
+        new_divergences = writer_output.get("new_divergences", [])
+        all_divergences = updated_divergences + new_divergences
+        merged = writer_output.get("merged", False)
         
         print(f"[Update] Done: Year {new_year} AD, {len(logs)} logs, merged={merged}")
         
         return {
             "rulers": updated_rulers,
-            "divergences": updated_divergences,
+            "divergences": all_divergences,
             "logs": logs,
             "condensed_logs": condensed_logs,
             "current_year": new_year,
             "merged": merged,
             # Clear inter-agent data
-            "historian_output": {},
-            "dreamer_output": {},
+            "writer_output": {},
+            "cartographer_output": {},
+            "ruler_updates_output": {},
             "territorial_changes": [],
             "quotegiver_output": {},
             "illustrator_output": {}

@@ -5,7 +5,7 @@ from util.kafka_producer import produce_timeline_event
 
 def produce_to_kafka_node(state: WorkflowState) -> dict:
     """
-    Produce a TimelineEvent to Kafka after the Dreamer completes.
+    Produce a TimelineEvent to Kafka after the pipeline completes.
 
     This node extracts all relevant data from the workflow state and
     publishes it to the timeline.events topic. Downstream microservices
@@ -31,24 +31,20 @@ def produce_to_kafka_node(state: WorkflowState) -> dict:
         "start_year": state.get("start_year", current_year),
     }
 
-    # Extract historian context
-    historian_output = state.get("historian_output", {})
-    historian_context = {
-        "period": historian_output.get("period", year_range),
-        "real_events": historian_output.get("real_events", []),
-        "keep_in_mind": historian_output.get("keep_in_mind", []),
-        "conditional_events": historian_output.get("conditional_events", []),
-    }
+    # Extract outputs from new pipeline
+    writer_output = state.get("writer_output", {})
+    cartographer_output = state.get("cartographer_output", {})
+    ruler_updates_output = state.get("ruler_updates_output", {})
 
-    # Extract dreamer decision
-    dreamer_output = state.get("dreamer_output", {})
-    dreamer_decision = {
-        "narrative": dreamer_output.get("narrative", ""),
-        "territorial_summary": dreamer_output.get("territorial_changes_summary", ""),
-        "territorial_changes": dreamer_output.get("territorial_changes", []),
-        "rulers": dreamer_output.get("rulers", {}),
-        "updated_divergences": dreamer_output.get("updated_divergences", []),
-        "merged": dreamer_output.get("merged", False),
+    # Build the decision payload (combines all agent outputs)
+    # This maintains compatibility with the existing Kafka event schema
+    decision = {
+        "narrative": writer_output.get("narrative", ""),
+        "territorial_changes": cartographer_output.get("territorial_changes", []),
+        "rulers": ruler_updates_output.get("rulers", {}),
+        "updated_divergences": writer_output.get("updated_divergences", []),
+        "new_divergences": writer_output.get("new_divergences", []),
+        "merged": writer_output.get("merged", False),
     }
 
     # Produce to Kafka
@@ -59,8 +55,8 @@ def produce_to_kafka_node(state: WorkflowState) -> dict:
             scenario_id=scenario_id,
             year_range=year_range,
             filter_result=filter_result,
-            historian_context=historian_context,
-            dreamer_decision=dreamer_decision,
+            historian_context={},  # No longer used, kept for schema compatibility
+            dreamer_decision=decision,  # Renamed internally but same schema
         )
         if success:
             print(f"[Kafka] Published timeline event for game={game_id}, iteration={iteration}")
@@ -69,10 +65,19 @@ def produce_to_kafka_node(state: WorkflowState) -> dict:
     else:
         print("[Kafka] WARNING: No game_id provided, skipping Kafka publish")
 
-    # Return updated iteration for next round
+    # Return updated state for next round
+    # Update rulers in state from ruler_updates_output
+    new_rulers = ruler_updates_output.get("rulers", state.get("rulers", {}))
+    # Merge updated_divergences (kept from input) with new_divergences (butterfly effects)
+    all_divergences = writer_output.get("updated_divergences", []) + writer_output.get("new_divergences", [])
+    
     return {
         "iteration": iteration + 1,
+        "rulers": new_rulers,  # Persist updated rulers for next iteration
+        "divergences": all_divergences,
+        "merged": writer_output.get("merged", False),
         # Clear inter-agent data (microservices will handle these now)
-        "historian_output": {},
-        "dreamer_output": {},
+        "writer_output": {},
+        "cartographer_output": {},
+        "ruler_updates_output": {},
     }
