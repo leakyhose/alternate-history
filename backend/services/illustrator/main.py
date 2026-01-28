@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Illustrator microservice entry point."""
 import logging
-import signal
+import os
 import sys
 from typing import Optional
 
@@ -18,12 +18,6 @@ logging.basicConfig(
 logger = logging.getLogger("illustrator")
 
 _shutdown_requested = False
-
-
-def signal_handler(signum, frame):
-    global _shutdown_requested
-    logger.info(f"Received signal {signum}, shutting down...")
-    _shutdown_requested = True
 
 
 def process_event(event: dict, producer: PortraitsProducer) -> None:
@@ -48,8 +42,18 @@ def run_service() -> None:
     """Main service loop."""
     global _shutdown_requested
 
-    signal.signal(signal.SIGINT, signal_handler)
-    signal.signal(signal.SIGTERM, signal_handler)
+    # Only use signal handlers on Unix (Windows has issues with signals + threads)
+    if os.name != "nt":
+        import signal
+
+        def signal_handler(signum, frame):
+            global _shutdown_requested
+            logger.info(f"Received signal {signum}, shutting down...")
+            _shutdown_requested = True
+
+        signal.signal(signal.SIGINT, signal_handler)
+        if hasattr(signal, "SIGTERM"):
+            signal.signal(signal.SIGTERM, signal_handler)
 
     consumer: Optional[QuotesEventConsumer] = None
     producer: Optional[PortraitsProducer] = None
