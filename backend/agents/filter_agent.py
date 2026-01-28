@@ -72,7 +72,7 @@ class FilterOutput(BaseModel):
 
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash-lite",
+    model="gemini-2.5-flash",
     google_api_key=os.getenv("GEMINI_API_KEY"),
     timeout=30,
     max_retries=2
