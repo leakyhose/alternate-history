@@ -33,3 +33,6 @@ PyYAML==6.0.3
 
 # Kafka
 kafka-python-ng==2.2.3
+
+# Redis
+redis==7.1.0
