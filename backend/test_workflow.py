@@ -6,9 +6,9 @@ Usage:
   
 Then enter a divergence prompt when asked. The script will:
 1. Run the filter agent (accepted/rejected + year)
-2. If accepted, run the historian agent
-3. Then run the dreamer agent
-4. Then run the geographer agent
+2. If accepted, run the writer agent
+3. Then run the cartographer agent
+4. Then run the ruler updates agent
 5. Display all outputs
 """
 import json
@@ -16,8 +16,9 @@ import os
 from pprint import pprint
 
 from agents.filter_agent import filter_command
-from agents.historian_agent import get_historical_context
-from agents.dreamer_agent import make_decision
+from agents.writer_agent import write_narrative
+from agents.cartographer_agent import extract_territorial_changes
+from agents.ruler_updates_agent import update_rulers
 from agents.geographer_agent import interpret_territorial_changes
 from util.scenario import get_scenario_tags
 
@@ -116,31 +117,10 @@ def test_workflow(divergence: str, years_to_progress: int = 20):
         print(f"  {tag}: {info['name']} ({info['title']})")
     
     print("\n" + "="*60)
-    print("STEP 2: HISTORIAN AGENT")
+    print("STEP 2: WRITER AGENT")
     print("="*60)
     print(f"Period: {start_year}-{start_year + years_to_progress} AD")
-    print("(Reports REAL history only - no alternate timeline knowledge)")
-    print("-"*40)
-    
-    historian_output = get_historical_context(
-        start_year=start_year,
-        years_to_progress=years_to_progress
-    )
-    
-    print("Historian Output:")
-    print(f"\nPeriod: {historian_output.get('period')}")
-    
-    print("\nConditional Events:")
-    for cond in historian_output.get("conditional_events", []):
-        print(f"  IF: {cond.get('condition')}")
-        print(f"  THEN: {cond.get('outcome')}")
-        print()
-    
-    print("\n" + "="*60)
-    print("STEP 3: DREAMER AGENT")
-    print("="*60)
     print(f"Divergence: {divergence}")
-    print(f"Available tags: {list(available_tags.keys())}")
     print("-"*40)
     
     # Create initial log
@@ -148,46 +128,78 @@ def test_workflow(divergence: str, years_to_progress: int = 20):
         "year_range": f"-{start_year} AD",
         "narrative": f"History up to {start_year} AD proceeded as in our timeline.",
         "divergences": [divergence],
-        "territorial_changes_summary": f"Territorial state as of {start_year} AD."
     }
     
-    dreamer_output = make_decision(
-        historian_output=historian_output,
+    writer_output = write_narrative(
         divergences=[divergence],
         condensed_logs="",
         recent_logs=[initial_log],
-        rulers=rulers,
         current_year=start_year,
         years_to_progress=years_to_progress,
         available_tags=available_tags
     )
     
-    print("\nDreamer Output:")
-    print(f"\nRulers:")
-    for tag, info in dreamer_output.get("rulers", {}).items():
-        print(f"  {tag}: {info.get('name')}, {info.get('title')}, age {info.get('age')}, {info.get('dynasty')} dynasty")
-    
+    print("\nWriter Output:")
     print(f"\nNarrative:")
-    print(f"  {dreamer_output.get('narrative', 'No narrative')}")
+    print(f"  {writer_output.get('narrative', 'No narrative')}")
     
-    print(f"\nTerritorial Changes (structured):")
-    for change in dreamer_output.get("territorial_changes", []):
-        print(f"  • {change.get('change_type')}: {change.get('location')} (from: {change.get('from_nation')}, to: {change.get('to_nation')})")
-    
-    print(f"\nTerritorial Changes Summary:")
-    print(f"  {dreamer_output.get('territorial_changes_summary', 'None')}")
-    
-    print(f"\nUpdated Divergences:")
-    for div in dreamer_output.get("updated_divergences", []):
+    print(f"\nKept Divergences:")
+    for div in writer_output.get("updated_divergences", []):
         print(f"  • {div}")
     
-    print(f"\nMerged: {dreamer_output.get('merged', False)}")
+    print(f"\nNew Divergences (butterfly effects):")
+    for div in writer_output.get("new_divergences", []):
+        print(f"  • {div}")
     
-    # Step 4: Geographer Agent
-    territorial_changes = dreamer_output.get("territorial_changes", [])
+    print(f"\nMerged: {writer_output.get('merged', False)}")
+    
+    # Step 3: Cartographer Agent
+    narrative = writer_output.get("narrative", "")
+    year_range = f"{start_year}-{start_year + years_to_progress}"
     
     print("\n" + "="*60)
-    print("STEP 4: GEOGRAPHER AGENT")
+    print("STEP 3: CARTOGRAPHER AGENT")
+    print("="*60)
+    print(f"Extracting territorial changes from narrative...")
+    print(f"Available tags: {list(available_tags.keys())}")
+    print("-"*40)
+    
+    cartographer_output = extract_territorial_changes(
+        narrative=narrative,
+        year_range=year_range,
+        available_tags=list(available_tags.keys())
+    )
+    
+    territorial_changes = cartographer_output.get("territorial_changes", [])
+    print(f"\nTerritorial Changes ({len(territorial_changes)} total):")
+    for change in territorial_changes:
+        change_type = change.get('change_type')
+        location = change.get('location')
+        from_n = change.get('from_nation', '-')
+        to_n = change.get('to_nation', '-')
+        print(f"  • {change_type}: {location} (from: {from_n}, to: {to_n})")
+    
+    # Step 4: Ruler Updates Agent
+    print("\n" + "="*60)
+    print("STEP 4: RULER UPDATES AGENT")
+    print("="*60)
+    print(f"Updating rulers based on narrative...")
+    print("-"*40)
+    
+    ruler_output = update_rulers(
+        current_rulers=rulers,
+        narrative=narrative,
+        current_year=start_year,
+        years_to_progress=years_to_progress
+    )
+    
+    print(f"\nUpdated Rulers:")
+    for tag, info in ruler_output.get("rulers", {}).items():
+        print(f"  {tag}: {info.get('name')}, {info.get('title')}, age {info.get('age')}, {info.get('dynasty', '')} dynasty")
+    
+    # Step 5: Geographer Agent (microservice preview)
+    print("\n" + "="*60)
+    print("STEP 5: GEOGRAPHER AGENT (microservice)")
     print("="*60)
     print(f"Input territorial changes: {len(territorial_changes)} structured change(s)")
     for i, change in enumerate(territorial_changes):
@@ -218,8 +230,9 @@ def test_workflow(divergence: str, years_to_progress: int = 20):
     
     return {
         "filter": filter_result,
-        "historian": historian_output,
-        "dreamer": dreamer_output,
+        "writer": writer_output,
+        "cartographer": cartographer_output,
+        "ruler_updates": ruler_output,
         "geographer": geographer_output
     }
 
