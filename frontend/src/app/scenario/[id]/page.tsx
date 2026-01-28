@@ -174,7 +174,7 @@ export default function ScenarioPage() {
       })
   }, [scenarioId])
 
-  // Start a new game with SSE streaming
+  // Start a new game (non-streaming, returns full state)
   const handleStartGame = useCallback(async (command: string, yearsToProgress: number) => {
     setIsProcessing(true)
     setInputError(null)
@@ -183,8 +183,7 @@ export default function ScenarioPage() {
     setGameYearsToProgress(yearsToProgress)  // Store the years for future Continue calls
 
     try {
-      // Use POST request with fetch for SSE (EventSource only supports GET)
-      const url = `${BACKEND_URL}/start-stream`
+      const url = `${BACKEND_URL}/start`
       console.log('🚀 Starting game - POST to:', url)
       const response = await fetch(url, {
         method: 'POST',
@@ -211,141 +210,52 @@ export default function ScenarioPage() {
         return
       }
 
-      // Process the SSE stream
-      const reader = response.body?.getReader()
-      if (!reader) {
-        setInputError('Failed to read response stream')
+      const data = await response.json() as StartResponse
+
+      // Check if rejected
+      if (data.status === 'rejected') {
+        setInputError(data.reason || 'Command was rejected')
+        setInputAlternative(data.alternative || null)
         setIsProcessing(false)
         setStreamingPhase('idle')
         return
       }
 
-      const decoder = new TextDecoder()
-      let buffer = ''
+      // Success - extract all state from response
+      const result = data.result || {}
+      const currentYear = result.current_year || data.year || 0
+      const logs = result.logs || []
+      const rulers = result.rulers || {}
+      const divergences = result.divergences || [command]
+      const provinces = result.provinces || []
+      const snapshots = result.snapshots || []
+      const nationTags = result.nation_tags || {}
+      const merged = result.merged || false
 
-      while (true) {
-        const { done, value } = await reader.read()
-        if (done) break
+      // Set game mode and all state
+      setGameMode(true)
+      setGameId(data.game_id || null)
+      setBranchStartYear(data.year || 0)
+      setGameYear(currentYear)
+      setGameMerged(merged)
+      setGameLogs(logs)
+      setGameRulers(rulers)
+      setGameDivergences(divergences)
+      setGameProvinces(provinces)
+      setProvinceSnapshots(snapshots)
+      setGameNationTags(nationTags)
+      setYear(currentYear)
+      setSelectedTimelinePoint({
+        timeline: 'alternate',
+        year: currentYear,
+        logIndex: logs.length > 0 ? logs.length - 1 : 0
+      })
 
-        buffer += decoder.decode(value, { stream: true })
-        const lines = buffer.split('\n')
-        buffer = lines.pop() || '' // Keep incomplete line in buffer
-
-        for (const line of lines) {
-          if (line.startsWith('data: ')) {
-            try {
-              const data = JSON.parse(line.slice(6)) as StreamEvent
-
-              switch (data.event) {
-                case 'rejected':
-                  setInputError(data.reason || 'Command was rejected')
-                  setInputAlternative(data.alternative || null)
-                  setIsProcessing(false)
-                  setStreamingPhase('idle')
-                  return
-
-                case 'filter_complete':
-                  // Timeline branches immediately
-                  setBranchStartYear(data.year)
-                  setGameId(data.game_id)
-                  setGameMode(true)
-                  setGameNationTags(data.nation_tags)
-                  setYear(data.year)
-                  setStreamingPhase('dreaming')
-                  // Initialize with empty state until dreamer completes
-                  setGameLogs([])
-                  setGameRulers({})
-                  setGameDivergences([command])
-                  setSelectedTimelinePoint({
-                    timeline: 'alternate',
-                    year: data.year,
-                    logIndex: 0
-                  })
-                  break
-
-                case 'dreamer_complete':
-                  // Populate the panel with narrative and rulers
-                  setGameLogs([data.log_entry])
-                  setGameRulers(data.rulers)
-                  setGameDivergences(data.divergences)
-                  setStreamingPhase('quoting')
-                  break
-
-                case 'quotegiver_complete':
-                  // Update the log entry with quotes (without portraits yet)
-                  setGameLogs(prev => {
-                    if (prev.length === 0) return prev
-                    const updated = [...prev]
-                    updated[updated.length - 1] = {
-                      ...updated[updated.length - 1],
-                      quotes: data.quotes
-                    }
-                    return updated
-                  })
-                  setStreamingPhase('illustrating')
-                  break
-
-                case 'illustrator_complete':
-                  // Update the log entry with enriched quotes (including portraits)
-                  setGameLogs(prev => {
-                    if (prev.length === 0) return prev
-                    const updated = [...prev]
-                    updated[updated.length - 1] = {
-                      ...updated[updated.length - 1],
-                      quotes: data.quotes
-                    }
-                    return updated
-                  })
-                  setStreamingPhase('mapping')
-                  break
-
-                case 'geographer_complete':
-                  // Map updates with provinces
-                  setGameProvinces(data.provinces)
-                  break
-
-                case 'complete':
-                  // Finalize everything
-                  setGameId(data.game_id)
-                  setGameYear(data.current_year)
-                  setGameMerged(data.merged)
-                  setGameLogs(data.logs)
-                  setGameRulers(data.rulers)
-                  setGameDivergences(data.divergences)
-                  setProvinceSnapshots(data.snapshots)
-                  if (data.snapshots && data.snapshots.length > 0) {
-                    const latestSnapshot = data.snapshots[data.snapshots.length - 1]
-                    setGameProvinces(latestSnapshot.provinces)
-                  }
-                  setSelectedTimelinePoint({
-                    timeline: 'alternate',
-                    year: data.current_year,
-                    logIndex: data.logs.length - 1
-                  })
-                  setYear(data.current_year)
-                  setIsProcessing(false)
-                  setStreamingPhase('idle')
-                  break
-
-                case 'error':
-                  setInputError(data.message)
-                  setIsProcessing(false)
-                  setStreamingPhase('idle')
-                  return
-              }
-            } catch (parseError) {
-              console.error('Error parsing SSE data:', parseError)
-            }
-          }
-        }
-      }
+      setIsProcessing(false)
+      setStreamingPhase('idle')
     } catch (err) {
       console.error('Error starting game:', err)
-      if (err instanceof Error && err.name === 'AbortError') {
-        setInputError('Request timed out. The server is taking too long to respond.')
-      } else {
-        setInputError('Failed to connect to server')
-      }
+      setInputError('Failed to connect to server')
       setIsProcessing(false)
       setStreamingPhase('idle')
     }
@@ -359,7 +269,7 @@ export default function ScenarioPage() {
     setStreamingPhase('dreaming')
 
     try {
-      const url = `${BACKEND_URL}/continue-stream/${gameId}`
+      const url = `${BACKEND_URL}/continue/${gameId}`
       console.log('🔄 Continuing game - POST to:', url)
       const response = await fetch(url, {
         method: 'POST',
@@ -384,115 +294,51 @@ export default function ScenarioPage() {
         return
       }
 
-      const reader = response.body?.getReader()
-      if (!reader) {
-        console.error('Failed to read response stream')
+      const data = await response.json() as ContinueResponse
+
+      // Check if merged
+      if (data.status === 'merged') {
+        setGameMerged(true)
         setIsProcessing(false)
         setStreamingPhase('idle')
         return
       }
 
-      const decoder = new TextDecoder()
-      let buffer = ''
+      // Success - extract all state from response
+      const result = data.result || {}
+      const currentYear = data.current_year || gameYear
+      const logs = data.logs || gameLogs
+      const rulers = result.rulers || gameRulers
+      const divergences = result.divergences || gameDivergences
+      const provinces = result.provinces || gameProvinces
+      const snapshots = result.snapshots || provinceSnapshots
+      const merged = data.merged || false
 
-      while (true) {
-        const { done, value } = await reader.read()
-        if (done) break
+      // Update all state
+      setGameYear(currentYear)
+      setGameMerged(merged)
+      setGameLogs(logs)
+      setGameRulers(rulers)
+      setGameDivergences(divergences)
+      setGameProvinces(provinces)
+      setProvinceSnapshots(snapshots)
+      setYear(currentYear)
+      setSelectedTimelinePoint({
+        timeline: 'alternate',
+        year: currentYear,
+        logIndex: logs.length > 0 ? logs.length - 1 : 0
+      })
 
-        buffer += decoder.decode(value, { stream: true })
-        const lines = buffer.split('\n')
-        buffer = lines.pop() || ''
-
-        for (const line of lines) {
-          if (line.startsWith('data: ')) {
-            try {
-              const data = JSON.parse(line.slice(6)) as StreamEvent
-
-              switch (data.event) {
-                case 'dreamer_complete':
-                  // Append new log entry (keep existing logs)
-                  setGameLogs(prev => [...prev, data.log_entry])
-                  setGameRulers(data.rulers)
-                  setGameDivergences(data.divergences)
-                  setStreamingPhase('quoting')
-                  break
-
-                case 'quotegiver_complete':
-                  // Update the latest log entry with quotes (without portraits yet)
-                  setGameLogs(prev => {
-                    if (prev.length === 0) return prev
-                    const updated = [...prev]
-                    updated[updated.length - 1] = {
-                      ...updated[updated.length - 1],
-                      quotes: data.quotes
-                    }
-                    return updated
-                  })
-                  setStreamingPhase('illustrating')
-                  break
-
-                case 'illustrator_complete':
-                  // Update the latest log entry with enriched quotes (including portraits)
-                  setGameLogs(prev => {
-                    if (prev.length === 0) return prev
-                    const updated = [...prev]
-                    updated[updated.length - 1] = {
-                      ...updated[updated.length - 1],
-                      quotes: data.quotes
-                    }
-                    return updated
-                  })
-                  setStreamingPhase('mapping')
-                  break
-
-                case 'geographer_complete':
-                  setGameProvinces(data.provinces)
-                  break
-
-                case 'complete':
-                  setGameYear(data.current_year)
-                  setGameMerged(data.merged)
-                  setGameLogs(data.logs)
-                  setGameRulers(data.rulers)
-                  setGameDivergences(data.divergences)
-                  setProvinceSnapshots(data.snapshots)
-                  if (data.snapshots && data.snapshots.length > 0) {
-                    const latestSnapshot = data.snapshots[data.snapshots.length - 1]
-                    setGameProvinces(latestSnapshot.provinces)
-                  }
-                  setSelectedTimelinePoint({
-                    timeline: 'alternate',
-                    year: data.current_year,
-                    logIndex: data.logs.length - 1
-                  })
-                  setYear(data.current_year)
-                  setIsProcessing(false)
-                  setStreamingPhase('idle')
-                  break
-
-                case 'error':
-                  console.error('Continue stream error:', data.message)
-                  setIsProcessing(false)
-                  setStreamingPhase('idle')
-                  return
-              }
-            } catch (parseError) {
-              console.error('Error parsing SSE data:', parseError)
-            }
-          }
-        }
-      }
+      setIsProcessing(false)
+      setStreamingPhase('idle')
     } catch (err) {
       console.error('Error continuing game:', err)
-      if (err instanceof Error && err.name === 'AbortError') {
-        console.error('Request timed out')
-      }
       setIsProcessing(false)
       setStreamingPhase('idle')
     }
-  }, [gameId, gameYearsToProgress])
+  }, [gameId, gameYearsToProgress, gameYear, gameLogs, gameRulers, gameDivergences, gameProvinces, provinceSnapshots])
 
-  // Add a new divergence to an existing timeline with SSE streaming
+  // Add a new divergence to an existing timeline
   // If command is empty, just continue without adding a new divergence
   const handleAddDivergence = useCallback(async (command: string, yearsToProgress: number) => {
     if (!gameId) return
@@ -548,11 +394,11 @@ export default function ScenarioPage() {
       }
     }
 
-    // Continue with streaming (with or without new divergence)
+    // Continue with the new divergence (or just continue without one)
     setStreamingPhase('dreaming')
 
     try {
-      const url = `${BACKEND_URL}/continue-stream/${gameId}`
+      const url = `${BACKEND_URL}/continue/${gameId}`
       console.log('➕ Adding divergence - POST to:', url)
       const response = await fetch(url, {
         method: 'POST',
@@ -578,114 +424,50 @@ export default function ScenarioPage() {
         return
       }
 
-      const reader = response.body?.getReader()
-      if (!reader) {
-        setInputError('Failed to read response stream')
+      const data = await response.json() as ContinueResponse
+
+      // Check if merged
+      if (data.status === 'merged') {
+        setGameMerged(true)
         setIsProcessing(false)
         setStreamingPhase('idle')
         return
       }
 
-      const decoder = new TextDecoder()
-      let buffer = ''
+      // Success - extract all state from response
+      const result = data.result || {}
+      const currentYear = data.current_year || gameYear
+      const logs = data.logs || gameLogs
+      const rulers = result.rulers || gameRulers
+      const divergences = result.divergences || gameDivergences
+      const provinces = result.provinces || gameProvinces
+      const snapshots = result.snapshots || provinceSnapshots
+      const merged = data.merged || false
 
-      while (true) {
-        const { done, value } = await reader.read()
-        if (done) break
+      // Update all state
+      setGameYear(currentYear)
+      setGameMerged(merged)
+      setGameLogs(logs)
+      setGameRulers(rulers)
+      setGameDivergences(divergences)
+      setGameProvinces(provinces)
+      setProvinceSnapshots(snapshots)
+      setYear(currentYear)
+      setSelectedTimelinePoint({
+        timeline: 'alternate',
+        year: currentYear,
+        logIndex: logs.length > 0 ? logs.length - 1 : 0
+      })
 
-        buffer += decoder.decode(value, { stream: true })
-        const lines = buffer.split('\n')
-        buffer = lines.pop() || ''
-
-        for (const line of lines) {
-          if (line.startsWith('data: ')) {
-            try {
-              const data = JSON.parse(line.slice(6)) as StreamEvent
-
-              switch (data.event) {
-                case 'dreamer_complete':
-                  setGameLogs(prev => [...prev, data.log_entry])
-                  setGameRulers(data.rulers)
-                  setGameDivergences(data.divergences)
-                  setStreamingPhase('quoting')
-                  break
-
-                case 'quotegiver_complete':
-                  // Update the latest log entry with quotes (without portraits yet)
-                  setGameLogs(prev => {
-                    if (prev.length === 0) return prev
-                    const updated = [...prev]
-                    updated[updated.length - 1] = {
-                      ...updated[updated.length - 1],
-                      quotes: data.quotes
-                    }
-                    return updated
-                  })
-                  setStreamingPhase('illustrating')
-                  break
-
-                case 'illustrator_complete':
-                  // Update the latest log entry with enriched quotes (including portraits)
-                  setGameLogs(prev => {
-                    if (prev.length === 0) return prev
-                    const updated = [...prev]
-                    updated[updated.length - 1] = {
-                      ...updated[updated.length - 1],
-                      quotes: data.quotes
-                    }
-                    return updated
-                  })
-                  setStreamingPhase('mapping')
-                  break
-
-                case 'geographer_complete':
-                  setGameProvinces(data.provinces)
-                  break
-
-                case 'complete':
-                  setGameYear(data.current_year)
-                  setGameMerged(data.merged)
-                  setGameLogs(data.logs)
-                  setGameRulers(data.rulers)
-                  setGameDivergences(data.divergences)
-                  setProvinceSnapshots(data.snapshots)
-                  if (data.snapshots && data.snapshots.length > 0) {
-                    const latestSnapshot = data.snapshots[data.snapshots.length - 1]
-                    setGameProvinces(latestSnapshot.provinces)
-                  }
-                  setSelectedTimelinePoint({
-                    timeline: 'alternate',
-                    year: data.current_year,
-                    logIndex: data.logs.length - 1
-                  })
-                  setYear(data.current_year)
-                  setIsProcessing(false)
-                  setStreamingPhase('idle')
-                  break
-
-                case 'error':
-                  setInputError(data.message)
-                  setIsProcessing(false)
-                  setStreamingPhase('idle')
-                  return
-              }
-            } catch (parseError) {
-              console.error('Error parsing SSE data:', parseError)
-            }
-          }
-        }
-      }
+      setIsProcessing(false)
+      setStreamingPhase('idle')
     } catch (err) {
       console.error('Error adding divergence:', err)
-      if (err instanceof Error && err.name === 'AbortError') {
-        setInputError('Request timed out. The server is taking too long to respond.')
-      } else {
-        setInputError('Failed to connect to server')
-      }
+      setInputError('Failed to connect to server')
       setIsProcessing(false)
       setStreamingPhase('idle')
     }
-  }, [gameId])
+  }, [gameId, gameYear, gameLogs, gameRulers, gameDivergences, gameProvinces, provinceSnapshots])
 
   // Handle timeline point selection
   const handleTimelinePointSelect = useCallback((point: TimelinePoint) => {

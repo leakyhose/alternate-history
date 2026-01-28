@@ -61,7 +61,6 @@ export interface LogEntry {
   year_range: string;
   narrative: string;
   divergences: string[];
-  territorial_changes_summary: string;
   quotes?: Quote[];
 }
 
@@ -72,33 +71,51 @@ export interface RulerInfo {
   dynasty: string;
 }
 
+export interface GameProvince {
+  id: number;
+  name: string;
+  owner: string;
+  control: string;
+}
+
+export interface ProvinceSnapshot {
+  provinces: GameProvince[];
+  rulers: Record<string, RulerInfo>;
+  divergences: string[];
+}
+
 export interface StartResponse {
-  status: 'accepted' | 'rejected';
+  status: 'started' | 'rejected';
   game_id?: string;
   year?: number;
   reason?: string;
   alternative?: string;
   result?: {
+    scenario_id?: string;
     current_year: number;
     merged: boolean;
     rulers: Record<string, RulerInfo>;
     logs: LogEntry[];
     divergences: string[];
+    provinces: GameProvince[];
+    snapshots: ProvinceSnapshot[];
+    nation_tags: Record<string, { name: string; color: string }>;
   };
-  snapshots?: ProvinceSnapshot[];  // Province snapshots per log entry
 }
 
 export interface ContinueResponse {
-  status: 'continued' | 'merged';
+  status: 'iteration_complete' | 'merged';
   current_year: number;
   merged: boolean;
   logs: LogEntry[];
   result?: {
+    iteration?: number;
     rulers: Record<string, RulerInfo>;
     divergences: string[];
+    provinces: GameProvince[];
+    snapshots: ProvinceSnapshot[];
     message?: string;
   };
-  snapshots?: ProvinceSnapshot[];  // Province snapshots per log entry
 }
 
 export interface GameState {
@@ -119,25 +136,12 @@ export interface GameState {
   snapshots?: ProvinceSnapshot[];  // Province snapshots per log entry
 }
 
-export interface GameProvince {
-  id: number;
-  name: string;
-  owner: string;
-  control: string;
-}
-
 // Timeline Branching types
 
 export interface TimelinePoint {
   timeline: 'main' | 'alternate';
   year: number;
   logIndex?: number;  // For alternate timeline points
-}
-
-export interface ProvinceSnapshot {
-  provinces: GameProvince[];
-  rulers: Record<string, RulerInfo>;
-  divergences: string[];
 }
 
 // Streaming types for SSE partial updates
