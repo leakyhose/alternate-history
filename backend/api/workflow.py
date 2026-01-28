@@ -23,24 +23,9 @@ def _setup_game_tags(game: Game, scenario_id: str):
         game.add_nation_tag(tag, info.get("name", tag), info.get("color", "#888888"))
 
 
-# =============================================================================
-# Main Endpoints (Kafka-based)
-# =============================================================================
-
 @router.post("/start")
 async def start_workflow(request: StartRequest) -> StartResponse:
-    """
-    Start a new alternate history game.
-
-    Runs the main loop pipeline:
-    Filter -> Initialize -> Writer -> Cartographer -> Ruler Updates -> Kafka
-    
-    Returns minimal response. Frontend will get full state via WebSocket
-    from the Aggregator service (consuming from Kafka microservices).
-    
-    NOTE: Quotegiver, Geographer, Illustrator are separate microservices
-    that consume from Kafka - they are NOT called here.
-    """
+    """Start a new alternate history game. Publishes to Kafka."""
     scenario_metadata = load_scenario_metadata(request.scenario_id)
     filter_result = filter_command(request.command, scenario_metadata)
 
@@ -56,8 +41,6 @@ async def start_workflow(request: StartRequest) -> StartResponse:
     _setup_game_tags(game, request.scenario_id)
 
     try:
-        # Run the core workflow (Filter -> Writer -> Cartographer -> Ruler Updates -> Kafka)
-        # This produces a TimelineEvent to Kafka for microservices to consume
         final_state = workflow.invoke({
             "game_id": game.id,
             "iteration": 1,
@@ -68,7 +51,6 @@ async def start_workflow(request: StartRequest) -> StartResponse:
             "filter_passed": True
         })
 
-        # Store minimal workflow state for continue operations
         game.workflow_state = dict(final_state)
         game.workflow_state["scenario_id"] = request.scenario_id
 
@@ -79,7 +61,6 @@ async def start_workflow(request: StartRequest) -> StartResponse:
         delete_game(game.id)
         raise HTTPException(status_code=500, detail=str(e))
 
-    # Return minimal response - frontend gets full data via WebSocket
     return StartResponse(
         status="started",
         game_id=game.id,
@@ -94,18 +75,7 @@ async def start_workflow(request: StartRequest) -> StartResponse:
 
 @router.post("/continue/{game_id}")
 async def continue_game(game_id: str, request: ContinueRequest) -> ContinueResponse:
-    """
-    Continue an existing game for more iterations.
-
-    Runs the main loop pipeline:
-    Writer -> Cartographer -> Ruler Updates -> Kafka
-    
-    Returns minimal response. Frontend will get full state via WebSocket
-    from the Aggregator service (consuming from Kafka microservices).
-    
-    NOTE: Quotegiver, Geographer, Illustrator are separate microservices
-    that consume from Kafka - they are NOT called here.
-    """
+    """Continue an existing game. Publishes to Kafka."""
     game = get_game(game_id)
     if not game:
         raise HTTPException(status_code=404, detail="Game not found")
@@ -126,8 +96,6 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
         state["divergences"] = state.get("divergences", []) + request.new_divergences
 
     try:
-        # Run the continue workflow (Writer -> Cartographer -> Ruler Updates -> Kafka)
-        # This produces a TimelineEvent to Kafka for microservices to consume
         final_state = continue_workflow.invoke(state)
         game.workflow_state = dict(final_state)
 
@@ -141,7 +109,6 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
 
-    # Return minimal response - frontend gets full data via WebSocket
     return ContinueResponse(
         status="iteration_complete",
         current_year=current_year,
@@ -156,11 +123,7 @@ async def continue_game(game_id: str, request: ContinueRequest) -> ContinueRespo
 
 @router.post("/game/{game_id}/filter-divergence")
 async def filter_game_divergence(game_id: str, request: FilterDivergenceRequest) -> FilterDivergenceResponse:
-    """
-    Filter/validate a divergence command for an existing game.
-
-    Used to check if a divergence is valid before adding it via /continue.
-    """
+    """Validate a divergence command before adding via /continue."""
     game = get_game(game_id)
     if not game:
         raise HTTPException(status_code=404, detail="Game not found")
