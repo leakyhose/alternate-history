@@ -42,8 +42,7 @@ def produce_to_kafka_node(state: WorkflowState) -> dict:
         "narrative": writer_output.get("narrative", ""),
         "territorial_changes": cartographer_output.get("territorial_changes", []),
         "rulers": ruler_updates_output.get("rulers", {}),
-        "updated_divergences": writer_output.get("updated_divergences", []),
-        "new_divergences": writer_output.get("new_divergences", []),
+        "divergences": writer_output.get("divergences", []),
         "merged": writer_output.get("merged", False),
     }
 
@@ -68,8 +67,7 @@ def produce_to_kafka_node(state: WorkflowState) -> dict:
     # Return updated state for next round
     # Update rulers in state from ruler_updates_output
     new_rulers = ruler_updates_output.get("rulers", state.get("rulers", {}))
-    # Merge updated_divergences (kept from input) with new_divergences (butterfly effects)
-    all_divergences = writer_output.get("updated_divergences", []) + writer_output.get("new_divergences", [])
+    all_divergences = writer_output.get("divergences", [])
     
     return {
         "iteration": iteration + 1,

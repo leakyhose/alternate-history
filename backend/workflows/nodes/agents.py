@@ -18,7 +18,7 @@ def writer_node(state: WorkflowState) -> dict:
     The Writer considers real history, current divergences, and past events
     to craft an eventful but grounded narrative (100-200 words).
     
-    Outputs: narrative, updated_divergences, merged
+    Outputs: narrative, divergences, merged
     """
     divergences = state.get("divergences", [])
     condensed_logs = state.get("condensed_logs", "")
@@ -43,7 +43,7 @@ def writer_node(state: WorkflowState) -> dict:
         )
         
         merged = writer_output.get('merged', False)
-        div_count = len(writer_output.get("updated_divergences", []))
+        div_count = len(writer_output.get("divergences", []))
         print(f"[Writer] Done: {div_count} divergences, merged={merged}")
         
         return {

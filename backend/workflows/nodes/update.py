@@ -45,7 +45,7 @@ def update_state_node(state: WorkflowState) -> dict:
         new_log: LogEntry = {
             "year_range": f"{current_year}-{new_year} AD",
             "narrative": writer_output.get("narrative", ""),
-            "divergences": writer_output.get("updated_divergences", []),
+            "divergences": writer_output.get("divergences", []),
             "quotes": quotes
         }
         logs.append(new_log)
@@ -56,10 +56,7 @@ def update_state_node(state: WorkflowState) -> dict:
         
         # Get updated values
         updated_rulers = ruler_updates_output.get("rulers", state.get("rulers", {}))
-        # Merge updated_divergences (kept from input) with new_divergences (butterfly effects)
-        updated_divergences = writer_output.get("updated_divergences", [])
-        new_divergences = writer_output.get("new_divergences", [])
-        all_divergences = updated_divergences + new_divergences
+        all_divergences = writer_output.get("divergences", [])
         merged = writer_output.get("merged", False)
         
         print(f"[Update] Done: Year {new_year} AD, {len(logs)} logs, merged={merged}")

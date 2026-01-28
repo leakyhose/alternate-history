@@ -41,40 +41,24 @@ def set_narrative(narrative: str) -> str:
 
 
 @tool
-def keep_divergence(divergence: str) -> str:
+def add_divergence(divergence: str) -> str:
     """
-    Keep an existing divergence that is STILL relevant going forward.
-    Only call this for divergences from the input that still matter.
-    Don't call this for divergences that have fizzled out or been resolved.
+    Add a divergence that will affect future periods.
+    
+    Call this for:
+    - Input divergences that are STILL relevant (re-add them to keep them)
+    - NEW butterfly effects that emerged from this period's events
+    
+    Don't re-add divergences that have fizzled out or been resolved.
     
     Args:
-        divergence: The divergence text (from input) to keep
+        divergence: The divergence text to add/keep
     """
     global _writer_output
-    if "updated_divergences" not in _writer_output:
-        _writer_output["updated_divergences"] = []
-    _writer_output["updated_divergences"].append(divergence)
-    return f"Kept divergence: {divergence[:50]}..."
-
-
-@tool
-def add_new_divergence(divergence: str) -> str:
-    """
-    Add a NEW butterfly effect that emerged from this period's events.
-    These are cascading consequences that will affect future periods.
-    
-    Example: If Rome conquers Persia, new divergences might be:
-    - "Roman-Chinese trade routes established"
-    - "Zoroastrian refugees flee east"
-    
-    Args:
-        divergence: A new divergence/butterfly effect to add
-    """
-    global _writer_output
-    if "new_divergences" not in _writer_output:
-        _writer_output["new_divergences"] = []
-    _writer_output["new_divergences"].append(divergence)
-    return f"Added new divergence: {divergence[:50]}..."
+    if "divergences" not in _writer_output:
+        _writer_output["divergences"] = []
+    _writer_output["divergences"].append(divergence)
+    return f"Added divergence: {divergence[:50]}..."
 
 
 @tool
@@ -97,9 +81,8 @@ def mark_complete() -> str:
     """
     Call this AFTER you have:
     1. Set the narrative
-    2. Called keep_divergence() for each input divergence that's still relevant
-    3. Called add_new_divergence() for any new butterfly effects
-    4. Set merged status
+    2. Called add_divergence() for each divergence that should continue (input ones still relevant + new butterfly effects)
+    3. Set merged status
     """
     global _writer_output
     
@@ -107,15 +90,13 @@ def mark_complete() -> str:
         return "Error: Must set narrative before completing"
     if "merged" not in _writer_output:
         _writer_output["merged"] = False
-    if "updated_divergences" not in _writer_output:
-        _writer_output["updated_divergences"] = []
-    if "new_divergences" not in _writer_output:
-        _writer_output["new_divergences"] = []
+    if "divergences" not in _writer_output:
+        _writer_output["divergences"] = []
     
     return "COMPLETE"
 
 
-TOOLS = [set_narrative, keep_divergence, add_new_divergence, set_merged, mark_complete]
+TOOLS = [set_narrative, add_divergence, set_merged, mark_complete]
 
 
 SYSTEM_PROMPT = """You are an alternate history writer. Write compelling, eventful narratives that explore "what if" scenarios.
@@ -130,9 +111,10 @@ GUIDELINES:
 7. **Successions**: When rulers die, name successors. "Justinian died, succeeded by Justin II."
 
 DIVERGENCE RULES:
-- Use keep_divergence() ONLY for input divergences that still matter
-- Use add_new_divergence() for NEW butterfly effects from this period
-- Don't keep divergences that have fizzled out or been resolved
+- Use add_divergence() for EACH divergence that should continue into future periods
+- Re-add input divergences that still matter
+- Add NEW butterfly effects from this period's events
+- Don't re-add divergences that have fizzled out or been resolved
 
 Write 100-200 words. Focus on WHAT HAPPENED, not philosophy."""
 
@@ -192,7 +174,7 @@ def write_narrative(
         available_tags: Dict of nation tags with metadata (for context)
 
     Returns:
-        Dict with narrative, updated_divergences, new_divergences, and merged flag
+        Dict with narrative, divergences, and merged flag
     """
     global _writer_output
     
@@ -218,10 +200,11 @@ def write_narrative(
 
 STEPS:
 1. Call set_narrative() with a 100-200 word narrative
-2. For EACH input divergence above that's STILL relevant, call keep_divergence()
-3. For any NEW butterfly effects from your narrative, call add_new_divergence()
-4. Call set_merged(False) unless timeline has returned to real history
-5. Call mark_complete()
+2. Call add_divergence() for EACH divergence that should continue:
+   - Re-add input divergences that are STILL relevant
+   - Add NEW butterfly effects from your narrative
+3. Call set_merged(False) unless timeline has returned to real history
+4. Call mark_complete()
 """
 
     messages = [
@@ -272,16 +255,15 @@ STEPS:
     # Build result with fallbacks
     result = {
         "narrative": _writer_output.get("narrative", f"The period {current_year}-{end_year} AD saw continued developments."),
-        "updated_divergences": _writer_output.get("updated_divergences", []),
-        "new_divergences": _writer_output.get("new_divergences", []),
+        "divergences": _writer_output.get("divergences", []),
         "merged": _writer_output.get("merged", False)
     }
     
-    # Fallback: if no divergences were kept and we had input divergences, keep them
-    if not result["updated_divergences"] and divergences and not result["merged"]:
+    # Fallback: if no divergences were added and we had input divergences, keep them
+    if not result["divergences"] and divergences and not result["merged"]:
         print(f"[Writer] Fallback: keeping all input divergences")
-        result["updated_divergences"] = divergences
+        result["divergences"] = divergences
 
-    print(f"[Writer] Done: {len(result['updated_divergences'])} kept, {len(result['new_divergences'])} new divergences")
+    print(f"[Writer] Done: {len(result['divergences'])} divergences")
     
     return result

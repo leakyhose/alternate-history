@@ -29,8 +29,7 @@ class LogEntry(TypedDict):
 class WriterOutput(TypedDict, total=False):
     """Output from the Writer agent."""
     narrative: str                     # 100-200 word narrative
-    updated_divergences: List[str]     # Divergences still affecting the timeline
-    new_divergences: List[str]         # New butterfly effects from this period
+    divergences: List[str]             # All divergences for next period (kept + new)
     merged: bool                       # True if timeline merged back to real history
 
 
