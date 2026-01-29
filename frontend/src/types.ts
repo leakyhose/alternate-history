@@ -221,3 +221,69 @@ export type StreamEvent =
   | CompleteEvent
   | ErrorEvent
   | RejectedEvent;
+
+// WebSocket message types from Aggregator service
+export interface WebSocketMessage {
+  type: 'timeline_update' | 'quotes_update' | 'provinces_update' | 'portraits_update' | 'ping';
+  game_id: string;
+  iteration?: number;
+  timestamp?: string;
+}
+
+export interface TimelineUpdateMessage extends WebSocketMessage {
+  type: 'timeline_update';
+  event_type: 'timeline_event';
+  year_range: string;
+  scenario_id: string;
+  writer_output: {
+    narrative: string;
+    updated_divergences: string[];
+    new_divergences: string[];
+    merged: boolean;
+  };
+  cartographer_output: {
+    territorial_changes: Array<{
+      location: string;
+      change_type: 'CONQUEST' | 'LOSS' | 'TRANSFER';
+      from_nation?: string;
+      to_nation?: string;
+      context: string;
+    }>;
+  };
+  ruler_updates_output: {
+    rulers: Record<string, RulerInfo>;
+  };
+}
+
+export interface QuotesUpdateMessage extends WebSocketMessage {
+  type: 'quotes_update';
+  event_type: 'quotes_ready' | 'quotes_failed';
+  quotes: Quote[];
+  error?: string;
+}
+
+export interface ProvincesUpdateMessage extends WebSocketMessage {
+  type: 'provinces_update';
+  event_type: 'provinces_updated' | 'provinces_failed';
+  provinces: GameProvince[];
+  year?: number;
+  error?: string;
+}
+
+export interface PortraitsUpdateMessage extends WebSocketMessage {
+  type: 'portraits_update';
+  event_type: 'portraits_ready' | 'portraits_failed';
+  portraits: Array<{
+    tag: string;
+    ruler_name: string;
+    portrait_base64: string;
+  }>;
+  status: 'success' | 'failed';
+  error?: string;
+}
+
+export type AggregatorMessage =
+  | TimelineUpdateMessage
+  | QuotesUpdateMessage
+  | ProvincesUpdateMessage
+  | PortraitsUpdateMessage;
