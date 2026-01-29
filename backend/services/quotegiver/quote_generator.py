@@ -58,21 +58,18 @@ TOOLS = [add_quote, mark_complete]
 
 
 SYSTEM_PROMPT = """You are a historical quote writer. Given a narrative and rulers list,
-select up to 2 rulers whose nations are most affected, then write memorable quotes.
+select up to 2 seperate rulers whose nations are most affected, then write memorable quotes.
 
 GUIDELINES:
 - Quotes should feel historically authentic to the era and culture
 - Keep each quote to a SINGLE SENTENCE (15-30 words)
 - Use first person ("I", "We")
 - Make quotes memorable and dramatic
-- If tehre is only one relevant ruler, only write one quote
+- If there is only one relevant ruler, only write one quote
+- If tehre is only one available ruler, only write one quote
 
-EXAMPLES:
-- "We have shown the world that Rome's legions cannot be stopped by mere walls."
-- "Let them come - we shall meet them as our fathers did, with steel and fire."
-- "In this treaty lies the foundation of a new age of peace."
 
-Call add_quote() for 1-2 relevant rulers, then call mark_complete()."""
+Call add_quote() for MAX 2 relevant rulers, then call mark_complete()."""
 
 
 def get_llm() -> ChatGoogleGenerativeAI:
