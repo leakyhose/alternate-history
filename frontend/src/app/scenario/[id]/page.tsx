@@ -120,12 +120,22 @@ export default function ScenarioPage() {
     onPortraitsUpdate,
   } = useGameWebSocket()
 
-  // Set up WebSocket event handlers
+  // Set up WebSocket event handlers (using refs to avoid stale closures)
   useEffect(() => {
     // Timeline update - narrative, rulers, divergences arrive first
+    // This is the main event loop completing - user can continue after this
     onTimelineUpdate.current = (msg) => {
       console.log('📜 Timeline update received:', msg.iteration)
       setStreamingPhase('quoting')
+
+      // Parse year from year_range (e.g., "630-650" -> 650)
+      let newYear = 0
+      const yearMatch = msg.year_range.match(/(\d+)$/)
+      if (yearMatch) {
+        newYear = parseInt(yearMatch[1], 10)
+        setGameYear(newYear)
+        setYear(newYear)
+      }
 
       // Build log entry (without quotes yet)
       const logEntry: LogEntry = {
@@ -134,21 +144,27 @@ export default function ScenarioPage() {
         divergences: [...msg.writer_output.updated_divergences, ...msg.writer_output.new_divergences],
       }
 
-      setGameLogs(prev => [...prev, logEntry])
-      setGameRulers(msg.ruler_updates_output.rulers)
+      const newRulers = msg.ruler_updates_output.rulers
+      setGameLogs(prev => {
+        const newLogs = [...prev, logEntry]
+        // Update timeline point to this new log
+        setSelectedTimelinePoint({
+          timeline: 'alternate',
+          year: newYear,
+          logIndex: newLogs.length - 1,
+        })
+        return newLogs
+      })
+      setGameRulers(newRulers)
       setGameDivergences(prev => [
         ...prev,
         ...msg.writer_output.new_divergences.filter(d => !prev.includes(d))
       ])
       setGameMerged(msg.writer_output.merged)
 
-      // Parse year from year_range (e.g., "630-650" -> 650)
-      const yearMatch = msg.year_range.match(/(\d+)$/)
-      if (yearMatch) {
-        const newYear = parseInt(yearMatch[1], 10)
-        setGameYear(newYear)
-        setYear(newYear)
-      }
+      // Main loop done - user can now trigger continue (isProcessing can be false)
+      // But we keep streaming phase active to show other services are working
+      setIsProcessing(false)
     }
 
     // Quotes update - quotes for the rulers
@@ -168,24 +184,29 @@ export default function ScenarioPage() {
       })
     }
 
-    // Provinces update - map data
+    // Provinces update - map data (from Geographer service)
     onProvincesUpdate.current = (msg) => {
       console.log('🗺️ Provinces update received:', msg.provinces?.length || 0, 'provinces')
       setStreamingPhase('mapping')
       setGameProvinces(msg.provinces)
 
-      // Add province snapshot
-      setProvinceSnapshots(prev => [
-        ...prev,
-        {
-          provinces: msg.provinces,
-          rulers: gameRulers,
-          divergences: gameDivergences,
+      // Add province snapshot - get current rulers/divergences from state updater
+      setGameLogs(prev => {
+        if (prev.length > 0) {
+          setProvinceSnapshots(snapshots => [
+            ...snapshots,
+            {
+              provinces: msg.provinces,
+              rulers: {}, // Will be filled by current gameRulers
+              divergences: prev[prev.length - 1]?.divergences || [],
+            }
+          ])
         }
-      ])
+        return prev
+      })
     }
 
-    // Portraits update - ruler portraits
+    // Portraits update - ruler portraits (last to arrive)
     onPortraitsUpdate.current = (msg) => {
       console.log('🎨 Portraits update received:', msg.portraits?.length || 0, 'portraits')
 
@@ -196,12 +217,15 @@ export default function ScenarioPage() {
           const updated = [...prev]
           const latestLog = updated[updated.length - 1]
           if (latestLog.quotes) {
-            latestLog.quotes = latestLog.quotes.map(q => {
-              const portrait = msg.portraits.find(
-                p => p.tag === q.tag && p.ruler_name === q.ruler_name
-              )
-              return portrait ? { ...q, portrait_base64: portrait.portrait_base64 } : q
-            })
+            updated[updated.length - 1] = {
+              ...latestLog,
+              quotes: latestLog.quotes.map(q => {
+                const portrait = msg.portraits.find(
+                  p => p.tag === q.tag && p.ruler_name === q.ruler_name
+                )
+                return portrait ? { ...q, portrait_base64: portrait.portrait_base64 } : q
+              })
+            }
           }
           return updated
         })
@@ -211,17 +235,9 @@ export default function ScenarioPage() {
       setStreamingPhase('complete')
       setTimeout(() => {
         setStreamingPhase('idle')
-        setIsProcessing(false)
-
-        // Update timeline point to latest
-        setSelectedTimelinePoint(prev => ({
-          timeline: 'alternate',
-          year: gameYear,
-          logIndex: gameLogs.length - 1,
-        }))
       }, 500)
     }
-  }, [gameRulers, gameDivergences, gameYear, gameLogs.length])
+  }, []) // Empty deps - handlers use functional updates
 
   // Cleanup WebSocket on unmount
   useEffect(() => {
@@ -354,23 +370,24 @@ export default function ScenarioPage() {
       const nationTags = result?.nation_tags || {}
       const merged = result?.merged || false
 
-      // Set game mode and all state
+      // Set game mode and create timeline branch immediately
+      // WebSocket will fill in the actual content (logs, quotes, provinces, portraits)
       setGameMode(true)
       setGameId(data.game_id || null)
       setBranchStartYear(data.year || 0)
       setGameYear(currentYear)
       setGameMerged(merged)
-      setGameLogs(logs)
-      setGameRulers(rulers)
+      setGameLogs([])  // Start empty - WebSocket will fill
+      setGameRulers({})  // Start empty - WebSocket will fill
       setGameDivergences(divergences)
-      setGameProvinces(provinces)
-      setProvinceSnapshots(snapshots)
+      setGameProvinces([])  // Start empty - WebSocket will fill
+      setProvinceSnapshots([])
       setGameNationTags(nationTags)
       setYear(currentYear)
       setSelectedTimelinePoint({
         timeline: 'alternate',
         year: currentYear,
-        logIndex: logs.length > 0 ? logs.length - 1 : 0
+        logIndex: 0
       })
 
       // Connect to WebSocket for real-time updates
@@ -379,15 +396,16 @@ export default function ScenarioPage() {
         wsConnect(data.game_id)
       }
 
-      setIsProcessing(false)
-      setStreamingPhase('idle')
+      // Keep processing/streaming active - WebSocket handlers will set to idle when complete
+      setStreamingPhase('dreaming')
+      // Note: isProcessing stays true until WebSocket delivers all updates
     } catch (err) {
       console.error('Error starting game:', err)
       setInputError('Failed to connect to server')
       setIsProcessing(false)
       setStreamingPhase('idle')
     }
-  }, [scenarioId])
+  }, [scenarioId, wsConnect])
 
   // Continue the game - triggers backend workflow, WebSocket delivers updates
   const handleContinue = useCallback(async () => {
