@@ -70,7 +70,7 @@ async def start_workflow(request: StartRequest) -> StartResponse:
             "scenario_id": request.scenario_id,
             "iteration": 1,
             "current_year": final_state.get("current_year", year),
-            "nation_tags": {tag: {"name": info["name"], "color": info["color"]} for tag, info in game.nation_tags.items()},
+            "nation_tags": {tag: {"name": info.name, "color": info.color} for tag, info in game.nation_tags.items()},
             "divergences": [request.command],
             "merged": final_state.get("merged", False),
             # Empty placeholders - WebSocket will fill these in
