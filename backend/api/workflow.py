@@ -61,6 +61,7 @@ async def start_workflow(request: StartRequest) -> StartResponse:
         delete_game(game.id)
         raise HTTPException(status_code=500, detail=str(e))
 
+    # Return enough data for frontend to create the timeline branch
     return StartResponse(
         status="started",
         game_id=game.id,
@@ -68,7 +69,15 @@ async def start_workflow(request: StartRequest) -> StartResponse:
         result={
             "scenario_id": request.scenario_id,
             "iteration": 1,
-            "message": "Timeline event published to Kafka. Await WebSocket for full state."
+            "current_year": final_state.get("current_year", year),
+            "nation_tags": {tag: {"name": info["name"], "color": info["color"]} for tag, info in game.nation_tags.items()},
+            "divergences": [request.command],
+            "merged": final_state.get("merged", False),
+            # Empty placeholders - WebSocket will fill these in
+            "logs": [],
+            "rulers": {},
+            "provinces": [],
+            "snapshots": [],
         }
     )
 
