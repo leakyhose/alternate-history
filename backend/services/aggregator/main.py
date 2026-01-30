@@ -58,6 +58,19 @@ async def process_events():
             logger.error(f"Error processing event: {e}")
 
 
+async def cleanup_buffers():
+    """Periodically clean up expired event buffers."""
+    while True:
+        try:
+            await asyncio.sleep(30)  # Run every 30 seconds
+            await manager.cleanup_expired_buffers()
+        except asyncio.CancelledError:
+            logger.info("Buffer cleanup task cancelled")
+            break
+        except Exception as e:
+            logger.error(f"Error cleaning up buffers: {e}")
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Manage startup and shutdown of background tasks."""
@@ -70,14 +83,22 @@ async def lifespan(app: FastAPI):
     # Start event processor task
     processor_task = asyncio.create_task(process_events())
 
+    # Start buffer cleanup task
+    cleanup_task = asyncio.create_task(cleanup_buffers())
+
     logger.info("Aggregator service ready")
 
     yield
 
     # Shutdown
     processor_task.cancel()
+    cleanup_task.cancel()
     try:
         await processor_task
+    except asyncio.CancelledError:
+        pass
+    try:
+        await cleanup_task
     except asyncio.CancelledError:
         pass
 
@@ -117,6 +138,7 @@ async def root():
 async def status():
     """Detailed status endpoint."""
     active_games = manager.get_active_games()
+    buffer_stats = manager.get_buffer_stats()
     return {
         "service": "aggregator",
         "status": "healthy",
@@ -126,6 +148,7 @@ async def status():
             game_id: manager.get_connection_count(game_id)
             for game_id in active_games
         },
+        "buffer": buffer_stats,
     }
 
 
