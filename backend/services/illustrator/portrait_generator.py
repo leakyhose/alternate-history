@@ -17,7 +17,6 @@ def generate_portrait_prompt(
     nation_name: str,
     era_context: str,
 ) -> str:
-    """Generate a prompt for creating a ruler portrait."""
     return f"""Create a pixel art portrait headshot in a retro 16-bit video game style.
 
 Subject: {ruler_name}, {ruler_title} of {nation_name}
@@ -40,7 +39,6 @@ Requirements:
 
 
 def _extract_image_base64(response: AIMessage) -> Optional[str]:
-    """Extract base64 image data from response."""
     if not hasattr(response, "content") or not isinstance(response.content, list):
         return None
 
@@ -59,7 +57,6 @@ def _generate_single_portrait(
     nation_name: str,
     era_context: str,
 ) -> Optional[str]:
-    """Generate a single portrait."""
     prompt = generate_portrait_prompt(ruler_name, ruler_title, nation_name, era_context)
 
     try:
@@ -67,7 +64,6 @@ def _generate_single_portrait(
         image_base64 = _extract_image_base64(response)
 
         if image_base64:
-            # Cache the result
             cache_portrait(ruler_name, nation_name, era_context, image_base64)
             return image_base64
         else:
@@ -80,15 +76,7 @@ def _generate_single_portrait(
 
 
 def generate_portraits_from_event(event: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """
-    Generate portraits for quoted rulers.
-
-    Args:
-        event: QuotesReady event with quotes list
-
-    Returns:
-        List of portrait dicts with tag, ruler_name, and portrait_key (Redis reference)
-    """
+    """Generate portraits for quoted rulers, returning Redis keys."""
     quotes = event.get("quotes", [])
     game_id = event.get("game_id", "unknown")
     iteration = event.get("iteration", 1)
@@ -97,7 +85,6 @@ def generate_portraits_from_event(event: Dict[str, Any]) -> List[Dict[str, Any]]
         logger.info("No quotes to illustrate")
         return []
 
-    # Initialize model
     try:
         model = ChatGoogleGenerativeAI(
             model=GEMINI_MODEL,
@@ -114,44 +101,35 @@ def generate_portraits_from_event(event: Dict[str, Any]) -> List[Dict[str, Any]]
         ruler_name = quote_data.get("ruler_name", "Unknown Ruler")
         ruler_title = quote_data.get("ruler_title", "Ruler")
 
-        # Use tag as nation name fallback
         nation_name = tag if tag else "Unknown"
         era_context = f"Iteration {iteration}"
 
         logger.info(f"Processing portrait: {ruler_name} ({tag})")
 
-        # Check cache first
         cached = get_cached_portrait(ruler_name, nation_name, era_context)
         if cached:
             logger.info(f"Cache hit: {ruler_name}")
-            # Store for this event and return key
-            redis_key = store_portrait_for_event(game_id, iteration, ruler_name, cached)
-            if redis_key:
-                portraits.append({
-                    "tag": tag,
-                    "ruler_name": ruler_name,
-                    "portrait_key": redis_key,
-                })
+            portrait_key = store_portrait_for_event(game_id, iteration, ruler_name, cached)
+            portraits.append({
+                "tag": tag,
+                "ruler_name": ruler_name,
+                "portrait_key": portrait_key,
+            })
             continue
 
-        # Generate new portrait
         logger.info(f"Generating: {ruler_name}")
         portrait_base64 = _generate_single_portrait(
             model, ruler_name, ruler_title, nation_name, era_context
         )
 
         if portrait_base64:
-            # Store in Redis and return key reference
-            redis_key = store_portrait_for_event(game_id, iteration, ruler_name, portrait_base64)
-            if redis_key:
-                portraits.append({
-                    "tag": tag,
-                    "ruler_name": ruler_name,
-                    "portrait_key": redis_key,
-                })
-                logger.info(f"Generated and stored: {ruler_name}")
-            else:
-                logger.warning(f"Failed to store portrait for {ruler_name}")
+            portrait_key = store_portrait_for_event(game_id, iteration, ruler_name, portrait_base64)
+            portraits.append({
+                "tag": tag,
+                "ruler_name": ruler_name,
+                "portrait_key": portrait_key,
+            })
+            logger.info(f"Generated: {ruler_name} (key: {portrait_key})")
         else:
             logger.warning(f"Failed to generate portrait for {ruler_name}")
 
