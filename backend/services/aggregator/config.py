@@ -28,3 +28,6 @@ ALL_TOPICS = [
 # WebSocket settings
 WS_HEARTBEAT_INTERVAL = 30  # seconds
 GAME_CLEANUP_DELAY = 60  # seconds after last disconnect before cleanup
+
+# Redis settings (for resolving portrait keys)
+REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
