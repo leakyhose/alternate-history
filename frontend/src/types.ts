@@ -253,6 +253,8 @@ export interface TimelineUpdateMessage extends WebSocketMessage {
   ruler_updates_output: {
     rulers: Record<string, RulerInfo>;
   };
+  // Full province state at this iteration (before geographer updates)
+  current_provinces?: GameProvince[];
 }
 
 export interface QuotesUpdateMessage extends WebSocketMessage {

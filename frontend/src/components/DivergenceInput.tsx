@@ -22,7 +22,7 @@ export default function DivergenceInput({
   isAddingDivergence
 }: DivergenceInputProps) {
   const [command, setCommand] = useState('')
-  const [yearsToProgress, setYearsToProgress] = useState(5)
+  const [yearsToProgress, setYearsToProgress] = useState(10)
   const inputRef = useRef<HTMLInputElement>(null)
 
   // Auto-focus input when not disabled

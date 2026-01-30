@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useCallback, useMemo } from 'react'
+import { useEffect, useState, useCallback, useMemo, useRef } from 'react'
 import { useParams } from 'next/navigation'
 import MapCanvas from '@components/MapCanvas'
 import CountryInfo from '@components/CountryInfo'
@@ -94,7 +94,7 @@ export default function ScenarioPage() {
   const [gameYear, setGameYear] = useState<number>(0)
   const [gameMerged, setGameMerged] = useState(false)
   const [gameNationTags, setGameNationTags] = useState<Record<string, { name: string; color: string }>>({})
-  const [gameYearsToProgress, setGameYearsToProgress] = useState<number>(5)  // Store the years used for this game)
+  const [gameYearsToProgress, setGameYearsToProgress] = useState<number>(10)  // Store the years used for this game
 
   // Timeline branching state
   const [branchStartYear, setBranchStartYear] = useState<number | null>(null)
@@ -120,13 +120,50 @@ export default function ScenarioPage() {
     onPortraitsUpdate,
   } = useGameWebSocket()
 
+  // Track which updates have arrived for the current iteration
+  const updatesReceivedRef = useRef({ timeline: false, quotes: false, provinces: false, portraits: false })
+  const streamingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const geographerTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  // Separate state for tracking if geographer has sent updates (for "Updating map..." indicator)
+  const [geographerComplete, setGeographerComplete] = useState(true)
+
+  // Helper to check if all updates arrived and reset streaming phase
+  const checkStreamingComplete = useCallback(() => {
+    const received = updatesReceivedRef.current
+    // We need timeline. Geographer updates are nice to have but we have initial provinces from timeline.
+    // Wait for portraits a bit, then go idle.
+    if (received.timeline) {
+      if (streamingTimeoutRef.current) {
+        clearTimeout(streamingTimeoutRef.current)
+      }
+      // If portraits arrived, quick transition; if geographer arrived, medium wait; otherwise longer wait
+      const delay = received.portraits ? 500 : received.provinces ? 2000 : 10000
+      streamingTimeoutRef.current = setTimeout(() => {
+        setStreamingPhase('idle')
+      }, delay)
+    }
+  }, [])
+
   // Set up WebSocket event handlers (using refs to avoid stale closures)
   useEffect(() => {
     // Timeline update - narrative, rulers, divergences arrive first
     // This is the main event loop completing - user can continue after this
     onTimelineUpdate.current = (msg) => {
       console.log('📜 Timeline update received:', msg.iteration)
+
+      // Reset tracking for new iteration
+      updatesReceivedRef.current = { timeline: true, quotes: false, provinces: false, portraits: false }
       setStreamingPhase('quoting')
+      setGeographerComplete(false)  // Geographer hasn't sent updates for this iteration yet
+
+      // Set a timeout for geographer - don't show "Updating map..." forever
+      if (geographerTimeoutRef.current) {
+        clearTimeout(geographerTimeoutRef.current)
+      }
+      geographerTimeoutRef.current = setTimeout(() => {
+        console.log('⏱️ Geographer timeout - marking complete')
+        setGeographerComplete(true)
+      }, 30000)  // 30 second timeout for geographer
 
       // Parse year from year_range (e.g., "630-650" -> 650)
       let newYear = 0
@@ -162,14 +199,46 @@ export default function ScenarioPage() {
       ])
       setGameMerged(msg.writer_output.merged)
 
+      // Initialize provinces from timeline event (full province state before geographer updates)
+      // This gives us a complete map to display immediately
+      const initialProvinces = msg.current_provinces || []
+      if (initialProvinces.length > 0) {
+        console.log('📍 Initializing provinces from timeline:', initialProvinces.length, 'provinces')
+        setGameProvinces(initialProvinces)
+      }
+
+      // Create initial snapshot for this log entry (will be updated when geographer arrives)
+      // Use functional update to get the correct log index
+      setGameLogs(logs => {
+        const logIndex = logs.length - 1
+        setProvinceSnapshots(prevSnapshots => {
+          // Ensure we have enough snapshot slots (pad with empty if needed)
+          const newSnapshots = [...prevSnapshots]
+          while (newSnapshots.length <= logIndex) {
+            newSnapshots.push({ provinces: [], rulers: {}, divergences: [] })
+          }
+          // Set snapshot for this log entry
+          newSnapshots[logIndex] = {
+            provinces: initialProvinces,
+            rulers: newRulers,
+            divergences: logEntry.divergences,
+          }
+          console.log('📸 Created snapshot for log', logIndex, 'with', initialProvinces.length, 'provinces')
+          return newSnapshots
+        })
+        return logs
+      })
+
       // Main loop done - user can now trigger continue (isProcessing can be false)
       // But we keep streaming phase active to show other services are working
       setIsProcessing(false)
+      checkStreamingComplete()
     }
 
     // Quotes update - quotes for the rulers
     onQuotesUpdate.current = (msg) => {
       console.log('💬 Quotes update received:', msg.quotes?.length || 0, 'quotes')
+      updatesReceivedRef.current.quotes = true
       setStreamingPhase('illustrating')
 
       // Add quotes to the latest log entry
@@ -182,33 +251,80 @@ export default function ScenarioPage() {
         }
         return updated
       })
+      checkStreamingComplete()
     }
 
-    // Provinces update - map data (from Geographer service)
+    // Provinces update - map data (from Geographer service) - geographer is NOW DONE
+    // NOTE: This contains only CHANGED provinces, not the full list
     onProvincesUpdate.current = (msg) => {
-      console.log('🗺️ Provinces update received:', msg.provinces?.length || 0, 'provinces')
-      setStreamingPhase('mapping')
-      setGameProvinces(msg.provinces)
+      console.log('🗺️ Provinces update received:', msg.provinces?.length || 0, 'province updates')
+      updatesReceivedRef.current.provinces = true
+      setGeographerComplete(true)  // Geographer has finished for this iteration
 
-      // Add province snapshot - get current rulers/divergences from state updater
-      setGameLogs(prev => {
-        if (prev.length > 0) {
-          setProvinceSnapshots(snapshots => [
-            ...snapshots,
-            {
-              provinces: msg.provinces,
-              rulers: {}, // Will be filled by current gameRulers
-              divergences: prev[prev.length - 1]?.divergences || [],
-            }
-          ])
+      // Clear geographer timeout since it completed
+      if (geographerTimeoutRef.current) {
+        clearTimeout(geographerTimeoutRef.current)
+        geographerTimeoutRef.current = null
+      }
+
+      if (!msg.provinces || msg.provinces.length === 0) {
+        checkStreamingComplete()
+        return
+      }
+
+      // Merge province updates with existing provinces (geographer only sends changes)
+      setGameProvinces(prevProvinces => {
+        // Create a map of existing provinces by ID
+        const provinceMap = new Map(prevProvinces.map(p => [p.id, p]))
+
+        // Apply updates
+        for (const update of msg.provinces) {
+          provinceMap.set(update.id, update)
         }
-        return prev
+
+        // Convert back to array
+        const mergedProvinces = Array.from(provinceMap.values())
+        console.log('📍 Merged provinces:', mergedProvinces.length, 'total,', msg.provinces.length, 'changed')
+
+        // Update the snapshot for the latest log entry with merged provinces
+        setGameLogs(logs => {
+          if (logs.length > 0) {
+            const logIndex = logs.length - 1
+            setProvinceSnapshots(prevSnapshots => {
+              const newSnapshots = [...prevSnapshots]
+              // Update existing snapshot (or create if missing)
+              if (newSnapshots[logIndex]) {
+                newSnapshots[logIndex] = {
+                  ...newSnapshots[logIndex],
+                  provinces: mergedProvinces,
+                }
+              } else {
+                // Shouldn't happen, but handle gracefully
+                while (newSnapshots.length <= logIndex) {
+                  newSnapshots.push({ provinces: [], rulers: {}, divergences: [] })
+                }
+                newSnapshots[logIndex] = {
+                  provinces: mergedProvinces,
+                  rulers: {},
+                  divergences: logs[logIndex]?.divergences || [],
+                }
+              }
+              console.log('📸 Updated snapshot', logIndex, 'with geographer changes')
+              return newSnapshots
+            })
+          }
+          return logs
+        })
+
+        return mergedProvinces
       })
+      checkStreamingComplete()
     }
 
     // Portraits update - ruler portraits (last to arrive)
     onPortraitsUpdate.current = (msg) => {
       console.log('🎨 Portraits update received:', msg.portraits?.length || 0, 'portraits')
+      updatesReceivedRef.current.portraits = true
 
       if (msg.status === 'success' && msg.portraits.length > 0) {
         // Merge portraits into the latest log's quotes
@@ -237,7 +353,17 @@ export default function ScenarioPage() {
         setStreamingPhase('idle')
       }, 500)
     }
-  }, []) // Empty deps - handlers use functional updates
+
+    // Cleanup timeouts on unmount
+    return () => {
+      if (streamingTimeoutRef.current) {
+        clearTimeout(streamingTimeoutRef.current)
+      }
+      if (geographerTimeoutRef.current) {
+        clearTimeout(geographerTimeoutRef.current)
+      }
+    }
+  }, [checkStreamingComplete]) // Include checkStreamingComplete
 
   // Cleanup WebSocket on unmount
   useEffect(() => {
@@ -766,7 +892,7 @@ export default function ScenarioPage() {
             onProvinceSelect={setSelectedTag}
             onReady={() => setMapReady(true)}
             isStreamingMap={
-              (streamingPhase === 'mapping' || streamingPhase === 'dreaming') &&
+              !geographerComplete &&
               selectedTimelinePoint.timeline === 'alternate' &&
               (gameLogs.length === 0 || selectedTimelinePoint.logIndex === gameLogs.length - 1)
             }
