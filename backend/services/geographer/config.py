@@ -14,7 +14,7 @@ TOPIC_PROVINCES_UPDATED = "provinces.updated"
 
 # LLM settings
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-3-flash-preview"
 
 # Processing settings
 LLM_TIMEOUT_SECONDS = 120

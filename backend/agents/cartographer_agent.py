@@ -156,7 +156,7 @@ If a territorial change involves nations you can't represent with available tags
 
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash-lite",
+    model="gemini-2.5-flash",
     google_api_key=os.getenv("GEMINI_API_KEY"),
     timeout=60,
     max_retries=2
