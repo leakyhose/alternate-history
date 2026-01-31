@@ -132,6 +132,7 @@ export default function MapCanvas({ defaultProvinceHistory, scenarioMetadata, ye
     }
 
     init();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Update map colors when year or history changes

@@ -62,6 +62,7 @@ export interface LogEntry {
   narrative: string;
   divergences: string[];
   quotes?: Quote[];
+  territorial_changes_summary?: string;
 }
 
 export interface RulerInfo {

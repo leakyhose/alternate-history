@@ -363,6 +363,7 @@ export default function ScenarioPage() {
         clearTimeout(geographerTimeoutRef.current)
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checkStreamingComplete]) // Include checkStreamingComplete
 
   // Cleanup WebSocket on unmount
