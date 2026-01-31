@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import Image from 'next/image'
 import type { LogEntry, TimelinePoint, StreamingPhase } from '@/types'
 
 interface GameInfoPanelProps {
@@ -157,11 +158,14 @@ export default function GameInfoPanel({
                         <div key={qIdx} className="bg-[#0a0a14] border-l-2 border-amber-600 pl-3 py-2 pr-2 rounded-r flex items-start gap-3">
                           {q.portrait_base64 && (
                             <div className="flex-shrink-0">
-                              <img 
+                              <Image 
                                 src={`data:image/png;base64,${q.portrait_base64}`}
                                 alt={`Portrait of ${q.ruler_name}`}
+                                width={48}
+                                height={48}
                                 className="w-12 h-12 rounded border border-amber-600/30 object-cover"
                                 style={{ imageRendering: 'pixelated' }}
+                                unoptimized
                               />
                             </div>
                           )}

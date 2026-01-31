@@ -176,7 +176,7 @@ def update_rulers(
 
 For EACH nation tag, call set_ruler() with the ruler at the END of {end_year} AD.
 - Add {years_to_progress} to each ruler's starting age
-- Replace rulers who die or are replaced (per narrative or old age 80+)
+- Replace rulers who die or are replaced as according to narrataive
 - Use ASCII names only (no accents)
 
 Call set_ruler() for EVERY tag, then call mark_complete().
