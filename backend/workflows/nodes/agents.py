@@ -343,6 +343,13 @@ def _run_geographer(state: WorkflowState) -> dict:
     dreamer_output = state.get("dreamer_output", {})
     territorial_changes = dreamer_output.get("territorial_changes", [])
     scenario_id = state.get("scenario_id", "rome")
+
+    print(f"[Geographer] Received {len(territorial_changes)} territorial change(s) from Dreamer")
+    if territorial_changes:
+        print(f"[Geographer] Changes: {territorial_changes}")
+    else:
+        # Debug: show all dreamer output keys to detect field name mismatches
+        print(f"[Geographer] WARNING: No territorial changes. Dreamer output keys: {list(dreamer_output.keys())}")
     
     # Get current province state for context
     memory = get_province_memory()

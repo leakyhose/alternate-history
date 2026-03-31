@@ -20,7 +20,7 @@ def list_scenarios():
                     with open(metadata_path, 'r') as f:
                         metadata = json.load(f)
                         name = metadata.get("name", name)
-                scenarios.append({"id": scenario_id, "name": name})
+                scenarios.append({"id": scenario_id, "name": name, "period": metadata.get("period")})
     return JSONResponse(content=scenarios)
 
 @router.get("/{scenario_id}/provinces")

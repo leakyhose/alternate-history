@@ -7,7 +7,7 @@
   src: url('/fonts/jersey10.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
   /* Limit to basic Latin - accented chars will use fallback font */
   unicode-range: U+0020-007F;
 }
@@ -99,4 +99,19 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.scanlines::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
 }

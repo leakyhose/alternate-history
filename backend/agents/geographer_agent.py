@@ -18,7 +18,7 @@ from langchain_core.messages import ToolMessage
 from pydantic import BaseModel, Field
 
 from util.province_memory import (
-    get_all_region_names, get_areas_for_region, get_all_area_names,
+    get_areas_for_region, get_all_area_names,
     get_provinces_for_area, load_areas
 )
 from util.scenario import get_scenario_tags
@@ -41,22 +41,11 @@ class ProvinceUpdate(BaseModel):
 # Query tools
 
 @tool
-def get_available_regions() -> str:
-    """Get all available region names. Call this first to see what regions exist."""
-    region_names = get_all_region_names()
-    if not region_names:
-        return "No regions available."
-    return f"Available regions ({len(region_names)} total):\n" + "\n".join(
-        f"  - {name}" for name in sorted(region_names)
-    )
-
-
-@tool
 def query_region_areas(region_name: str) -> str:
     """Get areas within a region with ownership summary."""
     areas = get_areas_for_region(region_name)
     if not areas:
-        return f"Region '{region_name}' not found. Use get_available_regions() to see valid names."
+        return f"Region '{region_name}' not found. Check the AVAILABLE REGIONS list in your instructions."
 
     lines = [f"Areas in {region_name} ({len(areas)} areas):"]
     for area_name in areas:
@@ -365,13 +354,27 @@ Process territorial changes by calling action tools that modify province ownersh
 WORK AT THE AREA LEVEL - areas are your primary unit of operation.
 
 GEOGRAPHICAL HIERARCHY:
-- REGIONS: Large areas (France, Egypt, Canada) - query to discover area names
+- REGIONS: Large areas (France, Egypt, Canada) - use query_region_areas() to discover area names within them
 - AREAS: Medium subdivisions (Brittany, Lower Egypt) - your working unit
+
+AVAILABLE REGIONS:
+Amazon, American East Coast, Anatolia, Arabia, Arabian Sea, Atlantic South America, Australia,
+Balkan, Baltic, Baltic Sea, Bengal, Brazil, British Isles, Burma, California, Canada,
+Caribbean Sea, Carpathia, Carribeans, Cascadia, Caucasia, Central Africa, Central America,
+Central Asia, Colombia, Coromandel, Crimea, Deccan, East Africa, East China Sea,
+East Indian Ocean, East Siberia, Egypt, France, Great Lakes, Great Plains, Guinea, Hindusthan,
+Horn Of Africa, Hudson Bay, Iberia, Indo China, Indonesia, Italy, Jan Mayen, Japan, Khorasan,
+Kongo, Korea, La Plata, Low Countries, Maghreb, Malaya, Manchuria, Mashriq, Mediterrenean,
+Mexico, Mississippi, Moluccas, Mongolia, Niger, North Atlantic, North China, North East Pacific,
+North German, North West Pacific, Northeast America, Oceanea, Pacific South America, Persia, Peru,
+Poland, Rio Grande, Russia, Ruthenia, Sahel, Scandinavia, South Africa, South Atlantic,
+South China, South China Sea, South East Pacific, South German, South Indian Ocean,
+South West Pacific, Southeast America, Tibet, Upper Peru, Ural, West African Sea, West India,
+West Indian Ocean, West Siberia, Xinan, Zambezi
 
 TOOLS:
 
 Query tools:
-- get_available_regions(): List all regions
 - query_region_areas(region_name): List areas in a region with ownership
 - query_tag_territories(tag): List all territory owned by a nation
 
@@ -405,7 +408,7 @@ llm = ChatGoogleGenerativeAI(
     max_retries=2
 )
 
-query_tools = [get_available_regions, query_region_areas, query_tag_territories]
+query_tools = [query_region_areas, query_tag_territories]
 action_tools = [transfer_areas, annex_nation, untrack_areas, mark_complete]
 all_tools = query_tools + action_tools
 
@@ -415,7 +418,6 @@ llm_with_tools = llm.bind_tools(all_tools, tool_choice="auto")
 def execute_tool(tool_name: str, tool_args: Dict[str, Any]) -> str:
     """Execute a tool by name."""
     tool_map = {
-        "get_available_regions": get_available_regions,
         "query_region_areas": query_region_areas,
         "query_area_provinces": query_area_provinces,
         "query_tag_territories": query_tag_territories,

@@ -102,7 +102,17 @@ RULER FORMAT (ASCII only - no accents):
 - tag, name, title, age, dynasty
 - Convert: Chretien not Chretien, Francois not Francois
 
-Return ONLY valid JSON matching the schema."""
+Return ONLY valid JSON with EXACTLY these keys:
+{
+  "rulers": {"TAG": {"name": "...", "title": "...", "age": 0, "dynasty": "..."}},
+  "narrative": "2-4 sentence narrative",
+  "territorial_changes": [
+    {"location": "description of location", "change_type": "CONQUEST|LOSS|TRANSFER", "from_nation": "TAG or null", "to_nation": "TAG or null", "context": "brief reason"}
+  ],
+  "territorial_changes_summary": "Human-readable summary of changes",
+  "updated_divergences": ["divergence 1", "divergence 2"],
+  "merged": false
+}"""
 
 
 llm = ChatGoogleGenerativeAI(
@@ -272,6 +282,30 @@ Return JSON only."""
                 if "dynasty" in ruler:
                     ruler["dynasty"] = transliterate(ruler["dynasty"])
 
+        # Normalize territorial_changes key (LLM may use alternate names)
+        if "territorial_changes" not in result:
+            for alt_key in ["changes", "territory_changes", "territorialChanges", "territorial_change"]:
+                if alt_key in result and isinstance(result[alt_key], list):
+                    print(f"[Dreamer] WARNING: LLM used key '{alt_key}' instead of 'territorial_changes', remapping")
+                    result["territorial_changes"] = result.pop(alt_key)
+                    break
+
+        # Normalize field names within each territorial change
+        for change in result.get("territorial_changes", []):
+            if isinstance(change, dict):
+                # Fix change_type alternatives
+                if "change_type" not in change:
+                    for alt in ["type", "changeType", "change"]:
+                        if alt in change:
+                            change["change_type"] = change.pop(alt)
+                            break
+                # Fix location alternatives
+                if "location" not in change:
+                    for alt in ["region", "area", "territory", "place"]:
+                        if alt in change:
+                            change["location"] = change.pop(alt)
+                            break
+
         # Ensure required fields
         result.setdefault("narrative", f"The period {current_year}-{end_year} AD saw continued developments.")
         result.setdefault("territorial_changes", [])
@@ -279,6 +313,12 @@ Return JSON only."""
                          result.get("territorial_changes_description", "No significant changes."))
         result.setdefault("updated_divergences", divergences)
         result.setdefault("merged", False)
+
+        # Debug: log what territorial changes look like
+        tc = result["territorial_changes"]
+        print(f"[Dreamer] territorial_changes: {len(tc)} item(s)")
+        if tc:
+            print(f"[Dreamer] First change keys: {list(tc[0].keys()) if isinstance(tc[0], dict) else type(tc[0])}")
 
         # Validate tags
         if available_tags and isinstance(result["rulers"], dict):
