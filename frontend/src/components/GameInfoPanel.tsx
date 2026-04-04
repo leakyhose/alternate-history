@@ -24,6 +24,7 @@ export default function GameInfoPanel({
 }: GameInfoPanelProps) {
   const [activeTab, setActiveTab] = useState<'logs' | 'divergences'>('logs')
   const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false)
 
   // Check if we're in a streaming loading state
   const isDreaming = streamingPhase === 'dreaming'
@@ -67,8 +68,9 @@ export default function GameInfoPanel({
   }
 
   return (
-    <div className="absolute bottom-5 right-5 w-96 max-h-[60vh] bg-[#1a1a24] border-2 border-[#2a2a3a]
-                    flex flex-col z-30 shadow-lg">
+    <div className={`absolute bottom-5 right-5 bg-[#1a1a24] border-2 border-[#2a2a3a]
+                    flex flex-col z-30 shadow-lg transition-all duration-300
+                    ${isExpanded ? 'w-[700px] max-h-[85vh]' : 'w-96 max-h-[60vh]'}`}>
       {/* Header with tabs */}
       <div className="flex items-center justify-between border-b border-[#2a2a3a] px-2">
         {/* Compact tabs */}
@@ -92,12 +94,21 @@ export default function GameInfoPanel({
             Divergences ({visibleDivergences.length})
           </button>
         </div>
-        <button
-          onClick={() => setIsCollapsed(true)}
-          className="text-gray-500 hover:text-amber-400 px-2 py-1"
-        >
-          ▶
-        </button>
+        <div className="flex items-center gap-1">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-gray-500 hover:text-amber-400 px-2 py-1 text-xs"
+            title={isExpanded ? 'Shrink panel' : 'Expand panel'}
+          >
+            {isExpanded ? '⤡' : '⤢'}
+          </button>
+          <button
+            onClick={() => setIsCollapsed(true)}
+            className="text-gray-500 hover:text-amber-400 px-2 py-1"
+          >
+            ▶
+          </button>
+        </div>
       </div>
 
       {/* Content */}
