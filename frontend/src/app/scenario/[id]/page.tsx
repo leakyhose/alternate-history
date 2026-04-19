@@ -57,6 +57,12 @@ function PixelLoader() {
   )
 }
 
+function parseLogEndYear(yearRange: string): number {
+  const match = yearRange.match(/(\d+)\s*-\s*(\d+)/)
+  if (match) return parseInt(match[2], 10)
+  return parseInt(yearRange, 10) || 0
+}
+
 // Convert game provinces to ProvinceHistory format for the map
 function gameProvincesToHistory(provinces: GameProvince[], year: number): ProvinceHistory {
   return {
@@ -263,13 +269,21 @@ export default function ScenarioPage() {
                   })
                   break
 
-                case 'dreamer_complete':
+                case 'dreamer_complete': {
                   // Populate the panel with narrative and rulers
+                  const endYear = parseLogEndYear(data.log_entry.year_range)
                   setGameLogs([data.log_entry])
                   setGameRulers(data.rulers)
                   setGameDivergences(data.divergences)
+                  setGameYear(endYear)
+                  setSelectedTimelinePoint({
+                    timeline: 'alternate',
+                    year: endYear,
+                    logIndex: 0
+                  })
                   setStreamingPhase('quoting')
                   break
+                }
 
                 case 'quotegiver_complete':
                   // Update the log entry with quotes (without portraits yet)
@@ -409,13 +423,24 @@ export default function ScenarioPage() {
               const data = JSON.parse(line.slice(6)) as StreamEvent
 
               switch (data.event) {
-                case 'dreamer_complete':
+                case 'dreamer_complete': {
                   // Append new log entry (keep existing logs)
-                  setGameLogs(prev => [...prev, data.log_entry])
+                  const endYear = parseLogEndYear(data.log_entry.year_range)
+                  setGameLogs(prev => {
+                    const newLogs = [...prev, data.log_entry]
+                    setSelectedTimelinePoint({
+                      timeline: 'alternate',
+                      year: endYear,
+                      logIndex: newLogs.length - 1
+                    })
+                    return newLogs
+                  })
                   setGameRulers(data.rulers)
                   setGameDivergences(data.divergences)
+                  setGameYear(endYear)
                   setStreamingPhase('quoting')
                   break
+                }
 
                 case 'quotegiver_complete':
                   // Update the latest log entry with quotes (without portraits yet)
@@ -603,12 +628,23 @@ export default function ScenarioPage() {
               const data = JSON.parse(line.slice(6)) as StreamEvent
 
               switch (data.event) {
-                case 'dreamer_complete':
-                  setGameLogs(prev => [...prev, data.log_entry])
+                case 'dreamer_complete': {
+                  const endYear = parseLogEndYear(data.log_entry.year_range)
+                  setGameLogs(prev => {
+                    const newLogs = [...prev, data.log_entry]
+                    setSelectedTimelinePoint({
+                      timeline: 'alternate',
+                      year: endYear,
+                      logIndex: newLogs.length - 1
+                    })
+                    return newLogs
+                  })
                   setGameRulers(data.rulers)
                   setGameDivergences(data.divergences)
+                  setGameYear(endYear)
                   setStreamingPhase('quoting')
                   break
+                }
 
                 case 'quotegiver_complete':
                   // Update the latest log entry with quotes (without portraits yet)
@@ -829,7 +865,10 @@ export default function ScenarioPage() {
             onProvinceSelect={setSelectedTag}
             onReady={() => setMapReady(true)}
             isStreamingMap={
-              (streamingPhase === 'mapping' || streamingPhase === 'dreaming') &&
+              (streamingPhase === 'dreaming' ||
+               streamingPhase === 'quoting' ||
+               streamingPhase === 'illustrating' ||
+               streamingPhase === 'mapping') &&
               selectedTimelinePoint.timeline === 'alternate' &&
               (gameLogs.length === 0 || selectedTimelinePoint.logIndex === gameLogs.length - 1)
             }
