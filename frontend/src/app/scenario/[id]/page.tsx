@@ -181,7 +181,7 @@ export default function ScenarioPage() {
   }, [scenarioId])
 
   // Start a new game with SSE streaming
-  const handleStartGame = useCallback(async (command: string, yearsToProgress: number) => {
+  const handleStartGame = useCallback(async (command: string, yearsToProgress: number): Promise<boolean> => {
     setIsProcessing(true)
     setInputError(null)
     setInputAlternative(null)
@@ -214,7 +214,7 @@ export default function ScenarioPage() {
         setInputError(errorMessage)
         setIsProcessing(false)
         setStreamingPhase('idle')
-        return
+        return false
       }
 
       // Process the SSE stream
@@ -223,7 +223,7 @@ export default function ScenarioPage() {
         setInputError('Failed to read response stream')
         setIsProcessing(false)
         setStreamingPhase('idle')
-        return
+        return false
       }
 
       const decoder = new TextDecoder()
@@ -248,7 +248,7 @@ export default function ScenarioPage() {
                   setInputAlternative(data.alternative || null)
                   setIsProcessing(false)
                   setStreamingPhase('idle')
-                  return
+                  return false
 
                 case 'filter_complete':
                   // Timeline branches immediately
@@ -345,7 +345,7 @@ export default function ScenarioPage() {
                   setInputError(data.message)
                   setIsProcessing(false)
                   setStreamingPhase('idle')
-                  return
+                  return false
               }
             } catch (parseError) {
               console.error('Error parsing SSE data:', parseError)
@@ -353,6 +353,7 @@ export default function ScenarioPage() {
           }
         }
       }
+      return true
     } catch (err) {
       console.error('Error starting game:', err)
       if (err instanceof Error && err.name === 'AbortError') {
@@ -362,6 +363,7 @@ export default function ScenarioPage() {
       }
       setIsProcessing(false)
       setStreamingPhase('idle')
+      return false
     }
   }, [scenarioId])
 
@@ -519,8 +521,8 @@ export default function ScenarioPage() {
 
   // Add a new divergence to an existing timeline with SSE streaming
   // If command is empty, just continue without adding a new divergence
-  const handleAddDivergence = useCallback(async (command: string, yearsToProgress: number) => {
-    if (!gameId) return
+  const handleAddDivergence = useCallback(async (command: string, yearsToProgress: number): Promise<boolean> => {
+    if (!gameId) return false
 
     setIsProcessing(true)
     setInputError(null)
@@ -552,7 +554,7 @@ export default function ScenarioPage() {
           setInputError(errorMessage)
           setIsProcessing(false)
           setStreamingPhase('idle')
-          return
+          return false
         }
 
         const filterResult = await filterResponse.json()
@@ -562,14 +564,14 @@ export default function ScenarioPage() {
           setInputAlternative(filterResult.alternative || null)
           setIsProcessing(false)
           setStreamingPhase('idle')
-          return
+          return false
         }
       } catch (error) {
         console.error('Error filtering divergence:', error)
         setInputError('Failed to validate divergence')
         setIsProcessing(false)
         setStreamingPhase('idle')
-        return
+        return false
       }
     }
 
@@ -600,7 +602,7 @@ export default function ScenarioPage() {
         setInputError(errorMessage)
         setIsProcessing(false)
         setStreamingPhase('idle')
-        return
+        return false
       }
 
       const reader = response.body?.getReader()
@@ -608,7 +610,7 @@ export default function ScenarioPage() {
         setInputError('Failed to read response stream')
         setIsProcessing(false)
         setStreamingPhase('idle')
-        return
+        return false
       }
 
       const decoder = new TextDecoder()
@@ -645,6 +647,7 @@ export default function ScenarioPage() {
                   setStreamingPhase('quoting')
                   break
                 }
+
 
                 case 'quotegiver_complete':
                   // Update the latest log entry with quotes (without portraits yet)
@@ -703,7 +706,7 @@ export default function ScenarioPage() {
                   setInputError(data.message)
                   setIsProcessing(false)
                   setStreamingPhase('idle')
-                  return
+                  return false
               }
             } catch (parseError) {
               console.error('Error parsing SSE data:', parseError)
@@ -711,6 +714,7 @@ export default function ScenarioPage() {
           }
         }
       }
+      return true
     } catch (err) {
       console.error('Error adding divergence:', err)
       if (err instanceof Error && err.name === 'AbortError') {
@@ -720,8 +724,21 @@ export default function ScenarioPage() {
       }
       setIsProcessing(false)
       setStreamingPhase('idle')
+      return false
     }
   }, [gameId])
+
+  // Wrapper: runs one initial submission, then (iterations - 1) blank continues in sequence
+  const handleInputSubmit = useCallback(async (command: string, yearsToProgress: number, iterations: number) => {
+    const firstOk = gameMode
+      ? await handleAddDivergence(command, yearsToProgress)
+      : await handleStartGame(command, yearsToProgress)
+    if (!firstOk) return
+    for (let i = 1; i < iterations; i++) {
+      const ok = await handleAddDivergence('', yearsToProgress)
+      if (!ok) break
+    }
+  }, [gameMode, handleStartGame, handleAddDivergence])
 
   // Handle timeline point selection
   const handleTimelinePointSelect = useCallback((point: TimelinePoint) => {
@@ -890,7 +907,7 @@ export default function ScenarioPage() {
           {/* Divergence Input - show when no alternate timeline exists OR when viewing latest year of alternate */}
           {showDivergenceInput && (
             <DivergenceInput
-              onSubmit={gameMode ? handleAddDivergence : handleStartGame}
+              onSubmit={handleInputSubmit}
               disabled={false}
               isProcessing={isProcessing}
               error={inputError}

@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 
 interface DivergenceInputProps {
-  onSubmit: (command: string, yearsToProgress: number) => void
+  onSubmit: (command: string, yearsToProgress: number, iterations: number) => void
   disabled: boolean
   isProcessing: boolean
   error?: string | null
@@ -23,6 +23,7 @@ export default function DivergenceInput({
 }: DivergenceInputProps) {
   const [command, setCommand] = useState('')
   const [yearsToProgress, setYearsToProgress] = useState(5)
+  const [iterations, setIterations] = useState(1)
   const inputRef = useRef<HTMLInputElement>(null)
 
   // Auto-focus input when not disabled
@@ -36,7 +37,7 @@ export default function DivergenceInput({
     e.preventDefault()
     if (!disabled && !isProcessing) {
       // Allow empty command for continuing without new divergence
-      onSubmit(command.trim(), yearsToProgress)
+      onSubmit(command.trim(), yearsToProgress, iterations)
       setCommand('')  // Clear input after submission
     }
   }
@@ -117,6 +118,23 @@ export default function DivergenceInput({
             <option value={10}>10</option>
             <option value={25}>25</option>
             <option value={50}>50</option>
+          </select>
+        </div>
+
+        {/* Iterations selector */}
+        <div className="flex items-center gap-1">
+          <label className="text-gray-500 text-xs whitespace-nowrap">Iterations:</label>
+          <select
+            value={iterations}
+            onChange={(e) => setIterations(Number(e.target.value))}
+            disabled={disabled || isProcessing}
+            className="bg-[#0a0a14] border border-[#2a2a3a] text-amber-100 px-2 py-2 rounded text-sm
+                       focus:border-amber-500/50 focus:outline-none
+                       disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {Array.from({ length: 10 }, (_, i) => i + 1).map(n => (
+              <option key={n} value={n}>{n}</option>
+            ))}
           </select>
         </div>
 
